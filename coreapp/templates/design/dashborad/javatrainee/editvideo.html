@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            
+            <div class="box">
+                
+                
+                <div class="col-12">
+                    
+                    <!-- Default box -->
+                    <div class="box">
+                    <div class="row with-border">
+                        <div class="col-9">
+                            <div class="box-header ">
+                                {% for i in somevalue %}
+                                             
+                                             
+                                <h4 class="box-title">{{i.title}}</h4>
+        
+                                      {% endfor %}
+                              
+                              </div>
+                        </div>
+                        <div class="col-2" style="padding-top: 13px;">
+                            <div class="clearfix">	
+                                {% for i in data2 %}				
+                               <a href="{% url 'editvideopart' editvideopart_id=i.id %}">
+                                <button class="waves-effect waves-light btn btn-primary btn-social btn-bitbucket mb-5" >
+                                    <i class="fa fa-edit"></i> Edit Video 
+                                  </button>
+                               </a>
+                               {% endfor %}
+                                
+                              </div>
+                        </div>
+                        <div class="col-1" style="padding-top: 13px;">
+                            <div class="clearfix">					
+                              
+                                <button class="waves-effect waves-light btn btn-social btn-danger btn-dropbox mb-5">
+                                  <i class="fa fa-delete"></i>Delete
+                                </button>
+                                
+                              </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                       
+                        
+                        <!-- demo -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <video id="myVideo" width="100%" height="100px" controls
+                                    controlsList="noplaybackrate nodownload ">
+                                    {% for i in data2 %}
+
+                                    <source src="{{ i.video_file.url }}" type="video/mp4">
+                                    Your browser does
+                                    not support the
+                                    video tag.
+                                    {% endfor %}
+
+                                </video>
+
+                            </div>
+                            <br>
+                            <div class="col-md-12 " style="margin-top: 35px;">
+                                <div id="slimtest1">
+                                    {% for i in data2 %}
+                                    {{i.content | safe}}
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- demo -->
+
+
+                        
+                    </div>
+                    <!-- /.box-body -->
+                    <!-- </div> -->
+                    <!-- /.box -->
+                   
+
+                    <div>
+
+                        <input type="text" value={{traingid.id}} id="numberid" style="display: none;">
+                    </div>
+                   <style>
+                    .nextpreviouspagecon{
+                        gap: 20px;
+                        margin: 10px;
+
+                    }
+                    .nextpreviouspagecon a{
+                        padding: 6px 15px;
+                        background-color: rgb(5, 51, 5);
+                        color: white;
+                        font-size: 15px;
+                        font-weight: 100;
+                        text-decoration: none;
+                        border-radius: 5%;
+                        margin-right: 20px;
+
+
+                    }
+                    .nextpreviouspagecon a:hover{
+                        transform: scale(1,1);
+                        font-weight: 400;
+                        color: white;
+                        text-decoration: none;
+                        
+
+                    }
+                   </style>
+                    <!-- <div class="box-body">
+                        <div class="clearfix" style="float: right;">
+                            <div class="nextpreviouspagecon">
+                                <a href="{% url 'javatraning' %}" > Previous  </a>
+                                <a  onclick="uploadtitle()" href="{% url 'traningcompiler' %}" > Next  </a>
+                            </div>
+                            
+
+                        </div>
+                    </div> -->
+               
+
+                    
+                </div>
+
+            </div>
+            
+        </section>
+    </div>
+</div>
+
+<script>
+    function uploadtitle() {
+       
+        var data2 = $('#numberid').val();
+       
+
+        let csrftoken = '{{ csrf_token }}'
+        $.ajax({
+          type: 'POST',
+          headers: { 'X-CSRFToken': csrftoken },
+          url: "{% url 'traningcompiler' %}",
+          data: {
+           
+            'data2': data2,
+  
+           
+  
+          },
+          success: function (response) {
+            if (response.success == true) {
+              location.reload() 
+  
+  
+            }
+            else if (response.success == false) {
+              console.log("error")
+            }
+          },
+          error: function (error) {
+            alert('titlenot add')
+          }
+        });
+      }
+  
+</script>
+
+<script>
+
+
+
+    let vid = document.getElementById("myVideo");
+
+    function getVolume() {
+        alert(vid.volume);
+    }
+
+    function setHalfVolume() {
+        vid.volume = 0.2;
+    }
+
+    function setFullVolume() {
+        vid.volume = 2.0;
+    }
+    vid.onratechange = function () {
+        vid.playbackRate = 1;
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('myVideo');
+
+        // Variables for drag functionality
+        var isDragging = false;
+        var startX;
+        var endX;
+
+        video.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            startX = e.clientX;
+            endX = e.clientX;
+        });
+
+        video.addEventListener('mouseup', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = e.clientX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                endX = e.clientX;
+            }
+        });
+
+        video.addEventListener('mouseleave', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = endX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('ended', function () {
+            video.play();
+        });
+    });
+
+</script>
+{% endblock content %}

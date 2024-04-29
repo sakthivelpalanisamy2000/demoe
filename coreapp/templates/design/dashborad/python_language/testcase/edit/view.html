@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+<script src="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/scripts/verify.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+" rel="stylesheet">
+<div class="content-wrapper">
+    <div class="container-full">
+
+        <section class="content" >
+            <div class="content-header mb-30">
+                <div class="d-flex align-items-center">
+                  <div class="me-auto">
+                    <h5 class="page-title">Testcase Edit Python </h5>
+                    <div class="d-inline-block align-items-center">
+                      <nav>
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+                          <li class="breadcrumb-item" aria-current="page">Python </li>
+                          <li class="breadcrumb-item active" aria-current="page">Testcase</li>
+                          <li class="breadcrumb-item active" aria-current="page">Solve</li>
+                          <li class="breadcrumb-item active" aria-current="page">Again</li>
+                          <li class="breadcrumb-item active" aria-current="page">Solve</li>
+
+
+                        </ol>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+
+                        <div class="row" >
+                            <div class="col-xxl-4 col-xl-4 col-lg-12 col-12 col-sm-12">
+                                <div class="box">
+             
+                                    <div class="box-body pull-up" style="box-shadow: rgba(212, 210, 210, 0.2) 0px 2px 8px 0px;">
+                                      <div class="card pull-up" style="border: none;box-shadow:none">
+                                        <img class="card-img-top" style="height: 200px;border-radius:1%" src="https://api3.sololearn.com/uploads/landing_python_course_image.png" alt="Card image cap">
+                                        <div class="card" style="border: none;box-shadow:none;padding-top:10px">
+                                         <div style="text-align: center;" class="mt-3">
+                                          <h5 class="">Complete Practice Traning Python</h5>
+                                         </div>
+                                        <div class="row mt-3">
+                                          <div class="col-1" style="text-align: end;">
+                                            
+                                            
+                                          </div>
+                                          <div class="col-6"  >
+                                            <p class=""><i class="fa fa-code" aria-hidden="true" style="color: #068bb0;"></i> {{count}} Problem</p>
+                                            <p class=""><i class="fa fa-level-up" aria-hidden="true" style="color: #068bb0;"></i>  {{easy}}  Easy Level</p>
+                                            <p class=""><i class="fa fa-rocket" aria-hidden="true" style="color: #068bb0;"></i>  {{hard}}  Hard Level</p>
+
+
+                                           
+                                            
+                                          </div>
+                                          <div class="col">
+                                            <p class=""><i class="fa fa-file-code-o" aria-hidden="true" style="color: #068bb0;"></i> Python</p>
+                                            <p class=""><i class="fa fa-exchange" aria-hidden="true" style="color: #068bb0;"></i> {{medium}}  Medium Level</p>
+
+                                            
+                                          </div>
+                      
+                                        </div>
+                                        <!-- <a class="btn btn-sucess" href="" style="background-color: #068bb0;color:white;font-weight:800;padding:10px ;width:200px;margin-left:20% ; margin-top:5%">Start Watching Now</a> -->
+                      
+                                        </div>
+                                       
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-12 col-12 col-sm-12">
+                                {% for i in data %}
+                    <a >
+                        <div class=" box mb-15 pull-up">
+                            <div>
+                                <div class="table-responsive">
+
+                                    <table class="table no-border mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="min-w-50">
+                                                    <div
+                                                        class=" h-50 w-50 l-h-50 rounded text-center">
+                                                        <span
+                                                            class="icon-Book-open fs-24"><i
+                                                                class="fa fa-code fs-16"
+                                                                aria-hidden="true"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td
+                                                        class="fw-600 min-w-170">
+                                                        <div
+                                                            class="d-flex flex-column fw-600">
+                                                            <a href="#"
+                                                                class="text-dark hover-primary mb-1 fs-16">{{i.title}}</a>
+                                                            <span
+                                                                class="text-fade">Problem
+                                                                Solving
+                                                                ({{i.level}})</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="text-align: right;">
+                                                        
+                                                        
+                                                        
+                                                        <a href="{% url 'pythonptquestionview' id=i.id %}"   style="margin-right: 60px;"><span class="badge bg-success"> -> Question</span></a>
+                                                    
+                                                    
+                                                        <a href="{% url 'pythonptedittitle' titleid=i.id %}"><span class="badge bg-success">Edit title</span></a>
+                                                    
+                                                </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                            </div>
+                          
+                            
+                        </div>
+                        </section>
+
+                    </div>
+                </div>
+
+                {% endblock content %}

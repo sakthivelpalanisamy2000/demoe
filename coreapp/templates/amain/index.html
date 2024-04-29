@@ -1,0 +1,779 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Imagecon</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.html">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/bootstrap.min.css '%} ">
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/animate.min.css '%} ">
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/magnific-popup.css '%} ">
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/fontawesome-all.min.css '%} ">
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/slick.css '%} ">
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/themify-icons.css '%} ">
+        <link rel="stylesheet" href=" {% static 'amain/assets/css/style.css '%} ">
+    </head>
+    <body>
+
+        <!-- header -->
+        <header id="header-sticky" class="header transparent-header pt-30 pl-65 pr-65">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-2 col-lg-3">
+                        <div class="header__logo" style="color: white;font-weight:900">IMAGECON
+                            <!-- <a href="index.html"><img src="https://www.imageconindia.com/assets-2/img/academy_logo_min.svg" alt="logo"></a> -->
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-9">
+                        <div class="header__menu main-menu text-center">
+                            <nav class="navbar navbar-expand-lg">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                                    <span class="navbar-icon"></span>
+                                    <span class="navbar-icon"></span>
+                                    <span class="navbar-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item active"><a class="nav-link" href="#hero">Home</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#work">How It Work?</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#download">Download APP</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                                        <!-- <li class="nav-item"><a class="nav-link" href="#blog">code</a></li> -->
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-2 d-none d-xl-block">
+                        <div class="header__btn text-right" >
+                            <a href="#" class="btn" style="background-color: orange;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">Free trial </a>
+                        </div>
+                        
+                    </div> -->
+                    <div class="col-xl-2 d-none d-xl-block">
+                        <div class="header__btn text-right">
+                            <a href="{% url 'login' %}" class="btn">Login</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header-end -->
+        <main>
+            <!-- slider-area -->
+            <section id="hero" class="slider slider-bg" data-background=" {% static 'amain/assets/img/bg/breadc_bg.jpg '%}">
+                <div class="slider-active">
+                    <div class="single-slider">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-10">
+                                    <div class="slider__content" sstyle="margin-top:-100px;">
+                                        <h2 data-animation="fadeInUp" data-delay=".2s" > Easy to Learn crack Interviews</h2>
+                                        <p data-animation="fadeInUp" data-delay=".4s" >Student and professional looking to upskill, or someone with a passion for lifelong learning, our platform <br>offers a wide range of resources to help you achieve your goals with ease.</p>
+                                        <div class="slider__content-btn">
+                                            <a href="#" class="btn" data-animation="fadeInUp" data-delay=".6s">1 day Free trial</a>
+                                            <!-- <a href="" class="v-play popup-video" data-animation="fadeInUp" data-delay=".8s"><i class="fas fa-play"></i></a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 d-none d-xl-block">
+                                    <div class="slider__img pt-150" data-animation="fadeInRight" data-delay=".6s">
+                                        <img src=" {% static 'amain/assets/img/main.png '%}" alt="" style="padding-top: 70px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- slider-area-end -->
+            <!-- features-area -->
+            <section id="features" class="features-area pt-110 pb-115">
+                <div class="features-shape d-none d-sm-block" data-background=" {% static 'amain/assets/img/bg/f_shape.png '%}"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                            <div class="section__title text-center mb-75">
+                                <span class="wow fadeInUp" data-wow-delay="0.2s">Features</span>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">The Best Features</h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.6s">Effective and Efficient</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="feature__nav">
+                                <ul class="nav nav-tabs feature__nav-tab" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                                            aria-selected="true"><i class="far fa-code"></i>Coding Testcase</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                                            aria-selected="false"><i class=""></i>Progress Tracker</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                                            aria-selected="false"><i class=""></i>Aptitude Test and Tracker</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content feature__tab-content" id="myTabContent">
+                                    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="single__features">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-6">
+                                                    <div class="single__features-img">
+                                                        <img src=" {% static 'amain/assets/img/2.jpeg '%}" alt="" style="width: 100%;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="single__features-content">
+                                                        <div class="f-title">
+                                                            <h2>Test Environment:</h2>
+                                                            <p>Description of the environment in which the tests are conducted (e.g., programming language, IDE, testing framework).
+                                                                Setup instructions for replicating the test environment..</p>
+                                                        </div>
+                                                        <div class="inner__features">
+                                                            <div class="icon">
+                                                                <img src=" {% static 'amain/assets/img/icon/features_01.png '%}" alt="">
+                                                            </div>
+                                                            <div class="inner__features-content">
+                                                                <h5>Expected Results</h5>
+                                                                <p>Specification of the expected output for each test case.
+                                                                    Justification for the expected results based on the requirements or specifications.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inner__features">
+                                                            <div class="icon">
+                                                                <img src=" {% static 'amain/assets/img/icon/features_02.png '%}" alt="">
+                                                            </div>
+                                                            <div class="inner__features-content">
+                                                                <h5>Pass/Fail Determination</h5>
+                                                                <p>Criteria for determining whether a test case passes or fails.
+                                                                    Explanation of the pass/fail status for each test case.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="single__features">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-6">
+                                                    <div class="single__features-img  wow fadeInLeft" data-wow-delay="0.2s">
+                                                        <img src=" {% static 'amain/assets/img/3.jpeg '%}" alt="" style="width: 100%;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="single__features-content">
+                                                        <div class="f-title">
+                                                            <h2>Test Case Identification:</h2>
+                                                            <p>Unique identifier or name for each test case.
+                                                                Description of the functionality being tested by each test case.
+                                                                Priority of each test case (e.g., high, medium, low).</p>
+                                                        </div>
+                                                        <div class="inner__features">
+                                                            <div class="icon">
+                                                                <img src=" {% static 'amain/assets/img/icon/features_01.png '%}" alt="">
+                                                            </div>
+                                                            <div class="inner__features-content">
+                                                                <h5>Test Case Execution Results:</h5>
+                                                                <p>Summary of the test case execution status (e.g., pass, fail, blocked).
+                                                                    Detailed results of each test case, including any defects found.
+                                                                    Any deviations from expected results and their explanations.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inner__features">
+                                                            <div class="icon">
+                                                                <img src=" {% static 'amain/assets/img/icon/features_02.png '%}" alt="">
+                                                            </div>
+                                                            <div class="inner__features-content">
+                                                                <h5>Test Coverage:</h5>
+                                                                <p>Metrics related to test coverage (e.g., percentage of requirements covered by test cases).
+                                                                    Areas of the system covered and not covered by testing.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                        <div class="single__features">
+                                            <div class="row align-items-center">
+                                                <div class="col-xl-6">
+                                                    <div class="single__features-img">
+                                                        <img src=" {% static 'amain/assets/img/1.png '%}" alt="" style="width: 100%;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="single__features-content">
+                                                        <div class="f-title">
+                                                            <h2>Scoring and Evaluation:</h2>
+                                                            <p>Explanation of how the aptitude test will be scored (e.g., total correct answers, percentile ranking).
+                                                                Criteria for evaluating performance in each aptitude domain.
+                                                                Interpretation of scores and what they indicate about an individual's abilities.</p>
+                                                        </div>
+                                                        <div class="inner__features">
+                                                            <div class="icon">
+                                                                <img src=" {% static 'amain/assets/img/icon/features_01.png '%}" alt="">
+                                                            </div>
+                                                            <div class="inner__features-content">
+                                                                <h5>Tracker Implementation:</h5>
+                                                                <p>Development of a tracking system to monitor individuals' performance over time.
+                                                                    Integration of test results into the tracker database.
+                                                                    Visualization of performance trends through charts, graphs, or dashboards.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inner__features">
+                                                            <div class="icon">
+                                                                <img src=" {% static 'amain/assets/img/icon/features_02.png '%}" alt="">
+                                                            </div>
+                                                            <div class="inner__features-content">
+                                                                <h5>Feedback and Reporting:</h5>
+                                                                <p>Providing immediate feedback to test takers upon completing the test.
+                                                                    Generating detailed score reports for individuals, including strengths and areas for improvement.
+                                                                    Offering personalized recommendations for skill enhancement based on test results.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- features-area-end -->
+            <!-- work-process-area -->
+            <section id="work" class="work-process grey-bg pt-110 pb-85">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                            <div class="section__title text-center mb-75">
+                                <span class="wow fadeInUp" data-wow-delay="0.2s">how work</span>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">How It Work?</h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Imagecon ! Here's a step-by-step guide to help you understand how our platform works and how you can get started.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single__process text-center mb-30 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="single__process-icon mb-40">
+                                    <img src=" {% static 'amain/assets/img/icon/work_01.png '%}" alt="">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="single__process-content">
+                                    <div class="number">01</div>
+                                    <h4>Signup For Create Account</h4>
+                                    <p>Username: Field for users to choose a unique username.
+                                        Email Address: Field for users to enter their email address.
+                                        Password: Field for users to create a password (include password strength requirements if applicable).
+                                        Confirm Password: Field for users to re-enter their password to confirm.
+                                        .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single__process text-center mb-30 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="single__process-icon mb-40">
+                                    <img src=" {% static 'amain/assets/img/icon/work_02.png '%}" alt="">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="single__process-content">
+                                    <div class="number">02</div>
+                                    <h4>Choose Your Plan</h4>
+                                    <p>Our 10x plan offers maximum value and benefits for those who need extensive features and resources.Our 5x plan is perfect for users who need a balance of features and affordability.Our 3x plan offers essential features at an affordable price, ideal for individual users or small businesses.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single__process text-center mb-30 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="single__process-icon mb-40">
+                                    <img src=" {% static 'amain/assets/img/icon/work_03.png '%}" alt="">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="single__process-content">
+                                    <div class="number">03</div>
+                                    <h4>And Ready To Learn</h4>
+                                    <p>Welcome to our learning platform! Whether you're looking to acquire new skills, further your education, or explore a passion, we're here to support you every step of the way. Let's embark on this exciting learning journey together.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- work-process-area-end -->
+            <!-- access-info-area -->
+            <section id="process" class="access-info access-sm pt-120 pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="section__title access-title">
+                                <h2>Get Access to Learn </h2>
+                                <p>Welcome to our coding courses! Whether you're a beginner looking to learn the basics or an experienced developer aiming to enhance your skills, our platform offers a wide range of courses to help you master coding.</p>
+                                <p>industry-Specific Internships: Gain hands-on experience in your field of interest through internships with leading companies and organizations.</p>
+                                <p>Skill-Building Workshops: Participate in workshops focused on developing specific skills such as coding, digital marketing, graphic design, and more.</p>
+                                <p>Hands-On Experience: Gain practical, real-world experience that will enhance your resume and set you apart in the job market.
+                                    Networking Opportunities: Connect with industry professionals, mentors, and fellow interns through networking events, webinars, and virtual meetups.</p>
+                                
+                                <P>Prepare for aptitude tests with confidence using our comprehensive preparation materials. Whether you're applying for jobs, internships, or academic programs, our platform has everything you need to succeed.</P>
+                                
+                                    <div class="access-btn">
+                                    <a href="#" class="btn">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="access__info-wrap mb-55">
+                                        <div class="info-icon mb-35">
+                                            <img src=" {% static 'amain/assets/img/icon/info_01.png '%}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <h5>Coding</h5>
+                                            <p>Introduction to Programming: Learn the fundamentals of programming languages such as Python, Java, C++, and more.
+                                                Data Structures and Algorithms: Dive deeper into data structures, algorithms, and problem-solving techniques to improve your coding efficiency.</p>
+
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="access__info-wrap mb-55">
+                                        <div class="info-icon mb-35">
+                                            <img src=" {% static 'amain/assets/img/icon/info_01.png '%}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <h5>Aptitude</h5>
+                                            <p>Prepare for aptitude tests with confidence using our comprehensive preparation materials. Whether you're applying for jobs, internships, or academic programs, our platform has everything you need to succeed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="access__info-wrap mb-55">
+                                        <div class="info-icon mb-35">
+                                            <img src=" {% static 'amain/assets/img/icon/info_01.png '%}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <h5>Learn English</h5>
+                                            <p>Improve your English language proficiency and communication skills with our diverse range of courses and resources. Whether you're a non-native speaker, a student, or a professional, our platform offers tailored solutions to help you achieve your language learning goals.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="access__info-wrap mb-55">
+                                        <div class="info-icon mb-35">
+                                            <img src=" {% static 'amain/assets/img/icon/info_01.png '%}" alt="">
+
+                                        </div>
+                                        <div class="content">
+                                            <h5>You got Internship and Workshop</h5>
+                                            <p>Gain valuable experience, develop practical skills, and network with industry professionals through our internship and workshop programs. Whether you're a student seeking real-world experience or a professional looking to upskill, our platform offers opportunities to help you succeed in your career.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- access-info-area-end -->
+            <!-- cta-area -->
+            <section id="download" class="cta-area cta-sm cta-bg pt-105" data-background=" {% static 'amain/assets/img/bg/cta_bg.jpg '%}">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
+                            <div class="section__title cta-title text-center mb-20">
+                                <h2 class="wow fadeInUp" data-wow-delay="0.2s">Our app seamlessly integrates with your mobile device</h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.4s">providing an optimized learning experience tailored to your screen size and device specifications. Enjoy smooth navigation, responsive design, and intuitive features designed for mobile use.</p>
+                                
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="cta__img text-center">
+                                <img src=" {% static 'amain/assets/img/iphone4.png '%}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-11 offset-xl-1 col-lg-10 offset-lg-1">
+                            <div class="section__title cta-title text-center mb-20">
+                                <!-- <h2 class="wow fadeInUp" data-wow-delay="0.2s">Our app seamlessly integrates with your mobile device</h2> -->
+                                <p class="wow fadeInUp" data-wow-delay="0.4s">Connect with fellow learners, instructors, and experts through our mobile app's community features. Participate in discussions, share insights, and collaborate with others to enhance your learning experience. Engage with interactive learning features such as quizzes, exercises, and assessments directly from your mobile device. Test your knowledge, track your progress, and stay motivated as you learn on the go.</p>
+                                <p></p>
+                                <div class="cta-btn">
+                                    <!-- <a href="#" class="btn wow fadeInUp" data-wow-delay="0.6s">Our Pricing</a> -->
+                                    <a href="#" class="btn wow fadeInUp" data-wow-delay="0.8s">Download APP</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </section>
+            <!-- cta-area-end -->
+            <!-- pricing-area -->
+            <section id="pricing" class="pricing-area pt-110 pb-90">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                            <div class="section__title text-center mb-75">
+                                <span class="wow fadeInUp" data-wow-delay="0.2s">pricing</span>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">Price & Plans</h2>
+                                <!-- <p class="wow fadeInUp" data-wow-delay="0.6s">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua ad minim veniam.</p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+                            <div class="pricing__box p-bg text-center mb-30" data-background=" https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711929600&semt=sph">
+                                <div class="pricing__box-head">
+                                    <span>English Traning</span>
+                                    <h5>Imagecon 3x</h5>
+                                </div>
+                                <div class="pricing__box-body mb-25">
+                                    <p> English , including grammar, vocabulary, pronunciation, and conversation.</p>
+                                </div>
+                                <div class="price-count mb-45">
+                                    <h2> ₹ 400 <span>/ Per Year</span></h2>
+                                </div>
+                                <div class="pricing__box-btn">
+                                    <a href="#" class="btn">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="pricing__box p-bg active text-center mb-30" data-background=" https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711929600&semt=sph">
+                                <div class="pricing__box-head">
+                                    <span>Full Traning</span>
+                                    <h5>Imagecon 10x</h5>
+                                </div>
+                                <div class="pricing__box-body mb-25">
+                                    <p>Unlock the full potential of your image delivery capabilities with our Imagecon 10x Plan. </p>
+                                </div>
+                                <div class="price-count mb-45">
+                                    <h2>₹ 1400 <span>/ Per Year</span></h2>
+                                </div>
+                                <div class="pricing__box-btn">
+                                    <a href="#" class="btn">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay="0.6s">
+                            <div class="pricing__box p-bg text-center mb-30" data-background=" https://img.freepik.com/free-photo/computer-program-coding-screen_53876-138060.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711929600&semt=sph">
+                                <div class="pricing__box-head">
+                                    <span>Technical Traning</span>
+                                    <h5>Imagecon 5x</h5>
+                                </div>
+                                <div class="pricing__box-body mb-25">
+                                    <p>Image delivery capabilities and technical skills with our Imagecon 5x Plan</p>
+                                </div>
+                                <div class="price-count mb-45">
+                                    <h2>₹ 700 <span>/ Per Year</span></h2>
+                                </div>
+                                <div class="pricing__box-btn">
+                                    <a href="#" class="btn">Purchase Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- pricing-area-end -->
+          
+            <!-- software-features -->
+            <!-- <section class="s_features features-p pt-110 pb-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="section__title s-featres-title mb-40">
+                                <span>featues</span>
+                                <h2>Make Your Softwer Quick & Faster</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="s-features__list mb-50">
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <p>Eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-check"></i>
+                                        <p>Tempor incididunt ut labore et dolore magna aliqua nim ad.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="s-features__btn">
+                                <a href="#" class="btn">Our Pricing</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="s-features-padding pt-75">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="s__features-wrap text-center mb-90">
+                                            <div class="icon">
+                                                <img src="assets/img/icon/sf_01.png" alt="">
+                                            </div>
+                                            <div class="s__features-wrap-content">
+                                                <h4>Easy To Edit</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doing best.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="s__features-wrap text-center mb-90">
+                                            <div class="icon">
+                                                <img src="assets/img/icon/sf_02.png" alt="">
+                                            </div>
+                                            <div class="s__features-wrap-content">
+                                                <h4>Free Support</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doing best.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="s__features-wrap text-center mb-90">
+                                            <div class="icon">
+                                                <img src="assets/img/icon/sf_03.png" alt="">
+                                            </div>
+                                            <div class="s__features-wrap-content">
+                                                <h4>Secure Panel</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doing best.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="s__features-wrap text-center mb-90">
+                                            <div class="icon">
+                                                <img src="assets/img/icon/sf_04.png" alt="">
+                                            </div>
+                                            <div class="s__features-wrap-content">
+                                                <h4>Free Icons</h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed doing best.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <!-- software-features-end -->
+         
+            <!-- brand-area -->
+            <!-- <div class="brand-area bg-height d-flex align-items-center" data-background="assets/img/bg/brand_bg.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="brand-active">
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_01.png" alt="">
+                                </div>
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_02.png" alt="">
+                                </div>
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_03.png" alt="">
+                                </div>
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_04.png" alt="">
+                                </div>
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_05.png" alt="">
+                                </div>
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_06.png" alt="">
+                                </div>
+                                <div class="single-brand">
+                                    <img src="assets/img/brand/brand_04.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- brand-area-end -->
+        </main>
+        <!-- footer-area -->
+        <footer class="footer__bg pt-105" data-background=" {% static 'amain/assets/img/bg/footer_bg.jpg '%}">
+            <div class="container">
+                <!-- <div class="row">
+                    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 mb-90">
+                        <div class="footer__cta text-center">
+                            <div class="section__title footer-title text-center mb-45 wow fadeInUp" data-wow-delay="0.2s">
+                                <h2>Get Every Updates Form There</h2>
+                            </div>
+                            <div class="footer__cta-form wow fadeInUp" data-wow-delay="0.4s">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your email address....">
+                                    <button class="btn">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="row mb-70">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="footer__widget mb-30">
+                            <div class="footer__widget-title mb-30">
+                                <h4>Our Services</h4>
+                            </div>
+                            <div class="footer__widget-link">
+                                <ul>
+                                    <li><a href="#">Expand</a></li>
+                                    <li><a href="#">Annualize</a></li>
+                                    <li><a href="#">Trach</a></li>
+                                    <li><a href="#">Engineering</a></li>
+                                    <li><a href="#">UI/UX</a></li>
+                                    <li><a href="#">Development</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-2 col-md-4 col-sm-6">
+                        <div class="footer__widget mb-30">
+                            <div class="footer__widget-title mb-30">
+                                <h4>About Us</h4>
+                            </div>
+                            <div class="footer__widget-link">
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Terms & Condition</a></li>
+                                    <li><a href="#">E-Books</a></li>
+                                    <li><a href="#">Calculate</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
+                        <div class="footer__widget mb-30">
+                            <div class="footer__widget-title mb-30">
+                                <h4>Press</h4>
+                            </div>
+                            <div class="footer__widget-link">
+                                <ul>
+                                    <li><a href="#">Presentation</a></li>
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">Management</a></li>
+                                    <li><a href="#">Publication</a></li>
+                                    <li><a href="#">Features</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
+                        <div class="footer__widget sm-padding mb-30 pl-50">
+                            <div class="footer__widget-title mb-30">
+                                <h4>News Feeds</h4>
+                            </div>
+                            <div class="footer__widget-post">
+                                <ul>
+                                    <li>
+                                        <div class="post-thumb">
+                                            <img src="assets/img/blog/f-blog_01.jpg" alt="img">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3><a href="#">Dolor sit amet, consectet is was
+                                            adipisicing elite author.</a></h3>
+                                            <div class="meta-info">
+                                                <span><i class="far fa-calendar"></i>2 January 2019</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="post-thumb">
+                                            <img src="assets/img/blog/f-blog_02.jpg" alt="img">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3><a href="#">Dolor sit amet, consectet is was
+                                            adipisicing elite author.</a></h3>
+                                            <div class="meta-info">
+                                                <span><i class="far fa-calendar"></i>2 January 2019</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="post-thumb">
+                                            <img src="assets/img/blog/f-blog_03.jpg" alt="img">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3><a href="#">Dolor sit amet, consectet is was
+                                            adipisicing elite author.</a></h3>
+                                            <div class="meta-info">
+                                                <span><i class="far fa-calendar"></i>2 January 2019</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div> -->
+                <div class="copyright-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright__text pt-35 pb-35 text-center">
+                                <p>Copyright By &copy;Imagecon - 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-area-end -->
+
+
+
+
+		<!-- JS here -->
+       
+        <script src=" {% static 'amain/assets/js/vendor/modernizr-3.5.0.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/vendor/jquery-1.12.4.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/popper.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/bootstrap.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/one-page-nav-min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/slick.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/ajax-form.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/wow.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/jquery.scrollUp.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/jquery.magnific-popup.min.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/plugins.js '%} "></script>
+        <script src=" {% static 'amain/assets/js/main.js '%} "></script>
+    </body>
+</html>

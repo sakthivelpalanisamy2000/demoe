@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            font-size: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <h2>Personal Information</h2>
+            <ul id="personalInfo">
+                <!-- Personal information will be dynamically added here -->
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Work Experience</h2>
+            <ul id="workExperience">
+                <!-- Work experience will be dynamically added here -->
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Education</h2>
+            <ul id="education">
+                <!-- Education will be dynamically added here -->
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Skills</h2>
+            <ul id="skills">
+                <!-- Skills will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function generateResume() {
+            // Get personal information
+            var personalInfo = [];
+            personalInfo.push('Name: ' + document.getElementById('name').value);
+            personalInfo.push('Email: ' + document.getElementById('email').value);
+            personalInfo.push('Phone: ' + document.getElementById('phone').value);
+            personalInfo.push('Address: ' + document.getElementById('address').value);
+
+            // Display personal information
+            var personalInfoList = document.getElementById('personalInfo');
+            personalInfoList.innerHTML = personalInfo.map(item => '<li>' + item + '</li>').join('');
+
+            // Get work experience
+            var workExperience = [];
+            var workItems = document.getElementsByClassName('workItem');
+            for (var i = 0; i < workItems.length; i++) {
+                var title = workItems[i].querySelector('.title').value;
+                var company = workItems[i].querySelector('.company').value;
+                var duration = workItems[i].querySelector('.duration').value;
+                workExperience.push('<li><strong>' + title + '</strong> at ' + company + ', ' + duration + '</li>');
+            }
+
+            // Display work experience
+            var workExperienceList = document.getElementById('workExperience');
+            workExperienceList.innerHTML = workExperience.join('');
+
+            // Get education
+            var education = [];
+            var eduItems = document.getElementsByClassName('eduItem');
+            for (var j = 0; j < eduItems.length; j++) {
+                var degree = eduItems[j].querySelector('.degree').value;
+                var institution = eduItems[j].querySelector('.institution').value;
+                var eduDuration = eduItems[j].querySelector('.eduDuration').value;
+                education.push('<li>' + degree + ' from ' + institution + ', ' + eduDuration + '</li>');
+            }
+
+            // Display education
+            var educationList = document.getElementById('education');
+            educationList.innerHTML = education.join('');
+
+            // Get skills
+            var skills = document.getElementById('skills').value.split(',');
+            var skillsList = document.getElementById('skillsList');
+            skillsList.innerHTML = skills.map(skill => '<li>' + skill.trim() + '</li>').join('');
+        }
+    </script>
+
+    <div class="container">
+        <h2>Enter Your Information</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email"><br><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone"><br><br>
+        <label for="address">Address:</label>
+        <input type="text" id="address"><br><br>
+
+        <h2>Add Work Experience</h2>
+        <div id="workExperienceForm">
+            <div class="workItem">
+                <label>Title:</label>
+                <input type="text" class="title"><br><br>
+                <label>Company:</label>
+                <input type="text" class="company"><br><br>
+                <label>Duration:</label>
+                <input type="text" class="duration"><br><br>
+            </div>
+        </div>
+        <button onclick="addWorkExperience()">Add More Experience</button><br><br>
+
+        <h2>Add Education</h2>
+        <div id="educationForm">
+            <div class="eduItem">
+                <label>Degree:</label>
+                <input type="text" class="degree"><br><br>
+                <label>Institution:</label>
+                <input type="text" class="institution"><br><br>
+                <label>Duration:</label>
+                <input type="text" class="eduDuration"><br><br>
+            </div>
+        </div>
+        <button onclick="addEducation()">Add More Education</button><br><br>
+
+        <h2>Enter Your Skills (comma separated)</h2>
+        <input type="text" id="skills"><br><br>
+
+        <button onclick="generateResume()">Generate Resume</button><br><br>
+
+        <h2>Generated Resume</h2>
+        <div id="skillsList"></div>
+    </div>
+
+    <script>
+        function addWorkExperience() {
+            var workExperienceForm = document.getElementById('workExperienceForm');
+            var workItem = document.createElement('div');
+            workItem.classList.add('workItem');
+            workItem.innerHTML = '<label>Title:</label><input type="text" class="title"><br><br>' +
+                                '<label>Company:</label><input type="text" class="company"><br><br>' +
+                                '<label>Duration:</label><input type="text" class="duration"><br><br>';
+            workExperienceForm.appendChild(workItem);
+        }
+
+        function addEducation() {
+            var educationForm = document.getElementById('educationForm');
+            var eduItem = document.createElement('div');
+            eduItem.classList.add('eduItem');
+            eduItem.innerHTML = '<label>Degree:</label><input type="text" class="degree"><br><br>' +
+                                '<label>Institution:</label><input type="text" class="institution"><br><br>' +
+                                '<label>Duration:</label><input type="text" class="eduDuration"><br><br>';
+            educationForm.appendChild(eduItem);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<!-- <link rel="stylesheet" href="{% static 'design/css/reder/reader_demo.css'%}" type="text/css" />
+<link rel="stylesheet" href="{% static 'design/css/reder/docs.css'%}" type="text/css" /> -->
+<style>
+
+.circular-progress {
+    position: relative;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .circular-progress:before {
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  
+  .value-container {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #1c3d23;
+  }
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+       <section class="content">
+        {% for i in data %}
+        <div class="box pull-up">
+            <div class="box-body bg-img" style="background-image: url(../images/bg-5.png);" data-overlay-light="9">
+                <div class="d-lg-flex align-items-center justify-content-between">
+                    <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                        <div class="circular-progress">
+                            <div class="value-container">0%</div>
+                        </div>
+                        <div class="ms-30">
+                            <h4 class="mb-10">{{i.title}}</h4>
+                            <p class="mb-0 text-fade">{{i.title.subtitle}}
+                            </p>
+                        </div>
+                    </div>
+                   
+                    <div class="clickable">
+                        <a href="{% url 'elisteningmcq' app_id=i.title_id %}" class="waves-effect waves-light w-p100 btn btn-primary" style="white-space: nowrap;">Next</a>
+                    </div>
+                </div>							
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="box-body bg-img" style="background-image: url(../images/bg-5.png);" data-overlay-light="9">
+                    <div class="d-lg-flex align-items-center justify-content-between">
+                        <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                            
+                            <div class="">
+                                <h4 class="">Listening English</h4>
+                                <!-- <p class="mb-0 text-fade">{{i.title.subtitle}}
+                                </p> -->
+                            </div>
+                        </div>
+                        <div class="clickable" style="margin-right: 20px;">
+                            <a >
+                           <p class="" style="font-size: 42px;"><i class="fa fa-stop-circle-o " aria-hidden="true" style="color: #068bb0;"></i></p>
+
+                            </a>
+                        </div>
+                        
+                    </div>							
+                </div>
+                <div class="box p-20 fs-5">
+                    <div class="clickable">
+                        
+                       <a > 
+                        <p class="" style="font-size: 29px;"><i class="fa fa-play-circle " aria-hidden="true" style="color: #068bb0;"></i></p>
+                        
+                        {{i.content | safe}}</a>
+                           
+                        
+                    </div>
+                    
+                    <!-- <div class="clickable">
+                        <p>
+                            hello
+                        </p>
+                    </div> -->
+                  
+                    <!-- <div class="clickable" id="output"></div> -->
+                   
+                </div>
+            </div>
+            <div class="col" style="display: none;">
+                <form class="control-panel">
+                    <label for="speed"> Reader Speed: </label> <input type="range" name="speed" min=".1" max="10" step=".1" value=".4">
+                    <label for="pitch">Pitch: </label><input type="range" name="pitch" min=".1" max="2" step=".1" value="2">
+                    <label for="voice">Voice:</label> <select name="voice" id="voices"></select>
+                    <label for="color">Highlight Color</label> <input type="color" name="color" value="#add8e6"> 
+                    <label for="toggle">Toggle Highlight</label> <input type="checkbox" name="toggle" checked=1>
+                </form>
+            </div>
+        </div>
+        {%endfor%}
+       </section>
+    </div>
+</div>
+
+<script src="{% static 'design/css/reder/reader_demo.js '%}"></script>
+<script src="{% static 'design/css/reder/Reader.js'%}"></script>
+<script>
+    let progressBar = document.querySelector(".circular-progress");
+  let valueContainer = document.querySelector(".value-container");
+  
+  let progressValue = 0;
+  let progressEndValue = 2;
+  let speed = 100;
+  
+  let progress = setInterval(() => {
+    progressValue++;
+    valueContainer.textContent = `${progressValue}%`;
+    progressBar.style.background = `conic-gradient(
+        #4d5bf9 ${progressValue * 3.6}deg,
+        #cadcff ${progressValue * 3.6}deg
+    )`;
+    if (progressValue == progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
+  
+  </script>
+
+{% endblock content %}

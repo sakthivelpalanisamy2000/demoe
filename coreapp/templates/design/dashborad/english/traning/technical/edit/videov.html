@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="box">
+                
+                <div class="col-12">
+                    <!-- Default box -->
+                    {% for i in data %}
+                    <div class="box">
+                    <div class="box-header with-border flex">
+                                
+                        <h4 class="box-title">{{i.title}} </h4>
+                        <a href="{% url 'etechnicalvideoedit' id=i.id %}" class="btn btn-info ms-3">Edit</a>
+                        <button class="btn btn-danger ms-3" data-bs-toggle="modal" data-bs-target="#myModal">Delete</button>
+
+                      </div>
+                    <div class="box-body">
+                       
+
+                        <!-- demo -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <video id="myVideo" width="100%" height="100px" controls
+                                    controlsList="noplaybackrate nodownload ">
+                                    <source src="{{ i.video_file.url }}" type="video/mp4">
+                                    Your browser does
+                                    not support the
+                                    video tag.
+
+                                </video>
+
+                            </div>
+                            <br>
+                            <div class="col-md-12 " style="margin-top: 35px;">
+                                <div id="slimtest1">
+                                  
+                                    {{i.content | safe}}
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- demo -->
+
+
+                        
+                    </div>
+                    <!-- /.box-body -->
+                    <!-- </div> -->
+                    <!-- /.box -->
+                   
+
+                {%endfor%}
+                    
+                </div>
+
+            </div>
+
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" >
+				<div class="modal-content "  style="border-radius: none;">
+					<!-- <div class="modal-header ">
+						<h4 class="modal-title" id="myModalLabel" >Confirmation </h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="startTimerButton"></button>
+					</div> -->
+					<div class="modal-body">
+						<h4 style="color: rgb(5, 76, 80);">Are you sure you want to delete this Video?</h4>
+                        {%for data in data%} 
+                        <video id="myVideo" width="100%" height="50px" controls
+                                    controlsList="noplaybackrate nodownload ">
+                                    <source src="{{ data.video_file.url }}" type="video/mp4">
+                                
+
+                        </video>
+                        <div style="height: 200px;overflow-y:scroll">
+                        
+                            {{data.content | safe}}
+                        </div>
+                        {%endfor%}
+					</div>
+					<div class="modal-footer align-items-center">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="startTimerButton">Cancel</button>
+                        {%for data in data%} 
+                        <form action="{% url 'etechnicalvideodelete' id=data.id %}" method="post">
+                            {% csrf_token %}
+
+						<button class="btn btn-success" type="submit">Delete</button>
+                        </form>
+                        {%endfor%}
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+            
+        </section>
+    </div>
+</div>
+
+
+<script>
+
+
+
+    let vid = document.getElementById("myVideo");
+
+    function getVolume() {
+        alert(vid.volume);
+    }
+
+    function setHalfVolume() {
+        vid.volume = 0.2;
+    }
+
+    function setFullVolume() {
+        vid.volume = 2.0;
+    }
+    vid.onratechange = function () {
+        vid.playbackRate = 1;
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('myVideo');
+
+        // Variables for drag functionality
+        var isDragging = false;
+        var startX;
+        var endX;
+
+        video.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            startX = e.clientX;
+            endX = e.clientX;
+        });
+
+        video.addEventListener('mouseup', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = e.clientX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                endX = e.clientX;
+            }
+        });
+
+        video.addEventListener('mouseleave', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = endX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('ended', function () {
+            video.play();
+        });
+    });
+
+</script>
+{% endblock content %}

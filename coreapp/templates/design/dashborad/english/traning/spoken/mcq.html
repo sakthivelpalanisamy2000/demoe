@@ -1,0 +1,415 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+   
+   
+    
+    .app h1{
+        font-size: 16px;
+        color: #989898;
+        text-align: center;
+        font-weight: 600;
+        border-bottom: 1px solid #333;
+        padding-bottom: 30px;
+    }
+    .quiz{
+        padding: 20px 0;
+    }
+    .quiz h2{
+        font-size: 15px;
+        color:#4d4d4f;
+        font-weight: 600;
+    }
+    .btnquiz{
+        background: #fff;
+        color: #535252;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 10px;
+        border-left: 1px solid rgb(255, 255, 255);
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    /* disabled olduğunda çalışmasın */
+    .btnquiz:hover:not([disabled]){ 
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: #222;
+    }
+    .btnquiz:disabled{
+        cursor: no-drop;
+    }
+    #next-btnquiz{
+        background: #005B41;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+    }
+    .correct{
+        border-left: 5px solid rgb(5, 57, 12);
+        color: rgb(40, 40, 40);
+        background: #9aeabc;
+    }
+    .incorrect{
+        border-left: 2px solid rgb(57, 5, 5);
+        color: rgb(40, 40, 40);
+        background: #ff9393;
+    }
+    .yourClassName{
+        text-align: center;
+    }
+    .nextpreviouspagecon{
+        gap: 20px;
+        margin-top: 20px;
+
+    }
+    .nextpreviouspagecon a{
+        padding: 6px 15px;
+        background-color: rgb(5, 51, 5);
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        text-decoration: none;
+        border-radius: 5%;
+
+
+    }
+    .nextpreviouspagecon a:hover{
+        transform: scale(1,1);
+        font-weight: 200;
+        color: white;
+        text-decoration: none;
+        
+
+    }
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div style="margin: 20px;">
+
+              </div>
+              
+            <div class="box" style="padding: 20px;">
+                <div class="app">
+                    <div class="timer-container">
+                       
+                        <div class="px-25 py-10 w-100"><span class="badge badge-primary"><div id="timerDisplay">00:00</div></span></div>
+                      </div>
+                
+
+                    <div class="quiz">
+                        
+                        <h2 id="question">Question goes here</h2>
+                        <pre id="preview" style="display: none;"></pre>
+                        <div id="answer-buttons">
+                            <button class="btnquiz">Answer 1</button>
+                            <button class="btnquiz">Answer 2</button>
+                            <button class="btnquiz">Answer 3</button>
+                            <button class="btnquiz">Answer 4</button>
+                        </div>
+                        <button id="next-btnquiz">Next</button>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" name="" id="" value="">
+            
+
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" >
+				<div class="modal-content"  style="border-radius: none;">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">MCQ Test</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="startTimerButton"></button>
+					</div>
+					<div class="modal-body">
+						<h4>Note :</h4>
+						<p>Each MCQ should ideally have only one correct answer</p>
+						<p>Total : 5 Questions <br>Timer : 2 min</p>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="startTimerButton">Close</button>
+					</div>
+				</div>
+				
+			</div>
+	
+
+            
+		</div>
+
+        <button  style="display: none;" id="spokewllew" type="button" class="btn btn-primary" data-bs-toggle="modal"
+										data-bs-target="#myModal" onclick="submitAnswerss({{ questions|safe }})">
+										Medium model
+									</button>
+        </section>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var timerDisplay = document.getElementById('timerDisplay');
+        var startTime;
+        var timerInterval;
+        var quizDuration = 100; 
+      
+        function startTimer(duration) {
+          var start = Date.now();
+          startTime = start;
+      
+          function updateTimer() {
+            var delta = duration - Math.floor((Date.now() - start) / 1000);
+            var minutes = Math.floor(delta / 60);
+            var seconds = delta % 60;
+      
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+            timerDisplay.textContent = minutes + ':' + seconds;
+      
+            if (delta <= 0) {
+              clearInterval(timerInterval);
+              timerDisplay.textContent = 'Time Up!';
+            }
+          }
+      
+          updateTimer();
+          timerInterval = setInterval(updateTimer, 1000);
+        }
+      
+        startTimer(quizDuration);
+      });
+      
+  </script>
+<script>
+  function submitAnswerss(answer){
+        console.log(answer)
+        const questions = answer
+      
+    const questionElement = document.getElementById("question");
+    const preview = document.getElementById("preview");
+
+    const answerButtons = document.getElementById("answer-buttons");
+    const nextButton = document.getElementById("next-btnquiz");
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function startQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        nextButton.innerHTML = "Next";
+        showQuestion();
+    }
+
+    function showQuestion() {
+        resetState();
+        let currentQuestion = questions[currentQuestionIndex];
+        let questionNo = currentQuestionIndex + 1;
+        questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+        preview.innerHTML = questionNo + ". " + currentQuestion.id;
+
+
+
+        currentQuestion.answers.forEach(answer => {
+            const button = document.createElement("button");
+            button.innerHTML = answer.text;
+            button.classList.add("btnquiz");
+            answerButtons.appendChild(button);
+            if (answer.correct) {
+                button.dataset.correct = answer.correct;
+            }
+            button.addEventListener("click", selectAnswer);
+        });
+    }
+
+    function resetState() {
+        nextButton.style.display = "none";
+        while (answerButtons.firstChild) {
+            answerButtons.removeChild(answerButtons.firstChild);
+        }
+    }
+
+    function selectAnswer(e) {
+        const selectedBtn = e.target;
+        const isCorrect = selectedBtn.dataset.correct === "true";
+        if (isCorrect) {
+            selectedBtn.classList.add("correct");
+            score++;
+        } else {
+            selectedBtn.classList.add("incorrect");
+        }
+        Array.from(answerButtons.children).forEach(button => {
+            if (button.dataset.correct === "true") {
+                button.classList.add("correct");
+            }
+            button.disabled = true;
+        });
+        nextButton.style.display = "block";
+    }
+
+    function showScore() {
+        resetState();
+        if  (score >= 8) {
+            questionElement.innerHTML = `
+        <style>.timer-container{display:none} .mcq{display:none
+        }
+        </style>
+        <section class=" " >
+            <div class="row">
+                <div class="col-12"  style="text-align:center">
+                   
+                    <img src="https://img.freepik.com/free-vector/celebration-emblem-illustration_1284-7727.jpg" alt="" style="height:400px;">
+                    <div class="cetnerc">
+                        <div style="text-align: center;">
+                            <h2 style="color:green">Very Good</h2>
+
+                            <div style="height: 100px;width:100px;border:1px solid green;text-align:center;padding:0px;padding-top:3% ; border-radius:100% ; margin-left:45%"  >
+                                <h2 style="font-size:29px"> <span style="color:green"> ${score} / </span>  <span style="color:green">10</span></h2>
+        
+                            </div>
+                        </div>
+                      </div>
+
+                  <br>
+                  <br>
+                    
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;">
+
+                    <a href="{% url 'spokenenglish'  %}" class="btn btn-success">Next  </a>
+
+
+                </div>
+            </div>
+        </section>
+
+                    
+        
+        `;
+
+        
+        }
+         
+
+        else{
+             questionElement.innerHTML = `
+             <style>.timer-container{display:none} .mcq{display:none
+            }
+            </style>
+            <section class=" " >
+                <div class="row">
+                    <div class="col-12"  style="text-align:center">
+                       
+                        <img src="" alt="" ">
+                        <div class="cetnerc">
+                            <div style="text-align: center;">
+                                <h2 style="color:red">Average</h2>
+    
+                                <div style="height: 100px;width:100px;border:1px solid red;text-align:center;padding:0px;padding-top:3% ; border-radius:100% ; margin-left:45%"  >
+                                    <h2 style="font-size:29px"> <span style="color:red"> ${score} / </span>  <span style="color:red">10</span></h2>
+            
+                                </div>
+                            </div>
+                          </div>
+    
+                      <br>
+                      <br>
+                        
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="col" style="text-align: center;">
+                       
+                        
+                        <a href="{% url 'spokenenglish' %}" class="btn btn-danger">Recommended Rewatch </a>
+    
+    
+    
+                    </div>
+                </div>
+            </section>
+        
+        `;
+                      
+        }
+    }
+ 
+    function handleNextButton() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        }
+        else {
+            showScore();
+
+        }
+    }
+
+    nextButton.addEventListener("click", () => {
+        if (currentQuestionIndex < questions.length) {
+            handleNextButton();
+        }
+        else {
+            startQuiz();
+        }
+    })
+
+    startQuiz();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+</script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var myButton = document.getElementById('spokewllew');
+      myButton.click();
+    });
+  </script>
+{% endblock content %}

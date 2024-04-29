@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+    .jobbutton{
+        padding: 1px 10px;
+        box-shadow: rgba(178, 208, 251, 0.155) 0px 8px 24px;
+        color: rgb(6, 125, 216);
+        border: none;
+        font-weight: 500;
+        border-radius: 4px ;
+    }
+    .jobbutton1{
+        padding: 6px 10px;
+        background-color: rgb(23, 0, 128);
+        color: rgb(255, 255, 255);
+        border: none;
+        font-weight: 700;
+        border-radius: 4px ;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="">
+                <div class="row">
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="data:image/jpeg;base64,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" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/202106/tcs_logo_1200_020621101143.jpg?size=948:533" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcWWYrLToNWTCCcMrcL-eoU88VeFauMTPiSTQJFSV7Od7QUS63sHs6soQPVeBT9fgbrhQ&usqp=CAU" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="https://www.equitybulls.com/equitybullsadmin/uploads/HCL%20Technologies%20Limited.jpg" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAA0lBMVEX///9jZGaGWqeojr3Sw98AAABgYWNkZWdcXV9aW13///3//v/5+flaW15WV1murq/h4eGEV6b09PTHx8hNTlGIiYvg4ODo6OjT09OBUqTu7u5sbW+cnZ7Nzc1XWlmVlZd1dXV8fX+AgYOmp6e2t7m/v7+srKx+TaKXmJiTbrHZzeKhoaHv6PJ7R6D07/V+f4G7psstLy4kJiU9Pz7NvNjd0+SvlcPFstOif7uHX6iWca6hg7q7o8zo4e7g0uiSb7G0l8ptMpkQEhE7PDwLEQ8cHx6FXcGPAAATbklEQVR4nO1dC3fauBI2NJYfGPE0GAzGvEkIeTSPNm3T9m63//8vXc1IlmRwEtpCm9PVd852bUsW9nhm9M1o7FiWgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgcEvwvf/9BUcDvUQUT/aD9xWjjb0b8eMEgZ6rOEr1vLuWGP/fqxIqVQi42MN799t3hxr7N+PGIU1Pdr4941l5a/xWjceQ7t1rOEvluXe1bEG/90IIkTzWOO/65XLD8ca/O+Cbz00yuXNX+Tijwj/blkulxt/kYs/BjJu9Z4pFlOti7/Gxe+LZrMZ7N05wK4XoFjlcu8dHvtNIgv69dl0BEx7tGj1i3o0+/WoNex0+83tM7ut2mI1Ylgthrun9gE77j2IpnDKQHWbjSZpnKbh9GWqz0RSuT1F3QL3DnbIXfzV/fmLJ/8qhotwHFddlyBczxlPu7kOlc4iTJ0qowDUjeNJmB1vdmrsTNfTTp3MtgRD4jh2RrjZneDTYJJZpB6c4omRgvmEVImAOxm+dMHBu9Pleytz7wDO4s825TdHFle3zS68VHJKEsR1p5pBRJPEJVprKo7P4gTPlHCcEkniHKXqUHbcm+H2EAIfOrdajhjOFcfTRB+F0PUzV8vU6u4D41a3sH3GrZCpFsjOqrDjvXcV64jB4khcqXiyfMdLs1/0B55+K6xfplnqFvUzCR1pg889GCzCbQx8aDPE8aC/BzoU8H044IpBvMnTV+v7n5ZMnZaoQR+FYoGLh31w98vTxwMLSEcVLtT1SDpmRjJJhWi87PGGHlc2j1IKxlNyRUuUCDWEUy8vx7EnFMbTpDVAAXHBo+46Yxd0isbjtNRmLq6euqhkZDwaMLeZ4q9Vn46OLj70mEQaH0B9LjLFEi7evwUX1ijfogIeAxH1vHQ0jfo4FQXNzsrlt8yba3j13ng973S7w9nqklBuPNaM9XOIlw6G7NSgEjS7tXEVT6U1OXpKZBQdUC5cJhln0GGn9JnUu+gB3Hja5XYfzFG5aKf4Yv3HB3TpS7DCzL1zMOH5FZReo/fpWMIKR61u3inPUFq0q+7Qa0kXFvQXQlghyGHS0Wf7SoRhs0OzAZugfS7Xk4hmdrqQv9cnhOmbdoCpmqeb+hYeG9zwNuegPLqslmeQBXzPDy0/HUm3CogCCMvhmjWES3druWZxZ0RKVG8DVVIn4OlV7vLn+AwcEkdZZ9+aYO98lI39CvNf/rmUDeyeLTVhld+DeG6F/JZXx9KtHaADvsRN1DJaxLz61Cm6pyb31mKvhqdz6sQnEhJrWjT1YIztjAR9yg6Dh8YDn/zuYVe5d1Q2GPd8kynayY/d8k9jXmW34C5we1bFGaygFyiNZBEaZpp8UHMcIdEYZeVoZtsFsVQX2yOg4ReRrfeZ3TGbY4LRrbAsEjWnmQCXx+engIgA5/KE7cCzL7xyIAJuASNqIrMS2uIqXlZBl0UjresYdC3eGQGOVue7I99Ks2uACV/lhVXuQR/p83sffuSefxLNBZ8MhTfqgLEVJoWJJpMcYkU3+yAglwc1ETrugdYRx/ainQFQ2rvCUkQBrLDiZzqUU7fHzA7BbR0Z9XXMZVVKxBGc3dxd3oPzHC0K5MD0hLBQQEKiU3d7QghhJixN14jBYLDi60Do9HeU2bfupYsCsfifl3x/eZsJ7SP0U36sd/GLwngOQWc2IVlcI/y7ZbXQeqq17d7gspzCOStUwuL+nXs8lEFJ69fnVMLNkAWH2G/nMfjnau5bAsn9IMTyYL1bam5KibR3/4sCeRL9aBBnknIUN7I4rWRPerB1AsihmA2hZnErutQElGzTp5rQ4ULsPoaP0kVhIJjJDrRMyIdx0Ryf2Bwllx1Nx44nYjviYVRSla6kGXMFGOd/WjO2LTjSitCnCwHxmU8/IeU/p6OaaRnd8ZJ6aAO04FNDCe7zUvr9nB2++0W57KI+TZkJMHVyMN0wqqNwqJrh6xmZzFEfoBQFzhk4v5PRpI6nBIT0NMeecOqYDFtFmO/QrFs1923ACsuKykuTRBf/VUqrceiFjHroSjfl0nTR5Tebm9Dxnll7VZMNKkoh/0KnnmDojFxcnFXb5uWYvKnuuUTmW1+krBpACk6Wul8Sc2DjC+t4pqS6PGz+YYCSgjyUR9NZHdQpAjskepoFpIW2qTEFJKtkezgAUA8xPayIihMxok61fpi82QmXnoAvqbmwLqFLPTSAinXfE3rmWxWt56c9xbAP+qmLQiDUGc1F2M8Z+JY3iqhIvkjrwCi60L/HypnFinRiQJ5jWTy7te+lnmhz4bl0770rEQFmuXiQzgfZs3y67/Avo+8SB2ghGUVaDBKSbaJtCZth6uVlB5Jtdy17avwLvZJIOUAIlWOaSCWSghEKca/mwi+WJOoPMlx+t8SosVHJz4f7Dv8ifCQFJG7ll1SSLf/OIfIrmXy6STHLztEpnZLOqznFtESss7ew3iv6xKyw0lMOnd+LJRpvmRIrOzyc01og89liBJyZFwTIQ5GN4nstnOcKhNUFbRIkbaGF1LtG92PCUoRg82j5wii5lfn4Hz/UgEOniup/3nf8l4CzXnV7QsMZzN0h7Ox2tZSgNcU81E6+IDNirpcTTUDgvmRUgBiTp+bTImhem0lGLK2eoxF+5qb4QR5TCVRc1jgEIk0HNIwKIzMAFxa3JD4vpDt9Wonmx3UdpTuzBoq1kKkVwJfCgkwMd++9N7iM099c4f8fNw3h4tXMeTBairOetxMJAyV1CrN9I5UcF2HdTrcm0c7mKQeexOHuK/cIUIWfSh9voyKdNrghHv8tMVD2vzRE6R+Ph3pMcKe6ZA+CtVvkyHnOvXBGn6qoeCho6mirC3IFsUrIOwn/viA7jwAn2OLHsgslLLDCpaY1n5Z8DszoA6RIVVLrUMIauEVmgLMewXW7+dZaZVySmS2R83Ly+Syef5fGCZzdEU8DI2rPyoHLe3eJsLDeIRNW72vGDXpY73cGlKGH+XeRDWQs/lH2PpQZ8qA/3ro0zb+PRrm2gavy5eNsedXVhF1HvSq5mc/GToLk0wK51JCkuFvaWa8VxgXy9k987sp5kl2Q0SUKJeCzJeOsUrMOlYlHB18ipKZFHP0oVW43dEkYicZgiGuhxOG7eJs875TNm821l09EVZCScp/E3df25OnwxKIjBR50prFLC91YVtSwubBQb5CaWtaX7DASqjPw7JBGzZJah6MOorjBdZ00hCKYcOwQkVLGdmY6JCGleBKGcQljSOJxD4Ms3V2guFxn3YqGcxaPA8MnnhQ9ht+ulnLYMfl6G6MCNsRoOp+tRzGBQYonSEFKoWwNyTwv9ruXtQ7cbSHDWlb8LLm8OdiqRYdmxkRyZQ6Z1xG2plpISTBwnkHo8hiIEM/NMhfVS6Wmcy2Jw0/YqdfIQk5IDbmyxqTwYsXqBNhVgwsNKkQ09oXFf3ebB96np2aDA6FOtko+MmGtsDnELFeJP31I4ISZD8vYZt/xMGXBuxEvF/+MPCbkNlfFlEnCdXavoBtT7QrwZ2hhQjEL+JYXvJ4BSv18La5hR24t5vGBPgCL50uKvLbmUJiH1HNlelKmKfk9R6OUethcdav0cqYmeeWN5jHluXN21qSVU501mLbw3mjmBVEBY7EhrWbVXa5H41GrsF7Ir4DOoKcCU+NprA+5RVbMwCNdZSbKk1oHT5VG81ltCwtlS53hnB2YzfW0hIj/hAZEtdHkcjKqFdcL7oFmq7YKJ5NwVJsVFA5KvAGdYXfP3XvASPsnrmyNB1H9V66IxcTGV+tiI2aDP44WrlL/rHB+EmiHyyZOdFBD438WSZmyf7XM3JbvY1y0rOCEcFgr/Ekg9y9kQ8dEA71R0GtAbt2XCxgPF3JSZGyLR9Fs44T1W568ghpmUhTpHBs+MzAWvcASPosFZXERX0kVy2RoduDTHlCWvWPWS+6JpxN/x0SF0QEmJUZO0bo+ZbMjb30j9AzMc4Mc9QE4/p/XLEz8FS7cHxdMqdC9w7QnGFZPkk6RcoBZkukcY/FXvQMm4H8ei62kZ6Xb3Y59K0817Id+t3D2KH8C9g4CCXpZkFOBl34Z58pyfyecPvQqF/87Zh3u3hiX9DzUzGkz3LCtdlsEgu02pERr2NCGLfY/Sin79xsLAdZtig1tSGAM2m1pz5TegLp2xti6u6DoX3wGtrXxZVYUIj/f+vIZze2LfDHlaw8Y1u0rMEJREZTdC2O1k9o0BEVreUgn+l4VnH/o0XA2DUFYi8FgnZbi9WAADWOSQsnMYDXEHTlTjFzMyEdtN57WRnHhmwOMvQNt4Fxhc2ZVKtbFaQ/Ju1/BWBtoa4Au/lXICiPCjGU121quOIFKrCDGKvY+zSeRUzdbM0y0FTTITAgO0qI8WXZZVE2Y4WMPaAMPkze4tIPlfxusIA0esrwyow+b4DXISqSDxU6XatWzNbfdtEiSwnaH5lbmKzRLJtQTLa0QseA0q4omPIczfuZ1at8Cp3QBJB1iQUskZcoPy4/QGGApMwixwSKeP08bLJ6MUCwrJkTOi01KphNX3KtDiJYoG3qZLraqWsJ05l6OOQkZuxOC4p1RrzCI5Ag+8srSB57uu8pC6d4ppBwvUFos2P589ir0irsstWLYd1zloqcsJHZEorRPiGpgLVRu8YQMrhiGXq2G0p3TpOVyHRt51fC5SRQdFtRAMk8uM/PMAs/9CpcWVpO+Cr2y6hQy64plBWGVZuuBTVpSeZhg4lGZSB7LnHKWJcOZk9AoqrbBmulwWBWVOzPqVp+pF4FXd5BPVb7kKnAxK3oOjb3fU6i8B4CSklyF8SyR7/lQVyf2tap8B4fKZVvdlzUpbQbgzVI3tNbylZ96TNxnFl/Pypt7plbnQOZ1aaEXO18uP72eLxfAohDJ10wu3Da3mw7N1/qzBr7RpdmaYeRpWhl5zBjD6mxGS0zlVATVpUWVAQow+d0tc5JC3frK2u4eXwVn4Ih1lsVFM6+2uSLMPTfXMMuk2Kpm6/QzV+P+U3g7s+XFLpNxkICg+ZtAAU2eExYI491mR1bw9lzgW6+DYCFwnUaWoMVhK4pmJKvOHVRDvaHmVoV9LrxUNITE4QlG0K8Y1mO7lMBLFhGFJcYZqUVRa+ySl2ogHq8eej1dXo1Gr/zx7vVYIGDehpd/s700oe2Euiux6yWZZ4q9pN1OJBF1aLbF5ssE0Abda2MZmOeCC5xRmBvYrMjO89KXMosgk7v700YPsVwysvrxrPKKlArRmTOoUKQbtebqayCdelNraBU1dOocIKugg1bXxcZuHdW12Wm1WvtlNOC98se7s7OTk7Ozx1eQQH7V8J/dNTAwMDAwMDAwMDAwMHgZ/5FQ6kC3+e7NfwCHKv27O/kP4EAfMPWhTO6vx2Fk9Vd9ct7AwMDAwMDgT0D/ZnbwA59Taqr6nsqea357YXW0vxJyAHzX3p6Mi99kK8LcVsKK7Gcq0X4U9isWVt/Wil7t5z4GnUd8rbaDnyzmLoRd/Dbdn8Esdd2xrCqIHDudiPKYfmo7oawr8hclmqrysvViGHuXUiirf67Dy2yUuSpGCmok0WoWokl3nMTPftQouiRuqgpOh3ZHNsDVwuOTnz9vhrGr/X0afD8vGMuT53ESH/av17Tj8NLOioSsln19mQphdb7ZkzTTreDm7Wh9rdTHtq/TkjK3xE7GsrjtWn0vJbHD8Ls6K7S/O2O7/dz1pG4YvrXl7lRuzpihB/Y1WHwm7fm3SUhsWZiElzeysye4sscjR410CMDQ47dy116ppvib2nagy1D+dBP72fK5DW1NXdTh+N8mPABp2f86TMtutGGLr2eubjG5ybbgYHjN/rlJ5VXkf21igxvJzJZvHfaFmSh0vO/y5/u2VkBmq5e+IjtdTBcTeRNzeH4dJYW19gQjOzOEPqpeZLfkPoxuP/uBkM4qTm7UaLacb5iw6nZks+ci5+jmfOy5cnTUwhtZz9qx486eXzHbF7FNwoEyp7mmIU3Ntw5sJ0kSV1paCBo/U/fU1kxrpVlOMzfm3GaK1bWf+2rdwG6H63/l7yjBMwW1SqFlW7zEHlD/53u6itVFzO16y1YO8tK2n38uP4oFXExHXdFK0xBdcPHb3GlcOy6/q32NcNxIlzXA0ZQ1j2C/9pwbGeJzU+q9UJ1bdoft2JrB21AmOPpX9qjb8xxp6Xba9p7fBNoLMdzvSNOQG9WmCy5EtykL0wJUOmWmkX5RyomgcbaUJt3AOxljFPFk+5On2hlTJQ+NkUT2W/aj9jfJu7og075yIazxH3X5fZhF4WnVJ3t+f/FFrOxw1bbVFSX2QP74wA4nmX+s29fraay5rDock1cR2WRVk121w0lrZasPqqAYkWV27eI3hmd2unZtzWUpO2LCYv9ea+puf1tPvus87Lut6qRndtgagcKvD8bUKvE30gmV7nZdVeMfxIm6o/64TaXorBY4lUj7hM2UJpmz1w+36LX2CagmfuQUX/Uaxk887tE3OlyriUV9dcXq4tkr7U3jqH0zGupflten8uaAtktw9iI+3FvvByTbBxn+F65n8pw3NMihdVBv/pdjdbw/zGlgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBg8BvwfxcNlUO5yIjyAAAAAElFTkSuQmCC" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="https://media.zenfs.com/en/accesswire.ca/a197fe8a67c65df6746113332ba11875" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ">
+                        <div class="row box" style="padding: 10x;">
+                            <div class="col-12 " style="padding:8px ;margin-left:20px;margin-bottom:10px; margin-top:20px; border-radius:10px;width:70px ">
+                                
+                                    <img   style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;height: 50px ;width:60px;border-radius:10px" src="data:image/jpeg;base64,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" alt="">
+                            </div>
+                            <div class="col-12">
+                                <h6 style="color: rgba(0, 0, 0, 0.675);">Full Stack Developer</h6>
+                            </div>
+                            <div class="col-12" style="color: rgb(110, 109, 109);">
+                                <p>We believe that design (and you) will be critical to the company's success. You will work with our founders and our early customers to help define and build our product</p>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton"> Full Time</button>
+                                <button class="jobbutton"> Part Time</button>
+                                <button class="jobbutton">Remote</button>
+                            </div>
+                            <div class="col-12" style="text-align: center;margin-bottom:20px">
+                                <button class="jobbutton1">Apply Job</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+       <section class="content">
+            <div class="box">
+                <div class="box-header " style="border: none;">
+                    <h5 class="box-title">Create Employee</h5>
+                </div>
+                
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col">
+                            {% if error_message %}
+                                <p>{{ error_message }}</p>
+                            {% endif %}
+                            <form method="post" action="{% url 'employeeupload' %}"  novalidate>
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-8">
+                                        <img src="{% static 'login_img_three.png'%}" alt="">
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-group">
+                                            <p>Full Name <span class="text-danger">*</span></p>
+                                            <div class="controls">
+                                                <input type="text" name="fullname" class="form-control" required data-validation-required-message="This field is required"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Email ID<span class="text-danger">*</span></p>
+                                            <div class="controls">
+                                                <input type="email" name="email" class="form-control" required data-validation-required-message="This field is required"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Password<span class="text-danger">*</span></p>
+                                            <div class="controls">
+                                                <input type="password" name="password" class="form-control" required data-validation-required-message="This field is required"> 
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <p>Repeat Password <span class="text-danger">*</span></p>
+                                            <div class="controls">
+                                                <input type="password" name="password2" data-validation-match-match="password" class="form-control" required> 
+                                            </div>
+                                        </div>
+                                        <div class="text-xs-right">
+                                            <button type="submit" class="btn btn-info">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </section>
+    </div>
+</div>
+
+
+{% endblock content %}

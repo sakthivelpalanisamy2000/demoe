@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Your Page</title>
+</head>
+<body>
+
+<pre id="dataToSend">
+    10 sec wait
+</pre>
+
+<button onclick="delayedCall()">Send Data to Django</button>
+
+<script>
+
+    function delayedCall() {
+        setTimeout(function() {
+            sendDataToDjango();
+        }, 10000); // 6000 milliseconds = 6 seconds
+    }
+    function sendDataToDjango() {
+        var data = $('#dataToSend').text();
+        let csrftoken = '{{ csrf_token }}'
+        $.ajax({
+            type: 'POST',
+            headers:{'X-CSRFToken':csrftoken},
+            url: "{% url 'check' %}",  // Replace with your actual Django endpoint
+            data: {
+                'data': data
+            },
+            success: function(response) {
+                console.log('Data sent successfully');
+                // Handle the response from Django if needed
+            },
+            error: function(error) {
+                console.error('Error sending data to Django:', error);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

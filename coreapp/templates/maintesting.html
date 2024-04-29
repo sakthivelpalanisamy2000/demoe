@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+  <title>c</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+
+  <link rel="stylesheet" href="{% static 'maintesting/playground8dc9.css'%}"rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="{% static 'maintesting/codebuilde.css'%}"rel="stylesheet" type="text/css" />
+  
+
+
+</head>
+
+<body>
+  <!-- <select id="language-changer"></select> -->
+  <div class="container" id="root" data-lang="c">
+
+
+
+    <div class="wrapper">
+
+
+      <div class="mobile-top-bar clearfix">
+        <div class="options-wrapper">
+
+
+        </div>
+        <div class="pills-wrapper">
+          <div class="pills clearfix">
+            <button class="pill active compiler-pill">
+              main.c </button>
+            <button class="pill shell-pill">
+              Output </button>
+          </div>
+        </div>
+        <div class="other-options-wrapper">
+
+
+        </div>
+      </div>
+
+      <div class="editor-wrapper">
+        <div class="editor-desktop-top-bar">
+          <div class="file-name">main.c</div>
+          <div class="desktop-top-bar__btn-wrapper">
+
+            <button class="desktop-run-button run">
+              <span class="run-text">
+                &nbsp;Run&nbsp;
+              </span>
+            </button>
+          </div>
+        </div>
+        <button class="mobile-run-button run">
+          Run
+        </button>
+        <div id="editor">// Online C compiler to run C program online
+          #include &lt;stdio.h&gt;
+
+          int main() {
+          // Write C code here
+          printf("Hello world");
+
+          return 0;
+          }</div>
+      </div>
+
+      <div class="terminal-wrapper">
+        <div class="terminal-desktop-top-bar">
+          <div class="shell-name">
+            Output </div>
+          <div class="terminal-desktop-top-bar__btn-wrapper">
+            <button class="desktop-clear-button">
+              &nbsp;Clear&nbsp;
+            </button>
+          </div>
+        </div>
+        <div id="terminal"></div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let editor;
+
+    window.onload = function() {
+        editor = ace.edit("editor");
+        editor.session.setMode("ace/mode/c_cpp");
+    }
+
+    
+</script>
+  <script defer src="{% static 'maintesting/socket.io.min.js'%}"></script>
+  <script defer src="{% static 'maintesting/ace.js'%}"></script>
+  <script defer src="{% static 'maintesting/final.js'%}"></script>
+  <script defer src="{% static 'maintesting/jquery.min.js'%}"></script>
+  <script defer src="{% static 'maintesting/mousetrap.min.js'%}"></script>
+  <script defer src="{% static 'maintesting/mode-c_cpp.js'%}"></script>
+</body>
+
+</html>

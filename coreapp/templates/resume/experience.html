@@ -1,0 +1,2678 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose template</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'resume/style.css'%}"  type="text/css" />
+
+    <style>
+
+        /* template 9 start */
+        .header-resume9 {
+            padding-bottom: 3%;
+            color: white !important;
+
+            text-align: left;
+            padding: 20px;
+            margin: -12px;
+            margin-top: -22px;
+            padding-top: 20px;
+
+
+        }
+
+        .header-resume9 img {
+            border-radius: 100%;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            padding-bottom: 20px;
+        }
+
+        .header-resume9 h1 {
+            color: #222222;
+font-size: 26px;
+font-family: Poppins;
+text-transform: capitalize;
+font-weight: 600;
+line-height: 34px;
+word-wrap: break-word
+        }
+
+        .header-resume9 p {
+            color: #1C8EB5;
+            font-size: 16px;
+            font-family: Poppins;
+            font-weight: 400;
+            line-height: 24px;
+            word-wrap: break-word
+        }
+
+
+
+        /* template 9 end */
+
+
+
+        /* template 5 start */
+
+        .header-resume5 {
+            padding-bottom: 3%;
+            border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+            background: #145349;
+            color: white !important;
+
+            text-align: center;
+            padding: 20px;
+            margin: -12px;
+            margin-top: -22px;
+            padding-top: 20px;
+
+
+        }
+
+        .header-resume5 img {
+            border-radius: 100%;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            padding-bottom: 20px;
+        }
+
+        .header-resume5 h1 {
+            font-size: 26px;
+            font-family: Roboto;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 45px;
+            word-wrap: break-word
+        }
+
+        .header-resume5 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+
+
+
+
+        .leftside-resume5 {
+            padding: 30px;
+            color: #ffffff;
+        }
+
+        .leftside-resume5 h2 {
+
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .details5 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+        }
+
+        .details5 h2 {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word;
+            text-decoration: none;
+        }
+
+        .details5 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.10px;
+            word-wrap: break-word
+        }
+
+        .link-resume5 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.10px;
+            word-wrap: break-word
+        }
+
+        .link-resume5 a {
+            color: white;
+
+
+        }
+
+        .skil-resume5 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .rightside-resume5 {}
+
+        .rightside-resume5 h2 {
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+
+
+
+        .rightside-resume5 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            word-wrap: break-word
+        }
+
+        .experience5 {
+            padding: 5px;
+        }
+
+        .experience5 h2 {
+            color: black;
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .experience5 h3 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+        .experience5 h4 {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+        .experience5 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            line-height: 13px;
+            word-wrap: break-word
+        }
+
+        .experience5 ul li {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            padding: 3px;
+            line-height: 13px;
+            word-wrap: break-word
+        }
+
+        .education5 {
+            padding: 5px;
+        }
+
+        .education5 h2 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word;
+            text-decoration: none;
+
+        }
+
+        .education5 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+        /* template 5 end */
+
+
+
+        /* template 6 start */
+
+        .header-resume6 {
+            padding-bottom: 3%;
+            border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+            color: rgb(0, 0, 0) !important;
+
+            text-align: center;
+            padding: 20px;
+            margin: -12px;
+            margin-top: -22px;
+            padding-top: 20px;
+
+
+        }
+
+        .header-resume6 img {
+            border-radius: 100%;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            padding-bottom: 20px;
+        }
+
+        .header-resume6 h1 {
+            font-size: 26px;
+            font-family: Roboto;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 45px;
+            word-wrap: break-word
+        }
+
+        .header-resume6 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+
+
+
+
+        .leftside-resume6 {
+            padding: 30px;
+        }
+
+        .leftside-resume6 h2 {
+            color: rgba(0, 53, 107, 0.70);
+
+
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .details6 {
+
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+        }
+
+        .details6 h2 {
+            color: rgba(0, 0, 0, 0.7);
+
+
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word;
+            text-decoration: none;
+        }
+
+        .details6 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.10px;
+            word-wrap: break-word
+        }
+
+        .link-resume6 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.10px;
+            word-wrap: break-word
+        }
+
+        .link-resume6 a {
+            color: rgba(0, 0, 0, 0.70);
+
+
+        }
+
+        .skil-resume6 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .rightside-resume6 {}
+
+        .rightside-resume6 h2 {
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+
+
+
+        .rightside-resume6 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            word-wrap: break-word
+        }
+
+        .experience6 {
+            padding: 5px;
+        }
+
+        .experience6 h2 {
+            color: black;
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .experience6 h3 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+        .experience6 h4 {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+        .experience6 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            line-height: 13px;
+            word-wrap: break-word
+        }
+
+        .experience6 ul li {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            padding: 3px;
+            line-height: 13px;
+            word-wrap: break-word
+        }
+
+        .education6 {
+            padding: 5px;
+        }
+
+        .education6 h2 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word;
+            text-decoration: none;
+
+        }
+
+        .education6 p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+        /* template 6 end */
+
+
+        .header-resume4 {
+            padding-bottom: 3%;
+            border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+            background: #533914;
+            color: white !important;
+
+            text-align: left;
+            padding: 20px;
+            margin: -12px;
+            padding-top: 20px;
+
+
+        }
+
+        .header-resume4 h1 {
+            font-size: 36px;
+            font-family: Roboto;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 45px;
+            word-wrap: break-word
+        }
+
+        .header-resume4 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+
+
+
+
+        .header-resume2 {
+            padding-bottom: 3%;
+            border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+            background: #145349;
+            color: white !important;
+
+            text-align: center;
+            margin: -12px;
+            padding-top: 20px;
+
+
+        }
+
+        .header-resume2 h1 {
+            font-size: 36px;
+            font-family: Roboto;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 45px;
+            word-wrap: break-word
+        }
+
+        .header-resume2 p {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+
+
+
+
+
+        .header-resume {
+            padding-bottom: 3%;
+            border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+
+
+        }
+
+        .header-resume h1 {
+            color: black;
+            font-size: 36px;
+            font-family: Roboto;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 45px;
+            word-wrap: break-word
+        }
+
+        .header-resume p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-transform: capitalize;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+        .leftside-resume {}
+
+        .leftside-resume h2 {
+
+            color: black;
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .rightside-resume {}
+
+        .rightside-resume h2 {
+            color: black;
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .rightside-resume p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            word-wrap: break-word
+        }
+
+        .experience {
+            padding: 5px;
+        }
+
+        .experience h2 {
+            color: black;
+            font-size: 19px;
+            font-family: Roboto;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 0.30px;
+            word-wrap: break-word
+        }
+
+        .experience h3 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+        .experience h4 {
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word
+        }
+
+        .experience p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            line-height: 13px;
+            word-wrap: break-word
+        }
+
+        .experience ul li {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            padding: 3px;
+            line-height: 13px;
+            word-wrap: break-word
+        }
+
+        .education {
+            padding: 5px;
+        }
+
+        .education h2 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word;
+            text-decoration: none;
+
+        }
+
+        .education p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+
+        .details {
+            padding-top: 0px;
+            padding-bottom: 0px;
+
+        }
+
+        .details h2 {
+            color: black;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 700;
+            letter-spacing: 0.20px;
+            word-wrap: break-word;
+            text-decoration: none;
+        }
+
+        .details p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.10px;
+            word-wrap: break-word
+        }
+
+        .link-resume {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.10px;
+            word-wrap: break-word
+        }
+
+        .link-resume a {
+            color: rgba(0, 0, 0, 0.70) !important;
+
+        }
+
+        .skil-resume p {
+            color: rgba(0, 0, 0, 0.70);
+            font-size: 13px;
+            font-family: Roboto;
+            font-weight: 400;
+            letter-spacing: 0.09px;
+            word-wrap: break-word
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+</head>
+
+<body>
+    <!-- <button type="button" >Download PDF</button> -->
+    <div class="columns" style="gap:10px;margin:10px">
+        <div class="column">
+            <button class="button is-small" onclick="downloadPDF()">Download PDF</button>
+
+        </div>
+        <div class="column">
+            <button class="button is-small" onclick="downloadPDF()">Download PDF</button>
+            <button class="button is-small">Choose Template</button>
+
+        </div>
+    </div>
+
+    <div class="columns is-desktop" style="margin: 20px;gap:10px">
+
+        <div class="column " style="border: 1px solid gray;" >
+
+            <div class="header-resume">
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+
+            <div class="columns " style="padding-top: 3%;">
+                <div class="column is-one-third" style="border-right: 1px solid gray;">
+                    <div class="leftside-resume">
+                        <h2 style="padding-bottom: 10px;">Details</h2>
+                        <div class="details">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="rightside-resume">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel. UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+                        <h2>experience</h2>
+
+                        <div class="experience">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column" style="border: 1px solid gray;">
+
+            <div class="header-resume2">
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+
+            <div class="columns is-desktop" style="padding-top: 3%;">
+
+                <div class="column" style="border-right: 1px solid gray;">
+                    <div class="rightside-resume">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+                        <h2>experience</h2>
+
+                        <div class="experience">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul>
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul>
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul>
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="column is-one-third" >
+                    <div class="leftside-resume">
+                        <!-- <h2 style="padding-bottom: 10px;">Details</h2> -->
+                        <div class="details">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="column" style="border: 1px solid gray;">
+
+            <div style="width: 100%; height: 100%; position: relative; background: white">
+                <div style="width: 188px; height: 842px; left: 0px; top: 0px; position: absolute; background: #145349">
+                </div>
+                <img style="width: 56px; height: 56px; left: 66px; top: 50px; position: absolute; border-radius: 250px"
+                    src="https://via.placeholder.com/56x56" />
+                <div
+                    style="left: 61px; top: 121px; position: absolute; color: white; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; word-wrap: break-word">
+                    rick Tang</div>
+                <div
+                    style="left: 54px; top: 143px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 10px; font-family: Roboto; font-weight: 400; text-transform: capitalize; letter-spacing: 0.20px; word-wrap: break-word">
+                    Product Designer</div>
+                <div
+                    style="left: 228px; top: 50px; position: absolute; color: black; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    profile</div>
+                <div
+                    style="left: 228px; top: 181px; position: absolute; color: black; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    experience</div>
+                <div
+                    style="left: 228px; top: 213px; position: absolute; color: black; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Uber</div>
+                <div
+                    style="left: 228px; top: 228px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Product Designer</div>
+                <div
+                    style="left: 228px; top: 332px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Product Designer</div>
+                <div
+                    style="left: 228px; top: 434px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Product Designer</div>
+                <div
+                    style="left: 228px; top: 536px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    UX/UI Design Intern</div>
+                <div
+                    style="left: 228px; top: 317px; position: absolute; color: black; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    IFTTT </div>
+                <div
+                    style="left: 228px; top: 419px; position: absolute; color: black; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Facebook</div>
+                <div
+                    style="left: 228px; top: 521px; position: absolute; color: black; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Google Maps</div>
+                <div
+                    style="left: 228px; top: 244px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Mar 2015 - Present</div>
+                <div
+                    style="left: 228px; top: 346px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Dec 2013 - Mar 2015</div>
+                <div
+                    style="left: 228px; top: 448px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    June 2013 - Sep 2013</div>
+                <div
+                    style="left: 228px; top: 550px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    June 2012 - Sep 2013</div>
+                <div
+                    style="width: 299px; left: 237px; top: 263px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    Designed safety-focused experiences for Riders and Drivers <br />Physical space problem solving and
+                    it’s interaction with the digital Navigated organization to achieve operational improvements</div>
+                <div
+                    style="width: 299px; left: 237px; top: 365px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    Product and system design for a complex product<br />Designed both consumer and developer products
+                    for IFTTT  Responsible for maintaining design across iOS, Android, and web</div>
+                <div
+                    style="width: 299px; left: 237px; top: 467px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    Designer and prototyped internal tools<br />Worked with Privacy team to build assets and
+                    features<br />Redesigned Newsfeed curation experience for mobile</div>
+                <div
+                    style="width: 299px; left: 237px; top: 569px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    Contributed to Maps on iOS wireframe ans user experience  Designed and prototyped onboarding
+                    experience  Asset and feature design for Maps on Android</div>
+                <div
+                    style="width: 322px; left: 228px; top: 83px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; word-wrap: break-word">
+                    I'm a product designer focused on ensuring great user experience and meeting business needs of
+                    designed products. I’m also experienced in implementing marketing strategies and developing both on
+                    and offline campaigns. My philosophy is to make products understandable, useful and long-lasting at
+                    the same time recognizing they're never finished and constantly changing. I'm always excited to face
+                    new challenges and problems.</div>
+                <div
+                    style="left: 228px; top: 258px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    •  •  •</div>
+                <div
+                    style="left: 228px; top: 360px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    •  •  •</div>
+                <div
+                    style="left: 228px; top: 462px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    •  •  •</div>
+                <div
+                    style="left: 228px; top: 564px; position: absolute; color: black; font-size: 9px; font-family: Roboto; font-weight: 400; line-height: 13px; word-wrap: break-word">
+                    •  •  •</div>
+                <div
+                    style="left: 228px; top: 671px; position: absolute; color: black; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Brown University</div>
+                <div
+                    style="left: 228px; top: 687px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Interdisciplinary studies, Sep 2010 - May 2013</div>
+                <div
+                    style="left: 228px; top: 638px; position: absolute; color: black; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    Education</div>
+                <div
+                    style="left: 228px; top: 761px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    English</div>
+                <div
+                    style="left: 228px; top: 781px; position: absolute; color: rgba(0, 0, 0, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Italian</div>
+                <div
+                    style="left: 228px; top: 728px; position: absolute; color: black; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    Languages</div>
+                <div
+                    style="left: 41px; top: 185px; position: absolute; color: white; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    Details</div>
+                <div
+                    style="left: 40px; top: 355px; position: absolute; color: white; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    links</div>
+                <div
+                    style="left: 40px; top: 480px; position: absolute; color: white; font-size: 15px; font-family: Roboto; font-weight: 700; text-transform: capitalize; letter-spacing: 0.30px; word-wrap: break-word">
+                    skills</div>
+                <div
+                    style="left: 41px; top: 257px; position: absolute; color: white; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Phone</div>
+                <div
+                    style="left: 41px; top: 297px; position: absolute; color: white; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Email</div>
+                <div
+                    style="left: 41px; top: 273px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 10px; font-family: Roboto; font-weight: 400; letter-spacing: 0.10px; word-wrap: break-word">
+                    (315) 802-8179</div>
+                <div
+                    style="left: 41px; top: 313px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 10px; font-family: Roboto; font-weight: 400; letter-spacing: 0.10px; word-wrap: break-word">
+                    ricktang@gmail.com</div>
+                <div
+                    style="left: 40px; top: 413px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 10px; font-family: Roboto; font-weight: 400; letter-spacing: 0.10px; word-wrap: break-word">
+                    Dribbble</div>
+                <div
+                    style="left: 40px; top: 438px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 10px; font-family: Roboto; font-weight: 400; letter-spacing: 0.10px; word-wrap: break-word">
+                    Behance</div>
+                <div
+                    style="left: 41px; top: 218px; position: absolute; color: white; font-size: 10px; font-family: Roboto; font-weight: 700; letter-spacing: 0.20px; word-wrap: break-word">
+                    Address</div>
+                <div
+                    style="left: 41px; top: 234px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    San Francisco, California</div>
+                <div
+                    style="left: 40px; top: 513px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Figma</div>
+                <div
+                    style="left: 40px; top: 550px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Sketch</div>
+                <div
+                    style="left: 40px; top: 587px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Adobe Photoshop</div>
+                <div
+                    style="left: 40px; top: 624px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Adobe Illustrator</div>
+                <div
+                    style="left: 40px; top: 661px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Principle</div>
+                <div
+                    style="left: 40px; top: 698px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 9px; font-family: Roboto; font-weight: 400; letter-spacing: 0.09px; word-wrap: break-word">
+                    Adobe XD</div>
+                <div
+                    style="left: 40px; top: 388px; position: absolute; color: rgba(255, 255, 255, 0.70); font-size: 10px; font-family: Roboto; font-weight: 400; letter-spacing: 0.10px; word-wrap: break-word">
+                    LinkedIn</div>
+                <div style="width: 108px; height: 2px; left: 40px; top: 530px; position: absolute">
+                    <div
+                        style="width: 108px; height: 2px; left: 0px; top: 2px; position: absolute; background: rgba(217, 217, 217, 0.36)">
+                    </div>
+                    <div
+                        style="width: 103.42px; height: 2px; left: 0px; top: 2px; position: absolute; background: white">
+                    </div>
+                </div>
+                <div style="width: 108px; height: 2px; left: 40px; top: 567px; position: absolute">
+                    <div
+                        style="width: 108px; height: 2px; left: 0px; top: 2px; position: absolute; background: rgba(217, 217, 217, 0.36)">
+                    </div>
+                    <div
+                        style="width: 103.42px; height: 2px; left: 0px; top: 2px; position: absolute; background: white">
+                    </div>
+                </div>
+                <div style="width: 108px; height: 2px; left: 40px; top: 604px; position: absolute">
+                    <div
+                        style="width: 108px; height: 2px; left: 0px; top: 2px; position: absolute; background: rgba(217, 217, 217, 0.36)">
+                    </div>
+                    <div
+                        style="width: 83.13px; height: 2px; left: 0px; top: 2px; position: absolute; background: white">
+                    </div>
+                </div>
+                <div style="width: 108px; height: 2px; left: 40px; top: 641px; position: absolute">
+                    <div
+                        style="width: 108px; height: 2px; left: 0px; top: 2px; position: absolute; background: rgba(217, 217, 217, 0.36)">
+                    </div>
+                    <div
+                        style="width: 56.29px; height: 2px; left: 0px; top: 2px; position: absolute; background: white">
+                    </div>
+                </div>
+                <div style="width: 108px; height: 2px; left: 40px; top: 678px; position: absolute">
+                    <div
+                        style="width: 108px; height: 2px; left: 0px; top: 2px; position: absolute; background: rgba(217, 217, 217, 0.36)">
+                    </div>
+                    <div
+                        style="width: 68.07px; height: 2px; left: 0px; top: 2px; position: absolute; background: white">
+                    </div>
+                </div>
+                <div style="width: 108px; height: 2px; left: 40px; top: 715px; position: absolute">
+                    <div
+                        style="width: 108px; height: 2px; left: 0px; top: 2px; position: absolute; background: rgba(217, 217, 217, 0.36)">
+                    </div>
+                    <div
+                        style="width: 68.07px; height: 2px; left: 0px; top: 2px; position: absolute; background: white">
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+    </div>
+
+    <br>
+
+
+    <!--  -->
+
+    <div class="columns is-desktop" style="margin: 20px;gap:10px" >
+        <div class="column " style="border: 1px solid gray; background-color: #efefef; text-align:center" >
+
+            <div class="header-resume">
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+
+            <div class="columns " style="padding-top: 3%;">
+                <div class="column is-one-third" style="border-right: 1px solid gray;">
+                    <div class="leftside-resume">
+                        <h2 style="padding-bottom: 10px;">Details</h2>
+                        <div class="details">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="rightside-resume">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel. UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+                        <h2>experience</h2>
+
+                        <div class="experience">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column" style="border: 1px solid gray;">
+
+            <div class="header-resume4">
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+
+            <div class="columns is-desktop" style="padding-top: 3%;">
+
+                <div class="column" style="border-right: 1px solid gray;">
+                    <div class="rightside-resume">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+                        <h2>experience</h2>
+
+                        <div class="experience">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="leftside-resume">
+                        <!-- <h2 style="padding-bottom: 10px;">Details</h2> -->
+                        <div class="details">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--  -->
+    </div>
+
+
+
+
+    <!-- template 3 section -->
+
+    <!--  -->
+
+    <div class="columns is-desktop" style="margin: 20px;gap:10px">
+        <!-- template 5 -->
+        <div class="column" style="border: 1px solid gray;">
+
+
+            <div class="columns is-desktop" style="padding-top: 1.4%;">
+
+                <div class="column is-one-third" style="border-right: 1px solid gray;background-color:#531449;">
+
+                    <div class="header-resume5">
+                        <!-- <img src="https://e1.pxfuel.com/desktop-wallpaper/904/983/desktop-wallpaper-male-models-man-boy.jpg"
+                            alt=""> -->
+
+                        <h1>rick Tang</h1>
+                        <p>Product Designer</p>
+                    </div>
+                    
+                    <div class="leftside-resume5">
+                        <h2 style="padding-bottom: 10px;">Details</h2>
+                        <div class="details5">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details5">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details5">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume5">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume5">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume5">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume5">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume5">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume5">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume5">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume5">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume5">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="column ">
+                    <div class="rightside-resume5">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+
+
+                        <h2>experience</h2>
+
+                        <div class="experience5">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience5">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience5">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience5">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education5">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education5">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- templat 5 end -->
+        <!-- template 6 -->
+        <div class="column" style="border: 1px solid gray;">
+            <div class="header-resume6">
+                <!-- <img src="https://e1.pxfuel.com/desktop-wallpaper/904/983/desktop-wallpaper-male-models-man-boy.jpg"
+                    alt=""> -->
+
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+            <div class="columns is-desktop" style="padding-top: 1.4%;">
+
+
+                <div class="column ">
+                    <div class="rightside-resume6">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+
+
+                        <h2>experience</h2>
+
+                        <div class="experience6">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience6">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience6">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience6">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education6">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education6">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="column is-one-third" style="border-right: 1px solid gray;background-color:#D9D9D9;">
+
+                    <div class="leftside-resume6">
+                        <h2 style="padding-bottom: 10px;">Details</h2>
+                        <div class="details6">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details6">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details6">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume6">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume6">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume6">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume6">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume6">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume6">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume6">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume6">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume6">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+                       
+                       
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- template 6 end -->
+    </div>
+
+
+
+
+    <!-- section 4 start-->
+    <div class="columns " style="margin: 20px;gap:10px">
+        <div class="column " style="border: 1px solid gray;background: linear-gradient(220deg, #1FAF38 -13.89%, rgba(217, 217, 217, 0.00) 77.07%);" >
+
+            <div class="header-resume">
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+
+            <div class="columns " style="padding-top: 3%;">
+                <div class="column is-one-third" style="border-right: 1px solid gray;">
+                    <div class="leftside-resume">
+                        <h2 style="padding-bottom: 10px;">Details</h2>
+                        <div class="details">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="rightside-resume">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel. UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+                        <h2>experience</h2>
+
+                        <div class="experience">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       <!-- templat start -->
+       <div class="column " style="border: 1px solid gray; background: linear-gradient(220deg, #FFD361 -13.89%, rgba(217, 217, 217, 0.29) 77.07%);">
+
+        <div class="header-resume">
+            <h1>rick Tang</h1>
+            <p>Product Designer</p>
+        </div>
+
+
+        <div class="columns " style="padding-top: 3%;">
+            <div class="column is-one-third" style="border-right: 1px solid gray;">
+                <div class="leftside-resume">
+                    <h2 style="padding-bottom: 10px;">Details</h2>
+                    <div class="details">
+                        <h2>Address</h2>
+                        <p>San Francisco, California</p>
+                    </div>
+                    <div class="details">
+                        <h2>Phone</h2>
+                        <p>(315) 802-8179</p>
+                    </div>
+                    <div class="details">
+                        <h2>Email</h2>
+                        <p>ricktang@gmail.com</p>
+                    </div>
+                    <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                    <div class="link-resume">
+                        <a href="">LinkedIn</a>
+                        <a href="">Dribbble</a>
+                        <a href="">Behance</a>
+                        <a href="">Facebook</a>
+                    </div>
+                    <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                    <div class="skil-resume">
+                        <p>Figma</p>
+                        <input type="range" name="" id="" value="40">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Sketch</p>
+                        <input type="range" name="" id="" value="60">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Adobe Photoshop</p>
+                        <input type="range" name="" id="" value="10">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Adobe Illustrator</p>
+                        <input type="range" name="" id="" value="50">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Principle</p>
+                        <input type="range" name="" id="" value="30">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Adobe XD</p>
+                        <input type="range" name="" id="" value="70">
+                    </div>
+                    <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                    <div class="skil-resume">
+                        <p>English</p>
+                        <input type="range" name="" id="" value="90">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Hindi</p>
+                        <input type="range" name="" id="" value="80">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="rightside-resume">
+                    <h2>profile</h2>
+                    <p>
+                        UX/UI specialist focused on designing clean and functional projects across all platforms and
+                        devices in response to specific briefs and problems, while always maintaining a unique look
+                        and feel. UX/UI specialist focused on designing clean and functional projects across all platforms and
+                        devices in response to specific briefs and problems, while always maintaining a unique look
+                        and feel.
+                    </p>
+                    <br>
+                    <h2>experience</h2>
+
+                    <div class="experience">
+                        <h4>Uber</h4>
+                        <h3>Product Designer</h3>
+                        <p>Mar 2015 - Present</p>
+
+                        <div style="padding-left: 20px;padding-top:4px">
+                            <ul style="list-style-type:circle;">
+                                <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                <li>Physical space problem solving and it’s interaction with the digital </li>
+                                <li>Navigated organization to achieve operational improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <h4>Facebook</h4>
+                        <h3>Product Designer</h3>
+                        <p>Mar 2015 - Present</p>
+
+                        <div style="padding-left: 20px;padding-top:4px">
+                            <ul style="list-style-type:circle;">
+                                <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                <li>Physical space problem solving and it’s interaction with the digital </li>
+                                <li>Navigated organization to achieve operational improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <h4>Google Maps</h4>
+                        <h3>UX/UI Design Intern</h3>
+                        <p>June 2012 - Sep 2013</p>
+
+                        <div style="padding-left: 20px;padding-top:4px">
+                            <ul style="list-style-type:circle;">
+                                <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                <li>Physical space problem solving and it’s interaction with the digital </li>
+                                <li>Navigated organization to achieve operational improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>Education</h2>
+                    <div class="education">
+                        <h2>Rhode Island School of Design</h2>
+                        <p>BFA Industrial Design, Class of 2013</p>
+                    </div>
+                    <div class="education">
+                        <h2>Brown University</h2>
+                        <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                    </div>
+                    <div class="education">
+                        <h2>Brown University</h2>
+                        <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                    </div>
+                    <div class="education">
+                        <h2>Rhode Island School of Design</h2>
+                        <p>BFA Industrial Design, Class of 2013</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+       <!-- template end -->
+    </div>
+    <!-- section 4 end -->
+
+
+
+
+
+
+    <!-- section 5 start-->
+    <div class="columns " style="margin: 20px;gap:10px">
+        <div class="column " style="border: 1px solid gray;background-image:url();background-repeat: no-repeat;" >
+
+            <div class="header-resume9">
+                <h1>rick Tang</h1>
+                <p>Product Designer</p>
+            </div>
+
+
+            <div class="columns " style="padding-top: 3%;">
+                <div class="column is-one-third" style="border-right: 1px solid gray;">
+                    <div class="leftside-resume">
+                        <h2 style="padding-bottom: 10px;">Details</h2>
+                        <div class="details">
+                            <h2>Address</h2>
+                            <p>San Francisco, California</p>
+                        </div>
+                        <div class="details">
+                            <h2>Phone</h2>
+                            <p>(315) 802-8179</p>
+                        </div>
+                        <div class="details">
+                            <h2>Email</h2>
+                            <p>ricktang@gmail.com</p>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                        <div class="link-resume">
+                            <a href="">LinkedIn</a>
+                            <a href="">Dribbble</a>
+                            <a href="">Behance</a>
+                            <a href="">Facebook</a>
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                        <div class="skil-resume">
+                            <p>Figma</p>
+                            <input type="range" name="" id="" value="40">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Sketch</p>
+                            <input type="range" name="" id="" value="60">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Photoshop</p>
+                            <input type="range" name="" id="" value="10">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe Illustrator</p>
+                            <input type="range" name="" id="" value="50">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Principle</p>
+                            <input type="range" name="" id="" value="30">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Adobe XD</p>
+                            <input type="range" name="" id="" value="70">
+                        </div>
+                        <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                        <div class="skil-resume">
+                            <p>English</p>
+                            <input type="range" name="" id="" value="90">
+                        </div>
+                        <div class="skil-resume">
+                            <p>Hindi</p>
+                            <input type="range" name="" id="" value="80">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="rightside-resume">
+                        <h2>profile</h2>
+                        <p>
+                            UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel. UX/UI specialist focused on designing clean and functional projects across all platforms and
+                            devices in response to specific briefs and problems, while always maintaining a unique look
+                            and feel.
+                        </p>
+                        <br>
+                        <h2>experience</h2>
+
+                        <div class="experience">
+                            <h4>Uber</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Facebook</h4>
+                            <h3>Product Designer</h3>
+                            <p>Mar 2015 - Present</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="experience">
+                            <h4>Google Maps</h4>
+                            <h3>UX/UI Design Intern</h3>
+                            <p>June 2012 - Sep 2013</p>
+
+                            <div style="padding-left: 20px;padding-top:4px">
+                                <ul style="list-style-type:circle;">
+                                    <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                    <li>Physical space problem solving and it’s interaction with the digital </li>
+                                    <li>Navigated organization to achieve operational improvements</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Education</h2>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Brown University</h2>
+                            <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                        </div>
+                        <div class="education">
+                            <h2>Rhode Island School of Design</h2>
+                            <p>BFA Industrial Design, Class of 2013</p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+       <!-- templat start -->
+       <div class="column " style="border: 1px solid gray; background-image:url('bg10.svg');background-repeat: no-repeat;">
+
+        <div class="header-resume">
+            
+            <h1>rick Tang</h1>
+            <p>Product Designer</p>
+        </div>
+
+
+        <div class="columns " style="padding-top: 3%;">
+            <div class="column is-one-third" style="border-right: 1px solid gray;">
+                <div class="leftside-resume">
+                    <h2 style="padding-bottom: 10px;">Details</h2>
+                    <div class="details">
+                        <h2>Address</h2>
+                        <p>San Francisco, California</p>
+                    </div>
+                    <div class="details">
+                        <h2>Phone</h2>
+                        <p>(315) 802-8179</p>
+                    </div>
+                    <div class="details">
+                        <h2>Email</h2>
+                        <p>ricktang@gmail.com</p>
+                    </div>
+                    <h2 style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                    <div class="link-resume">
+                        <a href="">LinkedIn</a>
+                        <a href="">Dribbble</a>
+                        <a href="">Behance</a>
+                        <a href="">Facebook</a>
+                    </div>
+                    <h2 style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                    <div class="skil-resume">
+                        <p>Figma</p>
+                        <input type="range" name="" id="" value="40">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Sketch</p>
+                        <input type="range" name="" id="" value="60">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Adobe Photoshop</p>
+                        <input type="range" name="" id="" value="10">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Adobe Illustrator</p>
+                        <input type="range" name="" id="" value="50">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Principle</p>
+                        <input type="range" name="" id="" value="30">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Adobe XD</p>
+                        <input type="range" name="" id="" value="70">
+                    </div>
+                    <h2 style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                    <div class="skil-resume">
+                        <p>English</p>
+                        <input type="range" name="" id="" value="90">
+                    </div>
+                    <div class="skil-resume">
+                        <p>Hindi</p>
+                        <input type="range" name="" id="" value="80">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="column">
+                <div class="rightside-resume">
+                    <h2>profile</h2>
+                    <p>
+                        UX/UI specialist focused on designing clean and functional projects across all platforms and
+                        devices in response to specific briefs and problems, while always maintaining a unique look
+                        and feel. UX/UI specialist focused on designing clean and functional projects across all platforms and
+                        devices in response to specific briefs and problems, while always maintaining a unique look
+                        and feel.
+                    </p>
+                    <br>
+                    <h2>experience</h2>
+
+                    <div class="experience">
+                        <h4>Uber</h4>
+                        <h3>Product Designer</h3>
+                        <p>Mar 2015 - Present</p>
+
+                        <div style="padding-left: 20px;padding-top:4px">
+                            <ul style="list-style-type:circle;">
+                                <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                <li>Physical space problem solving and it’s interaction with the digital </li>
+                                <li>Navigated organization to achieve operational improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <h4>Facebook</h4>
+                        <h3>Product Designer</h3>
+                        <p>Mar 2015 - Present</p>
+
+                        <div style="padding-left: 20px;padding-top:4px">
+                            <ul style="list-style-type:circle;">
+                                <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                <li>Physical space problem solving and it’s interaction with the digital </li>
+                                <li>Navigated organization to achieve operational improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience">
+                        <h4>Google Maps</h4>
+                        <h3>UX/UI Design Intern</h3>
+                        <p>June 2012 - Sep 2013</p>
+
+                        <div style="padding-left: 20px;padding-top:4px">
+                            <ul style="list-style-type:circle;">
+                                <li>Designed safety-focused experiences for Riders and Drivers </li>
+                                <li>Physical space problem solving and it’s interaction with the digital </li>
+                                <li>Navigated organization to achieve operational improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2>Education</h2>
+                    <div class="education">
+                        <h2>Rhode Island School of Design</h2>
+                        <p>BFA Industrial Design, Class of 2013</p>
+                    </div>
+                    <div class="education">
+                        <h2>Brown University</h2>
+                        <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                    </div>
+                    <div class="education">
+                        <h2>Brown University</h2>
+                        <p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+                    </div>
+                    <div class="education">
+                        <h2>Rhode Island School of Design</h2>
+                        <p>BFA Industrial Design, Class of 2013</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+       <!-- template end -->
+    </div>
+    <!-- section 5 end -->
+
+
+
+    <div class="columns" style="margin: 20px;gap:10px">
+        <div class="column" id="downloadresume" style="border: 1px solid gray;">
+            <div style="width: 100%; height: 100%; position: relative; background: white">
+                <div style="height: 196px; left: 310px; top: 590px; position: absolute">
+                    <div style="left: 0px; top: 0px; position: absolute; color: #1C8EB5; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 20px; word-wrap: break-word">Skills</div>
+                    <div style="width: 245px; left: 0px; top: 28px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Business Analysis, UX Research, User Testing and Validation, Customer Journey Mapping, Information Architecture, Low- and High- Fidelity Wireframing, Prototyping, Interaction Design, Visual Design, Defining Product Specifications, Design System Development, Design Sprints, A/B Testing.<br/><br/>Experienced with Kanban, Agile & Lean methodologies.<br/><br/>Coding fundamentals. HTML, CSS, JavaScript, SQL</div>
+                </div>
+                <div style="width: 258px; height: 366px; left: 310px; top: 200px; position: absolute">
+                    <div style="left: 0px; top: 0px; position: absolute; color: #1C8EB5; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 20px; word-wrap: break-word">Education & Learning</div>
+                    <div style="width: 258px; height: 52px; left: 0px; top: 32px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 12px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">Master’s in Human-Computer Interaction</div>
+                        <div style="width: 245px; left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Copenhagen School of Design and Technology, 2015 – 2016</div>
+                    </div>
+                    <div style="width: 245px; height: 52px; left: 0px; top: 100px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 12px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">Bachelor's of Arts</div>
+                        <div style="width: 245px; left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Copenhagen School of Design and Technology, 2011 – 2015</div>
+                    </div>
+                    <div style="width: 245px; height: 36px; left: 0px; top: 222px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 12px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">UX: Interaction Design</div>
+                        <div style="width: 245px; left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Trydesignlab.com, Dec 2017</div>
+                    </div>
+                    <div style="width: 245px; height: 36px; left: 0px; top: 176px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 12px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">Design Leadership Masterclass</div>
+                        <div style="width: 245px; left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Design Lab Inc., Mar 2020</div>
+                    </div>
+                    <div style="width: 245px; height: 52px; left: 0px; top: 268px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 12px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">UX Design Specialization</div>
+                        <div style="width: 245px; left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Udacity.com, online course by Google, <br/>Aug 2016</div>
+                    </div>
+                    <div style="width: 245px; height: 36px; left: 0px; top: 330px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 12px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">Branding fundamentals</div>
+                        <div style="width: 245px; left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Design Lab Inc., Nov 2014</div>
+                    </div>
+                </div>
+                <div style="width: 254px; height: 602px; left: 32px; top: 200px; position: absolute">
+                    <div style="left: 0px; top: 0px; position: absolute; color: #1C8EB5; font-size: 14px; font-family: Poppins; font-weight: 400; line-height: 20px; word-wrap: break-word">Work experience</div>
+                    <div style="width: 254px; height: 100px; left: 0px; top: 32px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">Product Designer</div>
+                        <div style="left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Fintef, Oct 2019 - Present</div>
+                        <div style="width: 254px; left: 0px; top: 44px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Designing end-to-end experience for financial products on mobile & web platforms. Working closely with managers, marketing specialists and developers.</div>
+                    </div>
+                    <div style="width: 254px; height: 128px; left: 0px; top: 156px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">UX Designer</div>
+                        <div style="width: 254px; left: 0px; top: 44px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Rewamped website flows and navigation menus, reducing the frequency of misdirected customer service queries by 30%. Conducted user testing with 10+ participants using UserTesting.com; designed agains findings which reduced bounce rate for primary user flow by 30%.</div>
+                        <div style="left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Resume Worded, Sep 2017 – Sep 2019</div>
+                    </div>
+                    <div style="width: 254px; height: 142px; left: 0px; top: 308px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">Associate UX Designer</div>
+                        <div style="width: 254px; left: 0px; top: 44px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Redesigned company’s homepage and lead generation forms using existing design system; reduced bounce rates by 40% and increased leads by 15%.<br/>Designed online customer support center comprising of a self-service knowledge base and interactive chat bot. Coached 15 summer interns.</div>
+                        <div style="left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Growshi, Dec 2016 – Aug 2017</div>
+                    </div>
+                    <div style="width: 254px; height: 128px; left: 0px; top: 474px; position: absolute">
+                        <div style="left: 0px; top: 0px; position: absolute; color: #222222; font-size: 14px; font-family: Poppins; font-weight: 700; line-height: 20px; word-wrap: break-word">UX Analyst</div>
+                        <div style="width: 254px; left: 0px; top: 44px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Managed redesign of internal tracking system in use by 125 employees, resulting in 20+ new features and 25% higher engagement.<br/>Worked with product managers to validate design hypothesis by conducting interviews and usability sessions.</div>
+                        <div style="left: 0px; top: 20px; position: absolute; color: #797979; font-size: 11px; font-family: Prata; font-weight: 400; line-height: 16px; word-wrap: break-word">Growshi, Mar 2016 – Dec 2016</div>
+                    </div>
+                </div>
+                <div style="width: 595px; height: 176px; left: 0px; top: 0px; position: absolute">
+                    <div style="width: 595px; height: 176px; left: 0px; top: 0px; position: absolute; background: rgba(228, 246, 251, 0.50)"></div>
+                    <div style="left: 102px; top: 32px; position: absolute; color: #222222; font-size: 26px; font-family: Poppins; font-weight: 600; line-height: 34px; word-wrap: break-word">Kate Bishop</div>
+                    <div style="left: 102px; top: 66px; position: absolute; color: #1C8EB5; font-size: 16px; font-family: Poppins; font-weight: 400; line-height: 24px; word-wrap: break-word">Product Designer</div>
+                    <div style="width: 313px; left: 32px; top: 104px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Over 5 years of professional experience conducting UX research and designing interactive end-to-end user flows. <br/>I enjoy working in close collaboration with teams across technology, business and design.</div>
+                    <div style="width: 154px; height: 108px; left: 385px; top: 40px; position: absolute">
+                        <div style="left: 0px; top: 54px; position: absolute; color: black; font-size: 10px; font-family: Poppins; font-weight: 600; text-decoration: underline; line-height: 14px; word-wrap: break-word">linkedin.com/in/kate-bishop</div>
+                        <div style="left: 0px; top: 0px; position: absolute; color: #1C8EB5; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Email</div>
+                        <div style="left: 0px; top: 80px; position: absolute; color: #1C8EB5; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">Phone</div>
+                        <div style="left: 0px; top: 40px; position: absolute; color: #1C8EB5; font-size: 10px; font-family: Poppins; font-weight: 400; line-height: 14px; word-wrap: break-word">LinkedIn</div>
+                        <div style="left: 0px; top: 14px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 600; text-decoration: underline; line-height: 14px; word-wrap: break-word">kate.bishop@katedesign.com</div>
+                        <div style="left: 0px; top: 94px; position: absolute; color: #222222; font-size: 10px; font-family: Poppins; font-weight: 600; text-decoration: underline; line-height: 14px; word-wrap: break-word">+46 98-765 43 21</div>
+                    </div>
+                    <img style="width: 58px; height: 58px; left: 32px; top: 32px; position: absolute; border-radius: 72px; border: 1px #D9D9D9 solid" src="https://via.placeholder.com/58x58" />
+                </div>
+            </div>
+        </div>
+        {% for item in data %}
+        {{ item.template | safe }}
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- data seriver -->
+       
+    <!--  -->
+    <div class="columns">
+       
+        <div class="column"></div>
+    </div>
+    <!--  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        window.jsPDF = window.jspdf.jsPDF;
+        var docPDF = new jsPDF();
+
+        function downloadPDF(invoiceNo) {
+
+            var elementHTML = document.querySelector("#downloadresume");
+            docPDF.html(elementHTML, {
+                callback: function (docPDF) {
+                    docPDF.save("sakthi" + '.pdf');
+                },
+                x: 15,
+                y: 15,
+                width: 170,
+                windowWidth: 650
+            });
+        }
+    </script>
+
+</body>
+
+</html>

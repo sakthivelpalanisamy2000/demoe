@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<!-- <link rel="stylesheet" href="{% static 'design/css/reder/reader_demo.css'%}" type="text/css" />
+<link rel="stylesheet" href="{% static 'design/css/reder/docs.css'%}" type="text/css" /> -->
+<style>
+    
+.clickable{
+    position: relative;
+    display: flex;
+
+}
+.clickable:hover{
+    cursor: pointer;
+    
+}
+
+.clickable::before{
+    position: absolute;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 1em;
+    content: 'Click Me  ';
+    text-align: center;
+    font-family: "Jura";
+    display: inline-block;
+    vertical-align: middle;
+    color: rgb(8, 70, 70);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom:0;   
+    background-color: white;
+
+    opacity: 0%;
+    transition: opacity 0.5s ease-in-out;
+}
+.clickable:hover::before{
+    opacity: 80%;
+}
+
+.no-hover::before{
+    display: none;
+}
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+       <section class="content">
+        <div class="row">
+            <div class="col">
+                <div class="box p-20 fs-5">
+                    <div class="clickable">
+                        <p>
+                            &emsp;The Easy Text-to-Speech javascript package allows developers to easily implement text to speech
+                            into their site. Using the browsers built in text to speech capabilities, the Reader javascript class integrates
+                            any feature you could want in text to speech.<br>
+                            &emsp;This class allows you to change the voice, pitch, speed, and highlighting color with a minimal amount of code. Most this pages content is readable via a click. Using the Reader class,
+                            this example page can highlight and read all elements using the following code:
+                        </p>
+                    </div>
+                    
+                    <div class="clickable">
+                        <p>
+                            hello
+                        </p>
+                    </div>
+                  
+                    <div class="clickable" id="output"></div>
+                   
+                </div>
+            </div>
+            <div class="col" style="display: none;">
+                <form class="control-panel">
+                    <label for="speed"> Reader Speed: </label> <input type="range" name="speed" min=".1" max="10" step=".1" value="1">
+                    <label for="pitch">Pitch: </label><input type="range" name="pitch" min=".1" max="2" step=".1" value="2">
+                    <label for="voice">Voice:</label> <select name="voice" id="voices"></select>
+                    <label for="color">Highlight Color</label> <input type="color" name="color" value="#add8e6"> 
+                    <label for="toggle">Toggle Highlight</label> <input type="checkbox" name="toggle" checked=1>
+                </form>
+            </div>
+        </div>
+
+       </section>
+    </div>
+</div>
+
+<script src="{% static 'design/css/reder/reader_demo.js '%}"></script>
+<script src="{% static 'design/css/reder/Reader.js'%}"></script>
+
+{% endblock content %}

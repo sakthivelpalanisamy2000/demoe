@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="content-wrapper">
+    <div class="container-full">
+        
+        <section  class="content">
+            <h5>Report </h5>
+            <div class="row">
+                <!-- <div class="col-md-6 col-xl-4">
+                    <div class="box">
+                        <div class="box-body">
+                            <div class="d-flex">
+                                <h3 class="fw-600 mb-0">22 </h3>
+                                <span class="badge badge-info badge-pill align-self-center ms-auto">Traning</span>
+                            </div>
+                            <div>
+                                Traning watched and solve problem
+                                <div class="text-muted fs-16">250 Problem</div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div style="width: 400px; height: 300px;">
+                                <canvas id="chart_bar_basic"></canvas>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="col-md-6 col-xl-4">
+                    <div class="box">
+                        <div class="box-body">
+                            <div class="d-flex">
+                                <h3 class="fw-600 mb-0">2 </h3>
+                                <span class="badge badge-success badge-pill align-self-center ms-auto">Practice</span>
+                            </div>
+                            <div>
+                                Traning watched and solve problem
+                                <div class="text-muted fs-16">250 Problem</div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div style="width: 400px; height: 300px;">
+                                <canvas id="chart_bar_basic2"></canvas>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-md-6 col-xl-4">
+                    <div class="box">
+                        <div class="box-body">
+                            <div class="d-flex">
+                                <h6 class="fw-600 mb-0">Total Question : {{report.total}} </h6>
+                                <span class="badge badge-info badge-pill align-self-center ms-auto">Test_case Report</span>
+                            </div>
+                            <div>
+                                Testcase Problem Solving 
+                                <!-- <div class="text-muted fs-16">2 Problem</div> -->
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div style=" height:auto ;padding:10px">
+                                <canvas id="chart_bar_basic3" ></canvas>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-12"> 
+                    <div class="box">
+						<div class="box-header with-border">
+							<h4 class="box-title">Testcase Report</h4>
+						</div>
+						<div class="box-body px-0 pt-0 pb-0" style="margin: 10px;">
+                            <div class="row" style="border-bottom:1px solid rgb(242, 242, 242)">
+                                <div class="col" style="padding: 10px;padding-left:10px">
+                                    <p class="mb-0 text-fade" style="padding-left: 10px;">Success </p>
+                                </div> 
+                                <div class="col" >
+                                    <div style="padding: 10px;">
+                                        <p class="mb-1 fw-600">{{report.success_percentage}} %</p>
+                                        <div class="progress progress-sm mb-0 w-100" style="height: 4px;">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ report.success_percentage }}%"  >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="border-bottom:1px solid rgb(242, 242, 242)">
+                                <div class="col" style="padding: 10px;padding-left:10px">
+                                    <p class="mb-0 text-fade" style="padding-left: 10px;">Failed and Not attend </p>
+                                </div>
+                                <div class="col" >
+                                    <div style="padding: 10px;">
+                                        <p class="mb-1 fw-600">{{report.failed_percentage}} %</p>
+                                        <div class="progress progress-sm mb-0 w-100" style="height: 4px;">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ report.failed_percentage }}%" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	
+
+                            <div class="row" >
+                                <div class="col" style="padding: 10px;padding-left:10px">
+                                    <p class="mb-0 text-fade" style="padding-left: 10px;">Total</p>
+                                </div>
+                                <div class="col" >
+                                    <div style="padding: 10px;">
+                                        <p class="mb-1 fw-600">100%</p>
+                                        <div class="progress progress-sm mb-0 w-100" style="height: 4px;">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	
+
+						</div>
+					</div>
+                </div>
+
+
+
+             
+            </div>
+
+            
+            <button onclick="load3({{ report|safe }})" id="myButtondemo" style="display: none;"> sent</button>
+
+    
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" id="showsuccess" style="display: none;"
+										data-bs-target="#myModal">
+										Test case Report
+									</button>
+
+            	<!-- /.modal -->
+
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Test case Report</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           {%for i in showsuccess %}
+                           <div class=" box mb-15 pull-up" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+                            <div>
+                                <div class="table-responsive">
+
+                                    <table class="table no-border mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="min-w-50">
+                                                    <div
+                                                        class=" h-50 w-50 l-h-50 rounded text-center">
+                                                        <span
+                                                            class="icon-Book-open fs-24"><i
+                                                                class="fa fa-code fs-16"
+                                                                aria-hidden="true"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td
+                                                        class="fw-600 min-w-170">
+                                                        <div
+                                                            class="d-flex flex-column fw-600">
+                                                            <a href="#"
+                                                                class="text-dark hover-primary mb-1 fs-16">{{i.title}}</a>
+                                                            <span
+                                                                class="text-fade">Question : {{ i.testcase.questions|truncatechars:200 |safe }}</span>
+                                                            <span
+                                                                class="text-fade">
+                                                              
+                                                                (Output : {{i.testcase.toutput}})</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td
+                                                        class=" fw-600 fs-16 min-w-150 text-end" style="color: green;">Solved
+                                                        <i class="fa fa-check" aria-hidden="true" style="color: green;"></i>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                           {%endfor%}
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div> -->
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+        </section>
+    </div>
+</div>
+
+<script src="{% static 'design/css/vendor_components/d3/d3_tooltip.js   '%}"></script>
+<script src="{% static 'design/css/vendor_components/d3/d3.min.js   '%}"></script>
+<script src="{% static 'design/css/vendor_components/chart.js-master/Chart.min.js   '%}"></script>
+<script src="{% static 'design/css/vendor_components/easypiechart/dist/jquery.easypiechart.js   '%}"></script>
+<script src="{% static 'design/css/vendor_components/jquery.peity/jquery.peity.js   '%}"></script>
+<script src="{% static 'design/css/vendor_components/apexcharts-bundle/dist/apexcharts.js   '%}"></script>
+
+
+<script src="{% static 'design/js/pages/chart-widgets.js '%}"></script>
+<script src="{% static 'design/js/pages/chartjs-int.js '%}"></script>
+<script src="{% static 'design/js/pages/chat-popup.js'%}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var myButton = document.getElementById('myButtondemo');
+      myButton.click();
+    });
+  </script>
+
+<script>
+
+        const data = {
+          labels: [
+            'Red',
+            'Blue',
+            'Yellow'
+          ],
+          datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+          }]
+        };
+        // </block:setup>
+        
+        // <block:config:0>
+        const config = {
+          type: 'pie',
+          data: data,
+        };
+        // </block:config>
+        
+        module.exports = {
+          actions: [],
+          config: config,
+        };
+  </script>
+
+<script>
+   function load1(){
+     // Data for the bar chart
+     var data = {
+        labels: ['1', '2', '3', '4', '5', '6'],
+        datasets: [{
+            label: 'Problem Solved',
+            backgroundColor: 'blue',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1,
+            data: [1, 5, 3, 5, 6, 1]
+        }]
+    };
+
+    // Configuration options
+    var options = {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: false
+                }
+            }]
+        },
+        hover: {
+            mode: 'index', 
+            intersect: false 
+        },
+        responsive: true,
+        maintainAspectRatio: false 
+    };
+
+    // Get the chart context
+    var ctx = document.getElementById('chart_bar_basic').getContext('2d');
+
+    // Create the bar chart
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: data,
+        options: options
+    });
+    
+   } 
+
+   function load2(){
+    // Data for the bar chart
+    const data = {
+        labels: [
+          'Red',
+          'Blue',
+          'Yellow'
+        ],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [300, 50, 100],
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+          ],
+          hoverOffset: 10
+        }]
+      };
+
+   // Configuration options
+   var options = {
+    scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: false
+            }
+        }]
+    },
+    hover: {
+        mode: 'index', 
+        intersect: false 
+    },
+    responsive: true,
+    maintainAspectRatio: false 
+};
+
+   // Get the chart context
+   var ctx = document.getElementById('chart_bar_basic2').getContext('2d');
+
+   // Create the bar chart
+   var myChart = new Chart(ctx, {
+       type: 'pie',
+       data: data,
+       options: options
+   });
+   
+  } 
+
+
+  function load3(report){
+    console.log(report)
+    var data = {
+       labels: ['Testcase Successfully passed', 'Not Attend and Failed Case', 'Total Questions'],
+       datasets: [{
+           label: 'Problem Solved',
+           backgroundColor: [
+           'blue',
+           'orange',
+           'yellow', 
+         ],
+           //borderColor: 'rgba(54, 162, 235, 1)',
+           //borderWidth: 1,
+           data: [report.success,report.failed,report.total]
+       }]
+   };
+   var options = {
+       scales: {
+           yAxes: [{
+               ticks: {
+                   beginAtZero: false
+               }
+           }]
+       },
+       hover: {
+        mode: 'index', 
+        intersect: false 
+    },
+    responsive: true,
+    maintainAspectRatio: false 
+   };
+   var ctx = document.getElementById('chart_bar_basic3').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'doughnut',
+       data: data,
+       options: {
+        onClick: function(event, elements) {
+            if (elements.length > 0 && elements[0]._index === 0) {
+                var myButton = document.getElementById('showsuccess');
+                myButton.click();
+            }
+        },
+    },
+    plugins: [{
+        beforeInit: function(chart) {
+            chart.canvas.parentNode.style.height = '700px';
+        }
+    }]
+
+   });
+   
+  } 
+
+  window.onload = function() {
+    load1();
+    load2();
+    
+};
+
+</script>
+
+{% endblock content %}

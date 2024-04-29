@@ -1,0 +1,331 @@
+{% load static %}
+
+{% block html %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    {% block head %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content>
+        <meta name="author" content>
+        <!-- Favicon icon -->
+        <!-- <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon.png' %}"> -->
+        <!-- <title>IMagecon</title> -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+        <link rel="stylesheet" href="{% static 'resume/style.css'%}"
+            type="text/css" />
+        <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+        <style>
+            div::-webkit-scrollbar {
+                width: 10px;
+                color: blue;
+                }
+                
+                div::-webkit-scrollbar-track {
+                border-radius: 0px;
+                }
+        </style>
+     
+        
+        <!-- <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <!-- Vendors Style-->
+        <link rel="stylesheet" href="{% static 'design/css/font-awesome-4.7.0/css/font-awesome.css'%}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/font-awesome-4.7.0/css/font-awesome.min.css'%}" type="text/css" />
+
+
+        <link rel="stylesheet" href="{% static 'design/css/extrafontawesome.css'%}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/color_theme.css'%}" type="text/css" />
+
+        <link rel="stylesheet" href="{% static 'design/css/style_rtl.css'%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/font-awesome/css/font-awesome.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/Ionicons/css/ionicons.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/themify-icons/themify-icons.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/linea-icons/linea.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/glyphicons/glyphicon.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/flag-icon-css/css/flag-icon.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/material-design-iconic-font/css/materialdesignicons.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/simple-line-icons/css/simple-line-icons.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/cryptocoins-master/cryptocoins.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/weather-icons/css/weather-icons.min.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/iconsmind/style.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/icons/icomoon/style.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/animate/animate.css '%}"
+            type="text/css" />
+
+        <link rel="stylesheet" href="{% static 'design/css/color_theme.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/style_rtl.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/vendors_css.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/style.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/skin_color.css'%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/iconsmindstyle.css'%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/weather-icons.min.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/cryptocoins.css'%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/simple-line-icons.css'%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/materialdesignicons.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/flag-icon.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/glyphicon.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/linea.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/themify-icons.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/ionicons.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/font-awesome.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/style_rtl.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/color_theme.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/iconmoonstyle.css'%}"
+            type="text/css" />
+        <link rel="stylesheet" href="{% static 'design/css/iconmoon.css'%}"
+            type="text/css" />
+
+        <link rel="stylesheet" href="{% static 'design/css/animate.css'%}"
+            type="text/css" />
+
+        <!-- vendor -->
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/gridstack/gridstack.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/ion-rangeSlider/css/ion.rangeSlider.skinModern.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/ion-rangeSlider/css/ion.rangeSlider.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/raty-master/lib/jquery.raty.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-select/dist/css/bootstrap-select.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/veendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-daterangepicker/daterangepicker.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/select2/dist/css/select2.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/dropzone/dropzone.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-markdown-master/css/bootstrap-markdown.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/sweetalert/sweetalert.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/lightbox-master/dist/ekko-lightbox.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/gallery/css/animated-masonry-gallery.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/Magnific-Popup-master/dist/magnific-popup.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/datatable/datatables.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/prism/prism.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/flexslider/flexslider.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/horizontal-timeline/css/horizontal-timeline.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/OwlCarousel2/dist/assets/owl.theme.default.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/OwlCarousel2/dist/assets/owl.carousel.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/morris.js/morris.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/perfect-scrollbar/css/perfect-scrollbar.css '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap/dist/css/bootstrap.css '%}"
+            type="text/css" />
+
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/fullcalendar/fullcalendar.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/pace/pace.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/timepicker/bootstrap-timepicker.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/iCheck/all.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/iCheck/flat/blue.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_plugins/bootstrap-slider/slider.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/cssvendor_components/chartist-js-develop/chartist.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/c3/c3.min.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/bootstrap-switch/switch.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/nestable/nestable.css  '%}"
+            type="text/css" />
+        <link rel="stylesheet"
+            href="{% static 'design/css/vendor_components/jquery-toast-plugin-master/src/jquery.toast.css  '%}"
+            type="text/css" />
+
+        {% block extra_style %}{% endblock extra_style %}
+    </head>
+    {% endblock head %}
+
+    {% block body %}
+
+    <body class="hold-transition light-skin sidebar-mini theme-primary fixed">
+        <div class="wrapper">
+            
+
+            {% include 'design/dashborad/include/header.html' %}
+
+            {% include 'design/dashborad/include/sidebartest.html' %}  
+            {% block content %}{% endblock content %}
+            {% include 'design/dashborad/include/footer.html' %}
+
+        </div>
+        {% block script %}
+
+        <script src="{% static 'design/js/vendors.min.js '%}"></script>
+      
+
+        <script src="{% static 'design/js/pages/chat-popup.js '%}"></script>
+        <script src="{% static 'design/icon/feather.min.js '%}"></script>
+        <script src="{% static 'design/vendor/apexcharts.js'%}"></script>
+        <script src="{% static 'design/vendor/moment.min.js'%}"></script>
+        <script src="{% static 'design/vendor/fullcalendar.js'%}"></script>
+        <script src="{% static 'design/js/template.js '%}"></script>
+        <script src="{% static 'design/js/pages/dashboard.js '%}"></script>
+        <script src="{% static 'design/js/pages/calendar.js '%}"></script>
+        <script src="{% static 'design/js/pages/validation.js '%}"></script>
+        <script src="{% static 'design/js/pages/form-validation.js '%}"></script>
+
+        <script
+            src="{% static 'design/css/vendor_components/jquery-steps-master/build/jquery.steps.js  '%}"></script>
+        <script
+            src="{% static 'design/css/vendor_components/sweetalert/sweetalert.min.js  '%}"></script>
+        <script
+            src="{% static 'design/css/vendor_components/jquery-validation-1.17.0/dist/jquery.validate.min.js  '%}"></script>
+        <script
+            src="{% static 'design/css/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js  '%}"></script>
+        <script
+            src="{% static 'design/css/vendor_components/select2/dist/js/select2.full.js  '%}"></script>
+
+        <script
+            src="{% static 'design/css/vendor_plugins/input-mask/jquery.inputmask.js '%}"></script>
+
+        <script src="{% static 'design/js/pages/stepss.js '%}"></script>
+        <script src="{% static 'design/js/pages/custom-scroll.js '%}"></script>
+
+        <script
+            src="{% static 'design/js/pages/advanced-form-element.js'%}"></script>
+            <script>
+                
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Disable text selection
+                    document.body.style.userSelect = 'none';
+                    document.body.style.webkitUserSelect = 'none';
+                    document.body.style.MozUserSelect = 'none';
+                    document.body.style.msUserSelect = 'none';
+                });
+            </script>
+
+        
+        {% block extra_script %}{% endblock extra_script %}
+
+        {% endblock script %}
+
+    </body>
+    {% endblock body %}
+
+    {% endblock html %}

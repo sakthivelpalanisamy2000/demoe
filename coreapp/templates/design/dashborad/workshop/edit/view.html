@@ -1,0 +1,593 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+    [data-bs-original-title] {
+     
+        color: rgb(10, 100, 108); 
+    }
+   
+    .tooltip .tooltip-inner {
+    color: rgb(0, 0, 0); 
+    }
+
+
+    .tooltip .tooltip-inner {
+    background-color: rgb(255, 255, 255); 
+    }
+</style>
+<style>
+    .theme-primary .timeline__year, .theme-primary .timeline5:before, .theme-primary .timeline__box:before, .theme-primary .timeline__date {
+        background-color:#96a1a1;
+    }
+    .timeline__content{
+        font-family: 'Rubik';
+    }
+    .theme-primary .timeline__post {
+        border-left: 3px solid #068bb0;
+    }
+
+
+
+
+/* -------------------------------- 
+Component 
+-------------------------------- */
+a{
+    text-decoration: none;
+}
+.banner {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 0 1px hsla(230, 13%, 9%, 0.05),
+    0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+    0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+    0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+  border-radius: 0.375em;
+  transition: 0.3s;
+  width: 80%;
+  margin-inline: auto;
+}
+
+.banner__grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner__grid > * {
+  min-width: 0;
+}
+
+.banner__link {
+  position: relative;
+  text-decoration: none;
+  color: hsl(0, 0%, 6%);
+  display: inline-block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform-origin: left bottom;
+}
+
+.banner__link i {
+  /* label */
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.banner__link::after {
+  /* animated border */
+  content: "";
+  background-color: currentColor;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  -webkit-clip-path: inset(0% round 0.1875em);
+  clip-path: inset(0% round 0.1875em);
+  opacity: 0.15;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.banner__figure {
+  height: 0;
+  width: 100%;
+  padding-bottom: 50%;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner__text {
+  padding: 1.5rem;
+}
+
+.banner__link-wrapper {
+  margin-top: 1rem;
+}
+
+.banner:hover {
+  box-shadow: 0 0 0 1px hsla(230, 13%, 9%, 0.05),
+    0 0.9px 1.25px hsla(230, 13%, 9%, 0.025), 0 3px 5px hsla(230, 13%, 9%, 0.05),
+    0 12px 20px hsla(230, 13%, 9%, 0.09);
+}
+
+.banner:hover .banner__link {
+  transform: scale(1.3);
+}
+
+.banner:hover .banner__link i {
+  transform: scale(0.7);
+}
+
+.banner:hover .banner__link::after {
+  height: 100%;
+}
+
+.banner:hover .banner__figure {
+  transform: scale(1.05);
+}
+
+@media (min-width: 64rem) {
+  .banner__grid {
+    flex-direction: row-reverse;
+  }
+
+  .banner__grid > * {
+    width: 50%;
+  }
+
+  .banner__figure {
+    height: 100%;
+    padding-bottom: 0;
+    -webkit-clip-path: polygon(100px 0%, 100% 0%, 100% 100%, 50px 100%);
+    clip-path: polygon(100px 0%, 100% 0%, 100% 100%, 50px 100%);
+  }
+
+  .banner__text {
+    padding: 3rem;
+  }
+
+  .banner__link-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  .banner--invert .banner__grid {
+    flex-direction: row;
+  }
+
+  .banner--invert .banner__figure {
+    -webkit-clip-path: polygon(
+      0% 0%,
+      calc(100% - 100px) 0%,
+      calc(100% - 50px) 100%,
+      0% 100%
+    );
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 100px) 0%,
+      calc(100% - 50px) 100%,
+      0% 100%
+    );
+  }
+
+  .banner--invert .banner__text {
+    text-align: right;
+  }
+
+  .banner--invert .banner__link {
+    transform-origin: right bottom;
+  }
+
+  .banner:hover .banner__figure {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+/* ------------------------ Watermark (Please Ignore) ----------------------- */
+.watermark-ctr {
+  --clr-button-bg: #141414;
+  --clr-button: 72, 39, 236;
+  --clr-text: #ffffff;
+
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+}
+.watermark-ctr a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+.generate-button {
+  --generate-button-star-1-opacity: 0.25;
+  --generate-button-star-1-scale: 1;
+  --generate-button-star-2-opacity: 1;
+  --generate-button-star-2-scale: 1;
+  --generate-button-star-3-opacity: 0.5;
+  --generate-button-star-3-scale: 1;
+  --generate-button-dots-opacity: 0;
+  appearance: none;
+  outline: none;
+  border: none;
+  padding: 14px 24px 14px 20px;
+  border-radius: 29px;
+  margin: 0;
+  background-color: var(--clr-button-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 1;
+  transform: scale(var(--generate-button-scale, 1)) translateZ(0);
+  box-shadow: 0px 0px 120px var(--generate-button-shadow-wide, transparent),
+    0px 4px 12px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0px 1px 1px
+      var(--generate-button-shadow-inset, rgba(255, 255, 255, 0.04)),
+    0 0 0 var(--generate-button-shadow-outline, 0px)
+      rgba(var(--clr-button), 0.4);
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+.generate-button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 20%;
+  height: 20px;
+  left: 20%;
+  bottom: -10px;
+  background: rgba(204, 204, 204, 0.4);
+  filter: blur(12.5px);
+  z-index: 2;
+  clip-path: inset(-200% -30% 10px -30% round 29px);
+  opacity: 0;
+  transition: opacity 0.4s;
+  transform: translateZ(0);
+}
+.generate-button span {
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.005em;
+  display: block;
+  user-select: none;
+}
+.generate-button .stroke {
+  mix-blend-mode: hard-light;
+}
+.generate-button .stroke svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 0.75px;
+  stroke: #e2d9ff;
+  stroke-dasharray: 1.5 14;
+  stroke-dashoffset: 22;
+  opacity: 0;
+}
+.generate-button .stroke svg:nth-child(2) {
+  stroke-width: 1px;
+  stroke-opacity: 0.5;
+  filter: blur(3px);
+}
+
+.generate-button svg.icon {
+  width: 18px;
+  height: 20px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+.generate-button svg.icon path:nth-child(1) {
+  opacity: var(--generate-button-star-1-opacity);
+  transform: scale(var(--generate-button-star-1-scale)) translateZ(0);
+  transform-origin: 25% 14.58%;
+}
+.generate-button svg.icon path:nth-child(2) {
+  opacity: var(--generate-button-star-2-opacity);
+  transform: scale(var(--generate-button-star-2-scale)) translateZ(0);
+  transform-origin: 60.42% 50%;
+}
+.generate-button svg.icon path:nth-child(3) {
+  opacity: var(--generate-button-star-3-opacity);
+  transform: scale(var(--generate-button-star-3-scale)) translateZ(0);
+  transform-origin: 25% 85.42%;
+}
+.generate-button:hover {
+  --generate-button-scale: 1.01;
+  --generate-button-shadow-wide: rgba(var(--clr-button), 0.4);
+  --generate-button-shadow-inset: rgba(255, 255, 255, 0.35);
+  --generate-button-shadow-outline: 3px;
+  color: var(--clr-text);
+  background-color: rgba(var(--clr-button));
+}
+.generate-button:hover .stroke svg {
+  animation: stroke 2s linear infinite;
+}
+.generate-button:hover:before {
+  opacity: 1;
+}
+.generate-button:hover span:before {
+  opacity: 0;
+}
+.generate-button:hover:active {
+  --generate-button-scale: 1.05;
+}
+@keyframes stroke {
+  0% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    stroke-dashoffset: 6;
+    opacity: 0;
+  }
+}
+
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <!-- <div class="box">
+                <div class="box-header">
+                    <h4 class="box-title">Work Shop Announcement</h4>
+                </div>
+                <div class="box-body">
+                    <div class="timeline5">
+                        <div class="timeline__group">
+                          <span class="timeline__year" >2024</span>
+                          <div class="timeline__box">
+                            <div class="timeline__date">
+                              <span class="timeline__day">2</span>
+                              <span class="timeline__month">Apr</span>
+                            </div>
+                            <div class="timeline__post">
+                              <div class="timeline__content">
+                                <p>The
+                                    Python Workshop
+                                    Learn to code in Python and kickstart your career in software development or data science</p>
+                                <button class="btn btn-success">Apply</button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="timeline__box">
+                            <div class="timeline__date">
+                              <span class="timeline__day">1</span>
+                              <span class="timeline__month">Sept</span>
+                            </div>
+                            <div class="timeline__post">
+                              <div class="timeline__content">
+                                <p>Started from University of Pennsylvania. This is an important stage of my career. Here I worked in the local magazine. The experience greatly affected me</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="timeline__group">
+                          <span class="timeline__year">2014</span>
+                          <div class="timeline__box">
+                            <div class="timeline__date">
+                              <span class="timeline__day">14</span>
+                              <span class="timeline__month">Jul</span>
+                            </div>
+                            <div class="timeline__post">
+                              <div class="timeline__content">
+                                <p>Travels to France, Italy, Spain, and Peru. After completing fashion editorial in Lima, prolongs stay to make portraits of local people in a daylight studio</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="timeline__group">
+                          <span class="timeline__year">2016</span>
+                          <div class="timeline__box">
+                            <div class="timeline__date">
+                              <span class="timeline__day">28</span>
+                              <span class="timeline__month">Aug</span>
+                            </div>
+                            <div class="timeline__post">
+                              <div class="timeline__content">
+                                <p>Upon moving to Brooklyn that summer, I began photographing weddings in Chicago</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>                
+            </div> -->
+
+              <!-- ---------------------- Watermark (Please Ignore) ---------------------- -->
+              <!-- <div class="watermark-ctr">
+                <a target="_blank" href="https://zaap.bio/vishalzen">
+                  <button class="generate-button">
+                    <svg class="icon" viewBox="0 0 24 26">
+                      <path d="M5.16515 2.62145L5.8075 0.999247C5.83876 0.919722 5.9154 0.866699 6.00112 0.866699C6.08683 0.866699 6.16347 0.919722 6.19473 0.999247L6.83708 2.62145L8.44145 3.27094C8.5201 3.30254 8.57254 3.38003 8.57254 3.4667C8.57254 3.55337 8.5201 3.63085 8.44145 3.66246L6.83708 4.31195L6.19473 5.93415C6.16347 6.0147 6.08683 6.0667 6.00112 6.0667C5.9154 6.0667 5.83876 6.0147 5.8075 5.93415L5.16515 4.31195L3.56078 3.66246C3.48112 3.63085 3.42969 3.55337 3.42969 3.4667C3.42969 3.38003 3.48112 3.30254 3.56078 3.27094L5.16515 2.62145Z" />
+                      <path d="M11.2362 9.43967C11.5502 9.30067 11.8015 9.05025 11.9405 8.73617L13.5494 5.11725C13.7169 4.74204 14.0887 4.5 14.5 4.5C14.9112 4.5 15.2839 4.74204 15.4506 5.11725L17.0603 8.73617C17.1985 9.05025 17.4497 9.3015 17.7638 9.43967L21.3827 11.0494C21.7579 11.2161 22 11.5887 22 12C22 12.4112 21.7579 12.7831 21.3827 12.9506L17.7638 14.5595C17.4497 14.6985 17.1993 14.9497 17.0603 15.2638L15.4506 18.8827C15.2839 19.2579 14.9112 19.5 14.5 19.5C14.0887 19.5 13.7169 19.2579 13.5494 18.8827L11.9405 15.2638C11.8015 14.9497 11.5502 14.6985 11.2362 14.5595L7.61725 12.9506C7.24204 12.7831 7 12.4112 7 12C7 11.5887 7.24204 11.2161 7.61725 11.0494L11.2362 9.43967Z" />
+                      <path d="M4.60728 19.392L5.67703 16.6875C5.72997 16.5541 5.85854 16.4666 6.00056 16.4666C6.14258 16.4666 6.27031 16.5541 6.32325 16.6875L7.39299 19.392L10.0678 20.4736C10.1997 20.5271 10.2863 20.6563 10.2863 20.7999C10.2863 20.9435 10.1997 21.0735 10.0678 21.1271L7.39299 22.2087L6.32325 24.9123C6.27031 25.0457 6.14258 25.1332 6.00056 25.1332C5.85854 25.1332 5.72997 25.0457 5.67703 24.9123L4.60728 22.2087L1.93333 21.1271C1.8014 21.0735 1.71484 20.9435 1.71484 20.7999C1.71484 20.6563 1.8014 20.5271 1.93333 20.4736L4.60728 19.392Z" />
+                    </svg>
+                    <span>Social Links</span>
+                  </button></a>
+              </div> -->
+
+
+              <div class="box-header">
+                <h4 class="box-title">Work Shop Announcement</h4>
+            </div>
+
+
+              <div class="box-body ">
+            {%for i in data%}
+            <div class="flexbox align-items-center mt-3">
+                <div class="btn-group">
+                  <a class="btn btn-xs" href="{% url 'workshoptetitle' id=i.id %}" data-bs-toggle="tooltip" title="Edit Title"  data-bs-original-title="Share Facebook"><i class="fa fa-edit"></i></a>
+                  <a class="btn btn-xs" href="{% url 'workshopvideoview' appvideoid=i.id %}" data-bs-toggle="tooltip" title="Edit video"  data-bs-original-title="Share Facebook"><i class="fa fa fa-video-camera"></i></a>
+
+                  <a class="btn btn-xs" href="{% url 'workshoptemcqedit' id=i.id %}" data-bs-toggle="tooltip" title="Edit MCQ" data-bs-original-title="Share Twitter"><i class="fa fa-sticky-note-o"></i></a>
+                
+                </div>
+
+              </div>
+            <a href="{% url 'workshopvideo' appvideoid=i.id %}" class="banner" aria-label="Shop now" style="margin: 20px;">
+                <div class="banner__grid">
+                  <div aria-hidden="true">
+                    <figure class="banner__figure" style="background-image: url(https://easycourses.in/filescab/courses/crs_61.jpg);"></figure>
+                  </div>
+              
+                  <div class="banner__text">
+                    <h2>{{i.title}}</h2>
+                    <p>The
+                        Python Workshop
+                        Learn to code in Python and kickstart your career in software development or data science</p>
+              
+                    <p class="banner__link-wrapper">
+                      <span class="banner__link">
+                        <i>Apply</i>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+              {%endfor%}
+              
+              
+            </div>
+
+        
+
+
+        </section>
+    </div>
+</div>
+<script>
+    /* ------------------------ Watermark (Please Ignore) ----------------------- */
+const createSVG = (width, height, className, childType, childAttributes) => {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  
+    const child = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      childType
+    );
+  
+    for (const attr in childAttributes) {
+      child.setAttribute(attr, childAttributes[attr]);
+    }
+  
+    svg.appendChild(child);
+  
+    return { svg, child };
+  };
+  
+  document.querySelectorAll(".generate-button").forEach((button) => {
+    const width = button.offsetWidth;
+    const height = button.offsetHeight;
+  
+    const style = getComputedStyle(button);
+  
+    const strokeGroup = document.createElement("div");
+    strokeGroup.classList.add("stroke");
+  
+    const { svg: stroke } = createSVG(width, height, "stroke-line", "rect", {
+      x: "0",
+      y: "0",
+      width: "100%",
+      height: "100%",
+      rx: parseInt(style.borderRadius, 10),
+      ry: parseInt(style.borderRadius, 10),
+      pathLength: "30"
+    });
+  
+    strokeGroup.appendChild(stroke);
+    button.appendChild(strokeGroup);
+  
+    const stars = gsap.to(button, {
+      repeat: -1,
+      repeatDelay: 0.5,
+      paused: true,
+      keyframes: [
+        {
+          "--generate-button-star-2-scale": ".5",
+          "--generate-button-star-2-opacity": ".25",
+          "--generate-button-star-3-scale": "1.25",
+          "--generate-button-star-3-opacity": "1",
+          duration: 0.3
+        },
+        {
+          "--generate-button-star-1-scale": "1.5",
+          "--generate-button-star-1-opacity": ".5",
+          "--generate-button-star-2-scale": ".5",
+          "--generate-button-star-3-scale": "1",
+          "--generate-button-star-3-opacity": ".5",
+          duration: 0.3
+        },
+        {
+          "--generate-button-star-1-scale": "1",
+          "--generate-button-star-1-opacity": ".25",
+          "--generate-button-star-2-scale": "1.15",
+          "--generate-button-star-2-opacity": "1",
+          duration: 0.3
+        },
+        {
+          "--generate-button-star-2-scale": "1",
+          duration: 0.35
+        }
+      ]
+    });
+  
+    button.addEventListener("pointerenter", () => {
+      gsap.to(button, {
+        "--generate-button-dots-opacity": "1",
+        duration: 0.5,
+        onStart: () => {
+          setTimeout(() => stars.restart().play(), 500);
+        }
+      });
+    });
+  
+    button.addEventListener("pointerleave", () => {
+      gsap.to(button, {
+        "--generate-button-dots-opacity": "0",
+        "--generate-button-star-1-opacity": ".25",
+        "--generate-button-star-1-scale": "1",
+        "--generate-button-star-2-opacity": "1",
+        "--generate-button-star-2-scale": "1",
+        "--generate-button-star-3-opacity": ".5",
+        "--generate-button-star-3-scale": "1",
+        duration: 0.15,
+        onComplete: () => {
+          stars.pause();
+        }
+      });
+    });
+  });
+  
+</script>
+<!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script> -->
+
+{% endblock content %}

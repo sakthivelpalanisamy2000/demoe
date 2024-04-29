@@ -1,0 +1,664 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+<style>
+    .nav {
+        list-style-type: none !important;
+    }
+
+    .mcqiteambox {
+        list-style-type: none !important;
+
+
+    }
+</style>
+
+<link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}"
+    type="text/css" />
+<link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}"
+    type="text/css" />
+
+<script src="{% static 'hack/clipboard.min.js'%}"></script>
+
+<script src="{% static 'hack/jquery.min.js'%}"></script>
+
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="box">
+                        <!-- <div class="box-header with-border">
+                            <h4 class="box-title">Customtab2 Tab</h4>
+                            <h6 class="box-subtitle">Use default tab with class
+                                <code>customtab</code></h6>
+                        </div> -->
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs customtab2" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active"
+                                        data-bs-toggle="tab" href="#home7"
+                                        role="tab"><span
+                                            class="hidden-sm-up">Video<i
+                                                class="ion"></i></span>
+                                        <span
+                                            class="hidden-xs-down">Video</span></a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        data-bs-toggle="tab" href="#profile7"
+                                        role="tab"><span
+                                            class="hidden-sm-up">Practice<i
+                                                class="ion"></i></span>
+                                        <span
+                                            class="hidden-xs-down">Practice</span></a>
+                                </li>
+
+                                <li class="nav-item"> <a class="nav-link"
+                                        data-bs-toggle="tab" href="#messages7"
+                                        role="tab"><span
+                                            class="hidden-sm-up">Test<i
+                                                class="ion"></i></span>
+                                        <span
+                                            class="hidden-xs-down">Test</span></a>
+                                </li>
+
+                                <li class="nav-item"> <a class="nav-link"
+                                        data-bs-toggle="tab" href="#report"
+                                        role="tab"><span
+                                            class="hidden-sm-up">Report<i
+                                                class="ion"></i></span>
+                                        <span
+                                            class="hidden-xs-down">Report</span></a>
+                                </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="home7"
+                                    role="tabpanel">
+                                    <div class="p-15">
+                                        <div class="col-12">
+                                            <!-- Default box -->
+                                            <!-- <div class="box"> -->
+                                            <!-- <div class="box-header with-border">
+                                                <h4 class="box-title">Only Content Scroll</h4>
+                                              </div> -->
+                                            <div class="box-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <video id="myVideo"
+                                                            width="100%"
+                                                            height="100px"
+                                                            controls
+                                                            controlsList="noplaybackrate nodownload ">
+                                                            <source
+                                                                src="{% static 'design/video/2.mp4 '%}"
+                                                                type="video/mp4">
+                                                            Your browser does
+                                                            not support the
+                                                            video tag.
+                                                        </video>
+
+                                                    </div>
+                                                    <br>
+                                                    <div class="col-md-12 "
+                                                        style="margin-top: 35px;">
+                                                        <div id="slimtest1">
+                                                            <p>Lorem ipsum dolor
+                                                                sit amet,
+                                                                consectetur
+                                                                adipiscing elit.
+                                                                Nam rhoncus,
+                                                                felis interdum
+                                                                condimentum
+                                                                consectetur,
+                                                                nisl libero
+                                                                elementum eros,
+                                                                vehicula congue
+                                                                lacus eros non
+                                                                diam. Cum sociis
+                                                                natoque
+                                                                penatibus et
+                                                                magnis dis
+                                                                parturient
+                                                                montes, nascetur
+                                                                ridiculus
+                                                                mus.</p>
+                                                            <p>Vivamus mauris
+                                                                lorem, lacinia
+                                                                id tempus non,
+                                                                imperdiet et
+                                                                leo. Cras sit
+                                                                amet erat sit
+                                                                amet lacus
+                                                                egestas
+                                                                placerat. </p>
+                                                            <p>Aenean ultricies
+                                                                ultrices mauris
+                                                                ac congue. In
+                                                                vel tortor vel
+                                                                velit tristique
+                                                                tempus ac id
+                                                                nisi. Proin quis
+                                                                lorem velit.
+                                                                Nunc dui dui,
+                                                                blandit a
+                                                                ullamcorper
+                                                                vitae, congue
+                                                                fringilla
+                                                                lectus. Aliquam
+                                                                ultricies
+                                                                malesuada
+                                                                feugiat.
+                                                                Vestibulum
+                                                                placerat turpis
+                                                                et eros lobortis
+                                                                vel semper
+                                                                sapien
+                                                                pulvinar.</p>
+                                                            <p>Lorem ipsum dolor
+                                                                sit amet,
+                                                                consectetur
+                                                                adipiscing elit.
+                                                                Nam rhoncus,
+                                                                felis interdum
+                                                                condimentum
+                                                                consectetur,
+                                                                nisl libero
+                                                                elementum eros,
+                                                                vehicula congue
+                                                                lacus eros non
+                                                                diam. Cum sociis
+                                                                natoque
+                                                                penatibus et
+                                                                magnis dis
+                                                                parturient
+                                                                montes, nascetur
+                                                                ridiculus
+                                                                mus.</p>
+                                                            <p>Vivamus mauris
+                                                                lorem, lacinia
+                                                                id tempus non,
+                                                                imperdiet et
+                                                                leo. Cras sit
+                                                                amet erat sit
+                                                                amet lacus
+                                                                egestas
+                                                                placerat. </p>
+                                                            <p>Aenean ultricies
+                                                                ultrices mauris
+                                                                ac congue. In
+                                                                vel tortor vel
+                                                                velit tristique
+                                                                tempus ac id
+                                                                nisi. Proin quis
+                                                                lorem velit.
+                                                                Nunc dui dui,
+                                                                blandit a
+                                                                ullamcorper
+                                                                vitae, congue
+                                                                fringilla
+                                                                lectus. Aliquam
+                                                                ultricies
+                                                                malesuada
+                                                                feugiat.
+                                                                Vestibulum
+                                                                placerat turpis
+                                                                et eros lobortis
+                                                                vel semper
+                                                                sapien
+                                                                pulvinar.</p>
+                                                            <p>Vivamus mauris
+                                                                lorem, lacinia
+                                                                id tempus non,
+                                                                imperdiet et
+                                                                leo. Cras sit
+                                                                amet erat sit
+                                                                amet lacus
+                                                                egestas
+                                                                placerat. </p>
+                                                            <p>Aenean ultricies
+                                                                ultrices mauris
+                                                                ac congue. In
+                                                                vel tortor vel
+                                                                velit tristique
+                                                                tempus ac id
+                                                                nisi. Proin quis
+                                                                lorem velit.
+                                                                Nunc dui dui,
+                                                                blandit a
+                                                                ullamcorper
+                                                                vitae, congue
+                                                                fringilla
+                                                                lectus. Aliquam
+                                                                ultricies
+                                                                malesuada
+                                                                feugiat.
+                                                                Vestibulum
+                                                                placerat turpis
+                                                                et eros lobortis
+                                                                vel semper
+                                                                sapien
+                                                                pulvinar.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.box-body -->
+                                            <!-- </div> -->
+                                            <!-- /.box -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="profile7"
+                                    role="tabpanel">
+                                    <div class="p-15">
+                                        <div class="column"
+                                            style="background-color: rgb(255, 255, 255);">
+                                            <!-- <div style="margin-top:0px ;color:#000000;font-weight:700;" class="editor-heading"><span>Code</span></div> -->
+
+                                            <div class="columns"
+                                                style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+
+                                                <div class="column "
+                                                    style="padding:0;">
+
+                                                    <div
+                                                        style="padding:5px 10px">
+                                                        <div
+                                                            style="padding:5px 10px 10px 10px;display:inline-block">
+                                                            <!-- <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+                                      <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+                                                        </div>
+                                                    </div>
+                                                    <div id="container"
+                                                        style="width:100%;height:550px ;"
+                                                        class="notranslate"></div>
+                                                </div>
+
+                                            </div>
+                                            <br>
+                                            <div class="columns">
+                                                <div class="column is-full"
+                                                    style="width:100%">
+                                                    <div>
+                                                        <div class="flex">
+                                                            <div id="runBtn"
+                                                                style="display:inline-block; color: white;padding: 4px 6px ;font-weight:800;background-color:#0ca5e7;border-radius:0px;color:#fff;cursor:pointer">
+                                                                <div
+                                                                    style="display:flex;justify-content:center;align-items:center">
+                                                                    <span
+                                                                        style="margin-left:5px;margin-right:10px">Run
+                                                                        Code</span>
+                                                                    <div
+                                                                        class="icon"
+                                                                        style="display:none; "></div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div
+                                                                id="messageContainer"></div>
+
+                                                            <br>
+
+                                                        </div>
+                                                        <style>
+                                                            .editor-heading {
+                                                                font-size: 14px;
+                                                                margin-bottom: 5px;
+                                                                margin-top: 0px;
+                                                                text-transform: uppercase;
+                                                                color: #aaa
+                                                            }
+
+                                                            textarea:focus,
+                                                            input:focus {
+                                                                outline: none;
+                                                            }
+                                                        </style>
+                                                        <br />
+
+                                                        <div id="stdin"
+                                                            style="width: 500px;">
+                                                            <div
+                                                                class="editor-heading"><span>Input
+                                                                    :</span></div>
+                                                            <div><textarea
+                                                                    style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                                                                    class="notranslate"
+                                                                    id="stdinput"></textarea></div>
+                                                        </div>
+
+                                                        <div
+                                                            style="margin-top:30px; "
+                                                            id="stdout"
+                                                            style="width: 500px;">
+                                                            <div
+                                                                class="editor-heading">Output
+                                                                :</div>
+                                                            <div>
+                                                                <pre
+                                                                    style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+                                                                    id="testcaseoutput"></pre>
+                                                                <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="stderr"
+                                                            style="margin-top:30px;display:none">
+                                                            <div
+                                                                class="editor-heading">Error
+                                                                Your code</div>
+                                                            <pre
+                                                                class="error-content notranslate"
+                                                                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane" id="messages7"
+                                    role="tabpanel">
+                                    <!-- <div class="p-15">
+                                        Test
+                                    </div> -->
+
+                                    <div class="tab-pane" id="mcq"
+                                        role="tabpanel">
+                                        <div class="p-15">
+                                            <div class="row">
+
+                                                <nav
+                                                    class="pagination is-small is-rounded"
+                                                    role="navigation"
+                                                    aria-label="pagination">
+                                                    {% if data.has_previous %}
+                                                    <a
+                                                        class="pagination-previous"
+                                                        href="?page={{ data.previous_page_number }}">Previous</a>
+                                                    {% endif %}
+                                                    {% if data.has_next %}
+                                                    <a id="nextanchortag"
+                                                        title="Submit the code first"
+                                                        class=" pagination-next title-tip title-tip-right"
+                                                        href="?page={{ data.next_page_number }}">Next
+                                                        page</a>
+
+                                                    {% endif %}
+                                                    {% comment %} <ul class="pagination-list">
+                                                        <li><a
+                                                                class="pagination-link is-current"
+                                                                aria-label="Page 46"
+                                                                aria-current="page"
+                                                                id="fullscreenButton"
+                                                                style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800">Questions
+                                                            </a></li> of
+                                                        <li><a
+                                                                class="pagination-link is-current"
+                                                                style="background-color: #2a5724;"
+                                                                aria-label> {{
+                                                                data.number}}</a>
+                                                        </li>
+                                                        <li><span
+                                                                class="pagination-ellipsis">&hellip;</span></li>
+                                                        <li><a
+                                                                class="pagination-link"
+                                                                aria-label>{{
+                                                                data.paginator.num_pages
+                                                                }}</a></li>
+
+                                                    </ul> {% endcomment %}
+                                                </nav>
+                                                <div class="col-xl-12 col-12">
+                                                    <div
+                                                        class="box box-solid box-inverse box-info">
+                                                        <div
+                                                            class="box-header with-border">
+                                                            <h4
+                                                                class="box-title" style="color: white;">
+                                                                {% for item in data %}
+                                                                {{item.questions |safe }}
+                                                                {% endfor %}
+
+                                                            </h4>
+                                                            <ul
+                                                                class="mcqiteambox box-controls pull-right">
+
+                                                                <li><a
+                                                                        class="box-btn-fullscreen"
+                                                                        href="#"></a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <div class="box-body">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-12 col-12">
+                                                                    <div
+                                                                        class="media bg-white mb-20"
+                                                                        data-provide="selectable">
+                                                                        <div
+                                                                            class="media-left">
+                                                                            <label
+                                                                                class="custom-control custom-checkbox">
+                                                                                <input
+                                                                                    type="checkbox"
+                                                                                    id="md_checkbox_5"
+                                                                                    class="filled-in chk-col-blue">
+                                                                                <label
+                                                                                    for="md_checkbox_5"></label>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div
+                                                                            class="media-body">
+                                                                            {% for item in data %}
+                                                                                {{ item.optiona }}
+                                                                                {% endfor %}
+
+                                                                            <!--  -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div
+                                                                    class="col-md-12 col-12">
+                                                                    <div
+                                                                        class="media bg-white mb-20"
+                                                                        data-provide="selectable">
+                                                                        <div
+                                                                            class="media-left">
+                                                                            <label
+                                                                                class="custom-control custom-checkbox">
+                                                                                <input
+                                                                                    type="checkbox"
+                                                                                    id="md_checkbox_2"
+                                                                                    class="filled-in chk-col-blue">
+                                                                                <label
+                                                                                    for="md_checkbox_2"></label>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div
+                                                                            class="media-body">
+                                                                            {% for item in data %}
+                                                                            {{ item.optionb }}
+                                                                            {% endfor %}
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div
+                                                                    class="col-md-12 col-12">
+                                                                    <div
+                                                                        class="media bg-white mb-20"
+                                                                        data-provide="selectable">
+                                                                        <div
+                                                                            class="media-left">
+                                                                            <label
+                                                                                class="custom-control custom-checkbox">
+                                                                                <input
+                                                                                    type="checkbox"
+                                                                                    id="md_checkbox_3"
+                                                                                    class="filled-in chk-col-blue">
+                                                                                <label
+                                                                                    for="md_checkbox_3"></label>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div
+                                                                            class="media-body">
+                                                                            {% for item in data %}
+                                                                                {{ item.optionc }}
+                                                                                {% endfor %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-md-12 col-12">
+                                                                    <div
+                                                                        class="media bg-white mb-20"
+                                                                        data-provide="selectable">
+                                                                        <div
+                                                                            class="media-left">
+                                                                            <label
+                                                                                class="custom-control custom-checkbox">
+                                                                                <input
+                                                                                    type="checkbox"
+                                                                                    id="md_checkbox_4"
+                                                                                    class="filled-in chk-col-blue">
+                                                                                <label
+                                                                                    for="md_checkbox_4"></label>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div
+                                                                            class="media-body">
+                                                                            {% for item in data %}
+                                                                                {{ item.optiond }}
+                                                                                {% endfor %}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+
+                                <div class="tab-pane" id="report"
+                                    role="tabpanel">
+                                    <div class="p-15">
+                                        <p>report</p>
+                                    </div>
+
+                                </div>
+
+                                <!-- /.box-body -->
+
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+    function setupMonacoWithDelay() {
+
+        var n = document.createElement("script");
+        n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+            var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `import java.util.Scanner; \n class Main {\n    public static void main(String[] args) {\n    //Write a code\n        System.out.println(\"Write a Code\");\n  }\n }`,\n                        language: \"java\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n)
+        }
+    } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }</script>
+
+        <script>
+    var global_editor, timeWhenIwasLoaded = Date.now(), runButton = document.querySelector("#runBtn"), runButtonIcon = document.querySelector("#runBtn .icon"), stdin = document.querySelector("#stdin textarea"), stdout = document.querySelector("#stdout pre"), stderr = document.querySelector("#stderr .error-content"), judgeId = 62; runButton.addEventListener("click", (function () { global_editor && $.ajax({ url: "https://moderator.adaface.com/compile", timeout: 45e3, type: "POST", data: { language_id: judgeId, source_code: global_editor.getValue(), stdin: stdin.value }, beforeSend: function () { runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"/></svg>', runButtonIcon.classList.add("fa-spin") }, success: function (e) { runButtonIcon.innerHTML = '', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), window.oneSuccessHappened = !0, 200 == e.statusCode ? (stdout.innerHTML = e.responseToSend.stdout || "No output", stderr.innerHTML = e.responseToSend.error || e.responseToSend.stderr, "" == (e.responseToSend.stderr || e.responseToSend.error) ? document.querySelector("#stderr").style.display = "none" : document.querySelector("#stderr").style.display = "block") : iziToast.error({ title: "Error", message: e.status.message, position: "topRight" }) }, error: function (e, t, o) { if ("timeout" === t) return e.abort(), Date.now() - timeWhenIwasLoaded < 5e3 && !window.oneSuccessHappened ? void window.location.reload() : iziToast.error({ title: "Error", message: "Request timed out. Please try again.", position: "topRight" }); window.oneSuccessHappened = !0, runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), iziToast.error({ title: "Error", message: "Something went wrong. Please try again.", position: "topRight" }) } }) }))
+
+</script>
+
+        <script>
+
+
+
+    let vid = document.getElementById("myVideo");
+
+    function getVolume() {
+        alert(vid.volume);
+    }
+
+    function setHalfVolume() {
+        vid.volume = 0.2;
+    }
+
+    function setFullVolume() {
+        vid.volume = 2.0;
+    }
+    vid.onratechange = function () {
+        vid.playbackRate = 1;
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('myVideo');
+
+        // Variables for drag functionality
+        var isDragging = false;
+        var startX;
+        var endX;
+
+        video.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            startX = e.clientX;
+            endX = e.clientX;
+        });
+
+        video.addEventListener('mouseup', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = e.clientX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                endX = e.clientX;
+            }
+        });
+
+        video.addEventListener('mouseleave', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = endX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('ended', function () {
+            video.play();
+        });
+    });
+
+</script>
+        {% endblock content %}

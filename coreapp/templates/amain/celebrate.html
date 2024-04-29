@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+    .cetnerc{
+        display: block;
+
+        justify-content: center;
+    }
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class=" " >
+            <div class="row">
+                <div class="col-12"  style="text-align:center">
+                   
+                    <img src="https://img.freepik.com/free-vector/celebration-emblem-illustration_1284-7727.jpg" alt="" style="height:400px;">
+                    <div class="cetnerc">
+                        <div style="text-align: center;">
+                            <h2 style="color:green">Good</h2>
+
+                            <div style="height: 100px;width:100px;border:1px solid green;text-align:center;padding:0px;padding-top:3% ; border-radius:100% ; margin-left:45%"  >
+                                <h2 style="font-size:29px"> <span style="color:green">8 / </span>  <span style="color:green">10</span></h2>
+        
+                            </div>
+                        </div>
+                      </div>
+
+                  <br>
+                  <br>
+                    
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col" style="text-align: center;">
+                    <a class="btn btn-info"> Show Answer</a>
+                    <a class="btn btn-info"> Mark Completed</a>
+                    <a href="{% url 'aptitudestart' %}" class="btn btn-info"> Next</a>
+                    <a href="{% url 'aptitudestart' %}" class="btn btn-info"> Rewatch </a>
+
+
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+
+{% endblock content %}

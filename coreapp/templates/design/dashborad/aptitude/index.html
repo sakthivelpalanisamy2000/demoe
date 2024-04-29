@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+    .circular-progress {
+      position: relative;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    
+    .circular-progress:before {
+      content: "";
+      position: absolute;
+      height: 70%;
+      width: 70%;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+    
+    .value-container {
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      color: #1c3d23;
+    }
+  </style>
+<div class="content-wrapper">
+    <div class="container-full">
+
+        <section class="content">
+            <div class="col-12 col-xl-12">
+				<div class="box">
+					<div class="box-body">	
+						<div class="flex-grow-1 pb-15">	
+							<!-- <div class="d-flex align-items-center pe-2 mb-30">							
+								<span class="text-fade fw-600 fs-16 flex-grow-1">
+									Aptitude Practice
+								</span>
+								<div class=" h-40 w-40 l-h-40 rounded text-center">
+									  <img src="" class="h-30 align-self-center" alt="" >
+								</div>							
+							</div> -->
+							
+							<a href="#" class="text-dark fw-600 hover-primary fs-18">
+								Aptitude Challenges
+							</a>
+							<p class="fs-16 mt-15">
+								Challenges often cover a wide range of topics, including mathematics, logical reasoning, problem-solving, and critical thinking etc ...
+							</p>
+						</div>	
+                        
+                       
+                    <div class="row">
+                          <!--  -->
+                            <div class="col-xl-4 col-12" style="padding: 10px;">
+                                <div class="box">
+                                
+                                <div class="box-body pull-up" style="box-shadow: rgba(212, 210, 210, 0.2) 0px 2px 8px 0px;">
+                                    <div class="card pull-up" style="border: none;box-shadow:none">
+                                    <img class="card-img-top" style="height: 200px;" src="https://www.criteriacorp.com/files/styles/blog_post/public/attachments_files/CriteriaBlog_WhyCognitiveAptitudeIsSuchAGreatPredictorOfJobPerformance.jpg?itok=oZV688td" alt="Card image cap">
+                                    <div class="card" style="border: none;box-shadow:none;padding-top:10px">
+                                    <div style="text-align: center;" class="mt-3">
+                                        <h5 class="">Complete Aptitude Challenges</h5>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-1" style="text-align: end;">
+                                        
+                                        
+                                        </div>
+                                        <div class="col-6"  >
+                                        <p class=""><i class="fa fa-clock-o" aria-hidden="true" style="color: #068bb0;"></i> 2:23:02 Mins</p>
+                                        <p class=""><i class="fa fa-caret-square-o-right" aria-hidden="true" style="color: #068bb0;"></i> 12 Parts</p>
+                    
+                                        <p class=""><i class="fa fa-code" aria-hidden="true" style="color: #068bb0;"></i> Mcq</p>
+                                        
+                                        </div>
+                                        <div class="col">
+                                        <div class="circular-progress">
+                                            <div class="value-container">0%</div>
+                                        </div>
+                                        </div>
+                
+                                    </div>
+                                    <!-- <a class="btn btn-sucess" href="" style="background-color: #068bb0;color:white;font-weight:800;padding:10px ;width:200px;margin-left:20% ; margin-top:5%">Start Watching Now</a> -->
+                
+                                    </div>
+                                    
+                                    </div>
+                                </div>
+                                </div>
+                                </div>
+                            <!--  -->
+                    
+                        <div class="col-lg-8 col-12" style="padding: 10px;">
+                          
+                            <div class="row">
+                                {%for i in data%}
+                                <div class="col-lg-6 col-12">
+
+                            
+                                    <div class="box pull-up  ">
+                                        <div class="box-body bg-img" style="background-image: url(../images/bg-5.png);" data-overlay-light="9">
+                                            <div class="d-lg-flex align-items-center justify-content-between">
+                                                <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                                                   
+                                                    <div class="ms-0">
+                                                        <h6 class="ms-10 " style="margin-top:10px">{{i.title}}</h6>
+                                                        <!--  -->
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <!-- <a href="">
+                                                    <button type="button" class="waves-effect waves-light w-p100 btn btn-primary" style="white-space: nowrap;">Start Now!</button>
+                                                </a> -->
+        
+                                                <a href="{% url 'aptitudevideo' appvideoid=i.id %}" class="btn btn-success btn-sm"><span class="icon-Arrow-right fs-18"><span class="path1"></span><span class="path2"></span></span></a>
+        
+                                                </div>
+                                            </div>							
+                                        </div>
+                                    </div>
+        
+                                    </div>
+                            {%endfor%}
+
+
+                            </div>
+                           
+                        
+                        </div>
+                       
+                       
+                    </div>
+
+
+                    
+					</div>					
+				</div>
+			</div>
+        </section>
+
+       
+    </div>
+</div>
+
+<script>
+    let progressBar = document.querySelector(".circular-progress");
+  let valueContainer = document.querySelector(".value-container");
+  
+  let progressValue = 0;
+  let progressEndValue = 2;
+  let speed = 100;
+  
+  let progress = setInterval(() => {
+    progressValue++;
+    valueContainer.textContent = `${progressValue}%`;
+    progressBar.style.background = `conic-gradient(
+        #4d5bf9 ${progressValue * 3.6}deg,
+        #cadcff ${progressValue * 3.6}deg
+    )`;
+    if (progressValue == progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
+  
+  </script>
+  
+
+{% endblock content %}

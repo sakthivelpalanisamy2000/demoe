@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+
+        <section class="content">
+            <div class="row">
+                <div class="col-xxl-10 col-xl-8 col-lg-12 col-12 col-sm-10">
+                    <div class="box bg-transparent no-shadow mb-20">
+                        <div class="box-header no-border pb-0 ps-0">
+                            <h4 class="box-title">Java Practices </h4>
+                            <ul
+                                class="box-controls pull-right d-md-flex d-none">
+                              
+                                <li>
+                                    <!-- <button
+                                        class="btn btn-primary-light me-10 p-10">Show
+                                        All</button> -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mb-5">Prepare > Learn > Practice > Success</p>
+                    <!-- <small class="table-scroll-contant">***Drag a table to
+                        scroll***</small> -->
+
+                    {% for i in data %}
+                    <!-- <a href="{% url 'javacompiler' compiler_id=i.id %}"> -->
+                        <div class=" box mb-15 pull-up">
+                            <div>
+                                <div class="table-responsive">
+
+                                    <table class="table no-border mb-0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="min-w-50">
+                                                    <div
+                                                        class="bg-primary-light h-50 w-50 l-h-50 rounded text-center">
+                                                        <span
+                                                            class="icon-Book-open fs-24"><i
+                                                                class="fa fa-code fs-16"
+                                                                aria-hidden="true"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td
+                                                        class="fw-600 min-w-170">
+                                                        <div
+                                                            class="d-flex flex-column fw-600">
+                                                            <a href="#"
+                                                                class="text-dark hover-primary mb-1 fs-16">{{i.title}}</a>
+                                                            <span
+                                                                class="text-fade">Problem
+                                                                Solving
+                                                                ({{i.level}})</span>
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="text-align: right;">
+                                                        
+                                                        
+                                                        
+                                                            <a href="{% url 'pquestionedit' compiler_id=i.id %}"   style="margin-right: 60px;"><span class="badge bg-success"> -> Question</span></a>
+                                                        
+                                                        
+                                                            <a href="{% url 'titlepractice' ptitle_id=i.id %}"><span class="badge bg-success">Edit title</span></a>
+                                                        
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- </a> -->
+                        {% endfor %}
+                        <!--  -->
+
+                      
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+                {% endblock content %}

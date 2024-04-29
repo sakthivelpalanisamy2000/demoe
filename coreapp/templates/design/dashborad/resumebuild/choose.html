@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+
+
+{% endblock %}
+
+
+{% block page_title %}
+<title> Imagecon</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="row">
+                <div class="col-xl-12 col-12">
+                    <div class="box bg-primary-light">
+                        <div class="box-body d-flex px-0">
+                            <div class="flex-grow-1 p-30 flex-grow-1 bg-img dask-bg bg-none-md"
+                                style="background-position: right bottom; background-size: auto 100%; background-image: url(https://www.eklavvya.com/Content/wp-content/uploads/2023/02/carrer-aptitude-test.png )">
+                                <div class="row">
+                                    <div class="col-12 col-xl-12">
+                                        <h2 style="color: black;"> Create A Professional Resume</h2>
+
+                                        <p class="text-dark my-10 fs-16">
+                                            Pick one of many world-class templates and build your resume in
+                                            <strong class="text-warning">minutes</strong>
+                                        </p>
+                                        <p class="text-dark my-10 fs-16">
+                                            Make a perfect resume in <strong class="text-warning">2024</strong>
+                                            and get your dream job
+                                        </p>
+                                        <br>
+                                        <p class="text-dark my-10 fs-16">
+                                            Steps --> Pick One Resume --> Enter Your Details --> Download Resume
+                                        </p>
+
+                                    </div>
+                                    <div class="col-12 col-xl-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-lg-3 col-xs-3" style="text-align: center;">
+                    <a href="{% url 'rfour' %}" class="hoverimage"> <img src="{% static 'srini.jpeg' %} "
+                            style="height: 400px;width:270px"></a><br><br>
+                </div>
+
+                <div class="col-lg-3 col-xs-3" style="text-align: center;">
+                    <a href="{% url 'rone' %}" class="hoverimage"> <img src="{% static 'naveen.jpeg' %}"
+                            style="height: 400px;width:270px"></a><br><br>
+                </div>
+                <div class="col-lg-3 col-xs-3" style="text-align: center;">
+                    <a href="{% url 'rtwo' %}" class="hoverimage"> <img
+                            src="{% static 'ranjith.jpeg' %} " style="height: 400px;width:270px"></a><br><br>
+                </div>
+
+
+
+                <div class="col-lg-3 col-xs-3" style="text-align: center;">
+                    <a href="{% url 'rthree' %}" class="hoverimage"> <img
+                            src="{% static 'three.jpeg' %} " style="height: 400px;width:270px"></a><br><br>
+                </div>
+
+
+
+            </div>
+
+        </section>
+        <style>
+            .hoverimage :hover {
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                z-index: 2;
+                -webkit-transition: all 200ms ease-in;
+                -webkit-transform: scale(1.1);
+                -ms-transition: all 200ms ease-in;
+                -ms-transform: scale(1.1);
+                -moz-transition: all 200ms ease-in;
+                -moz-transform: scale(1.1);
+                transition: all 200ms ease-in;
+                transform: scale(1.1);
+            }
+
+            .hoverimage {
+                box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+            }
+        </style>
+
+
+    </div>
+</div>
+{% endblock content %}

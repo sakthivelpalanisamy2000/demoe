@@ -1,0 +1,1577 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="container-full">
+
+        <section class="content">
+            <div class="row">
+                <div class="col-xl-12 col-12">
+                    <div class="box bg-primary-light">
+                        <div class="box-body d-flex px-0">
+                            <div
+                                class="flex-grow-1 p-30 flex-grow-1 bg-img dask-bg bg-none-md"
+                                style="background-position: right bottom; background-size: auto 100%; background-image: url(https://www.eklavvya.com/Content/wp-content/uploads/2023/02/carrer-aptitude-test.png    )">
+                                <div class="row">
+                                    <div class="col-12 col-xl-12">
+                                        <h2> Create A Professional Resume</h2>
+
+                                        <p class="text-dark my-10 fs-16">
+                                            Pick one of many world-class
+                                            templates and build your resume in
+                                            <strong
+                                                class="text-warning">minutes</strong>
+                                        </p>
+                                        <p class="text-dark my-10 fs-16">
+                                            Make a perfect resume in <strong
+                                                class="text-warning">2024</strong>
+                                            and get your dream job
+                                        </p>
+                                    </div>
+                                    <div class="col-12 col-xl-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- demo check -->
+
+        <!-- end demo check -->
+        <!--  Two Column  -->
+        <!-- <div class="row">
+            <div class="col-sm-6 background">
+                One of one columns
+            </div>
+            <div class="col-sm-6 background">
+                One of two columns
+            </div>
+        </div> -->
+        <!--  Two Column  -->
+
+        <section class="content">
+
+            <div class="box">
+                <!-- <div class="box-header with-border">
+                    <h4 class="box-title">Form Popup</h4>
+                </div> -->
+                <div class="box-body">
+                    <a class=" btn btn-success" href="{% url 'resumebuild' %}"
+                        style="align-items: center;">Choose the Template</a>
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- Step wizard -->
+            <div class="row">
+                <div class="col-xl-6 col-sm-12 background">
+                    <div class="box">
+                        <div class="box-header with-border"
+                            style="text-align: center;">
+                            <h4 class="box-title">Personal Information</h4>
+
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body wizard-content">
+                            <form method="post" action="{% url 'rtwo' %}"
+                                class="tab-wizard wizard-circle">
+                                {% csrf_token %}
+
+                                <!-- Step 1 -->
+                                <!-- <h6>Personal Information</h6> -->
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="firstName5"
+                                                    class="form-label">Job Title
+                                                    :</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    name="jobtitle"
+                                                    value={{data.jobtitle}}>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="lastName1"
+                                                    class="form-label">Name
+                                                    :</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    name="fullName"
+                                                    value={{data.name}}>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="emailAddress1"
+                                                    class="form-label">Email
+                                                    Address
+                                                    :</label>
+                                                <input type="email"
+                                                    class="form-control"
+                                                    name="Email"
+                                                    value={{data.email}}>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="phoneNumber1"
+                                                    class="form-label">Phone
+                                                    Number
+                                                    :</label>
+                                                <input type="tel"
+                                                    class="form-control"
+                                                    name="Phone"
+                                                    value={{data.phone}}>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="addressline1"
+                                                    class="form-label">Address
+                                                    :</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    name="Address"
+                                                    value={{data.address}}>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="addressline2"
+                                                    class="form-label">Country:</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    name="Country"
+                                                    value={{data.country}}>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="addressline1"
+                                                    class="form-label">City
+                                                    :</label>
+                                                <input type="text"
+                                                    class="form-control"
+                                                    name="city"
+                                                    value={{data.city}}>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </section>
+                                <!--  -->
+                                <div class="box-header with-border"
+                                    style="text-align: center;">
+                                    <h4 class="box-title">Profile
+                                        Information</h4>
+
+                                </div>
+                                <br>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="decisions1"
+                                                    class="form-label">Profile
+                                                    (Summary)
+                                                    :</label>
+                                                <textarea class="form-control"
+                                                    row="6" style="height:150px"
+                                                    name="summary"
+                                                    id="editor1">{{summary.summary | safe}}</textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </section>
+                                <!--  -->
+                                <div class="box-header with-border"
+                                    style="text-align: center;">
+                                    <h4 class="box-title">Education</h4>
+
+                                </div>
+                                <br>
+
+                                <section>
+                                    <div class="box-body bg-white"
+                                        style="border:1px solid rgb(218, 217, 217);">
+                                        <div class="accordion"
+                                            id="accordionPanelsStayOpenExample">
+                                            <div
+                                                class="accordion-item border-0">
+                                                <h2
+                                                    class="accordion-header mt-0"
+                                                    id="panelsStayOpen-headingOne">
+                                                    <button
+                                                        class="accordion-button p-0 bg-white border-0 no-shadow"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseOne"
+                                                        aria-expanded="true"
+                                                        aria-controls="panelsStayOpen-collapseOne">
+                                                        <div
+                                                            class="d-flex align-items-center">
+                                                            <!-- <div
+                                                                class="me-15 bg-warning h-50 w-50 l-h-60 rounded text-center">
+                                                                <span class="icon-Book-open fs-24"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></span>
+                                                            </div> -->
+                                                            <div
+                                                                class="d-flex flex-column fw-500">
+                                                                <a href="#"
+                                                                    class="text-dark hover-primary mb-1 fs-16">
+                                                                    UG
+                                                                </a>
+                                                                <span
+                                                                    class="text-fade">Degree</span>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </h2>
+                                                <div
+                                                    id="panelsStayOpen-collapseOne"
+                                                    class="accordion-collapse collapse show"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+                                                    <div
+                                                        class="accordion-body p-0">
+                                                        <div
+                                                            class="media-list media-list-hover">
+
+                                                            <section>
+                                                                <div
+                                                                    class="row">
+                                                                    <!-- <h6>UG</h6> -->
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">School
+                                                                                Name:</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="ugname"
+                                                                                value={{education.ugname}}>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">School
+                                                                                Location:</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="uglocations"
+                                                                                value={{education.uglocations}}>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">Start
+                                                                                Date</label>
+                                                                            <input
+                                                                                type="date"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="ugstartdate"
+                                                                                value={{education.ugstartdate}}>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">End
+                                                                                Date</label>
+                                                                            <input
+                                                                                type="date"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="ugenddate"
+                                                                                value={{education.ugenddate}}>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">Degree</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="ugdegree"
+                                                                                value={{education.ugdegree}}>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">Field
+                                                                                of
+                                                                                Study</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="ugfieldstudy"
+                                                                                value={{education.ugfieldstudy}}>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-md-12">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="shortDescription2"
+                                                                                class="form-label">Description:</label>
+                                                                            <textarea
+                                                                                id="editor"
+                                                                                rows="6"
+                                                                                class="form-control"
+                                                                                name="ugdescription">{{education.ugdescriptions | safe}}</textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+
+                                <!--  -->
+                                <br>
+                                <section>
+                                    <div class="box-body bg-white"
+                                        style="border:1px solid rgb(218, 217, 217);">
+                                        <div class="accordion"
+                                            id="accordionPanelsStayOpenExample">
+                                            <div
+                                                class="accordion-item border-0">
+                                                <h2
+                                                    class="accordion-header mt-0"
+                                                    id="panelsStayOpen-headingOne">
+                                                    <button
+                                                        class="accordion-button p-0 bg-white border-0 no-shadow"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#panelsStayOpen-collapseTwo"
+                                                        aria-expanded="true"
+                                                        aria-controls="panelsStayOpen-collapseTwo">
+                                                        <div
+                                                            class="d-flex align-items-center">
+                                                            <!-- <div
+                                                                class="me-15 bg-warning h-50 w-50 l-h-60 rounded text-center">
+                                                                <span class="icon-Book-open fs-24"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></span>
+                                                            </div> -->
+                                                            <div
+                                                                class="d-flex flex-column fw-500">
+                                                                <a href="#"
+                                                                    class="text-dark hover-primary mb-1 fs-16">XII</a>
+                                                                <span
+                                                                    class="text-fade">higher
+                                                                    secondary
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </h2>
+                                                <div
+                                                    id="panelsStayOpen-collapseTwo"
+                                                    class="accordion-collapse collapse show"
+                                                    aria-labelledby="panelsStayOpen-headingOne">
+                                                    <div
+                                                        class="accordion-body p-0">
+                                                        <div
+                                                            class="media-list media-list-hover">
+
+                                                            <section>
+                                                                <div
+                                                                    class="row">
+                                                                    <!-- <h6>UG</h6> -->
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">School
+                                                                                Name:</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="xiiname">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">School
+                                                                                Location:</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="xiilocation">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">Start
+                                                                                Date</label>
+                                                                            <input
+                                                                                type="date"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="xiistartdate">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">End
+                                                                                Date</label>
+                                                                            <input
+                                                                                type="date"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="xiienddate">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">Degree</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="xiidegree">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">Field
+                                                                                of
+                                                                                Study</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="xiifieldstudy">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-md-12">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="shortDescription2"
+                                                                                class="form-label">Description:</label>
+                                                                            <textarea
+                                                                                rows="6"
+                                                                                class="form-control"
+                                                                                name="xiidescription"
+                                                                                id="editor2"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                                <!--  -->
+
+                                <!--  -->
+                                <br>
+                                <section>
+                                    <div class="box-body bg-white"
+                                        style="border:1px solid rgb(218, 217, 217);">
+                                        <div class="accordion"
+                                            id="accordionPanelsStayCloseExample">
+                                            <div
+                                                class="accordion-item border-0">
+                                                <h2
+                                                    class="accordion-header mt-0"
+                                                    id="PanelsStayClose-headingOne">
+                                                    <button
+                                                        class="accordion-button p-0 bg-white border-0 no-shadow"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#PanelsStayClose-collapseThree"
+                                                        aria-expanded="true"
+                                                        aria-controls="PanelsStayClose-collapseThree">
+                                                        <div
+                                                            class="d-flex align-items-center">
+                                                            <!-- <div
+                                                                class="me-15 bg-warning h-50 w-50 l-h-60 rounded text-center">
+                                                                <span class="icon-Book-open fs-24"><span
+                                                                        class="path1"></span><span
+                                                                        class="path2"></span></span>
+                                                            </div> -->
+                                                            <div
+                                                                class="d-flex flex-column fw-500">
+                                                                <a href="#"
+                                                                    class="text-dark hover-primary mb-1 fs-16">X</a>
+                                                                <span
+                                                                    class="text-fade">high_school
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                </h2>
+                                                <div
+                                                    id="PanelsStayClose-collapseThree"
+                                                    class="accordion-collapse collapse show"
+                                                    aria-labelledby="PanelsStayClose-headingOne">
+                                                    <div
+                                                        class="accordion-body p-0">
+                                                        <div
+                                                            class="media-list media-list-hover">
+
+                                                            <section>
+                                                                <div
+                                                                    class="row">
+                                                                    <!-- <h6>UG</h6> -->
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">School
+                                                                                Name:</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="xname">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">School
+                                                                                Location:</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="xlocation">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">Start
+                                                                                Date</label>
+                                                                            <input
+                                                                                type="date"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="xstartdate">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">End
+                                                                                Date</label>
+                                                                            <input
+                                                                                type="date"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="xenddate">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="jobTitle6"
+                                                                                class="form-label">Degree</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="jobTitle6"
+                                                                                name="xdegree">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div
+                                                                        class="col-md-6">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="videoUrl2"
+                                                                                class="form-label">Field
+                                                                                of
+                                                                                Study</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                class="form-control"
+                                                                                id="videoUrl2"
+                                                                                name="xfieldstudy">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div
+                                                                        class="col-md-12">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label
+                                                                                for="shortDescription2"
+                                                                                class="form-label">Description:</label>
+                                                                            <textarea
+                                                                                name="xdescription"
+                                                                                id="editor3"
+                                                                                rows="6"
+                                                                                class="form-control"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                                <!--  -->
+                                <div class="box-header with-border"
+                                    style="text-align: center;">
+                                    <h4 class="box-title">Project</h4>
+
+                                </div>
+                                <br>
+                                <section>
+                                    <div
+                                        class="row">
+                                        <!-- <h6>UG</h6> -->
+                                        <div
+                                            class="col-md-6">
+                                            <div
+                                                class="form-group">
+                                                <label
+                                                    for="jobTitle6"
+                                                    class="form-label">Title</label>
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="jobTitle6"
+                                                    name="projecttitle"
+                                                    value={{education.ugname}}>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="col-md-12">
+                                            <div
+                                                class="form-group">
+                                                <label
+                                                    for="shortDescription2"
+                                                    class="form-label">Description:</label>
+                                                <textarea
+                                                    id="editor5"
+                                                    rows="6"
+                                                    class="form-control"
+                                                    name="projectdescription"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <!--  -->
+                                <div class="box-header with-border"
+                                    style="text-align: center;">
+                                    <h4 class="box-title">Key Skill</h4>
+
+                                </div>
+                                <br>
+                                <section>
+
+                                    <style>
+                                        /* styles.css */
+
+                                        .skills-container {
+                                            display: flex;
+                                            flex-direction: column;
+                                        }
+
+                                        .skill-component {
+                                            display: flex;
+                                            align-items: center;
+                                            margin-bottom: 10px;
+                                        }
+
+                                        .skill-input {
+                                            flex: 1;
+                                            padding: 8px;
+                                            margin-right: 10px;
+                                            border: 1px solid #ccc;
+                                            border-radius: 5px;
+                                        }
+
+                                        .add-skill-btn {
+                                            margin-top: 10px;
+                                            padding: 8px 16px;
+                                            background-color: #064b24;
+                                            color: #fff;
+                                            border: none;
+                                            border-radius: 5px;
+                                            cursor: pointer;
+                                        }
+
+                                        .add-skill-btn:hover {
+                                            background-color: #09b300;
+                                        }
+
+                                        .remove-skill-btn {
+                                            padding: 4px 10px;
+                                            background-color: #5b131a;
+                                            color: #fff;
+                                            border: none;
+                                            border-radius: 100%;
+                                            cursor: pointer;
+                                        }
+
+                                        .remove-skill-btn:hover {
+                                            background-color: #5c2329;
+                                        }
+
+                                        textarea:focus,
+                                        input:focus {
+                                            outline: none;
+                                        }
+                                    </style>
+                                    <div class="row">
+                                        <div class="col-xl-6"
+                                            style="padding: 10px;">
+                                            <div id="skillsContainer"
+                                                class="skills-container">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <span id="addSkillBtn"
+                                                class="add-skill-btn">Add
+                                                Skill</span>
+
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                    <script>
+                                        // script.js
+
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            const skillsContainer = document.getElementById('skillsContainer');
+                                            const addSkillBtn = document.getElementById('addSkillBtn');
+
+                                            // Function to create a new skill component
+                                            function createSkillComponent() {
+                                                const skillComponent = document.createElement('div');
+                                                skillComponent.classList.add('skill-component');
+
+                                                const input = document.createElement('input');
+                                                input.type = 'text';
+                                                input.classList.add('skill-input');
+                                                input.placeholder = 'Please Enter Your Skill';
+                                                input.name='skilstag'
+
+                                                const removeBtn = document.createElement('button');
+                                                removeBtn.classList.add('remove-skill-btn');
+                                                removeBtn.textContent = 'x';
+
+                                                // Event listener to remove the skill component
+                                                removeBtn.addEventListener('click', function () {
+                                                    skillComponent.remove();
+                                                });
+
+                                                skillComponent.appendChild(input);
+                                                skillComponent.appendChild(removeBtn);
+
+                                                skillsContainer.appendChild(skillComponent);
+                                            }
+
+                                            // Event listener for adding a skill component
+                                            addSkillBtn.addEventListener('click', function () {
+                                                createSkillComponent();
+                                            });
+                                        });
+
+                                    </script>
+
+                                </section>
+                                <button type="submit"
+                                    class="btn btn-success">Save &
+                                    Preview</button>
+
+                            </form>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+
+                </div>
+                <div class="col-xl-6 col-sm-12  background">
+
+                    <div class="column " style="border: 1px solid gray;">
+
+                        <div class="header-resume">
+                            <h1>{{data.name}}</h1>
+                            <p>{{data.jobtitle}}</p>
+                        </div>
+
+                        <div class="columns " style="padding-top: 3%;">
+                            <div class="column is-one-third"
+                                style="border-right: 1px solid gray;">
+                                <div class="leftside-resume">
+                                    <h2
+                                        style="padding-bottom: 10px;">Details</h2>
+                                    <div class="details">
+                                        <h2>Address</h2>
+                                        <p>{{data.address}} {{data.country}}
+                                            {{data.city}}</p>
+                                    </div>
+                                    <div class="details">
+                                        <h2>Phone</h2>
+                                        <p>{{data.phone}}</p>
+                                    </div>
+                                    <div class="details">
+                                        <h2>Email</h2>
+                                        <p>{{data.email}}</p>
+                                    </div>
+                                    <h2
+                                        style="padding-top: 10px;padding-bottom:10px">links</h2>
+
+                                    <div class="link-resume">
+                                        <a href>LinkedIn</a>
+                                        <a href>Dribbble</a>
+                                        <a href>Behance</a>
+                                        <a href>Facebook</a>
+                                    </div>
+                                    <h2
+                                        style="padding-top: 10px;padding-bottom:10px">skills</h2>
+                                    <div class="skil-resume">
+                                        <p>Figma</p>
+                                        <input type="range" name id value="40">
+                                    </div>
+                                    <div class="skil-resume">
+                                        <p>Sketch</p>
+                                        <input type="range" name id value="60">
+                                    </div>
+                                    <div class="skil-resume">
+                                        <p>Adobe Photoshop</p>
+                                        <input type="range" name id value="10">
+                                    </div>
+                                    <div class="skil-resume">
+                                        <p>Adobe Illustrator</p>
+                                        <input type="range" name id value="50">
+                                    </div>
+                                    <div class="skil-resume">
+                                        <p>Principle</p>
+                                        <input type="range" name id value="30">
+                                    </div>
+                                    <div class="skil-resume">
+                                        <p>Adobe XD</p>
+                                        <input type="range" name id value="70">
+                                    </div>
+                                    <h2
+                                        style="padding-top: 10px;padding-bottom:10px">Languages</h2>
+                                    <div class="skil-resume">
+                                        <p>English</p>
+                                        <input type="range" name id value="90">
+                                    </div>
+                                    <div class="skil-resume">
+                                        <p>Hindi</p>
+                                        <input type="range" name id value="80">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="column">
+                                <div class="rightside-resume">
+                                    <h2>profile</h2>
+                                    <p>
+                                        UX/UI specialist focused on designing
+                                        clean and functional projects
+                                        across all platforms and
+                                        devices in response to specific briefs
+                                        and problems, while always
+                                        maintaining a unique look
+                                        and feel. UX/UI specialist focused on
+                                        designing clean and functional
+                                        projects across all platforms and
+                                        devices in response to specific briefs
+                                        and problems, while always
+                                        maintaining a unique look
+                                        and feel.
+                                    </p>
+                                    <br>
+                                    <h2>experience</h2>
+
+                                    <div class="experience">
+                                        <h4>Uber</h4>
+                                        <h3>Product Designer</h3>
+                                        <p>Mar 2015 - Present</p>
+
+                                        <div style="padding:4px">
+                                            <ul style="list-style-type:circle;">
+                                                <li>Designed safety-focused
+                                                    experiences for Riders and
+                                                    Drivers
+                                                </li>
+                                                <li>Physical space problem
+                                                    solving and it’s interaction
+                                                    with the
+                                                    digital </li>
+                                                <li>Navigated organization to
+                                                    achieve operational
+                                                    improvements
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="experience">
+                                        <h4>Facebook</h4>
+                                        <h3>Product Designer</h3>
+                                        <p>Mar 2015 - Present</p>
+
+                                        <div style="padding:4px">
+                                            <ul style="list-style-type:circle;">
+                                                <li>Designed safety-focused
+                                                    experiences for Riders and
+                                                    Drivers
+                                                </li>
+                                                <li>Physical space problem
+                                                    solving and it’s interaction
+                                                    with the
+                                                    digital </li>
+                                                <li>Navigated organization to
+                                                    achieve operational
+                                                    improvements
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="experience">
+                                        <h4>Google Maps</h4>
+                                        <h3>UX/UI Design Intern</h3>
+                                        <p>June 2012 - Sep 2013</p>
+
+                                        <div style="padding:4px">
+                                            <ul style="list-style-type:circle;">
+                                                <li>Designed safety-focused
+                                                    experiences for Riders and
+                                                    Drivers
+                                                </li>
+                                                <li>Physical space problem
+                                                    solving and it’s interaction
+                                                    with the
+                                                    digital </li>
+                                                <li>Navigated organization to
+                                                    achieve operational
+                                                    improvements
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <h2 id="textToColor">Education</h2>
+
+                                    <div class="education">
+                                        <h2>{{education.ugname}}
+                                            {{education.uglocations}}</h2>
+                                        <p>{{education.ugdegree}}
+                                            {{education.ugfieldstudy}}
+                                            {{education.ugstartdate}}
+                                            {{education.ugenddate}}</p>
+                                        {{education.ugdescriptions | safe}}
+
+                                    </div>
+                                    <div class="education">
+                                        <h2>{{education.xiiname}}
+                                            {{education.xiilocations}}</h2>
+                                        <p>{{education.xiidegree}}
+                                            {{education.xiifieldstudy}}
+                                            {{education.xiistartdate}}
+                                            {{education.xiienddate}}</p>
+                                        {{education.xiidescriptions | safe}}
+
+                                    </div>
+                                    <div class="education">
+                                        <h2>{{education.xname}}
+                                            {{education.xlocations}}</h2>
+                                        <p>{{education.xdegree}}
+                                            {{education.xfieldstudy}}
+                                            {{education.xstartdate}}
+                                            {{education.xenddate}}</p>
+                                        {{education.xdescriptions | safe}}
+
+                                    </div>
+                                    <h2 id="textToColor">Projects</h2>
+
+                                    <div class="experience">
+                                        <h4>{{project.title}}</h4>
+                                        <h3>Description :</h3>
+                                        <p>{{project.descriptions | safe}}</p>
+
+                                        <div style="padding:4px">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end tempalte -->
+
+                </div>
+            </div>
+
+        </section>
+
+        <style>
+            .header-resume4 {
+                padding-bottom: 3%;
+                border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+                background: #533914;
+                color: white !important;
+
+                text-align: left;
+                padding: 20px;
+                margin: -12px;
+                padding-top: 20px;
+
+
+            }
+
+            .header-resume4 h1 {
+                font-size: 36px;
+                color: white !important;
+
+                font-family: Roboto;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 45px;
+                word-wrap: break-word
+            }
+
+            .header-resume4 p {
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                text-transform: capitalize;
+                letter-spacing: 0.20px;
+                word-wrap: break-word
+            }
+
+
+
+
+
+            .header-resume2 {
+                padding-bottom: 3%;
+                border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+                background: #145349;
+                color: white !important;
+
+                text-align: center;
+                margin: -12px;
+                padding-top: 20px;
+
+
+            }
+
+            .header-resume2 h1 {
+                color: white !important;
+
+                font-size: 36px;
+                font-family: Roboto;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 45px;
+                word-wrap: break-word
+            }
+
+            .header-resume2 p {
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                text-transform: capitalize;
+                letter-spacing: 0.20px;
+                word-wrap: break-word
+            }
+
+
+
+
+
+
+            .header-resume {
+                padding-bottom: 3%;
+                border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+
+
+            }
+
+            .header-resume h1 {
+                color: black;
+                font-size: 36px;
+                font-family: Roboto;
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 45px;
+                word-wrap: break-word
+            }
+
+            .header-resume p {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                text-transform: capitalize;
+                letter-spacing: 0.20px;
+                word-wrap: break-word
+            }
+
+            .leftside-resume {}
+
+            .leftside-resume h2 {
+
+                color: black;
+                font-size: 19px;
+                font-family: Roboto;
+                font-weight: 700;
+
+                text-transform: uppercase;
+                letter-spacing: 0.30px;
+                word-wrap: break-word
+            }
+
+            .rightside-resume {}
+
+            .rightside-resume h2 {
+                color: black;
+                font-size: 19px;
+                font-family: Roboto;
+                font-weight: 700;
+
+                text-transform: uppercase;
+                letter-spacing: 0.30px;
+                word-wrap: break-word
+            }
+
+            .rightside-resume p {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                word-wrap: break-word
+            }
+
+            .experience {
+                padding: 5px;
+            }
+
+            .experience h2 {
+                color: black;
+                font-size: 19px;
+                font-family: Roboto;
+                font-weight: 700;
+
+                text-transform: uppercase;
+                letter-spacing: 0.30px;
+                word-wrap: break-word
+            }
+
+            .experience h3 {
+                color: black;
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                letter-spacing: 0.09px;
+                word-wrap: break-word
+            }
+
+            .experience h4 {
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 700;
+                letter-spacing: 0.20px;
+                word-wrap: break-word
+            }
+
+            .experience p {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                line-height: 13px;
+                word-wrap: break-word
+            }
+
+            .experience ul li {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                padding: 3px;
+                line-height: 13px;
+                word-wrap: break-word
+            }
+
+            .education {
+                padding: 5px;
+            }
+
+            .education h2 {
+                color: black;
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 700;
+                letter-spacing: 0.20px;
+                word-wrap: break-word;
+                text-decoration: none;
+
+            }
+
+            .education p {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                letter-spacing: 0.09px;
+                word-wrap: break-word
+            }
+
+            .details {
+                padding-top: 0px;
+                padding-bottom: 0px;
+
+            }
+
+            .details h2 {
+                color: black;
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 700;
+                letter-spacing: 0.20px;
+                word-wrap: break-word;
+                text-decoration: none;
+            }
+
+            .details p {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                letter-spacing: 0.10px;
+                word-wrap: break-word
+            }
+
+            .link-resume {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                letter-spacing: 0.10px;
+                word-wrap: break-word
+            }
+
+            .link-resume a {
+                color: rgba(0, 0, 0, 0.70) !important;
+
+            }
+
+            .skil-resume p {
+                color: rgba(0, 0, 0, 0.70);
+                font-size: 13px;
+                font-family: Roboto;
+                font-weight: 400;
+                letter-spacing: 0.09px;
+                word-wrap: break-word
+            }
+        </style>
+
+        <script>
+
+            //jQuery time
+            var current_fs, next_fs, previous_fs; //fieldsets
+            var left, opacity, scale; //fieldset properties which we will animate
+            var animating; //flag to prevent quick multi-click glitches
+
+            $(".next").click(function () {
+                if (animating) return false;
+                animating = true;
+
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+
+                //activate next step on progressbar using the index of next_fs
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({ opacity: 0 }, {
+                    step: function (now, mx) {
+                        //as the opacity of current_fs reduces to 0 - stored in "now"
+                        //1. scale current_fs down to 80%
+                        scale = 1 - (1 - now) * 0.2;
+                        //2. bring next_fs from the right(50%)
+                        left = (now * 50) + "%";
+                        //3. increase opacity of next_fs to 1 as it moves in
+                        opacity = 1 - now;
+                        current_fs.css({
+                            'transform': 'scale(' + scale + ')',
+                            'position': 'absolute'
+                        });
+                        next_fs.css({ 'left': left, 'opacity': opacity });
+                    },
+                    duration: 800,
+                    complete: function () {
+                        current_fs.hide();
+                        animating = false;
+                    },
+                    //this comes from the custom easing plugin
+                    easing: 'easeInOutBack'
+                });
+            });
+
+            $(".previous").click(function () {
+                if (animating) return false;
+                animating = true;
+
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+
+                //de-activate current step on progressbar
+                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+                //show the previous fieldset
+                previous_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({ opacity: 0 }, {
+                    step: function (now, mx) {
+                        //as the opacity of current_fs reduces to 0 - stored in "now"
+                        //1. scale previous_fs from 80% to 100%
+                        scale = 0.8 + (1 - now) * 0.2;
+                        //2. take current_fs to the right(50%) - from 0%
+                        left = ((1 - now) * 50) + "%";
+                        //3. increase opacity of previous_fs to 1 as it moves in
+                        opacity = 1 - now;
+                        current_fs.css({ 'left': left });
+                        previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+                    },
+                    duration: 800,
+                    complete: function () {
+                        current_fs.hide();
+                        animating = false;
+                    },
+                    //this comes from the custom easing plugin
+                    easing: 'easeInOutBack'
+                });
+            });
+
+
+        </script>
+        <script src="{% static 'resume/script.js'%}"></script>
+
+        <!-- html2 pdf -->
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script>
+            window.jsPDF = window.jspdf.jsPDF;
+            var docPDF = new jsPDF();
+
+            function downloadPDF(invoiceNo) {
+
+                var elementHTML = document.querySelector("#resume");
+                docPDF.html(elementHTML, {
+                    callback: function (docPDF) {
+                        docPDF.save("sakthi" + '.pdf');
+                    },
+                    x: 15,
+                    y: 15,
+                    width: 170,
+                    windowWidth: 650
+                });
+            }
+        </script>
+
+        <script>
+            function sentData() {
+
+                var data1 = ('#jobtitle').val();
+                var data2 = ('#fullName').val();
+
+                var data3 = ('#Email').val();
+                var data4 = $('#Phone').val();
+                var data5 = $('#Country').val();
+                var data6 = $('#city').val();
+                var data7 = $('#Address').val();
+                let csrftoken = '{{ csrf_token }}'
+
+                $.ajax({
+                    type: 'POST',
+                    headers: { 'X-CSRFToken': csrftoken },
+                    url: "{% url 'resume' %}",  // Use the URL from your Django urls.py
+                    contentType: 'application/json;charset=UTF-8',
+                    data: JSON.stringify({
+                        'data1': data1,
+                        'data2': data2,
+                        'data3': data3,
+                        'data4': data4,
+                        'data5': data5,
+                        'data6': data6,
+                        'data7': data7,
+                    }),
+                    success: function (response) {
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        console.error(error);
+                    }
+                });
+            }
+        </script>
+
+        <script
+            src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+            ClassicEditor
+            .create( document.querySelector( '#editor2' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+            ClassicEditor
+            .create( document.querySelector( '#editor3' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+            ClassicEditor
+            .create( document.querySelector( '#editor1' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+            ClassicEditor
+            .create( document.querySelector( '#editor5' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+        </script>
+
+    </div>
+</div>
+
+{% endblock content %}

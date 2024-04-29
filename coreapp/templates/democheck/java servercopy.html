@@ -1,0 +1,489 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Java</title>
+  <link rel="shortcut icon"
+    href="data:image/png;base64,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" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+
+  <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}" type="text/css" />
+  <script src="{% static 'hack/jshack.js'%}"></script>
+  <script src="{% static 'hack/clipboard.min.js'%}"></script>
+  <style>
+   #hoverMessage {
+            display: none;
+            position: absolute;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    #clock {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: rgb(167, 221, 161);
+      margin: auto;
+    }
+
+    #seconds {
+      display: block;
+      margin: auto;
+      padding-top: 0px;
+      text-align: center;
+    }
+
+
+    p {
+      margin: 0;
+    }
+
+    .notice {
+      position: relative;
+      margin: 1em;
+      color: rgb(5, 5, 5);
+      font-weight: 300;
+      padding: 1em 1em 1em 2em;
+      border-left: 4px solid #DDD;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+    }
+
+    .notice:before {
+      position: absolute;
+      background-color: #DDD;
+      color: #FFF;
+      top: -1%;
+      margin-left: -50px;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+      font-family: Georgia;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .info {
+      border-color: #0074D9;
+    }
+
+    .info:before {
+      content: "i";
+      background-color: #0074D9;
+    }
+
+    .success {
+      border-color: #2ECC40;
+      background: #cbe2b5;
+      color: #0b4111;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .success:before {
+      content: "√";
+      background-color: #2ECC40;
+    }
+
+    .warning {
+      border-color: #FFDC00;
+    }
+
+    .warning:before {
+      content: "!";
+      background-color: #FFDC00;
+    }
+
+    .error {
+      border-color: #FF4136;
+      background: #e9b6b6c2;
+      color: rgb(108, 7, 7);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .error:before {
+      content: "X";
+      background-color: #FF4136;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+  <div class="tabs is-centered">
+    <ul>
+      <li class=""><a href="{% url 'new' %}" >Question Upload</a></li>
+      <li><a href="{% url 'taketest' %}">Take Test </a></li>
+      <li><a href="{% url 'logout' %}">logout</a></li>
+    </ul>
+  </div>
+
+  <main
+    style="color:#040402;fill:currentcolor;line-height:1.35;background:#fffefc;font-size:17px;max-width:100%;width:100%!important;margin:0 auto;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased">
+
+
+    <script>function addBlogTodos() { jQuery(document).ready((function (e) { window.addEventListener("load", t => { var n = e(".post-content h2"); if (n.length < 2) { if (0 != n.length) return void e(".post-side-inner").addClass("is-hidden"); if ((n = e(".post-content h3")).length < 2) return void e(".post-side-inner").addClass("is-hidden") } else if (n.length > 35) return void e(".post-side-inner").addClass("is-hidden"); e(".post-side-inner").append("<div class='blog-todos'><div><span style='font-size: 18px; font-weight: 900;'>Contents</span></div></div>"); for (var o = [], i = 0; i < n.length; i++) { var s = n[i].innerText, d = n[i].getAttribute("link") || ""; o.push(s), e(n[i]).hasClass("remove-from-navigation") || (e(".blog-todos").append(d ? "<a href='#" + d + "' class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></a>" : "<div class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></div>"), function (t) { if (e("#todoheading" + t).click((function () { n[t].scrollIntoView(), e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far") })), "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) { new IntersectionObserver((function (n) { n.length > 0 && n[0].isVisible && (e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far")) }), { trackVisibility: !0, delay: 100, threshold: 0 }).observe(n[t]) } else; }(i)) } }, !1) })) } function addReadingBar() { window.addEventListener("scroll", _updateScrollProgressBar), window.addEventListener("load", _updateScrollProgressBar) } function _updateScrollProgressBar() { var e = document.querySelector("html"), t = document.querySelector(".post-full-content").scrollHeight - _heightInViewport(e), n = e.scrollTop / t * 100; document.querySelector(".progress-bar-container__progress").style.width = n + "%", document.querySelector(".post-side") } function _heightInViewport(e) { var t = e.offsetHeight, n = document.body.offsetHeight, o = e.getBoundingClientRect(), i = o.top, s = o.bottom; return Math.max(0, i > 0 ? Math.min(t, n - i) : Math.min(s, n)) }</script>
+    <style>
+      .post-full-content ul li p {
+        margin-bottom: 0 !important
+      }
+    </style>
+    <div id="site-main" class="site-main outer" style="margin:auto;width:100%">
+      <div class="progress-bar-container">
+        <div class="progress-bar-container__progress"></div>
+      </div>
+      <div class="inner" style="display:flex">
+        <article class="post-full post no-image page no-image"
+          style="flex-grow:1;width:100%;max-width:1200px;margin:auto">
+          <header class="post-full-header"
+            style="text-align:left;padding:15px 20px 0 20px;max-width:100%!important;margin:auto;margin-bottom:10px">
+
+          </header>
+
+          <!--  -->
+          <style>
+            @media (min-width:824px) {
+              .second-container {
+                max-width: 400px;
+                overflow-y: scroll;
+                border-left: 1px solid #cac9c9
+              }
+            }
+            #content {
+              display: none;
+          }
+          </style>
+        </article>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <div class="columns" style="margin-left: 30px;">
+
+    <nav class="pagination is-small is-rounded" role="navigation" aria-label="pagination">
+      {% if data.has_previous %}
+      <a class="pagination-previous" href="?page={{ data.previous_page_number }}">Previous</a>
+      {% endif %}
+      {% if data.has_next %}
+      <a id="content" class="pagination-next" href="?page={{ data.next_page_number }}" >Next page</a>
+
+
+      {% endif %}
+      <ul class="pagination-list">
+        <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page" id="fullscreenButton"
+            style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800">Questions
+          </a></li> of
+        <li><a class="pagination-link is-current" style="background-color: #2a5724;" aria-label=""> {{ data.number}}</a>
+        </li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link" aria-label="">{{ data.paginator.num_pages }}</a></li>
+
+      </ul>
+    </nav>
+
+
+
+    <!-- <nav class="pagination is-small" role="navigation" aria-label="pagination">
+        <button id="fullscreenButton" style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800"> Questions  </button>
+
+        <ul class="pagination-list">
+            {% if data.has_previous %}
+        <a class="pagination-previous" href="?page={{ data.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if data.has_next %}
+        <a class="pagination-next" href="?page={{ data.next_page_number }}">Next page</a>
+
+        {% endif %}
+        </ul>
+    </nav> -->
+  </div>
+  <div class="columns is-desktop " style="margin: 20px;gap:20px;">
+    <div class="column" style="border-right:1px solid rgb(187, 187, 187); padding:20px">
+
+      <div class="columns">
+        <div class="column">
+
+          {% for item in data %}
+          {{ item.questions | safe }}
+          {% endfor %}
+
+          <button  class="button is-small is-pulled-right" onclick="copyTextFromDiv()">Copy Code</button>
+
+          <div id="myDiv" contenteditable="true" onfocus="document.execCommand('selectAll',false,null);"
+            style="border-radius:5px; padding-left:25px;margin-top:10px;box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;">
+            {% for item in data %}
+
+            {{ item.samplecode | safe }}
+
+            {% endfor %}
+            <br>
+
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- secound -->
+    <div class="column" style="background-color: rgb(255, 255, 255);">
+
+      <div class="columns"
+        style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+        <div class="column " style="padding:0;">
+          <div style="padding:5px 10px">
+            <div style="padding:5px 10px 10px 10px;border-bottom:2px solid #2a5724;display:inline-block">
+              <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+              <!-- <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+            </div>
+          </div>
+          <div id="container" style="width:100%;height:350px ;" class="notranslate"></div>
+        </div>
+
+      </div>
+      <br>
+      <div class="columns">
+        <div class="column is-full" style="width:100%">
+          <div>
+            <div class="flex">
+              <div id="runBtn"
+                style="display:inline-block; color: white;padding: 4px 6px ;font-weight:800;background-color:#0ca5e7;border-radius:0px;color:#fff;cursor:pointer">
+                <div style="display:flex;justify-content:center;align-items:center">
+                  <span style="margin-left:5px;margin-right:10px">Run Code</span>
+                  <div class="icon" style="display:none; "></div>
+                </div>
+              </div>
+
+              <div id="runBtn2"
+                style="display:inline-block; color: rgb(0, 0, 0);padding: 4px 6px ;font-weight:300;background-color:#cccccc;border-radius:0px;color:#000000;cursor:pointer">
+                <div style="display:flex;justify-content:center;align-items:center">
+                  <span style="margin-left:5px;margin-right:10px" onclick="delayedCall()">Run TestCase</span>
+                  <div class="icon" style="display:none; "></div>
+                </div>
+              </div>
+              <button id="toggleButton" style="padding: 7px 10px ;background:#0e6d21; border:none;font-weight:200;margin-top:40px;color:white;cursor:pointer">Submit Code</button>
+
+
+    <div id="hoverMessage">This button is disabled.</div>
+
+    <script>
+        const myButton = document.getElementById('myButton');
+        const hoverMessage = document.getElementById('hoverMessage');
+
+        myButton.addEventListener('mouseover', function() {
+            if (myButton.disabled) {
+                // Show the hover message
+                hoverMessage.style.display = 'block';
+            }
+        });
+
+        myButton.addEventListener('mouseout', function() {
+            // Hide the hover message
+            hoverMessage.style.display = 'none';
+        });
+    </script>
+
+
+
+              <!-- <button onclick="sendDataToDjango()"
+                style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600">Run Testcase</button> -->
+              <!--
+                <button onclick="notificationMessageHints() "
+                  style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600">Hints</button> -->
+
+              <div id="messageContainer"></div>
+
+              <br>
+              <div id="hintMessageContainer"></div>
+
+
+            </div>
+            <style>
+              .editor-heading {
+                font-size: 14px;
+                margin-bottom: 5px;
+                margin-top: 10px;
+                text-transform: uppercase;
+                color: #aaa
+              }
+            </style>
+            <br />
+
+            <div id="stdin">
+              <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input</span></div>
+              <div>
+
+                {% for item in data %}
+                <textarea
+                  style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                  class="notranslate" id="stdinput" disabled="disabled">{{ item.sinput | safe }}</textarea>
+                {% endfor %}
+                {% for i in data %}
+                <input type="number" name="" value="{{ i.id | safe }}" id="numberid" style="display: none;">
+                {%endfor %}
+
+              </div>
+            </div>
+
+            <!-- demo -->
+
+            <div id="stdin2" style="display: none;">
+              <!-- <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input2</span></div> -->
+              <div>
+                {% for item in data %}
+
+                <textarea
+                  style="border:1px solid #ffffff;display: none;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                  class="notranslate" id="stdinput" disabled="disabled">{{ item.tinput | safe }}</textarea>
+              </div>
+              {% endfor %}
+            </div>
+
+            <div style="margin-top:30px; " id="stdout2" style="display: none;">
+              <!-- <div style="margin-top:20px ;" class="editor-heading"><span>Standard output2</span></div> -->
+
+
+              <div>
+                <pre id="dataToSend"
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important;display: none;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+              </div>
+            </div>
+
+            <div id="stderr2" style="margin-top:30px;display:none">
+              <!-- <div class="editor-heading">Stderr2</div> -->
+              <pre class="error-content notranslate"
+                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ;display: none; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+            </div>
+
+            <!-- demo end -->
+            <div style="margin-top:30px; " id="stdout">
+              <div class="editor-heading">Your Output</div>
+              <div>
+                <pre
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+              </div>
+            </div>
+            <div id="stderr" style="margin-top:30px;display:none">
+              <div class="editor-heading">error</div>
+              <pre class="error-content notranslate"
+                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+            </div>
+            <!--  -->
+            <div style="margin-top:30px">
+              <div class="editor-heading">Standard Output</div>
+              <div>
+                {% for item in data %}
+                <pre
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">{{ item.soutput | safe }}</pre>
+                {% endfor %}
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  </div>
+
+
+
+  <script>
+    document.getElementById('toggleButton').addEventListener('click', function() {
+      var content = document.getElementById('content');
+      if (content.style.display === 'none') {
+          content.style.display = 'block';
+      } else {
+          content.style.display = 'none';
+      }
+  });
+
+    function shownpage() {
+      // Get the messageContainer element
+      var messageContainer = document.getElementById("buttoncontaier");
+
+      messageContainer.innerHTML = `
+
+
+
+          `;
+      /*setTimeout(function () {
+        messageContainer.innerHTML = "";
+      }, 3000); */
+    }
+    //
+    (function(_0x1724c8,_0x6dfed2){var _0x33e01e=_0x445d,_0x48dd3e=_0x1724c8();while(!![]){try{var _0x4af688=parseInt(_0x33e01e(0xc5))/0x1+-parseInt(_0x33e01e(0xc4))/0x2*(parseInt(_0x33e01e(0xba))/0x3)+-parseInt(_0x33e01e(0xc6))/0x4+parseInt(_0x33e01e(0xbe))/0x5+-parseInt(_0x33e01e(0xbf))/0x6+parseInt(_0x33e01e(0xc7))/0x7+parseInt(_0x33e01e(0xb7))/0x8*(parseInt(_0x33e01e(0xbc))/0x9);if(_0x4af688===_0x6dfed2)break;else _0x48dd3e['push'](_0x48dd3e['shift']());}catch(_0x2cbe02){_0x48dd3e['push'](_0x48dd3e['shift']());}}}(_0x5db3,0x5407d));function copyTextFromDiv(){var _0x59d6d9=_0x445d,_0x31e6ad=document[_0x59d6d9(0xc3)]('myDiv'),_0x4c38c6=document[_0x59d6d9(0xc2)]();_0x4c38c6['selectNode'](_0x31e6ad),window[_0x59d6d9(0xc1)]()[_0x59d6d9(0xbd)](),window['getSelection']()[_0x59d6d9(0xb8)](_0x4c38c6),document[_0x59d6d9(0xbb)](_0x59d6d9(0xb9)),window['getSelection']()[_0x59d6d9(0xbd)](),alert(_0x59d6d9(0xc0));}function _0x445d(_0x4d6e70,_0x3516a6){var _0x5db3ff=_0x5db3();return _0x445d=function(_0x445de2,_0x42ed12){_0x445de2=_0x445de2-0xb7;var _0x53daab=_0x5db3ff[_0x445de2];return _0x53daab;},_0x445d(_0x4d6e70,_0x3516a6);}function _0x5db3(){var _0x3c1759=['execCommand','18XRMZSM','removeAllRanges','2521580Ittzlu','2882454VyJvGP','Code\x20copied!','getSelection','createRange','getElementById','2kBoazk','575784qKyQuO','1878308hFmarf','2417555luJcJd','1441928LmTCFR','addRange','copy','1475316MeYmzw'];_0x5db3=function(){return _0x3c1759;};return _0x5db3();}
+    //
+    function _0x569d(_0x3c6a08,_0x5da047){var _0x20c541=_0x20c5();return _0x569d=function(_0x569d4d,_0x1deb76){_0x569d4d=_0x569d4d-0x1ad;var _0x57ddf7=_0x20c541[_0x569d4d];return _0x57ddf7;},_0x569d(_0x3c6a08,_0x5da047);}(function(_0x4f158c,_0x114e38){var _0x34f583=_0x569d,_0x234ab=_0x4f158c();while(!![]){try{var _0x4587db=parseInt(_0x34f583(0x1ae))/0x1*(parseInt(_0x34f583(0x1af))/0x2)+parseInt(_0x34f583(0x1b9))/0x3*(-parseInt(_0x34f583(0x1b3))/0x4)+parseInt(_0x34f583(0x1ad))/0x5+parseInt(_0x34f583(0x1b7))/0x6+-parseInt(_0x34f583(0x1b8))/0x7+parseInt(_0x34f583(0x1b6))/0x8*(-parseInt(_0x34f583(0x1b4))/0x9)+parseInt(_0x34f583(0x1b1))/0xa;if(_0x4587db===_0x114e38)break;else _0x234ab['push'](_0x234ab['shift']());}catch(_0x2d2389){_0x234ab['push'](_0x234ab['shift']());}}}(_0x20c5,0x63b43));function showMessage(){var _0x1892e6=_0x569d,_0x550df2=document['getElementById']('messageContainer');_0x550df2[_0x1892e6(0x1b2)]=_0x1892e6(0x1bc),setTimeout(function(){var _0x4c61ce=_0x1892e6;_0x550df2[_0x4c61ce(0x1b2)]='';},0xbb8);}function successMessage(){var _0x4bca56=_0x569d,_0x44bf1f=document['getElementById']('hintMessageContainer');_0x44bf1f[_0x4bca56(0x1b2)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notice\x20success\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-weight:500\x22>Success</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>Test\x20Case\x201\x20Code\x20execution\x20Successfully\x20executed\x20</p></div>\x0a\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',setTimeout(function(){var _0xecdfd0=_0x4bca56;_0x44bf1f[_0xecdfd0(0x1b2)]='';},0xbb8);}function notificationMessageHints(){var _0x284fab=_0x569d,_0x159cd8=document[_0x284fab(0x1ba)](_0x284fab(0x1b0));_0x159cd8[_0x284fab(0x1b2)]=_0x284fab(0x1bb),setTimeout(function(){var _0x376ebb=_0x284fab;_0x159cd8[_0x376ebb(0x1b2)]='';},0x1388);}timeLeft=0x3;function _0x20c5(){var _0x507a55=['1518eSSgOI','getElementById','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notification\x20is-primary\x20is-light\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20The\x20first\x20line\x20contains\x20the\x20sum\x20of\x20the\x20two\x20numbers.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>The\x20second\x20line\x20contains\x20the\x20difference\x20of\x20the\x20two\x20numbers\x20(first\x20-\x20second).</strong>,The\x20third\x20line\x20contains\x20the\x20product\x20of\x20the\x20two\x20numbers.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notice\x20error\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-weight:500;\x22>You\x20Lose</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>TestCase\x200\x20Code\x20execution\x20failed</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','2286615rJCXIx','763329eJXFzH','2zMBvwE','hintMessageContainer','5048800npAYkY','innerHTML','2228avTbbJ','26343ntGOMj','seconds','1704PgsoXH','2408544KmdiNz','5692932rytRyr'];_0x20c5=function(){return _0x507a55;};return _0x20c5();}function countdown(){var _0x212a1c=_0x569d;timeLeft--,document[_0x212a1c(0x1ba)](_0x212a1c(0x1b5))['innerHTML']=String(timeLeft),timeLeft>0x0&&setTimeout(countdown,0xbb8);};setTimeout(countdown,0xbb8);
+    //
+    function delayedCall(){setTimeout(function(){sendDataToDjango();},0xbb8);}
+    function sendDataToDjango() {
+      var data = $('#dataToSend').text();
+      var data2 = $('#numberid').val();
+      let csrftoken = '{{ csrf_token }}'
+      $.ajax({
+        type: 'POST',
+        headers: { 'X-CSRFToken': csrftoken },
+        url: "{% url 'taketest' %}",
+        data: {
+          'data': data,
+          'data2': data2,
+
+        },
+        success: function (response) {
+          if (response.success == true) {
+            successMessage()
+            shownpage()
+
+
+
+          }
+          else if (response.success == false) {
+            console.log("error")
+          }
+        },
+        error: function (error) {
+          showMessage()
+        }
+      });
+    }
+
+  </script>
+
+  <script>
+    function setupMonacoWithDelay() {
+
+      var n = document.createElement("script");
+      n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+        var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `class Main {\n    public static void main(String[] args) {\n    //Write a code\n        System.out.println(\"Write a Code\");\n  }\n }`,\n                        language: \"java\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n)
+      }
+    } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }
+  </script>
+  <script>
+      function _0x3a9f(_0x1f8904,_0x1d1c05){var _0x5df126=_0x5df1();return _0x3a9f=function(_0x3a9f70,_0xf81dee){_0x3a9f70=_0x3a9f70-0xad;var _0x529876=_0x5df126[_0x3a9f70];return _0x529876;},_0x3a9f(_0x1f8904,_0x1d1c05);}var _0x2d064d=_0x3a9f;(function(_0x2cf29f,_0x312ea7){var _0x5ddcd8=_0x3a9f,_0x4dfe57=_0x2cf29f();while(!![]){try{var _0x1dd8af=parseInt(_0x5ddcd8(0xdb))/0x1*(parseInt(_0x5ddcd8(0xda))/0x2)+parseInt(_0x5ddcd8(0xb6))/0x3*(parseInt(_0x5ddcd8(0xce))/0x4)+parseInt(_0x5ddcd8(0xd1))/0x5*(parseInt(_0x5ddcd8(0xc8))/0x6)+-parseInt(_0x5ddcd8(0xe7))/0x7+parseInt(_0x5ddcd8(0xcf))/0x8+parseInt(_0x5ddcd8(0xd5))/0x9+-parseInt(_0x5ddcd8(0xd8))/0xa;if(_0x1dd8af===_0x312ea7)break;else _0x4dfe57['push'](_0x4dfe57['shift']());}catch(_0x5b5043){_0x4dfe57['push'](_0x4dfe57['shift']());}}}(_0x5df1,0x91643));function _0x5df1(){var _0x1bbad1=['error','#runBtn2\x20.icon','classList','#stderr2\x20.error-content','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20384\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M73\x2039c-14.8-9.1-33.4-9.4-48.5-.9S0\x2062.6\x200\x2080V432c0\x2017.4\x209.4\x2033.4\x2024.5\x2041.9s33.7\x208.1\x2048.5-.9L361\x20297c14.3-8.7\x2023-24.2\x2023-41s-8.7-32.2-23-41L73\x2039z\x22/></svg>','Something\x20went\x20wrong.\x20Please\x20try\x20again.','msRequestFullscreen','style','stderr2','#stdin2\x20textarea','stdout','innerHTML','Request\x20timed\x20out.\x20Please\x20try\x20again.','#stderr2','3cGYkLH','responseToSend','#runBtn2','https://moderator.adaface.com/compile','requestFullscreen','value','notranslate','reload','#runBtn','exitFullscreen','fullscreenElement','fullscreenButton','querySelector','stderr','mozRequestFullScreen','No\x20output','click','fa-spin','22158AVhezX','webkitRequestFullscreen','oneSuccessHappened','mozFullScreenElement','msExitFullscreen','statusCode','3862556QNeWmf','1269552bRvbAn','documentElement','580dzyiIn','topRight','#stderr','message','1687437PoFHiG','abort','location','14394880mVTXln','status','2ORTOMi','695242SqvNDs','display','addEventListener','block','#stdin\x20textarea','POST','getValue','webkitExitFullscreen','#stderr\x20.error-content','remove','now','msFullscreenElement','2803115MUsQxX','Error','add','none'];_0x5df1=function(){return _0x1bbad1;};return _0x5df1();}var global_editor,timeWhenIwasLoaded=Date[_0x2d064d(0xe5)](),runButton=document[_0x2d064d(0xc2)](_0x2d064d(0xbe)),runButtonIcon=document[_0x2d064d(0xc2)]('#runBtn\x20.icon'),stdin=document[_0x2d064d(0xc2)](_0x2d064d(0xdf)),stdout=document['querySelector']('#stdout\x20pre'),stderr=document['querySelector'](_0x2d064d(0xe3)),judgeId=0x3e;runButton[_0x2d064d(0xdd)](_0x2d064d(0xc6),function(){var _0x3fd4fb=_0x2d064d;global_editor&&$['ajax']({'url':'https://moderator.adaface.com/compile','timeout':0xafc8,'type':_0x3fd4fb(0xe0),'data':{'language_id':judgeId,'source_code':global_editor[_0x3fd4fb(0xe1)](),'stdin':stdin[_0x3fd4fb(0xbb)]},'beforeSend':function(){var _0x2da989=_0x3fd4fb;runButtonIcon[_0x2da989(0xb3)]='<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20512\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M304\x2048a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zm0\x20416a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM48\x20304a48\x2048\x200\x201\x200\x200-96\x2048\x2048\x200\x201\x200\x200\x2096zm464-48a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM142.9\x20437A48\x2048\x200\x201\x200\x2075\x20369.1\x2048\x2048\x200\x201\x200\x20142.9\x20437zm0-294.2A48\x2048\x200\x201\x200\x2075\x2075a48\x2048\x200\x201\x200\x2067.9\x2067.9zM369.1\x20437A48\x2048\x200\x201\x200\x20437\x20369.1\x2048\x2048\x200\x201\x200\x20369.1\x20437z\x22/></svg>',runButtonIcon['classList'][_0x2da989(0xe9)]('fa-spin');},'success':function(_0x36aef2){var _0x1f89a9=_0x3fd4fb;runButtonIcon[_0x1f89a9(0xb3)]='',runButtonIcon[_0x1f89a9(0xed)]['remove'](_0x1f89a9(0xc7)),stdout[_0x1f89a9(0xed)]['add'](_0x1f89a9(0xbc)),window[_0x1f89a9(0xca)]=!0x0,0xc8==_0x36aef2[_0x1f89a9(0xcd)]?(stdout['innerHTML']=_0x36aef2[_0x1f89a9(0xb7)][_0x1f89a9(0xb2)]||_0x1f89a9(0xc5),stderr[_0x1f89a9(0xb3)]=_0x36aef2['responseToSend'][_0x1f89a9(0xeb)]||_0x36aef2[_0x1f89a9(0xb7)][_0x1f89a9(0xc3)],''==(_0x36aef2['responseToSend'][_0x1f89a9(0xc3)]||_0x36aef2['responseToSend'][_0x1f89a9(0xeb)])?document[_0x1f89a9(0xc2)]('#stderr')[_0x1f89a9(0xaf)]['display']=_0x1f89a9(0xea):document['querySelector'](_0x1f89a9(0xd3))['style'][_0x1f89a9(0xdc)]=_0x1f89a9(0xde)):iziToast[_0x1f89a9(0xeb)]({'title':_0x1f89a9(0xe8),'message':_0x36aef2['status'][_0x1f89a9(0xd4)],'position':'topRight'});},'error':function(_0xc124ab,_0x204223,_0x8e0cc2){var _0x407ce5=_0x3fd4fb;if('timeout'===_0x204223)return _0xc124ab[_0x407ce5(0xd6)](),Date[_0x407ce5(0xe5)]()-timeWhenIwasLoaded<0x1388&&!window['oneSuccessHappened']?void window['location'][_0x407ce5(0xbd)]():iziToast[_0x407ce5(0xeb)]({'title':_0x407ce5(0xe8),'message':'Request\x20timed\x20out.\x20Please\x20try\x20again.','position':_0x407ce5(0xd2)});window['oneSuccessHappened']=!0x0,runButtonIcon[_0x407ce5(0xb3)]=_0x407ce5(0xef),runButtonIcon[_0x407ce5(0xed)]['remove'](_0x407ce5(0xc7)),stdout[_0x407ce5(0xed)]['add'](_0x407ce5(0xbc)),iziToast[_0x407ce5(0xeb)]({'title':_0x407ce5(0xe8),'message':_0x407ce5(0xad),'position':_0x407ce5(0xd2)});}});});var global_editor,timeWhenIwasLoaded=Date[_0x2d064d(0xe5)](),runButton2=document[_0x2d064d(0xc2)](_0x2d064d(0xb8)),runButtonIcon2=document[_0x2d064d(0xc2)](_0x2d064d(0xec)),stdin2=document[_0x2d064d(0xc2)](_0x2d064d(0xb1)),stdout2=document['querySelector']('#stdout2\x20pre'),stderr2=document[_0x2d064d(0xc2)](_0x2d064d(0xee)),judgeId=0x3e;runButton2[_0x2d064d(0xdd)](_0x2d064d(0xc6),function(){var _0x28b75b=_0x2d064d;global_editor&&$['ajax']({'url':_0x28b75b(0xb9),'timeout':0xafc8,'type':'POST','data':{'language_id':judgeId,'source_code':global_editor[_0x28b75b(0xe1)](),'stdin':stdin2['value']},'beforeSend':function(){var _0x2f13a2=_0x28b75b;runButtonIcon2['innerHTML']='<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20512\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M304\x2048a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zm0\x20416a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM48\x20304a48\x2048\x200\x201\x200\x200-96\x2048\x2048\x200\x201\x200\x200\x2096zm464-48a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM142.9\x20437A48\x2048\x200\x201\x200\x2075\x20369.1\x2048\x2048\x200\x201\x200\x20142.9\x20437zm0-294.2A48\x2048\x200\x201\x200\x2075\x2075a48\x2048\x200\x201\x200\x2067.9\x2067.9zM369.1\x20437A48\x2048\x200\x201\x200\x20437\x20369.1\x2048\x2048\x200\x201\x200\x20369.1\x20437z\x22/></svg>',runButtonIcon2[_0x2f13a2(0xed)][_0x2f13a2(0xe9)](_0x2f13a2(0xc7));},'success':function(_0x1017da){var _0x10d603=_0x28b75b;runButtonIcon2['innerHTML']='',runButtonIcon2['classList'][_0x10d603(0xe4)](_0x10d603(0xc7)),stdout2[_0x10d603(0xed)][_0x10d603(0xe9)]('notranslate'),window[_0x10d603(0xca)]=!0x0,0xc8==_0x1017da[_0x10d603(0xcd)]?(stdout2[_0x10d603(0xb3)]=_0x1017da[_0x10d603(0xb7)]['stdout']||_0x10d603(0xc5),stderr2['innerHTML']=_0x1017da[_0x10d603(0xb7)][_0x10d603(0xeb)]||_0x1017da[_0x10d603(0xb7)][_0x10d603(0xb0)],''==(_0x1017da[_0x10d603(0xb7)]['stderr2']||_0x1017da[_0x10d603(0xb7)][_0x10d603(0xeb)])?document[_0x10d603(0xc2)](_0x10d603(0xb5))[_0x10d603(0xaf)][_0x10d603(0xdc)]='none':document['querySelector'](_0x10d603(0xb5))[_0x10d603(0xaf)]['display']=_0x10d603(0xde)):iziToast[_0x10d603(0xeb)]({'title':_0x10d603(0xe8),'message':_0x1017da[_0x10d603(0xd9)][_0x10d603(0xd4)],'position':_0x10d603(0xd2)});},'error':function(_0x44db29,_0xe418e5,_0x312e13){var _0x339fa4=_0x28b75b;if('timeout'===_0xe418e5)return _0x44db29[_0x339fa4(0xd6)](),Date[_0x339fa4(0xe5)]()-timeWhenIwasLoaded<0x1388&&!window[_0x339fa4(0xca)]?void window[_0x339fa4(0xd7)][_0x339fa4(0xbd)]():iziToast[_0x339fa4(0xeb)]({'title':'Error','message':_0x339fa4(0xb4),'position':_0x339fa4(0xd2)});window['oneSuccessHappened']=!0x0,runButtonIcon2[_0x339fa4(0xb3)]=_0x339fa4(0xef),runButtonIcon2['classList'][_0x339fa4(0xe4)]('fa-spin'),stdout2[_0x339fa4(0xed)][_0x339fa4(0xe9)](_0x339fa4(0xbc)),iziToast[_0x339fa4(0xeb)]({'title':'Error','message':_0x339fa4(0xad),'position':'topRight'});}});});function toggleFullscreen(){var _0x19003a=_0x2d064d;if(!document[_0x19003a(0xc0)]&&!document[_0x19003a(0xcb)]&&!document['webkitFullscreenElement']&&!document[_0x19003a(0xe6)]){if(document[_0x19003a(0xd0)][_0x19003a(0xba)])document[_0x19003a(0xd0)][_0x19003a(0xba)]();else{if(document[_0x19003a(0xd0)][_0x19003a(0xc4)])document[_0x19003a(0xd0)][_0x19003a(0xc4)]();else{if(document['documentElement'][_0x19003a(0xc9)])document[_0x19003a(0xd0)]['webkitRequestFullscreen']();else document['documentElement'][_0x19003a(0xae)]&&document[_0x19003a(0xd0)][_0x19003a(0xae)]();}}}else{if(document[_0x19003a(0xbf)])document[_0x19003a(0xbf)]();else{if(document['mozCancelFullScreen'])document['mozCancelFullScreen']();else{if(document[_0x19003a(0xe2)])document['webkitExitFullscreen']();else document[_0x19003a(0xcc)]&&document[_0x19003a(0xcc)]();}}}}document['getElementById'](_0x2d064d(0xc1))[_0x2d064d(0xdd)]('click',toggleFullscreen);
+  </script>
+
+
+
+</html>

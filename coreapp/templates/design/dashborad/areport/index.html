@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="container-full">
+	{%for i in sidebar_data %}
+		{%if i.tenx.main %}
+        <section class="content">
+            <div class="row">
+                <div class="col-12">														
+					<div class="box no-shadow mb-0 bg-transparent">
+						<div class="box-header no-border px-0">
+							<h4 class="box-title"> <span style="font-weight: 700;">Hi {{username}} Welcome ! </span> <br> <br> Your Classes</h4>	
+							<ul class="box-controls pull-right d-md-flex d-none">
+							  <!-- <li>
+								<button class="btn btn-primary-light px-10">View All</button>
+							  </li> -->
+							  
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="box pull-up">
+						<div class="box-body d-flex align-items-center">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="" class="align-self-end h-60 w-60" style="padding:10px">
+							<div class="d-flex flex-column flex-grow-1">
+								<h5 class="box-title fs-16 mb-2">C Class</h5>
+								<a href="{% url 'ptraningview' %}">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="box pull-up">
+						<div class="box-body d-flex align-items-center">
+							<img src="https://logowik.com/content/uploads/images/731_java.jpg" alt="" class="align-self-end h-60 w-60" style="padding:10px">
+							<div class="d-flex flex-column flex-grow-1">
+								<h5 class="box-title fs-16 mb-2">Java  Class</h5>
+								<a href="{% url 'javatraning' %}">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="box pull-up">
+						<div class="box-body d-flex align-items-center">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt=""class="align-self-end h-60 w-60" style="padding:10px">
+							<div class="d-flex flex-column flex-grow-1">
+								<h5 class="box-title fs-16 mb-2">Python Class</h5>
+								<a href="{% url 'ptraningview' %}">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-12">
+					<div class="box pull-up">
+						<div class="box-body d-flex align-items-center">
+							<img src="https://download.logo.wine/logo/C%2B%2B/C%2B%2B-Logo.wine.png" alt="" class="align-self-end h-60 w-60" style="padding:10px">
+							<div class="d-flex flex-column flex-grow-1">
+								<h5 class="box-title fs-16 mb-2">C++ Class </h5>
+								<a href="{% url 'cpptraningview' %}">Learn more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+          
+
+
+            <div class="row">
+                
+
+
+				<div class="col-xl-9">														
+					<div class="box no-shadow mb-0 bg-transparent">
+						<div class="box-header no-border px-0">
+							<h4 class="box-title">Progress Meter</h4>							
+							<div class="box-controls pull-right d-md-flex d-none">
+							  <!-- <a href="#">View All</a> -->
+							</div>
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-lg-4 col-12">
+							<a href="#" class="box pull-up">
+								<div class="box-body">
+									<div class="d-flex align-items-center">
+										<div class="icon bg-primary-light rounded-circle w-60 h-60 text-center l-h-80">											
+											<span class="fs-30 fa fa-code"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+										</div>
+										<div class="ms-15">											
+											<h5 class="mb-0">Technical Traning</h5>
+											<p class="text-fade fs-12 mb-0">You Completed at </p>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between mt-20">
+										<div class="w-p70">
+											<div class="progress progress-sm mb-0" style="height:4px">
+												<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+												</div>
+											</div>
+										</div>
+										<div>
+											<div>80%</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-lg-4 col-12">
+							<a href="{% url 'aptitudestart' %}" class="box pull-up">
+								<div class="box-body">
+									<div class="d-flex align-items-center">
+										<div class="icon bg-primary-light rounded-circle w-60 h-60 text-center l-h-80">											
+											<span class="fs-30 fa fa-linode"><span class="path1"></span><span class="path2"></span></span>
+										</div>
+										<div class="ms-15">											
+											<h5 class="mb-0">Aptitude Traning</h5>
+											<p class="text-fade fs-12 mb-0">You Completed at </p>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between mt-20" >
+										<div class="w-p70">
+											<div class="progress progress-sm mb-0" style="height:4px">
+												<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+												</div>
+											</div>
+										</div>
+										<div>
+											<div>40%</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-lg-4 col-12">
+							<a href="{% url 'englishtraing' %}" class="box pull-up">
+								<div class="box-body">
+									<div class="d-flex align-items-center">
+										<div class="icon bg-primary-light rounded-circle w-60 h-60 text-center l-h-80">											
+											<span class="fs-30 fa fa-file-audio-o"><span class="path1"></span><span class="path2"></span></span>
+										</div>
+										<div class="ms-15">											
+											<h5 class="mb-0">English Traning</h5>
+											<p class="text-fade fs-12 mb-0">You Completed at </p>
+										</div>
+									</div>
+									<div class="d-flex align-items-center justify-content-between mt-20">
+										<div class="w-p70">
+											<div class="progress progress-sm mb-0" style="height:4px">
+												<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+												</div>
+											</div>
+										</div>
+										<div>
+											<div>30%</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						
+						<div class="col-lg-6">
+							<!-- <div class="box">
+								<div class="box-header">
+									<h4 class="box-title">Statisics</h4>
+								</div>
+								<div class="box-body">
+									<h3 class="mt-0">24hr</h3>
+									<p class="text-fade fs-12">Hours Spend last week</p>
+									<div id="charts_widget_2_chart"></div>
+								</div>
+							</div> -->
+							<div class="row">
+								<div class="col-6">
+									<div class="box">
+                                        <div class="box-header">
+                                            <h4 class="box-title">Statisics</h4>
+                                        </div>
+                                        <div class="box-body">
+                                            <h3 class="mt-0">24hr</h3>
+                                            <p class="text-fade fs-12">Hours Spend last week</p>
+                                            <div id="charts_widget_2_chart"></div>
+                                        </div>
+                                    </div>
+								</div>
+								<div class="col-6">
+									<a class="box box-link-shadow text-center pull-up" href="javascript:void(0)">
+										<div class="box-body py-25 bg-info-light px-5">
+											<p class="fw-600 text-info">Applyed Job</p>
+										</div>
+										<div class="box-body">
+											<h1 class="countnm fs-50 m-0">25</h1>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+                        <div class="col-lg-6 col-12">
+							<div class="box">
+								<div class="box-header">
+									<h4 class="box-title">Achivement Record</h4>
+								</div>
+								<div class="box-body">
+									<div class="act-div">
+										<div class="bg-gray-100 p-15 rounded10 mb-20">
+											<!-- <div>
+												<span class="badge badge-sm badge-dot badge-warning me-5"></span>
+												Fuzzy Logic
+											</div> -->
+											<h4 class="my-20">Congratulations you solved 10 Program Testcase</h4>
+											<div class="d-flex align-items-center justify-content-between">
+												<div class="d-flex align-items-center">
+													<!-- <img src="../images/avatar/1.jpg" class="avatar avatar-sm me-10 avatar-pill"> -->
+													<p class="text-fade fs-12 mb-0">Technical</p>
+												</div>
+												<!-- <p class="text-fade fs-12 mb-0">08 Nov 2020</p> -->
+											</div>
+										</div>
+																		
+									</div>
+								</div>
+								<div class="box-footer text-center p-0">
+									<!-- <a href="#" class="btn d-grid btn-primary-light">View all</a> -->
+								</div>
+							</div>
+						</div> 
+
+					</div>
+
+
+
+
+                <!-- divitions -->
+                </div>
+
+
+
+
+                <div class="col-xl-3 col-12">										
+					<div class="box no-shadow mb-0 bg-transparent">
+						<div class="box-header no-border px-0">
+							<h4 class="box-title">Upcoming Workshop Intership</h4>							
+							<div class="box-controls pull-right d-md-flex d-none">
+							  <!-- <a href="#">View All</a> -->
+							</div>
+						</div>
+					</div>
+                    <div class="card">
+					  <div class="card-body">
+							<span class="badge badge-primary">Online</span>	
+							<span class="badge badge-primary-light">English</span>
+							<div class="cour-stac d-flex align-items-center text-fade mt-20">
+							  <p>Start Date 4th Mar - 9th Mar..</p>
+							</div>
+						<h4 class="card-title justify-content-between d-flex align-items-center">C Programming Intership</h4>
+					  </div>
+					 
+					</div>
+
+                    <div class="card">
+					  <div class="card-body">
+							<span class="badge badge-primary">Online</span>	
+							<span class="badge badge-primary-light">English</span>
+							<div class="cour-stac d-flex align-items-center text-fade mt-20">
+							  <p>Start Date 23th Apr - 28th Apr..</p>
+							</div>
+						<h4 class="card-title justify-content-between d-flex align-items-center">Java Workshop</h4>
+					  </div>
+					</div>
+
+                    <div class="card">
+                        <div class="card-body">
+                              <span class="badge badge-primary">Online</span>	
+                              <span class="badge badge-primary-light">English</span>
+                              <div class="cour-stac d-flex align-items-center text-fade mt-20">
+                                <p>Start Date 14th Mar - 19th Mar..</p>
+                              </div>
+                          <h4 class="card-title justify-content-between d-flex align-items-center">C++ Programming Intership</h4>
+                        </div>
+                       
+                      </div>
+  
+                      <div class="card">
+                        <div class="card-body">
+                              <span class="badge badge-primary">Online</span>	
+                              <span class="badge badge-primary-light">English</span>
+                              <div class="cour-stac d-flex align-items-center text-fade mt-20">
+                                <p>Start Date 13th Apr - 18th Apr..</p>
+                              </div>
+                          <h4 class="card-title justify-content-between d-flex align-items-center">Python Workshop</h4>
+                        </div>
+                      </div>
+
+                    
+					
+									
+					
+				</div>
+            </div>
+        
+
+
+        </section>
+		{%endif%}
+
+	{%endfor%}
+
+	{%for i in sidebar_data %}
+        {%if i.tenx.main %}
+		
+		{%endif%}
+
+	{%endfor%}
+    </div>
+</div>
+
+
+{% endblock content %}

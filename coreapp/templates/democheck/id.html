@@ -1,0 +1,40 @@
+<!-- myapp/templates/myapp/my_view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My View</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>My View</h1>
+    
+    <label for="id_input">Enter ID:</label>
+    <input type="text" id="id_input" required>
+    <button type="button" onclick="submitID()">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        function submitID() {
+            var enteredID = $('#id_input').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '{% url "id" my_id=0 %}',
+                data: { 
+                    'my_id': enteredID ,
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+            },
+                success: function(response) {
+                    $('#result').html(response.message);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}" type="text/css" />
+
+    <!-- Bootstrap CSS -->
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Imagecon</title>
+    
+</head>
+
+<body>
+   
+                {% if request.user.is_authenticated %}
+                
+                <div class="tabs is-small is-centered">
+                    <ul>
+                      <li class="is-active"><a href="">Home </a></li>
+
+                      <li ><a href="{% url 'new' %}" >Question Upload</a></li>
+                      <li><a href="{% url 'taketest' %}">Take Test </a></li>
+                      <li><a href="{% url 'logout' %}">logout</a></li>
+                    </ul>
+                  </div>
+                {% else %}
+               
+                    <a class="nav-link" href="{% url 'login' %}"></a>
+                
+                
+                {% endif %}
+       
+    <!-- end of navigation bar -->
+
+    <!-- main content -->
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <script>
+        $(document).ready(function() {
+          $('.tabs ul li').click(function() {
+            $('.tabs ul li').removeClass('is-active');
+            $(this).addClass('is-active');
+          });
+        });
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/html2pdf.js/0.9.1/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/octoshrimpy/bulma-o-steps/master/bulma-steps.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>  
+        body {
+			margin: 0;
+			font-size: 13px;
+			font-family: 'Nunito', sans-serif;
+		}
+		@media screen {
+			body { background-color: #ffffff; }
+			.resume {
+				background-color: #fff;
+				max-width: 100vw;
+				box-shadow: 0 0.5rem 2.5rem 0 rgba(0,0,0,0.25);
+			}
+		}
+		.resume-heading {
+			display: flex;
+			justify-content: space-between;
+			background-color: #291b2c;
+			color: #fff;
+			padding: 25px;
+			line-height: 1;
+		}
+		.resume-heading a {
+			color: #fff;
+			text-decoration: none;
+		}
+		.resume-heading p { margin-bottom: 0; }
+		.resume-heading-title {
+			margin-top: 0;
+			margin-bottom: 0;
+			font-weight: 600;
+		}
+		.resume-heading-subtitle {
+			margin-top: 15px;
+			margin-bottom: 0px;
+			font-weight: normal;
+			font-size: 16px;
+		}
+		.resume-heading-section {
+			display: inline-block;
+			vertical-align: top;
+			padding-right: 10px;
+		}
+		.resume-heading-section.last { padding-right: 0; }
+		.resume-body {
+			padding: 20px 30px;
+			line-height: 1.45;
+		}
+		@media(min-width: 400px) {
+			.resume-section {
+				display: flex;
+			}
+			.resume-section-time { flex: 0 0 15%; }
+			.resume-section-info { flex: 0 0 100%; }
+		}
+		.resume-section-title {
+			padding-bottom: 5px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+			font-weight: 600;
+			font-size: 18px;
+		}
+		.resume-section-body {
+			padding-left: 10px;
+		}
+		.resume-section p,
+		.resume-section h4 {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		.resume-section h4 {
+			font-size: 15px;
+			font-weight: 600;
+		}
+		.resume-list {
+			padding-left: 0;
+			list-style: none;
+			margin-top: 0;
+		}
+		.resume-list li {
+			position: relative;
+			padding-left: 20px;
+		}
+		.resume-list li:before {
+			position: absolute;
+			left: 0;
+			top: 0; 
+			content: '\2022';
+		}
+		.resume-statement {
+			margin-top: 0;
+		}
+
+		.resume-section-info-title {
+			display: flex; 
+			justify-content: space-between;
+		}
+		.resume-company-section {
+
+			padding-left: 15px;
+		}
+		.resume-company-title {
+			margin-bottom: 5px !important;
+		}
+        </style>
+        <style>
+        
+        .form {
+          position: relative;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+          border-radius: 0px;
+         
+          background-color: #ffffff;
+          padding:40px;
+        }
+        
+        .form img {
+            position: absolute;
+            height: 20px;
+            top: 230px;
+            right: 60px;
+            cursor: pointer;
+        }
+        
+        .form input {
+            outline: 0;
+            background: #f2f2f2;
+            border-radius: 4px;
+            width: 100%;
+            border: 0;
+            margin: 15px 0;
+            padding: 15px;
+            font-size: 14px;
+        }
+        
+        .form input:focus {
+            box-shadow: 0 0 5px 0 rgba(106, 98, 210);
+        }
+        
+        span {
+            color: red;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .form button {
+            outline: 0;
+            background: #6a62d2;
+            width: 100%;
+            border: 0;
+            margin-top: 10px;
+            border-radius: 3px;
+            padding: 15px;
+            color: #FFFFFF;
+            font-size: 15px;
+            -webkit-transition: all 0.3 ease;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .form button:hover,
+        .form button:active,
+        .form button:focus {
+            background: black;
+            color: #fff;
+        
+        }
+        
+        .message{
+            margin: 15px 0;
+            text-align: center;
+        
+        }
+        .form .message a {
+            font-size: 14px;
+            color: #6a62d2;
+            text-decoration: none;
+        }
+
+    </style>
+    
+    <script>
+         function createPDF() {
+            var element = document.getElementById('element-to-print');
+            html2pdf(element, {
+                margin:1,
+                padding:0,
+                filename: 'myfile.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2,  logging: true },
+                jsPDF: { unit: 'in', format: 'A2', orientation: 'P' },
+                class: createPDF
+            });
+        };
+        // function exportHTML(){
+        //     var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+        //             "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+        //             "xmlns='http://www.w3.org/TR/REC-html40'>"+
+        //             "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+        //     var footer = "</body></html>";
+        //     var sourceHTML = header+document.getElementById("element-to-print").innerHTML+footer;
+            
+        //     var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+        //     var fileDownload = document.createElement("a");
+        //     document.body.appendChild(fileDownload);
+        //     fileDownload.href = source;
+        //     fileDownload.download = 'document.doc';
+        //     fileDownload.click();
+        //     document.body.removeChild(fileDownload);
+        // }
+        
+    </script>
+
+    <script>
+        function printpdf() {
+            var content = document.getElementById("coloneresume");
+        
+            // Clone the content to avoid modifying the original DOM
+            var contentClone = content.cloneNode(true);
+        
+            // Remove unnecessary elements from the clone
+          /*  var buttons = contentClone.querySelectorAll("#print button");
+            buttons.forEach(button => {
+                button.remove();
+            });
+        
+            var checkboxes = contentClone.querySelectorAll(".input-checkbox");
+            checkboxes.forEach(checkbox => {
+                checkbox.remove();
+            });*/
+        
+            html2pdf(contentClone, {
+                html2canvas: { scale: 1, logging: true, dpi: 500 }
+            });
+        }
+    </script>
+</head>
+<body >
+    <div class="columns" style="margin: 0px; gap:10px">
+       
+        <div class="column">
+            <ul class="steps is-narrow  has-content-centered">
+                <li class="steps-segment">
+                  <a href="#" class="has-text-dark">
+                    <span class="steps-marker">
+                      <span class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                      </span>
+                    </span>
+                    <div class="steps-content">
+                      <p class="heading">Shopping Cart</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="steps-segment">
+                  <a href="#" class="has-text-dark">
+                    <span class="steps-marker">
+                      <span class="icon">
+                        <i class="fa fa-user"></i>
+                      </span>
+                    </span>
+                    <div class="steps-content">
+                      <p class="heading">User Information</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="steps-segment is-active has-gaps">
+                  <span class="steps-marker">
+                    <span class="icon">
+                      <i class="fa fa-usd"></i>
+                    </span>
+                  </span>
+                  <div class="steps-content">
+                    <p class="heading">Payment</p>
+                  </div>
+                </li>
+                <li class="steps-segment">
+                  <span class="steps-marker is-hollow">
+                    <span class="icon">
+                      <i class="fa fa-check"></i>
+                    </span>
+                  </span>
+                  <div class="steps-content">
+                    <p class="heading">Confirmation</p>
+                  </div>
+                </li>
+              </ul>
+            <div class="login-page">
+                <div class="form">
+                    <form class="login-form " action="" target="_blank">
+                        <h2 style="font-weight: 900;" >Personal Details</h2>
+                        <div class="columns">
+                            <div class="column">
+                                <input type="text" required placeholder="First Name" id="user" autocomplete="off" />
+                                <input type="text" required placeholder="Email Id" id="user" autocomplete="off" />
+                                    <input type="text" required placeholder="Country" id="user" autocomplete="off" />
+
+
+                            </div>
+                            <div class="column">
+                                <input type="text" required placeholder="Last Name" id="user" autocomplete="off" />
+                                <input type="text" required placeholder="Phone Number" id="user" autocomplete="off" />
+                                 <input type="text" required placeholder="City" id="user" autocomplete="off" />
+
+                            </div>
+                        </div>
+                        <input type="text" required placeholder="Address" id="user" autocomplete="off" />
+
+                        <div class="columns">
+                            <div class="column">
+                                <input type="text" required placeholder="Postal Code" id="user" autocomplete="off" />
+                               
+                            </div>
+                            <div class="column">
+                                <input type="text" required placeholder="Nationality" id="user" autocomplete="off" />
+                                
+                            </div>
+                        </div>
+                       
+                       
+                        <input type="text" required placeholder="Place of Birth" id="user" autocomplete="off" />
+                        <input type="date" required placeholder="Date of birth" id="user" autocomplete="off" />
+
+                        <!-- <div class="buttons are-small">
+                            <button class="button">Small</button>
+                            <button class="button">Small</button>
+                            <button class="button">Small</button>
+                            <button class="button is-normal">Normal</button>
+                            <button class="button">Small</button>
+                          </div> -->
+                        <!-- <input oninput="return formvalid()" type="password" required placeholder="Password" id="pass" autocomplete="off" /> -->
+    <button onclick="printpdf()" style="padding: 6px 12px; background-color:#6a62d2;color:white">Download</button>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="column is-three-fifths ">
+            <div id="element-to-print">
+
+                <div class="resume" id="coloneresume">
+                
+                    <div class="resume-heading">
+                        <div class="resume-heading-section">
+                            <h1 class="resume-heading-title">Ranjith Prasanth</h1>
+                            <h3 class="resume-heading-subtitle">Senior Developer / Project Manager</h3>
+                            <p>
+                                E-mail:
+                                <a href="">ranjith@gmail.com</a>
+                            </p>
+                            <p>
+                                Mobile:
+                                <a href="#">9976830373</a>
+                            </p>
+                        </div>
+                        <div class="resume-heading-section">
+                            
+                        </div>
+                        <div class="resume-heading-section last">
+                            <p>
+                                LinkedIn:
+                                <a href="#" target="_blank">linkedin.com/in/ranjit</a>
+                            </p>				
+                            <p>
+                                GitHub:
+                                <a href="#" target="_blank">github.com/ranjit</a>
+                            </p>
+                            <p>
+                                Stack-overflow:
+                                <a href="" target="_blank">stackoverflow.com/users/ranjit</a>
+                            </p>
+                        </div>
+                        
+                    </div>
+            
+                    <div class="resume-body">
+                        <p class="resume-statement">
+                            Senior Developer / Project Manager with 4 years of experience in developing and managing web applications and sass products using NodeJs, ReactJs, AngularJs, Java and PHP. Proﬁcient in modern web technologies. Knowledgeable in UI, UX and working with clients.
+            
+                        </p>
+            
+                        <h3 class="resume-section-title">Skills</h3>
+                        <div class="resume-section-body">
+                            <div class="resume-section">
+                                <p class="resume-section-time">Client Side:</p>
+                                <div class="resume-section-info">
+                                    <p>
+                                        Javascript, AngularJs, ReactJS, React Native, VueJs, PugJs, Bootstrap, HTML, CSS, SASS, LESS
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="resume-section">
+                                <p class="resume-section-time">Server Side:</p>
+                                <div class="resume-section-info">
+                                    <p>
+                                        NodeJs, Java, Python, PHP, MySQL, MongoDB, PostgreSQL, Redis, Nginx, Linux (Ubuntu), Amazon AWS
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="resume-section">
+                                <p class="resume-section-time">Developer Tools:</p>
+                                <div class="resume-section-info">
+                                    <p>
+                                        Git, Grunt, Gulp, Webpack, NPM, Docker, Elasticsearch, Kibana
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <h3 class="resume-section-title">Experience</h3>
+                        <div class="resume-section-body">
+                            <div class="resume-section">
+                                <div class="resume-section-info">
+                                    <div class="resume-section-info-title">
+                                        <h4 style="margin-bottom: 5px;">Gridle, Senior Fullstack Developer / Project Manager </h4>
+                                        <p>
+                                            May 2017 - Aug 2018
+                                        </p>
+                                    </div>
+                                   
+                                    <div class="resume-company-section">
+                                        <p class="resume-company-title"><b>Project: Aqualogy, An E-Commerce Marketplace</b></p>
+                                        <ul class="resume-list">
+                                            <li>
+                                                Led the software team of five peoples through the development of the core product and the administrative control. Assigned coding tasks to various team members. Regularly monitored work with software development tools.
+                                            </li>
+                                            <!-- <li>
+                                                Configured nginx server from a threat like brute force and man in the middle attack. Made server access secure with google authenticator.
+                                            </li> -->
+                                            <li>
+                                                Developed the real-time notification, email and the feedback system to engage users. Created the logistics flow for the product.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="resume-company-section">
+                                        <p class="resume-company-title"><b>Project: Samcara, A Career Assessment Tool</b></p>
+                                        <ul class="resume-list">
+                                            <li>
+                                                Architected, designed, and developed a single page application for the product. Used Birkman API for the career assessment.
+                                            </li>
+                                            <li>
+                                                Helped and mentored junior members of the team by reviewing and advising them for possible improvements in the code.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="resume-section">
+                                <div class="resume-section-info">
+                                    <div class="resume-section-info-title">
+                                        <h4 style="margin-bottom: 5px;">IndiaBizForSale, Senior Fullstack Developer</h4>
+                                        <p>
+                                            July 2016 - May 2017
+                                        </p>
+                                    </div>
+                                    <div class="resume-company-section">
+                                        <p class="resume-company-title"><b>Project: IndiaBizForSale, A Network To Grow Business</b></p>
+                                        <ul class="resume-list">
+                                            <li>
+                                                Worked closely with design team, management team and created interfaces based on visual design and user feedback.
+                                            </li>
+                                            <li>
+                                                Worked on a frontend as well as a backend of the product to implement new features as per requirement.
+                                            </li>
+                                            <li>
+                                                Developed event-driven analytics which is for analyzing user behavior and make auto-suggestions. Used elasticsearch and created filter module for better experience. 
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="resume-section">
+                                <div class="resume-section-info">
+                                    <div class="resume-section-info-title">
+                                        <h4 style="margin-bottom: 5px;">Accenture, Software Engineering Associate</h4>
+                                        <p>
+                                            Oct 2015 - July 2016
+                                        </p>
+                                    </div>
+                                    <div class="resume-company-section">
+                                        <p class="resume-company-title"><b>Project: AT&T ERP Solution</b></p>
+                                        <ul class="resume-list">
+                                            <li>
+                                                Developed Oracle Forms and Oracle Reports which used in ERP solutions. Worked on PL/SQL, shell script and Oracle R12 database to manage the resources.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="resume-section">
+                                <div class="resume-section-info">
+                                    <div class="resume-section-info-title">
+                                        <h4 style="margin-bottom: 5px;">Gridle, Intern / Software Developer</h4>
+                                        <p>
+                                            Jan 2015 - Oct 2015
+                                        </p>
+                                    </div>
+                                    <div class="resume-company-section">
+                                        <p class="resume-company-title"><b>Project: Gridle, A Collaboration Tool</b></p>
+                                        <ul class="resume-list">
+                                            <li>
+                                                Developed the back-end of the product and managed the database. Created an analytics module to measure daily activity of the user. Worked on automated emails and real time notiﬁcation to get user engagement.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+            
+                        <h3 class="resume-section-title" style="margin-top: 0px;margin-bottom: 15px;">Education</h2>
+                        <div class="resume-section-body">
+                            <div class="resume-section">
+                                <div class="resume-section-info">
+                                    <div class="resume-section-info-title">
+                                        <h4 style="margin-bottom: 5px;">New York University Tandon School of Engineering</h4>
+                                        <p>May 2020</p>
+                                    </div>
+                                    <p>Masters of Science, Computer Science</p>
+                                </div>
+                            </div>
+                            <div class="resume-section">
+                                <div class="resume-section-info">
+                                    <div class="resume-section-info-title">
+                                        <h4 style="margin-bottom: 5px;">LD College Of Engineering</h4>
+                                        <p>May 2015</p>
+                                    </div>
+                                    <p>Bachelor of Engineering, Computer Engineering, CGPA: 8.28</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+                 
+            </div>
+        </div>
+       
+        
+      </div>
+  
+ 
+</body>
+</html>

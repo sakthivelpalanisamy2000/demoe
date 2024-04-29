@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+       <section class="content">
+            <div class="box">
+                <div class="box-header " style="border: none;">
+                    <h5 class="box-title">Access to the Employee Employee</h5>
+                </div>
+                
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col">
+                           
+                            <form method="post" action="{% url 'employeenext' %}"  novalidate>
+                                {% csrf_token %}
+                                <div class="row">
+                                   
+                                    <div class="col-8">
+                                       
+                                        <div class="form-group">
+                                            <h5>Employee Select <span class="text-danger">*</span></h5>
+                                            <div class="controls">
+                                                <select name="emp" id="select" required class="form-select" style="width: 50%;">
+                                                    <option value="">Selecte Your Employee</option>
+                                                    {% for i in user %}
+                                                    <option value={{i.id}}>{{i.username}}</option>
+                                                    {%endfor%}
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <h5>Access <span class="text-danger">*</span></h5>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_1" name="data1" value="1">
+                                                        <label for="checkbox_1">Aptitude Upload</label>
+                                                    </div>	
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_2" name="data2" value="1">
+                                                        <label for="checkbox_2">C Upload</label>
+                                                    </div>	
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_3" name="data3" value="1">
+                                                        <label for="checkbox_3">Java Upload</label>
+                                                    </div>	
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_4" name="data4" value="1">
+                                                        <label for="checkbox_4">Python Upload</label>
+                                                    </div>	
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_5" name="data5" value="1">
+                                                        <label for="checkbox_5">C++ Upload</label>
+                                                    </div>	
+                                                </div>
+                                                <div class="col">
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_6" name="data6" value="1">
+                                                        <label for="checkbox_6">English Upload</label>
+                                                    </div>
+                                                    
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_7" name="data7" value="1">
+                                                        <label for="checkbox_7">Intership Upload</label>
+                                                    </div>	
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_8" name="data8" value="1">
+                                                        <label for="checkbox_8">Workshop Upload</label>
+                                                    </div>	
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_9" name="data9" value="1">
+                                                        <label for="checkbox_9">PD Upload</label>
+                                                    </div>	
+        
+        
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_10" name="data10" value="1">
+                                                        <label for="checkbox_10">Job Upload</label>
+                                                    </div>	
+        
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-xs-right">
+                                            <button type="submit" class="btn btn-info">Provide Access</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <img src="{% static 'login_img_three.png'%}" alt="">
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </section>
+    </div>
+</div>
+
+
+{% endblock content %}

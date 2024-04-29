@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Color from Palette</title>
+    <style>
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" id="textColor">
+    <div id="headercolorchange" class="color-box"></div>
+
+    <script>
+        class TextColor {
+            constructor() {
+                this.textColor = document.getElementById('textColor');
+                this.headercolorChange = document.getElementById('headercolorchange');
+                this.addEventListeners();
+            }
+
+            addEventListeners() {
+                this.textColor.addEventListener('input', () => {
+                    this.setColor();
+                });
+            }
+
+            setColor() {
+                const color = this.textColor.value;
+                this.headercolorChange.style.backgroundColor = color;
+            }
+        }
+
+        const textColorApp = new TextColor();
+    </script>
+</body>
+</html> --><!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Change Text Color from Palette</title>
+    </head>
+    <body>
+        <input type="color" id="textColor">
+        <p id="textToColor">This is the text whose color will change.</p>
+    
+        <script>
+            class TextColorChanger {
+                constructor() {
+                    this.textColor = document.getElementById('textColor');
+                    this.textToColor = document.getElementById('textToColor');
+                    this.addEventListeners();
+                }
+    
+                addEventListeners() {
+                    this.textColor.addEventListener('input', () => {
+                        this.setColor();
+                    });
+                }
+    
+                setColor() {
+                    const color = this.textColor.value;
+                    this.textToColor.style.color = color;
+                }
+            }
+    
+            // Initialize the TextColorChanger class
+            const textColorChanger = new TextColorChanger();
+        </script>
+    </body>
+    </html>
+    

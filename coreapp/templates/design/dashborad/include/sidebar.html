@@ -1,0 +1,835 @@
+{% load static %} <aside class="main-sidebar" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+    <!-- sidebar-->
+
+    <style>
+        .colorsidecolor{
+            background: linear-gradient(175.84deg, #14EBFF -3.78%, #0C8D99 -3.77%);
+        }
+       
+       .acolorhead{
+        color: rgb(255, 255, 255) !important;
+       }
+       .sidebar-footer{
+        background: linear-gradient(28.93deg, #0C8D99 23.81%,#141c1c 23.82%);
+       }
+       .icon-Commit{
+        color: rgb(255, 255, 255) !important;
+       }
+       .path1{
+        color: white !important;
+       }
+    
+    </style>
+
+    <section class="sidebar position-relative colorsidecolor">
+        <div class="multinav">
+            <div class="multinav-scroll" style="height: 100%;">
+                <!-- sidebar menu-->
+                <ul class="sidebar-menu colorsidecolor" data-widget="tree" >
+                    <li class="header"  ></li>
+                    <li class="treeview"  >
+                        <a href="{% url 'areport' %}" >
+                            <i class="icon-Layout-4-blocks acolorhead" ><span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead" >Dashboard</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'areport' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Dashboard</a></li>
+                         
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <!-- <i span class="icon"> <img
+                                    src="https://cdni.iconscout.com/illustration/premium/thumb/report-7108510-5791726.png?f=webp"
+                                    width="20px" height="20px" alt><span class="path1"></span><span
+                                    class="path2"></span></i> -->
+
+                                    <i span class="icon"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.18 19.6L14.17 16.12C15.15 15.4 15.83 14.28 15.97 13H20C19.9175 14.3207 19.5295 15.6042 18.8666 16.7495C18.2037 17.8947 17.2841 18.8705 16.18 19.6ZM13 7.03V3C17.3 3.26 20.74 6.7 21 11H16.97C16.8584 9.98546 16.4042 9.03928 15.6825 8.31756C14.9607 7.59584 14.0146 7.14168 13 7.03ZM7.00003 12.5C7.00003 13.14 7.13003 13.75 7.38003 14.3L3.90003 16.31C3.30485 15.1283 2.99652 13.8231 3.00003 12.5C3.00003 7.97 6.54003 4.27 11 4V8.03C8.75003 8.28 7.00003 10.18 7.00003 12.5ZM11.5 21C8.53003 21 5.92003 19.5 4.40003 17.18L7.88003 15.17C8.29638 15.7389 8.84137 16.2012 9.4705 16.5193C10.0996 16.8373 10.7951 17.002 11.5 17C12.14 17 12.75 16.87 13.3 16.62L15.31 20.1C14.16 20.68 12.87 21 11.5 21Z" fill="white"/>
+                                        </svg>
+                                        <span class="path1"></span><span
+                                        class="path2"></span></i>
+                            <span class="acolorhead">Report</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Aptitud
+                                    Report</a>
+                            </li>
+                            <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Technical
+                                    Report</a>
+                            </li>
+                            <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>English
+                                    Traning Report</a></li>
+                            <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Job
+                                    Report</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class="header">Components & UI </li> -->
+                    <li class="treeview">
+                        <a class="acolorhead" href="#">
+                            <!-- <i class="icon"><img
+                                    src="https://cdni.iconscout.com/illustration/premium/thumb/human-head-brain-with-pie-chart-of-idea-10015300-8111327.png?f=webp"
+                                    width="20px" height="20px" alt><span class="path1"></span><span
+                                    class="path2"></span></i> -->
+
+
+                                    <i class="icon">
+                                        
+                                        <!-- start -->
+                                        <svg width="24" height="24" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_2_42)">
+                                            <path d="M286.883 449.302C254.809 443.704 242.635 387.58 229.199 308.045C193.706 313.615 144.975 323.665 92.553 334.963C84.006 357.355 69.393 390.08 48.715 433.152C37.15 458.017 -0.482993 447.932 0.00500744 421.615C0.00500744 413.411 12.907 382.223 38.716 328.042C27.753 308.381 37.556 290.612 59.482 285.996C103.997 206.302 184.712 67.056 208.946 62.698C243.218 62.718 236.658 108.851 252.785 177.039L290.985 355.216C307.009 401.908 332.421 440.946 286.883 449.302ZM196.383 156.272L123.063 274.46C143.741 269.165 175.106 262.755 217.151 255.233L196.383 156.272ZM420.983 116.541C419.776 133.416 418.605 153.208 419.446 173.968C466.895 175.953 511.176 165.222 511.995 197.553C512.263 209.775 502.161 221.658 489.948 221.139C467.739 217.654 444.208 220.439 419.958 219.6V279.847C422.078 311.681 371.641 310.733 374.325 279.847L373.812 220.626C321.174 224.261 289.815 224.086 290.236 198.836C291.503 168.862 309.906 180.317 373.812 174.992C373.073 151.364 373.062 129.202 375.864 112.695C381.864 83.994 420.848 91.329 420.983 116.541Z" fill="white"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_2_42">
+                                            <rect width="512" height="512" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                            </svg>
+                                            
+
+                                        <!-- end -->
+                                        <span class="path1"></span><span
+                                        class="path2"></span></i>
+                            <span class="acolorhead">Aptitude</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a class="acolorhead" href="{% url 'aptitudestart' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Traning</a></li>
+
+                            <li><a class="acolorhead" href="{% url 'appview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Practices</a></li>
+
+                        </ul>
+                    </li>
+
+
+                    <!-- start aptitude upload -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                <!-- stra -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.615 19C4.155 19 3.771 18.846 3.463 18.538C3.15433 18.2293 3 17.845 3 17.385V6.615C3 6.155 3.15433 5.771 3.463 5.463C3.771 5.15433 4.155 5 4.615 5H9.596L11.596 7H19.385C19.845 7 20.229 7.15433 20.537 7.463C20.8457 7.771 21 8.155 21 8.615V17.385C21 17.845 20.846 18.229 20.538 18.537C20.2293 18.8457 19.845 19 19.385 19H4.615ZM11.5 16.23H12.5V11.53L14.62 13.65L15.327 12.942L12 9.615L8.712 12.904L9.419 13.612L11.5 11.53V16.23Z" fill="white"/>
+                                    </svg>
+                                    
+                                    
+                                <!-- end -->
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Aptitude Upload</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a class="acolorhead" href="{% url 'aptitudetitleupload' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Video Upload</a></li>
+
+                            <li><a class="acolorhead" href="{% url 'apptitleupload' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Practice Upload</a></li>
+                            <li><a class="acolorhead" href="{% url 'appeeditview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Aptitude Edit</a></li>
+                            <li><a class="acolorhead" href="{% url 'apptetview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                    class="path2"></span></i>Traning Edit</a></li>
+
+                        </ul>
+                    </li>
+                    <!-- end aptitude upload -->
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                <!-- stra -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.615 19C4.155 19 3.771 18.846 3.463 18.538C3.15433 18.2293 3 17.845 3 17.385V6.615C3 6.155 3.15433 5.771 3.463 5.463C3.771 5.15433 4.155 5 4.615 5H9.596L11.596 7H19.385C19.845 7 20.229 7.15433 20.537 7.463C20.8457 7.771 21 8.155 21 8.615V17.385C21 17.845 20.846 18.229 20.538 18.537C20.2293 18.8457 19.845 19 19.385 19H4.615ZM11.5 16.23H12.5V11.53L14.62 13.65L15.327 12.942L12 9.615L8.712 12.904L9.419 13.612L11.5 11.53V16.23Z" fill="white"/>
+                                    </svg>
+                                    
+                                    
+                                <!-- end -->
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Technical Upload</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="treeview">
+                                <a  class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Java Upload
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+
+                                    <li><a  class="acolorhead" href="{% url 'uploadjava' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload
+                                            Testcase</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'javapracticeupload' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload
+                                            Practice</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'practiceview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Practice
+                                            View</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'topicupload' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload
+                                            Traning</a></li>
+
+                                </ul>
+                            </li>
+
+                           
+
+                            <li class="treeview">
+                                <a  class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Java Edit
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+
+                                    <li><a  class="acolorhead" href="{% url 'javatraningtranieeview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Edit Traning</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'viewpracties' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Edit Practice</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'testtitleview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Edit Testcase</a></li>
+
+                                    <!-- <li><a  class="acolorhead" href="{% url 'topicupload' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload
+                                            Traning</a></li> -->
+
+                                </ul>
+                            </li>
+
+                            <!-- c++ -->
+                            <li class="treeview">
+                                <a  class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>C++ Upload
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+
+                                    <li><a  class="acolorhead" href="{% url 'cpptraningviewupload' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload Traning</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'cpppracticeupload' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload Practice</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'cppttitleupload' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Upload Testcase</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a  class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>C++ Edit
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+
+                                    <li><a  class="acolorhead" href="{% url 'cpptraningvieweditview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Edit Traning</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'cpppracticeeditview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Edit Practice</a></li>
+
+                                    <li><a  class="acolorhead" href="{% url 'cppptestcaseditview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Edit Testcase</a></li>
+                                </ul>
+                            </li>
+                            <!-- c++ end -->
+
+                            <!-- c start -->
+                                <!-- c -->
+                                <li class="treeview">
+                                    <a  class="acolorhead" href="#">
+                                        <i class="icon-Commit"><span class="path1"></span><span
+                                                class="path2"></span></i>C Upload
+                                        <span class="pull-right-container acolorhead">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+    
+                                        <li><a  class="acolorhead" href="{% url 'ctraningviewupload' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Upload Traning</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'cpracticeupload' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Upload Practice</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'cttitleupload' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Upload Testcase</a></li>
+    
+                                    </ul>
+                                </li>
+                                <li class="treeview">
+                                    <a  class="acolorhead" href="#">
+                                        <i class="icon-Commit"><span class="path1"></span><span
+                                                class="path2"></span></i>C Edit
+                                        <span class="pull-right-container acolorhead">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+    
+                                        <li><a  class="acolorhead" href="{% url 'ctraningvieweditview' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Edit Traning</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'cpracticeeditview' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Edit Practice</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'cptestcaseditview' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Edit Testcase</a></li>
+                                    </ul>
+                                </li>
+                  
+                            <!-- c End -->
+                                <!-- Python start -->
+                                <li class="treeview">
+                                    <a  class="acolorhead" href="#">
+                                        <i class="icon-Commit"><span class="path1"></span><span
+                                                class="path2"></span></i>Python Upload
+                                        <span class="pull-right-container acolorhead">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+    
+                                        <li><a  class="acolorhead" href="{% url 'ptraningviewupload' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Traning Upload</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'ppracticeupload' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Practice Upload</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'pttitleupload' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Testcase Upload</a></li>
+    
+                                    </ul>
+                                </li>
+                                <li class="treeview">
+                                    <a  class="acolorhead" href="#">
+                                        <i class="icon-Commit"><span class="path1"></span><span
+                                                class="path2"></span></i>Python Edit
+                                        <span class="pull-right-container acolorhead">
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+    
+                                        <li><a  class="acolorhead" href="{% url 'ptraningvieweditview' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Edit Traning</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'pythonpracticeeditview' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Edit Practice</a></li>
+    
+                                        <li><a  class="acolorhead" href="{% url 'pythonptestcaseditview' %}"><i class="icon-Commit"><span
+                                                        class="path1"></span><span class="path2"></span></i>Edit Testcase</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Python end -->
+
+                        </ul>
+                    </li>
+                    <!-- <li class="header">COLLECTIONS</li> -->
+                    <li class="treeview">
+                        <a  class="acolorhead" href="#">
+                            <i class="icon">
+                                <!-- stra -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.89 3L14.85 3.4L11.11 21L9.15002 20.6L12.89 3ZM19.59 12L16 8.41V5.58L22.42 12L16 18.41V15.58L19.59 12ZM1.58002 12L8.00002 5.58V8.41L4.41002 12L8.00002 15.58V18.41L1.58002 12Z" fill="white"/>
+                                    </svg>
+                                    
+                                <!-- end -->
+                                
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Technical</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+
+                            <li class="treeview">
+                                <a  class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span class="path2"></span></i>C
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a class="acolorhead"  href="{% url 'ctraningview' session_id=request.session.session_key %}"><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Traning</a></li>
+                                    <li><a class="acolorhead" href="{% url 'cpracticeview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Practice</a></li>
+                                    <li><a class="acolorhead" href="{% url 'ctview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Test</a></li>
+                                    <li><a class="acolorhead" href="{% url 'creportpage' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Report</a></li>
+                                </ul>
+                            <!-- </li>
+                            <li class="treeview">
+                                <a class="acolorhead" href="#">
+                                    <i class="icon-Commit "><span class="path1"></span><span class="path2"></span></i>C++
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Traning</a></li>
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Practice</a></li>
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Test</a></li>
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Report</a></li>
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Upload
+                                            Testcase</a></li>
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Upload
+                                            Practice</a></li>
+
+                                    <li><a class="acolorhead" href><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Upload
+                                            Traning</a></li>
+
+                                </ul>
+                            </li> -->
+                            <li class="treeview">
+                                <a class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Java
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a class="acolorhead" href="{% url 'javatraning' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Traning</a></li>
+                                    <li><a class="acolorhead" href="{% url 'javapracticeview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Practice</a>
+                                    </li>
+                                    <li><a class="acolorhead" href="{% url 'javatestcaseview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Test</a></li>
+                                    <li><a class="acolorhead" href="{% url 'javareportpage' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Report</a></li>
+
+                                </ul>
+                            </li>
+                            
+                            <li class="treeview">
+                                <a class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Python
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="{% url 'ptraningview' %}" class="acolorhead" ><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Traning</a></li>
+                                    <li><a href="{% url 'ppracticeview' %}" class="acolorhead" ><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Practice</a></li>
+                                    <li><a class="acolorhead" href ="{% url 'ptview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Test</a></li>
+                                    <li><a class="acolorhead" href="{% url 'preportpage' %}" ><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Report</a></li>
+                                 
+
+                                </ul>
+                            </li>
+
+                            <li class="treeview">
+                                <a class="acolorhead" href="#">
+                                    <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>C++
+                                    <span class="pull-right-container acolorhead">
+                                        <i class="fa fa-angle-right pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="{% url 'cpptraningview' %}" class="acolorhead" ><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Traning</a></li>
+                                    <li><a href="{% url 'cpppracticeview' %}" class="acolorhead" ><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Practice</a></li>
+                                    <li><a class="acolorhead" href ="{% url 'cpptview' %}"><i class="icon-Commit"><span
+                                                    class="path1"></span><span class="path2"></span></i>Test</a></li>
+                                    <li><a class="acolorhead" href="{% url 'cppreportpage' %}" ><i class="icon-Commit"><span class="path1"></span><span
+                                                    class="path2"></span></i>Report</a></li>
+                                  
+
+                                </ul>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 5C19.89 4.65 18.67 4.5 17.5 4.5C15.55 4.5 13.45 4.9 12 6C10.55 4.9 8.45 4.5 6.5 4.5C4.55 4.5 2.45 4.9 1 6V20.65C1 20.9 1.25 21.15 1.5 21.15C1.6 21.15 1.65 21.1 1.75 21.1C3.1 20.45 5.05 20 6.5 20C8.45 20 10.55 20.4 12 21.5C13.35 20.65 15.8 20 17.5 20C19.15 20 20.85 20.3 22.25 21.05C22.35 21.1 22.4 21.1 22.5 21.1C22.75 21.1 23 20.85 23 20.6V6C22.4 5.55 21.75 5.25 21 5ZM21 18.5C19.9 18.15 18.7 18 17.5 18C15.8 18 13.35 18.65 12 19.5V8C13.35 7.15 15.8 6.5 17.5 6.5C18.7 6.5 19.9 6.65 21 7V18.5Z" fill="white"/>
+                                    <path d="M17.5 10.5C18.38 10.5 19.23 10.59 20 10.76V9.24C19.21 9.09 18.36 9 17.5 9C15.8 9 14.26 9.29 13 9.83V11.49C14.13 10.85 15.7 10.5 17.5 10.5ZM13 12.49V14.15C14.13 13.51 15.7 13.16 17.5 13.16C18.38 13.16 19.23 13.25 20 13.42V11.9C19.21 11.75 18.36 11.66 17.5 11.66C15.8 11.66 14.26 11.96 13 12.49ZM17.5 14.33C15.8 14.33 14.26 14.62 13 15.16V16.82C14.13 16.18 15.7 15.83 17.5 15.83C18.38 15.83 19.23 15.92 20 16.09V14.57C19.21 14.41 18.36 14.33 17.5 14.33Z" fill="white"/>
+                                    </svg>
+                                    
+
+                                <!-- end -->
+                                
+                                
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Resume Builder</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a  class="acolorhead" href="{% url 'resumebuild' %}"><i class="icon-Commit"><span
+                                            class="path1"></span><span class="path2"></span></i>Build
+                                    Resume</a></li>
+                            <!-- <li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Certification</a>
+                            </li> -->
+
+                        </ul>
+
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 6H37V11H35V8H8V31H29.387V33H6V6ZM36 19C36.7956 19 37.5587 18.6839 38.1213 18.1213C38.6839 17.5587 39 16.7956 39 16C39 15.2044 38.6839 14.4413 38.1213 13.8787C37.5587 13.3161 36.7956 13 36 13C35.2044 13 34.4413 13.3161 33.8787 13.8787C33.3161 14.4413 33 15.2044 33 16C33 16.7956 33.3161 17.5587 33.8787 18.1213C34.4413 18.6839 35.2044 19 36 19ZM38.031 21.01C39.33 21.01 40.358 21.594 41.031 22.496C41.66 23.341 41.926 24.386 41.986 25.351C42.0448 26.3409 41.9099 27.3327 41.589 28.271C41.289 29.141 40.782 30.041 40 30.658V40.5C40.0007 40.8769 39.8596 41.2402 39.6046 41.5177C39.3496 41.7953 38.9995 41.9666 38.6239 41.9978C38.2483 42.0289 37.8748 41.9175 37.5776 41.6857C37.2804 41.454 37.0813 41.1189 37.02 40.747L35.73 33H35.432L33.974 40.776C33.9048 41.143 33.7011 41.471 33.4029 41.6958C33.1046 41.9206 32.7333 42.026 32.3614 41.9915C31.9895 41.957 31.6439 41.785 31.3921 41.5092C31.1403 41.2333 31.0005 40.8735 31 40.5V26.233C30.8 26.5376 30.6027 26.844 30.408 27.152L30.33 27.275L30.31 27.307L30.305 27.316C30.1702 27.5324 29.9825 27.7109 29.7596 27.8346C29.5367 27.9583 29.2859 28.0231 29.031 28.023H24.031C23.6332 28.023 23.2516 27.865 22.9703 27.5837C22.689 27.3024 22.531 26.9208 22.531 26.523C22.531 26.1252 22.689 25.7436 22.9703 25.4623C23.2516 25.181 23.6332 25.023 24.031 25.023H28.208C28.451 24.647 28.771 24.159 29.107 23.669C29.457 23.158 29.843 22.617 30.187 22.193C30.354 21.986 30.541 21.77 30.729 21.593C30.821 21.506 30.949 21.393 31.105 21.293C31.3803 21.1123 31.7017 21.0144 32.031 21.011L38.031 21.01Z" fill="white"/>
+                                    </svg>
+  
+                                <!-- end -->
+ 
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">English Traning</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'englishtraing' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Traning</a></li>
+                            <li><a href="{% url 'technicalenglish' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Technical
+                                    English</a></li>
+                            <li><a href="{% url 'businessenglish' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Business
+                                    English</a>
+                            </li>
+                            <li><a href="{% url 'spokenenglish' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Spoken
+                                    English</a></li>
+                            <li><a href="{% url 'listeningenglish' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Listening
+                                    English</a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M6 6H37V11H35V8H8V31H29.387V33H6V6ZM36 19C36.7956 19 37.5587 18.6839 38.1213 18.1213C38.6839 17.5587 39 16.7956 39 16C39 15.2044 38.6839 14.4413 38.1213 13.8787C37.5587 13.3161 36.7956 13 36 13C35.2044 13 34.4413 13.3161 33.8787 13.8787C33.3161 14.4413 33 15.2044 33 16C33 16.7956 33.3161 17.5587 33.8787 18.1213C34.4413 18.6839 35.2044 19 36 19ZM38.031 21.01C39.33 21.01 40.358 21.594 41.031 22.496C41.66 23.341 41.926 24.386 41.986 25.351C42.0448 26.3409 41.9099 27.3327 41.589 28.271C41.289 29.141 40.782 30.041 40 30.658V40.5C40.0007 40.8769 39.8596 41.2402 39.6046 41.5177C39.3496 41.7953 38.9995 41.9666 38.6239 41.9978C38.2483 42.0289 37.8748 41.9175 37.5776 41.6857C37.2804 41.454 37.0813 41.1189 37.02 40.747L35.73 33H35.432L33.974 40.776C33.9048 41.143 33.7011 41.471 33.4029 41.6958C33.1046 41.9206 32.7333 42.026 32.3614 41.9915C31.9895 41.957 31.6439 41.785 31.3921 41.5092C31.1403 41.2333 31.0005 40.8735 31 40.5V26.233C30.8 26.5376 30.6027 26.844 30.408 27.152L30.33 27.275L30.31 27.307L30.305 27.316C30.1702 27.5324 29.9825 27.7109 29.7596 27.8346C29.5367 27.9583 29.2859 28.0231 29.031 28.023H24.031C23.6332 28.023 23.2516 27.865 22.9703 27.5837C22.689 27.3024 22.531 26.9208 22.531 26.523C22.531 26.1252 22.689 25.7436 22.9703 25.4623C23.2516 25.181 23.6332 25.023 24.031 25.023H28.208C28.451 24.647 28.771 24.159 29.107 23.669C29.457 23.158 29.843 22.617 30.187 22.193C30.354 21.986 30.541 21.77 30.729 21.593C30.821 21.506 30.949 21.393 31.105 21.293C31.3803 21.1123 31.7017 21.0144 32.031 21.011L38.031 21.01Z" fill="white"/>
+                                    </svg>
+  
+                                <!-- end -->
+ 
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">English Upload</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                           
+                            <li><a href="{% url 'etechnicaltitleupload' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Technical Upload</a></li>
+                            <li><a href="{% url 'ebusinesstitleupload' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Business Upload</a>
+                            </li>
+                            <li><a href="{% url 'espokentitleupload' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Spoken Upload</a></li>
+                            <li><a href="{% url 'elisteningtitleupload' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Listening
+                                    English</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="18" viewBox="0 0 63 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_2_40)">
+                                    <path d="M1.64801 56.572H12.853V45.168H23.987V33.686H35.295V22.416H46.528V11.222H63.205V16.933H52.118V28.17H40.872V39.567H29.65V50.903H18.383V62.335H1.64801V56.572Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_2_40">
+                                    <rect width="63" height="64" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    
+                                <!--  -->
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Intership</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'intershipannouncement' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Announcement</a></li>
+                            <li><a href="{% url 'intershipstart' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Intership</a></li>
+                            <li><a href="{% url 'intershipcertificate' %}" class="acolorhead"> <i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Certification</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="18" viewBox="0 0 63 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_2_40)">
+                                    <path d="M1.64801 56.572H12.853V45.168H23.987V33.686H35.295V22.416H46.528V11.222H63.205V16.933H52.118V28.17H40.872V39.567H29.65V50.903H18.383V62.335H1.64801V56.572Z" fill="white"/>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_2_40">
+                                    <rect width="63" height="64" fill="white"/>
+                                    </clipPath>
+                                    </defs>
+                                    </svg>
+                                    
+                                <!--  -->
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Intership Upload</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                           
+                            <li><a href="{% url 'intershiptitleupload' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Upload intership</a></li>
+                            <li><a href="{% url 'intershipteview' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                    class="path2"></span></i>Edit intership</a></li>
+                           
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.11497 19.346V18.346H7.21198L6.15798 17.304C5.38064 16.5507 4.82031 15.724 4.47698 14.824C4.13364 13.924 3.96198 13.012 3.96198 12.088C3.96198 10.4813 4.41998 9.028 5.33598 7.728C6.25198 6.42733 7.46064 5.49867 8.96198 4.942V6.004C7.74864 6.514 6.77864 7.322 6.05198 8.428C5.32531 9.534 4.96198 10.754 4.96198 12.088C4.96198 12.9027 5.11631 13.6927 5.42498 14.458C5.73364 15.2247 6.21364 15.9337 6.86497 16.585L7.88498 17.604V14.577H8.88498V19.347L4.11497 19.346ZM19.905 10.673H18.9C18.778 10.0897 18.5733 9.52167 18.286 8.969C17.998 8.41633 17.6143 7.89833 17.135 7.415L16.115 6.396V9.423H15.115V4.653H19.885V5.653H16.788L17.842 6.696C18.4226 7.29333 18.8803 7.926 19.215 8.594C19.5496 9.262 19.7796 9.95433 19.905 10.673ZM17 20.807L16.892 19.941C16.5126 19.8577 16.2003 19.7413 15.955 19.592C15.7096 19.4427 15.476 19.2567 15.254 19.034L14.458 19.387L13.881 18.534L14.588 17.957C14.4653 17.595 14.404 17.25 14.404 16.922C14.404 16.594 14.4653 16.249 14.588 15.887L13.881 15.311L14.458 14.457L15.254 14.811C15.476 14.5877 15.7093 14.401 15.954 14.251C16.2006 14.1023 16.5133 13.9863 16.892 13.903L17 13.037H18L18.108 13.903C18.4873 13.9863 18.7996 14.1037 19.045 14.255C19.2903 14.4063 19.524 14.5953 19.746 14.822L20.542 14.457L21.119 15.322L20.412 15.899C20.5346 16.2523 20.596 16.5953 20.596 16.928C20.596 17.26 20.5346 17.603 20.412 17.957L21.119 18.534L20.542 19.387L19.746 19.034C19.524 19.2567 19.2906 19.4427 19.046 19.592C18.7993 19.7413 18.4866 19.858 18.108 19.942L18 20.807H17ZM17.5 19.076C18.0886 19.076 18.5946 18.864 19.018 18.44C19.442 18.0167 19.654 17.5107 19.654 16.922C19.654 16.3333 19.442 15.8273 19.018 15.404C18.5946 14.98 18.0886 14.768 17.5 14.768C16.9113 14.768 16.4053 14.98 15.982 15.404C15.558 15.8273 15.346 16.3333 15.346 16.922C15.346 17.5107 15.558 18.0167 15.982 18.44C16.4053 18.864 16.9113 19.076 17.5 19.076Z" fill="white"/>
+                                    </svg>
+                                    
+                                <!-- end -->
+                                
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span  class="acolorhead">WorkShop</span>
+                            <span class="pull-right-container acolorhead acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'workoshopannouncement' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Announcement</a></li>
+                            <li><a href="{% url 'workshopstart' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Workshop</a></li>
+                            <li><a href="{% url 'workoshopcertificate' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Certification</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.11497 19.346V18.346H7.21198L6.15798 17.304C5.38064 16.5507 4.82031 15.724 4.47698 14.824C4.13364 13.924 3.96198 13.012 3.96198 12.088C3.96198 10.4813 4.41998 9.028 5.33598 7.728C6.25198 6.42733 7.46064 5.49867 8.96198 4.942V6.004C7.74864 6.514 6.77864 7.322 6.05198 8.428C5.32531 9.534 4.96198 10.754 4.96198 12.088C4.96198 12.9027 5.11631 13.6927 5.42498 14.458C5.73364 15.2247 6.21364 15.9337 6.86497 16.585L7.88498 17.604V14.577H8.88498V19.347L4.11497 19.346ZM19.905 10.673H18.9C18.778 10.0897 18.5733 9.52167 18.286 8.969C17.998 8.41633 17.6143 7.89833 17.135 7.415L16.115 6.396V9.423H15.115V4.653H19.885V5.653H16.788L17.842 6.696C18.4226 7.29333 18.8803 7.926 19.215 8.594C19.5496 9.262 19.7796 9.95433 19.905 10.673ZM17 20.807L16.892 19.941C16.5126 19.8577 16.2003 19.7413 15.955 19.592C15.7096 19.4427 15.476 19.2567 15.254 19.034L14.458 19.387L13.881 18.534L14.588 17.957C14.4653 17.595 14.404 17.25 14.404 16.922C14.404 16.594 14.4653 16.249 14.588 15.887L13.881 15.311L14.458 14.457L15.254 14.811C15.476 14.5877 15.7093 14.401 15.954 14.251C16.2006 14.1023 16.5133 13.9863 16.892 13.903L17 13.037H18L18.108 13.903C18.4873 13.9863 18.7996 14.1037 19.045 14.255C19.2903 14.4063 19.524 14.5953 19.746 14.822L20.542 14.457L21.119 15.322L20.412 15.899C20.5346 16.2523 20.596 16.5953 20.596 16.928C20.596 17.26 20.5346 17.603 20.412 17.957L21.119 18.534L20.542 19.387L19.746 19.034C19.524 19.2567 19.2906 19.4427 19.046 19.592C18.7993 19.7413 18.4866 19.858 18.108 19.942L18 20.807H17ZM17.5 19.076C18.0886 19.076 18.5946 18.864 19.018 18.44C19.442 18.0167 19.654 17.5107 19.654 16.922C19.654 16.3333 19.442 15.8273 19.018 15.404C18.5946 14.98 18.0886 14.768 17.5 14.768C16.9113 14.768 16.4053 14.98 15.982 15.404C15.558 15.8273 15.346 16.3333 15.346 16.922C15.346 17.5107 15.558 18.0167 15.982 18.44C16.4053 18.864 16.9113 19.076 17.5 19.076Z" fill="white"/>
+                                    </svg>
+                                    
+                                <!-- end -->
+                                
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span  class="acolorhead">WorkShopUpload</span>
+                            <span class="pull-right-container acolorhead acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="{% url 'workshoptitleupload' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Upload</a></li>
+                            <li><a href="{% url 'workshopteview' %}" class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Edit</a></li>
+                           
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.58279 1.17188V1.17656C4.41091 1.32656 3.37498 2.67656 3.37498 4.40156C3.37498 5.35781 3.70779 6.20156 4.19529 6.7875L4.67341 7.35938L3.93748 7.49531C3.29529 7.61719 2.82185 7.95937 2.4281 8.50312C2.02966 9.04219 1.72966 9.79219 1.51873 10.65C1.13435 12.225 1.05466 14.1516 1.04529 15.8297H3.10779L3.6656 23.2547H8.17966L8.67185 15.8297H10.6359C10.6359 14.1328 10.6219 12.1828 10.2703 10.5938C10.0828 9.72656 9.79216 8.98125 9.39373 8.44219C8.9906 7.90781 8.49373 7.56563 7.77654 7.45781L7.02654 7.34063L7.49998 6.75C7.96873 6.16406 8.28279 5.33438 8.28279 4.40156C8.28279 2.56406 7.12029 1.17656 5.82654 1.17656C5.6906 1.17656 5.60623 1.17188 5.58279 1.17188ZM20.625 1.54688C19.8187 1.54688 19.1719 2.19234 19.1719 3C19.1719 3.80766 19.8187 4.45312 20.625 4.45312C21.4312 4.45312 22.0781 3.80766 22.0781 3C22.0781 2.19234 21.4312 1.54688 20.625 1.54688ZM14.5781 2.57812V4.82812H9.74998V5.67188H14.5781V13.0781H12V13.9219H14.5781V19.0781H9.74998V19.9219H14.5781V21.4219H18.3656C18.3422 21.2859 18.3281 21.1453 18.3281 21C18.3281 20.8547 18.3422 20.7141 18.3656 20.5781H15.4219V13.9219H18.3656C18.3422 13.7859 18.3281 13.6453 18.3281 13.5C18.3281 13.3547 18.3422 13.2141 18.3656 13.0781H15.4219V3.42188H18.3656C18.3422 3.285 18.3281 3.14391 18.3281 3C18.3281 2.85609 18.3422 2.715 18.3656 2.57812H14.5781ZM20.625 12.0469C19.8187 12.0469 19.1719 12.6937 19.1719 13.5C19.1719 14.3063 19.8187 14.9531 20.625 14.9531C21.4312 14.9531 22.0781 14.3063 22.0781 13.5C22.0781 12.6937 21.4312 12.0469 20.625 12.0469ZM20.625 19.5469C19.8187 19.5469 19.1719 20.1937 19.1719 21C19.1719 21.8063 19.8187 22.4531 20.625 22.4531C21.4312 22.4531 22.0781 21.8063 22.0781 21C22.0781 20.1937 21.4312 19.5469 20.625 19.5469Z" fill="white"/>
+                                    </svg>
+                                    
+                                <!-- end -->
+                                
+                                
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Upload PD</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+
+                        <ul class="treeview-menu">
+                         
+                            <li><a class="acolorhead" href="{% url 'pdtitleupload' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Upload PD</a></li>
+                            <li><a class="acolorhead" href="{% url 'pdeditview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                class="path2"></span></i>Edit PD</a></li>
+
+                        </ul>
+
+                    </li>
+
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                 <!-- start -->
+                                 <svg width="24" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.58279 1.17188V1.17656C4.41091 1.32656 3.37498 2.67656 3.37498 4.40156C3.37498 5.35781 3.70779 6.20156 4.19529 6.7875L4.67341 7.35938L3.93748 7.49531C3.29529 7.61719 2.82185 7.95937 2.4281 8.50312C2.02966 9.04219 1.72966 9.79219 1.51873 10.65C1.13435 12.225 1.05466 14.1516 1.04529 15.8297H3.10779L3.6656 23.2547H8.17966L8.67185 15.8297H10.6359C10.6359 14.1328 10.6219 12.1828 10.2703 10.5938C10.0828 9.72656 9.79216 8.98125 9.39373 8.44219C8.9906 7.90781 8.49373 7.56563 7.77654 7.45781L7.02654 7.34063L7.49998 6.75C7.96873 6.16406 8.28279 5.33438 8.28279 4.40156C8.28279 2.56406 7.12029 1.17656 5.82654 1.17656C5.6906 1.17656 5.60623 1.17188 5.58279 1.17188ZM20.625 1.54688C19.8187 1.54688 19.1719 2.19234 19.1719 3C19.1719 3.80766 19.8187 4.45312 20.625 4.45312C21.4312 4.45312 22.0781 3.80766 22.0781 3C22.0781 2.19234 21.4312 1.54688 20.625 1.54688ZM14.5781 2.57812V4.82812H9.74998V5.67188H14.5781V13.0781H12V13.9219H14.5781V19.0781H9.74998V19.9219H14.5781V21.4219H18.3656C18.3422 21.2859 18.3281 21.1453 18.3281 21C18.3281 20.8547 18.3422 20.7141 18.3656 20.5781H15.4219V13.9219H18.3656C18.3422 13.7859 18.3281 13.6453 18.3281 13.5C18.3281 13.3547 18.3422 13.2141 18.3656 13.0781H15.4219V3.42188H18.3656C18.3422 3.285 18.3281 3.14391 18.3281 3C18.3281 2.85609 18.3422 2.715 18.3656 2.57812H14.5781ZM20.625 12.0469C19.8187 12.0469 19.1719 12.6937 19.1719 13.5C19.1719 14.3063 19.8187 14.9531 20.625 14.9531C21.4312 14.9531 22.0781 14.3063 22.0781 13.5C22.0781 12.6937 21.4312 12.0469 20.625 12.0469ZM20.625 19.5469C19.8187 19.5469 19.1719 20.1937 19.1719 21C19.1719 21.8063 19.8187 22.4531 20.625 22.4531C21.4312 22.4531 22.0781 21.8063 22.0781 21C22.0781 20.1937 21.4312 19.5469 20.625 19.5469Z" fill="white"/>
+                                    </svg>
+                                    
+                                <!-- end -->
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">PD</span>
+                            <span class="pull-right-container acolorhead">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a class="acolorhead" href="{% url 'pdview' %}"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Personality Development</a></li>
+
+                            
+                        </ul>
+
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="icon">
+                                
+                                <!-- start -->
+                                <svg width="24" height="24" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 15.98C20.6289 15.98 22.76 13.8757 22.76 11.28C22.76 8.68426 20.6289 6.58 18 6.58C15.3711 6.58 13.24 8.68426 13.24 11.28C13.24 13.8757 15.3711 15.98 18 15.98Z" fill="white"/>
+                                    <path d="M10.78 11.75H11.26V11.32C11.2629 10.0696 11.6157 8.84497 12.2784 7.78462C12.9411 6.72428 13.8873 5.87055 15.01 5.32C14.6777 4.55456 14.1442 3.89344 13.4663 3.40684C12.7883 2.92024 11.9913 2.62634 11.1597 2.55636C10.3282 2.48638 9.4932 2.64293 8.74349 3.00937C7.99377 3.37582 7.3573 3.93849 6.90168 4.63761C6.44606 5.33673 6.1883 6.1462 6.15578 6.98005C6.12326 7.8139 6.3172 8.64099 6.71699 9.37347C7.11678 10.106 7.7075 10.7165 8.4264 11.1402C9.14531 11.5639 9.96555 11.785 10.8 11.78L10.78 11.75ZM24.76 11.28V11.71H25.24C26.0634 11.7017 26.8693 11.4717 27.5729 11.044C28.2765 10.6163 28.8518 10.0069 29.2383 9.27981C29.6247 8.55273 29.808 7.73492 29.7689 6.91246C29.7297 6.08999 29.4696 5.29329 29.0158 4.60622C28.562 3.91914 27.9314 3.3671 27.1904 3.0082C26.4493 2.6493 25.6252 2.49682 24.8048 2.56681C23.9844 2.63679 23.198 2.92666 22.5284 3.40589C21.8588 3.88512 21.3309 4.536 21 5.29C22.123 5.8384 23.0703 6.68997 23.7347 7.74848C24.3992 8.80699 24.7543 10.0302 24.76 11.28ZM22.29 16.45C24.2783 16.8435 26.2007 17.5169 28 18.45C28.2535 18.5893 28.4831 18.7682 28.68 18.98H34V15.56C34.001 15.4288 33.9661 15.2999 33.8991 15.1871C33.8322 15.0743 33.7356 14.9819 33.62 14.92C31.0282 13.5643 28.145 12.8607 25.22 12.87H24.56C24.2135 14.2787 23.4164 15.5358 22.29 16.45ZM6.53002 20.92C6.52819 20.4164 6.6642 19.9218 6.92332 19.49C7.18244 19.0581 7.55478 18.7054 8.00002 18.47C9.7993 17.5369 11.7218 16.8635 13.71 16.47C12.5891 15.5635 11.7925 14.3178 11.44 12.92H10.78C7.85505 12.9107 4.97187 13.6143 2.38002 14.97C2.26439 15.0319 2.16788 15.1243 2.1009 15.2371C2.03393 15.3499 1.99905 15.4788 2.00002 15.61V22H6.53002V20.92ZM21.46 26.69H27.42V28.09H21.46V26.69Z" fill="white"/>
+                                    <path d="M32.81 21.26H25.94V20.26C25.94 19.9948 25.8346 19.7404 25.6471 19.5529C25.4596 19.3654 25.2052 19.26 24.94 19.26C24.6748 19.26 24.4204 19.3654 24.2329 19.5529C24.0453 19.7404 23.94 19.9948 23.94 20.26V21.26H22V18.43C20.6843 18.1537 19.3443 18.0097 18 18C14.8438 17.9869 11.7326 18.7492 8.93999 20.22C8.8156 20.2845 8.71148 20.3822 8.63912 20.5022C8.56676 20.6222 8.529 20.7599 8.52999 20.9V26.51H15.64V32.6C15.64 32.8652 15.7453 33.1196 15.9329 33.3071C16.1204 33.4946 16.3748 33.6 16.64 33.6H32.81C33.0752 33.6 33.3296 33.4946 33.5171 33.3071C33.7046 33.1196 33.81 32.8652 33.81 32.6V22.26C33.81 21.9948 33.7046 21.7404 33.5171 21.5529C33.3296 21.3654 33.0752 21.26 32.81 21.26ZM31.81 31.62H17.64V23.26H23.94V24.17C23.94 24.4352 24.0453 24.6896 24.2329 24.8771C24.4204 25.0646 24.6748 25.17 24.94 25.17C25.2052 25.17 25.4596 25.0646 25.6471 24.8771C25.8346 24.6896 25.94 24.4352 25.94 24.17V23.26H31.81V31.62Z" fill="white"/>
+                                    </svg>
+                                    
+                                <!-- end -->
+                                
+                                <span class="path1"></span><span class="path2"></span></i>
+                            <span class="acolorhead">Jobs</span>
+                            <span class="pull-right-container acolorhead ">
+                                <i class="fa fa-angle-right pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Job</a></li>
+                            <li><a href class="acolorhead"><i class="icon-Commit"><span class="path1"></span><span
+                                            class="path2"></span></i>Upload
+                                    Jobs</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="header"></li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="sidebar-footer "  >
+        <a href="" class="link" ><span 
+                class="icon-Settings-2 acolorhead"></span></a>
+        <a href="" class="link" ><span
+                class="icon-Mail acolorhead"></span></a>
+        <a href="" class="link" ><span
+                class="icon-Lock-overturning acolorhead"><span class="path1"></span><span class="path2"></span></span></a>
+
+
+
+                <!-- <a href="javascript:void(0)" class="link" data-bs-toggle="tooltip" title="Settings"><span
+                    class="icon-Settings-2"></span></a>
+            <a href="mailbox.html" class="link" data-bs-toggle="tooltip" title="Email"><span
+                    class="icon-Mail"></span></a>
+            <a href="javascript:void(0)" class="link" data-bs-toggle="tooltip" title="Logout"><span
+                    class="icon-Lock-overturning"><span class="path1"></span><span class="path2"></span></span></a> -->
+    </div>
+</aside>
+
+<!-- Content Wrapper. Contains page content -->

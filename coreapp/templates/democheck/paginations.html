@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+  
+
+
+    {% block content %}
+    <h2>Data Display with Pagination</h2>
+    
+    <ul>
+        {% for item in data %}
+            {{ item.questions | safe }}
+        {% endfor %}
+    </ul>
+    
+    
+    <nav class="pagination is-small" role="navigation" aria-label="pagination">
+        {% if data.has_previous %}
+        <a class="pagination-previous" href="?page={{ data.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if data.has_next %}
+        <a class="pagination-next" href="?page={{ data.next_page_number }}">Next page</a>
+        <!-- <a class="pagination-next" href="?page={{ data.paginator.num_pages }}">Last page</a> -->
+
+        {% endif %}
+        <ul class="pagination-list">
+          <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+          <li><span class="pagination-ellipsis">&hellip;</span></li>
+          <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+          <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+          <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+          <li><span class="pagination-ellipsis">&hellip;</span></li>
+          <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+        </ul>
+      </nav>
+    
+    <div class="pagination">
+        <span class="step-links">
+            {% if data.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ data.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ data.number }} of {{ data.paginator.num_pages }}.
+            </span>
+    
+            {% if data.has_next %}
+                <a href="?page={{ data.next_page_number }}">next</a>
+                <a href="?page={{ data.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endblock %}
+    
+
+
+    
+  </body>
+</html>

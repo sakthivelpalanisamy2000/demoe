@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+          
+         
+            <div class="box-header with-border">
+                <h4 class="box-title">Upload Topic</h4>
+               
+            </div>
+            <div class="box-body">
+               <form action="{% url 'ptraningviewupload' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Choose
+                        Chapter</label>
+                    <div class="col-md-10">
+    
+                        <select
+                            class="form-control select2"
+                            style="width: 40%;"
+                            id="chapterselet" name="data3">
+                            <option>.</option>
+                            <option
+                                value="Chapter 1">Chapter
+                                1</option>
+                            <option
+                                value="Chapter 2">Chapter
+                                2</option>
+                            <option
+                                value="Chapter 3">Chapter
+                                3</option>
+                            <option
+                                value="Chapter 4">Chapter
+                                4</option>
+                            <option
+                                value="Chapter 5">Chapter
+                                5</option>
+                            <option
+                                value="Chapter 6 ">Chapter
+                                6
+                            </option>
+                            <option
+                                value="Chapter 7">Chapter
+                                7</option>
+                            <option
+                                value="Chapter 8">Chapter
+                                8</option>
+                            <option
+                                value="Chapter 9">Chapter
+                                9</option>
+                            <option
+                                value="Chapter 10">Chapter
+                                10</option>
+                            <option
+                                value="Chapter 11">Chapter
+                                11</option>
+                            <option
+                                value="Chapter 12">Chapter
+                                12</option>
+                            <option
+                                value="Chapter 13">Chapter
+                                13</option>
+                            <option
+                                value="Chapter 14">Chapter
+                                14</option>
+                            <option
+                                value="Chapter 15">Chapter
+                                15</option>
+                            <option
+                                value="Chapter 16">Chapter
+                                16</option>
+                            <option
+                                value="Chapter 17">Chapter
+                                17</option>
+                            <option
+                                value="Chapter 18">Chapter
+                                18</option>
+                            <option
+                                value="Chapter 19">Chapter
+                                19</option>
+                            <option
+                                value="Chapter 20">Chapter
+                                20</option>
+                            <option
+                                value="Chapter 21">Chapter
+                                21</option>
+                            <option
+                                value="Chapter 22">Chapter
+                                22</option>
+                            <option
+                                value="Chapter 23">Chapter
+                                23</option>
+                            <option
+                                value="Chapter 24">Chapter
+                                24</option>
+                            <option
+                                value="Chapter 25">Chapter
+                                25</option>
+                            <option
+                                value="Chapter 26">Chapter
+                                26</option>
+                            <option
+                                value="Chapter 27">Chapter
+                                27</option>
+    
+                        </select>
+    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Title
+                    </label>
+                    <div class="col-md-6">
+                        <input class="form-control"
+                            type="text"
+                            placeholder="Mini-Max Sum,"
+                            id="title_select" name="data2">
+                    </div>
+    
+                    <div class="col-md-4">
+                        <button class="btn btn-success"
+                          type="submit">+
+                            Add Title
+                        </button>
+                    </div>
+                </div>
+               </form>
+            </div>
+            
+        </section>
+    </div>
+</div>
+
+<script>
+ 
+</script>
+
+{% endblock content %}

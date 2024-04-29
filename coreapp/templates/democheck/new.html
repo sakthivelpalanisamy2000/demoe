@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Question Upload</title>
+  <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}" type="text/css" />
+
+  <script src="{% static 'hack/clipboard.min.js'%}"></script>
+  <script src="{% static 'hack/tiny.js'%}"></script>
+  <script src="{% static 'hack/jshack.js'%}"></script>
+
+
+
+  <style>
+    .textchange {
+      padding: 1.25rem 1.5rem !important;
+      border-radius: 5px !important;
+      background-color: white;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    }
+
+    textarea:focus,
+    input:focus {
+      outline: none;
+    }
+  </style>
+  <script>
+    tinymce.init({
+      selector: '#dataTextarea',
+      height: 500,
+      plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table paste code help wordcount'
+      ],
+      toolbar: 'undo redo | formatselect | ' +
+        'bold italic backcolor | alignleft aligncenter ' +
+        'alignright alignjustify | bullist numlist outdent indent | ' +
+        'removeformat | help',
+      content_style: 'body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px }'
+    });
+    tinymce.init({
+      selector: '#samplecode',
+      height: 200,
+      menubar: false,
+      plugins: 'code',
+      toolbar: 'code',
+
+    });
+  </script>
+</head>
+
+<body>
+  <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+
+  <div class="columns" style="margin: 10px;">
+    <div class="column" style="overflow-y: scroll;height: 1000px;">
+      <label style="margin-top:0px ;color:#000000;font-weight:700;">Questions</label>
+      <textarea id="dataTextarea"></textarea>
+      <br>
+      <label style="margin-top:0px ;color:#000000;font-weight:700;">Sample code</label>
+      <textarea id="samplecode"></textarea><br>
+
+      <div class="inputcol" style="display: flex;flex-direction:column ;gap:10px">
+        <label style="margin-top:0px ;color:#000000;font-weight:700;">Sampleinput</label>
+
+        <textarea id="sampleinput" class="textchange"></textarea>
+        <label style="margin-top:0px ;color:#000000;font-weight:700;">Sampleoutput</label>
+
+        <textarea id="sampleoutput" class="textchange"></textarea>
+        <label style="margin-top:0px ;color:#000000;font-weight:700;">TextcaseInput</label>
+
+        <textarea id="textcaseInput" class="textchange"></textarea>
+
+      </div>
+
+    </div>
+    <!-- secound -->
+    <div class="column" style="background-color: rgb(255, 255, 255);">
+
+      <div style="margin-top:0px ;color:#000000;font-weight:700;" class="editor-heading"><span>Code</span></div>
+
+      <div class="columns"
+        style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+
+
+        <div class="column " style="padding:0;">
+
+          <div style="padding:5px 10px">
+            <div style="padding:5px 10px 10px 10px;display:inline-block">
+              <!-- <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+                <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+            </div>
+          </div>
+          <div id="container" style="width:100%;height:350px ;" class="notranslate"></div>
+        </div>
+
+      </div>
+      <br>
+      <div class="columns">
+        <div class="column is-full" style="width:100%">
+          <div>
+            <div class="flex">
+              <div id="runBtn"
+                style="display:inline-block; color: white;padding: 4px 6px ;font-weight:800;background-color:#0ca5e7;border-radius:0px;color:#fff;cursor:pointer">
+                <div style="display:flex;justify-content:center;align-items:center">
+                  <span style="margin-left:5px;margin-right:10px">Run Code</span>
+                  <div class="icon" style="display:none; "></div>
+                </div>
+              </div>
+
+
+
+
+              <div id="messageContainer"></div>
+
+
+              <br>
+
+
+            </div>
+            <style>
+              .editor-heading {
+                font-size: 14px;
+                margin-bottom: 5px;
+                margin-top: 0px;
+                text-transform: uppercase;
+                color: #aaa
+              }
+            </style>
+
+            <div id="stdin">
+              <div style="margin-top:0px ;color:#000000;font-weight:700;" class="editor-heading"><span>Test Case
+                  Input</span></div>
+              <div><textarea
+                  style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                  class="notranslate" id="stdinput " id="testcaseinput"></textarea></div>
+            </div>
+
+
+            <div style="margin-top:30px; " id="stdout">
+              <div class="editor-heading" style="margin-top:0px ;color:#000000;font-weight:700;">TestCase Output</div>
+              <div>
+                <pre
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+                  id="textcaseOutput"></pre>
+                <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+              </div>
+            </div>
+            <div id="stderr" style="margin-top:30px;display:none">
+              <div class="editor-heading" style="margin-top:0px ;color:#000000;font-weight:700;">Error</div>
+              <pre class="error-content notranslate"
+                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+            </div>
+
+
+            <button id="submitDataButton" data-item-id="123"
+              style="padding: 7px 10px ;background:#0e6d21; border:none;font-weight:600;margin-top:40px;color:white">Submit
+              Data</button>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <script>
+    
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $("#submitDataButton").click(function () {
+        
+
+        var _0x2b9a72=_0x1402;function _0x1402(_0x1a2958,_0x35469d){var _0x488f42=_0x488f();return _0x1402=function(_0x1402e9,_0x5060a2){_0x1402e9=_0x1402e9-0x138;var _0xfb1b5=_0x488f42[_0x1402e9];return _0xfb1b5;},_0x1402(_0x1a2958,_0x35469d);}function _0x488f(){var _0x6fb68a=['text','5592RcCveF','1967PbZzjB','3ZtxVfM','2803960NTXBlm','8804310WYGqiP','getContent','272809uhCiVc','get','1635036sDvPJT','samplecode','163384gitxvP','#sampleinput','dataTextarea','6674058xBHFuR','val','#sampleoutput','2DhELNz'];_0x488f=function(){return _0x6fb68a;};return _0x488f();}(function(_0x1da173,_0x3da9f3){var _0x433a34=_0x1402,_0x12ca1e=_0x1da173();while(!![]){try{var _0x3b720f=-parseInt(_0x433a34(0x146))/0x1*(-parseInt(_0x433a34(0x13e))/0x2)+parseInt(_0x433a34(0x142))/0x3*(-parseInt(_0x433a34(0x138))/0x4)+parseInt(_0x433a34(0x143))/0x5+-parseInt(_0x433a34(0x148))/0x6+-parseInt(_0x433a34(0x141))/0x7*(parseInt(_0x433a34(0x140))/0x8)+-parseInt(_0x433a34(0x13b))/0x9+parseInt(_0x433a34(0x144))/0xa;if(_0x3b720f===_0x3da9f3)break;else _0x12ca1e['push'](_0x12ca1e['shift']());}catch(_0x2905b2){_0x12ca1e['push'](_0x12ca1e['shift']());}}}(_0x488f,0x70f6b));var inputData=tinymce[_0x2b9a72(0x147)](_0x2b9a72(0x13a))[_0x2b9a72(0x145)](),sampleCode=tinymce[_0x2b9a72(0x147)](_0x2b9a72(0x149))[_0x2b9a72(0x145)](),sampleinput=$(_0x2b9a72(0x139))[_0x2b9a72(0x13c)](),sampleoutput=$(_0x2b9a72(0x13d))[_0x2b9a72(0x13c)](),textcaseInput=$('#textcaseInput')['val'](),textcaseOutput=$('#textcaseOutput')[_0x2b9a72(0x13f)]();
+
+        $.ajax({
+          type: "POST",
+          url: "{% url 'new'%}",   
+          data: {
+            'inputData': inputData,
+            'sampleCode': sampleCode,
+            'sampleinput': sampleinput,
+            'sampleoutput': sampleoutput,
+            'textcaseInput': textcaseInput,
+            'textcaseOutput': textcaseOutput,
+            csrfmiddlewaretoken: '{{ csrf_token }}', 
+          },
+          success: function (response) {
+            var _0x21c08b=_0x10fb;(function(_0xee7623,_0x1d3b2e){var _0x4b3c58=_0x10fb,_0x4cac78=_0xee7623();while(!![]){try{var _0x4d5c0e=parseInt(_0x4b3c58(0x6e))/0x1*(parseInt(_0x4b3c58(0x66))/0x2)+parseInt(_0x4b3c58(0x69))/0x3+parseInt(_0x4b3c58(0x65))/0x4+-parseInt(_0x4b3c58(0x67))/0x5*(parseInt(_0x4b3c58(0x6a))/0x6)+-parseInt(_0x4b3c58(0x6d))/0x7+parseInt(_0x4b3c58(0x6c))/0x8+-parseInt(_0x4b3c58(0x68))/0x9;if(_0x4d5c0e===_0x1d3b2e)break;else _0x4cac78['push'](_0x4cac78['shift']());}catch(_0x48713b){_0x4cac78['push'](_0x4cac78['shift']());}}}(_0x15e0,0x52a05),alert(_0x21c08b(0x6b)));function _0x10fb(_0xc8ac95,_0x168aca){var _0x15e01f=_0x15e0();return _0x10fb=function(_0x10fb35,_0x58a157){_0x10fb35=_0x10fb35-0x65;var _0xfa45e7=_0x15e01f[_0x10fb35];return _0xfa45e7;},_0x10fb(_0xc8ac95,_0x168aca);}function _0x15e0(){var _0x7c5c2e=['2iTmUYf','249370bSEMBQ','5206959bXrQFX','1052751knKutx','72NicFFj','Data\x20sented','4032216cvoyiE','1678677uDFpES','604869ISnIUm','1181896HjCfAC'];_0x15e0=function(){return _0x7c5c2e;};return _0x15e0();}
+            function _0x4cd5(_0x104c23,_0x2a99fd){var _0x405950=_0x4059();return _0x4cd5=function(_0x4cd5d1,_0x449683){_0x4cd5d1=_0x4cd5d1-0x13a;var _0x560a1c=_0x405950[_0x4cd5d1];return _0x560a1c;},_0x4cd5(_0x104c23,_0x2a99fd);}function _0x4059(){var _0x3bfb68=['7zBGkTk','180766oHCYrK','30ZxfrAF','764384FeiOnR','350046NNBUkY','277167fBByYE','887645wAYMAH','6rpFZSl','1fJoBdP','838455AjhyAO','83408mFjKAb'];_0x4059=function(){return _0x3bfb68;};return _0x4059();}(function(_0x3df2c1,_0xe2156b){var _0x385bda=_0x4cd5,_0x373b6c=_0x3df2c1();while(!![]){try{var _0x5a544b=-parseInt(_0x385bda(0x13d))/0x1*(-parseInt(_0x385bda(0x141))/0x2)+-parseInt(_0x385bda(0x13a))/0x3+-parseInt(_0x385bda(0x13f))/0x4+parseInt(_0x385bda(0x13e))/0x5*(-parseInt(_0x385bda(0x13c))/0x6)+parseInt(_0x385bda(0x140))/0x7*(parseInt(_0x385bda(0x143))/0x8)+-parseInt(_0x385bda(0x144))/0x9*(-parseInt(_0x385bda(0x142))/0xa)+parseInt(_0x385bda(0x13b))/0xb;if(_0x5a544b===_0xe2156b)break;else _0x373b6c['push'](_0x373b6c['shift']());}catch(_0x32b784){_0x373b6c['push'](_0x373b6c['shift']());}}}(_0x4059,0x18fe8),location['reload']());
+          },
+          error: function (error) {
+            console.log(error);
+          }
+        });
+      });
+    });
+
+
+    function shownPageOne() {
+      var messageContainer = document.getElementById("messageboxsent");
+      messageContainer.innerHTML = `
+      <div class="notification is-success is-light">
+        <button class="delete"></button>
+        Data Sent successfully
+
+      </div>
+  
+          `;
+      setTimeout(function () {
+        messageContainer.innerHTML = "";
+      }, 3000); 
+    }
+  </script>
+  <script>
+    function setupMonacoWithDelay() {
+
+      var n = document.createElement("script");
+      n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+        var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `class Main {\n    public static void main(String[] args) {\n    //Write a code\n        System.out.println(\"Write a Code\");\n  }\n }`,\n                        language: \"java\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n)
+      }
+    } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }</script>
+  <script>
+    function _0x3714(_0x36ad7b,_0xc63619){var _0x2422ac=_0x2422();return _0x3714=function(_0x3714f5,_0x1460b8){_0x3714f5=_0x3714f5-0x150;var _0x47d19e=_0x2422ac[_0x3714f5];return _0x47d19e;},_0x3714(_0x36ad7b,_0xc63619);}function _0x2422(){var _0x51f7e7=['innerHTML','76184nbrVxg','notranslate','statusCode','#stdout\x20pre','#stdin\x20textarea','stdout','responseToSend','display','stderr','querySelector','now','ajax','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20512\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M304\x2048a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zm0\x20416a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM48\x20304a48\x2048\x200\x201\x200\x200-96\x2048\x2048\x200\x201\x200\x200\x2096zm464-48a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM142.9\x20437A48\x2048\x200\x201\x200\x2075\x20369.1\x2048\x2048\x200\x201\x200\x20142.9\x20437zm0-294.2A48\x2048\x200\x201\x200\x2075\x2075a48\x2048\x200\x201\x200\x2067.9\x2067.9zM369.1\x20437A48\x2048\x200\x201\x200\x20437\x20369.1\x2048\x2048\x200\x201\x200\x20369.1\x20437z\x22/></svg>','click','remove','239924KVAVPj','POST','https://moderator.adaface.com/compile','oneSuccessHappened','style','topRight','message','classList','1258269MJQTuc','timeout','6084063BpSKdp','235590MvKCpv','#runBtn\x20.icon','#runBtn','value','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20384\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M73\x2039c-14.8-9.1-33.4-9.4-48.5-.9S0\x2062.6\x200\x2080V432c0\x2017.4\x209.4\x2033.4\x2024.5\x2041.9s33.7\x208.1\x2048.5-.9L361\x20297c14.3-8.7\x2023-24.2\x2023-41s-8.7-32.2-23-41L73\x2039z\x22/></svg>','none','add','7wsDMrX','status','#stderr','Error','block','3242776SkRksQ','error','68766nkZhZP','reload','25ozztKm','No\x20output','addEventListener'];_0x2422=function(){return _0x51f7e7;};return _0x2422();}var _0x404cd6=_0x3714;(function(_0x3ab278,_0x184468){var _0x224d82=_0x3714,_0x91c9c9=_0x3ab278();while(!![]){try{var _0x481842=parseInt(_0x224d82(0x173))/0x1+parseInt(_0x224d82(0x179))/0x2+-parseInt(_0x224d82(0x162))/0x3+-parseInt(_0x224d82(0x15a))/0x4*(-parseInt(_0x224d82(0x175))/0x5)+-parseInt(_0x224d82(0x165))/0x6+parseInt(_0x224d82(0x16c))/0x7*(-parseInt(_0x224d82(0x171))/0x8)+parseInt(_0x224d82(0x164))/0x9;if(_0x481842===_0x184468)break;else _0x91c9c9['push'](_0x91c9c9['shift']());}catch(_0x158d83){_0x91c9c9['push'](_0x91c9c9['shift']());}}}(_0x2422,0x3566f));var global_editor,timeWhenIwasLoaded=Date[_0x404cd6(0x155)](),runButton=document[_0x404cd6(0x154)](_0x404cd6(0x167)),runButtonIcon=document[_0x404cd6(0x154)](_0x404cd6(0x166)),stdin=document['querySelector'](_0x404cd6(0x17d)),stdout=document[_0x404cd6(0x154)](_0x404cd6(0x17c)),stderr=document[_0x404cd6(0x154)]('#stderr\x20.error-content'),judgeId=0x3e;runButton[_0x404cd6(0x177)](_0x404cd6(0x158),function(){var _0x439fe2=_0x404cd6;global_editor&&$[_0x439fe2(0x156)]({'url':_0x439fe2(0x15c),'timeout':0xafc8,'type':_0x439fe2(0x15b),'data':{'language_id':judgeId,'source_code':global_editor['getValue'](),'stdin':stdin[_0x439fe2(0x168)]},'beforeSend':function(){var _0x1bf31b=_0x439fe2;runButtonIcon[_0x1bf31b(0x178)]=_0x1bf31b(0x157),runButtonIcon[_0x1bf31b(0x161)][_0x1bf31b(0x16b)]('fa-spin');},'success':function(_0x20aeb0){var _0x35cb55=_0x439fe2;runButtonIcon['innerHTML']='',runButtonIcon['classList']['remove']('fa-spin'),stdout[_0x35cb55(0x161)][_0x35cb55(0x16b)](_0x35cb55(0x17a)),window[_0x35cb55(0x15d)]=!0x0,0xc8==_0x20aeb0[_0x35cb55(0x17b)]?(stdout[_0x35cb55(0x178)]=_0x20aeb0[_0x35cb55(0x151)][_0x35cb55(0x150)]||_0x35cb55(0x176),stderr[_0x35cb55(0x178)]=_0x20aeb0[_0x35cb55(0x151)][_0x35cb55(0x172)]||_0x20aeb0['responseToSend'][_0x35cb55(0x153)],''==(_0x20aeb0[_0x35cb55(0x151)][_0x35cb55(0x153)]||_0x20aeb0[_0x35cb55(0x151)][_0x35cb55(0x172)])?document[_0x35cb55(0x154)](_0x35cb55(0x16e))['style'][_0x35cb55(0x152)]=_0x35cb55(0x16a):document[_0x35cb55(0x154)](_0x35cb55(0x16e))[_0x35cb55(0x15e)][_0x35cb55(0x152)]=_0x35cb55(0x170)):iziToast['error']({'title':_0x35cb55(0x16f),'message':_0x20aeb0[_0x35cb55(0x16d)][_0x35cb55(0x160)],'position':_0x35cb55(0x15f)});},'error':function(_0x1150fc,_0xabc880,_0x2b930e){var _0x2fc243=_0x439fe2;if(_0x2fc243(0x163)===_0xabc880)return _0x1150fc['abort'](),Date[_0x2fc243(0x155)]()-timeWhenIwasLoaded<0x1388&&!window['oneSuccessHappened']?void window['location'][_0x2fc243(0x174)]():iziToast[_0x2fc243(0x172)]({'title':_0x2fc243(0x16f),'message':'Request\x20timed\x20out.\x20Please\x20try\x20again.','position':'topRight'});window[_0x2fc243(0x15d)]=!0x0,runButtonIcon[_0x2fc243(0x178)]=_0x2fc243(0x169),runButtonIcon['classList'][_0x2fc243(0x159)]('fa-spin'),stdout['classList'][_0x2fc243(0x16b)]('notranslate'),iziToast[_0x2fc243(0x172)]({'title':_0x2fc243(0x16f),'message':'Something\x20went\x20wrong.\x20Please\x20try\x20again.','position':_0x2fc243(0x15f)});}});});
+  </script>
+</body>
+
+</html>

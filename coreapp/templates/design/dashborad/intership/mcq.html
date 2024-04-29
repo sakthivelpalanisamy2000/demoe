@@ -1,0 +1,435 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+   
+   
+    
+    .app h1{
+        font-size: 16px;
+        color: #989898;
+        text-align: center;
+        font-weight: 600;
+        border-bottom: 1px solid #333;
+        padding-bottom: 30px;
+    }
+    .quiz{
+        padding: 20px 0;
+    }
+    .quiz h2{
+        font-size: 15px;
+        color:#4d4d4f;
+        font-weight: 600;
+    }
+    .btnquiz{
+        background: #fff;
+        color: #535252;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 10px;
+        border-left: 1px solid rgb(255, 255, 255);
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    /* disabled olduğunda çalışmasın */
+    .btnquiz:hover:not([disabled]){ 
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: #222;
+    }
+    .btnquiz:disabled{
+        cursor: no-drop;
+    }
+    #next-btnquiz{
+        background: #005B41;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+    }
+    .correct{
+        border-left: 5px solid rgb(5, 57, 12);
+        color: rgb(40, 40, 40);
+        background: #9aeabc;
+    }
+    .incorrect{
+        border-left: 2px solid rgb(57, 5, 5);
+        color: rgb(40, 40, 40);
+        background: #ff9393;
+    }
+    .yourClassName{
+        text-align: center;
+    }
+    .nextpreviouspagecon{
+        gap: 20px;
+        margin-top: 20px;
+
+    }
+    .nextpreviouspagecon a{
+        padding: 6px 15px;
+        background-color: rgb(5, 51, 5);
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        text-decoration: none;
+        border-radius: 5%;
+
+
+    }
+    .nextpreviouspagecon a:hover{
+        transform: scale(1,1);
+        font-weight: 200;
+        color: white;
+        text-decoration: none;
+        
+
+    }
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div style="margin: 20px;">
+<!--         
+                <div class="col-lg-12 col-md-6 col-12" >
+                  <div class="box-body bg-img"
+                          style="background-image: url(data:image/jpeg;base64,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);"
+                          data-overlay-light="9">
+                          <div
+                              class="d-lg-flex align-items-center justify-content-between">
+                              <div
+                                  class="d-md-flex align-items-center mb-0 mb-lg-0 w-p100">
+                                  <img
+                                      src="https://www.oracle.com/a/tech/img/rc10-java-badge-3.png"
+                                      class="img-fluid max-w-150" alt />
+                                  <div class="ms-30">
+                                    {% for i in somevalue %}
+                                     
+                                     
+                                    <h4 class="mb-10">{{i.title}}</h4>
+      
+                                    {% endfor %}
+                                      <p class="mb-0 text-fade">
+                                        Solve the Challenges .....
+                                        
+                                      </p>
+                                      <div class="nextpreviouspagecon">
+                                        <a   href="{% url 'javatrainingtest' %}" > Take Codeing Challenges </a>
+                                    </div>
+                                      
+                                  </div>
+                              </div>
+                            
+                          </div>
+                      </div>
+                 
+              </div> -->
+              </div>
+              
+            <div class="box" style="padding: 20px;">
+                <div class="app">
+                    <div class="timer-container">
+                       
+                        <div class="px-25 py-10 w-100"><span class="badge badge-primary"><div id="timerDisplay">00:00</div></span></div>
+                      </div>
+                      {% for i in data %}
+                    <h1>{{i.title}}</h1>
+                    {%endfor%} 
+
+                    <div class="quiz">
+                        
+                        <h2 id="question">Question goes here</h2>
+                        <pre id="preview" style="display: none;"></pre>
+                        <div id="answer-buttons">
+                            <button class="btnquiz">Answer 1</button>
+                            <button class="btnquiz">Answer 2</button>
+                            <button class="btnquiz">Answer 3</button>
+                            <button class="btnquiz">Answer 4</button>
+                        </div>
+                        <button id="next-btnquiz">Next</button>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" name="" id="" value="">
+            
+
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" >
+				<div class="modal-content"  style="border-radius: none;">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">MCQ Test</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="startTimerButton"></button>
+					</div>
+					<div class="modal-body">
+						<h4>Note :</h4>
+						<p>Each MCQ should ideally have only one correct answer</p>
+						<p>Total : 5 Questions <br>Timer : 2 min</p>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="startTimerButton">Close</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+
+            
+		</div>
+
+        <button  style="display: none;" id="myButton" type="button" class="btn btn-primary" data-bs-toggle="modal"
+										data-bs-target="#myModal" onclick="submitAnswerss({{ questions|safe }})">
+										Medium model
+									</button>
+        </section>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var timerDisplay = document.getElementById('timerDisplay');
+        var startTime;
+        var timerInterval;
+      
+        // Set the duration of the quiz in seconds
+        var quizDuration = 100; // 5 minutes
+      
+        function startTimer(duration) {
+          var start = Date.now();
+          startTime = start;
+      
+          function updateTimer() {
+            var delta = duration - Math.floor((Date.now() - start) / 1000);
+            var minutes = Math.floor(delta / 60);
+            var seconds = delta % 60;
+      
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+            timerDisplay.textContent = minutes + ':' + seconds;
+      
+            if (delta <= 0) {
+              clearInterval(timerInterval);
+              timerDisplay.textContent = 'Time Up!';
+            }
+          }
+      
+          updateTimer();
+          timerInterval = setInterval(updateTimer, 1000);
+        }
+      
+        startTimer(quizDuration);
+      });
+      
+  </script>
+<script>
+  function submitAnswerss(answer){
+        console.log(answer)
+        const questions = answer
+        /*[
+        {
+            question: `
+            JDK stands for ____ ?`,
+            answers: [
+                { text: "Java development kit", correct: true },
+                { text: "Java deployment kit", correct: false },
+                { text: "JavaScript deployment kit", correct: false },
+                { text: "None of these", correct: false }
+            ]
+        },
+        {
+            question: "What makes the Java platform independent?",
+            answers: [
+                { text: "Advanced programming language", correct: false },
+                { text: "It uses bytecode for execution", correct: true },
+                { text: "Class compilation", correct: false },
+                { text: "All of these", correct: false }
+            ]
+        },
+        {
+            question: "What are the types of memory allocated in memory in java?",
+            answers: [
+                { text: "Heap memory", correct: false },
+                { text: "Stack memory", correct: false },
+                { text: " Both A and B", correct: true },
+                { text: "None of these", correct: false }
+            ]
+        },
+        {
+            question: "What is the entry point of a program in Java?",
+            answers: [
+                { text: " main() method", correct: true },
+                { text: "The first line of code", correct: false },
+                { text: "Last line of code", correct: false },
+                { text: "main class", correct: false }
+            ]
+        }
+    ];
+*/
+
+    const questionElement = document.getElementById("question");
+    const preview = document.getElementById("preview");
+
+    const answerButtons = document.getElementById("answer-buttons");
+    const nextButton = document.getElementById("next-btnquiz");
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function startQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        nextButton.innerHTML = "Next";
+        showQuestion();
+    }
+
+    function showQuestion() {
+        resetState();
+        let currentQuestion = questions[currentQuestionIndex];
+        let questionNo = currentQuestionIndex + 1;
+        questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+        preview.innerHTML = questionNo + ". " + currentQuestion.id;
+
+
+
+        currentQuestion.answers.forEach(answer => {
+            const button = document.createElement("button");
+            button.innerHTML = answer.text;
+            button.classList.add("btnquiz");
+            answerButtons.appendChild(button);
+            if (answer.correct) {
+                button.dataset.correct = answer.correct;
+            }
+            button.addEventListener("click", selectAnswer);
+        });
+    }
+
+    function resetState() {
+        nextButton.style.display = "none";
+        while (answerButtons.firstChild) {
+            answerButtons.removeChild(answerButtons.firstChild);
+        }
+    }
+
+    function selectAnswer(e) {
+        const selectedBtn = e.target;
+        const isCorrect = selectedBtn.dataset.correct === "true";
+        if (isCorrect) {
+            selectedBtn.classList.add("correct");
+            score++;
+        } else {
+            selectedBtn.classList.add("incorrect");
+        }
+        Array.from(answerButtons.children).forEach(button => {
+            if (button.dataset.correct === "true") {
+                button.classList.add("correct");
+            }
+            button.disabled = true;
+        });
+        nextButton.style.display = "block";
+    }
+
+    function showScore() {
+        resetState();
+        questionElement.innerHTML = `
+        <style>.timer-container{display:none}</style>
+        <div class="box-body bg-img"
+                          style="background-image: url());"
+                          data-overlay-light="9">
+                          <div
+                              class="d-lg-flex align-items-center justify-content-between">
+                              <div
+                                  class="d-md-flex align-items-center mb-0 mb-lg-0 w-p100">
+                                 
+                                  <div class="ms-30 align-items">
+                                    
+                                    <h4 >You scored ${score} out of  ${questions.length} !</h4>
+
+                                     
+                                  </div>
+                              </div>
+                            
+                          </div>
+                      </div>
+
+                    
+        
+        `;
+        //nextButton.innerHTML = "Take Test Again";
+        //nextButton.innerHTML = "Sumbit"
+        //nextButton.classList.add("yourClassName"); 
+        //nextButton.style.display = "block";
+    }
+ 
+    function handleNextButton() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+        }
+        else {
+            showScore();
+
+        }
+    }
+
+    nextButton.addEventListener("click", () => {
+        if (currentQuestionIndex < questions.length) {
+            handleNextButton();
+        }
+        else {
+            startQuiz();
+        }
+    })
+
+    startQuiz();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+</script>
+
+<script>
+    // Wait for the document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the button element by its ID
+      var myButton = document.getElementById('myButton');
+      // Trigger a click event on the button
+      myButton.click();
+    });
+  </script>
+{% endblock content %}

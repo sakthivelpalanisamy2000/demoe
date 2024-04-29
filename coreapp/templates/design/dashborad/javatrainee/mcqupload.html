@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <style>
+              
+                
+                .buttons {
+                    text-align: center;
+                }
+                
+                .btn-hover {
+                    font-size: 14px;
+                    font-weight: 100;
+                    color: #fff;
+                    cursor: pointer;
+                    margin: 20px;
+                    padding: 4px 15px;
+                    text-align:center;
+                    border: none;
+                    background-size: 300% 100%;
+                
+                    border-radius: 50px;
+                    moz-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    -webkit-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                }
+                
+                .btn-hover:hover {
+                    transform: scale(1.1);
+                    font-weight: 300;
+
+                    background-position: 100% 0;
+                    moz-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    -webkit-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                }
+                
+                .btn-hover:focus {
+                    outline: none;
+                }
+                
+                .btn-hover.color-1 {
+                    border: 1px solid rgb(255, 255, 255);
+                    background-color: rgba(31, 123, 13, 0.715);
+                }
+              
+                
+                
+                
+                
+            </style>
+            <div class="buttons">
+                <button class="btn-hover color-1" onclick="location.href='{% url 'topicupload' %}'">Upload Topic</button>
+                <button class="btn-hover color-1" onclick="location.href='{% url 'videoupload' %}'">Upload Video</button>
+                <button class="btn-hover color-1" onclick="location.href='{% url 'mcqupload' %}'">Upload MCQ</button>
+                <button class="btn-hover color-1"onclick="location.href='{% url 'codingtestupload' %}'">Upload Coding</button>
+                
+            </div>
+            
+            <div class="box-header with-border">
+                <h4 class="box-title">Upload MCQ</h4>
+               
+            </div>
+            <div class="box-body">
+                <form method="post"
+                action="{% url 'uploadjavatraingmcq' %}">
+                {% csrf_token %}
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Choose
+                        Topic upload</label>
+                    <div class="col-md-10">
+
+                        <select
+                            class="form-control select2"
+                            style="width: 30%;"
+                            name="questiontypeselected">
+
+                            {% for i in data %}
+                            <option
+                                value={{i.id}}>{{i.title}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Question</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control h-200" id="editor2" 
+                            name="questionmcq"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Options
+                        A</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                            type="text"
+                            placeholder="Option A"
+                            name="optionamcq">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Options
+                        B</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                        type="text"
+                        placeholder="Option A"
+                        name="optionbmcq">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Options
+                        C</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                            type="text"
+                            placeholder="Option A"
+                            name="optioncmcq">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Options
+                        D</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                            type="text"
+                            placeholder="Option A"
+                            name="optiondmcq">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Choose
+                        Correcte Option</label>
+                    <div class="col-md-10">
+
+                        <select
+                            class="form-control select2"
+                            style="width: 10%;"
+                            name="correctansmcq">
+
+                            <option
+                                value="A">A</option>
+                            <option
+                                value="B">B</option>
+                            <option
+                                value="C">C</option>
+                            <option
+                                value="D">D</option>
+
+                        </select>
+
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="btn btn-success">
+                    Upload MCQ</button>
+
+            </form>
+            </div>
+            
+        </section>
+    </div>
+</div>
+
+
+{% endblock content %}

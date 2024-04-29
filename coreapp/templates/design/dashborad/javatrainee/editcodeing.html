@@ -1,0 +1,800 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+
+
+{% endblock %}
+
+
+{% block page_title %}
+<title> Imagecon</title>
+{% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}" type="text/css" />
+<link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}" type="text/css" />
+<script src="{% static 'hack/jshack.js'%}"></script>
+<script src="{% static 'hack/clipboard.min.js'%}"></script>
+<style>
+  .title-tip[title]:hover {
+    position: relative;
+  }
+  .title-tip[title]:hover:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99999;
+    content: attr(title);
+    margin-top: 0.5em;
+    padding: 0.5em;
+    width: 200px;    /* change it */
+    overflow: hidden;
+    word-wrap: break-word;
+    font-size: inherit;
+    color: #FFF;
+    text-align: center;
+    background-color: #0a94a3;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+  .title-tip[title]:hover:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 99999;
+    content: '';
+    margin-left: -0.125em;
+    width: 0;
+    height: 0;
+    border: 0.25em dashed transparent;
+    border-bottom: 0.25em solid #222;
+    font-size: inherit;
+  }
+  
+  /* title-tip-up */
+  .title-tip-up[title]:hover:before {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+  .title-tip-up[title]:hover:after {
+    top: auto;
+    bottom: 100%;
+    border: 0.25em dashed transparent;
+    border-top: 0.25em solid #222;
+  }
+  
+  /* title-tip-right */
+  .title-tip-right[title]:hover:before {
+    top: auto;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 0.5em;
+  }
+  .title-tip-right[title]:hover:after {
+    top: 50%;
+    left: 100%;
+    margin-left: 0;
+    margin-top: -0.125em;
+    border: 0.25em dashed transparent;
+    border-right: 0.25em solid #222;
+  }
+  
+  /* title-tip-left */
+  .title-tip-left[title]:hover:before {
+    top: auto;
+    left: auto;
+    right: 100%;
+    margin-top: 0;
+    margin-right: 0.5em;
+  }
+  .title-tip-left[title]:hover:after {
+    top: 50%;
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-top: -0.125em;
+    border: 0.25em dashed transparent;
+    border-left: 0.25em solid #222;
+  }
+ #hoverMessage {
+          display: none;
+          position: absolute;
+          background-color: #f0f0f0;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+  #clock {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(167, 221, 161);
+    margin: auto;
+  }
+
+  #seconds {
+    display: block;
+    margin: auto;
+    padding-top: 0px;
+    text-align: center;
+  }
+
+
+  p {
+    margin: 0;
+  }
+
+  .notice {
+    position: relative;
+    margin: 1em;
+    color: rgb(5, 5, 5);
+    font-weight: 300;
+    padding: 1em 1em 1em 2em;
+    border-left: 4px solid #DDD;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+  }
+
+  .notice:before {
+    position: absolute;
+    background-color: #DDD;
+    color: #FFF;
+    top: -1%;
+    margin-left: -50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-family: Georgia;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  }
+
+
+  .success {
+    border-color: #2ECC40;
+    background: #cbe2b5;
+    color: #0b4111;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  }
+
+  .success:before {
+    content: "√";
+    background-color: #2ECC40;
+  }
+
+  .warning {
+    border-color: #FFDC00;
+  }
+
+  .warning:before {
+    content: "!";
+    background-color: #FFDC00;
+  }
+
+  .error {
+    border-color: #FF4136;
+    background: #e9b6b6c2;
+    color: rgb(108, 7, 7);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  }
+
+  .error:before {
+    content: "X";
+    background-color: #FF4136;
+  }
+
+    .nextpreviouspagecon{
+        gap: 20px;
+        margin-top: 20px;
+
+    }
+    .nextpreviouspagecon a{
+        padding: 6px 15px;
+        background-color: rgb(5, 51, 5);
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        text-decoration: none;
+        border-radius: 5%;
+
+
+    }
+    .nextpreviouspagecon a:hover{
+        transform: scale(1,1);
+        font-weight: 200;
+        color: white;
+        text-decoration: none;
+        
+
+    }
+   
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+
+     
+
+       <div style="margin: 20px;">
+        
+        <div class="col-lg-12 col-md-6 col-12" >
+        
+            <div class="row with-border">
+                <div class="col-9">
+                    <div class="box-header ">
+                        {% for i in somevalue %}
+                                     
+                                     
+                        <h4 class="box-title">{{i.title}} ( {{count}} )</h4>
+
+                              {% endfor %}
+                      
+                      </div>
+                </div>
+                <div class="col-2" style="padding-top: 13px;">
+                    <div class="clearfix">	
+                        {% for i in data %}				
+                       <a href="{% url 'codeupadate' codeupadate_id=i.id %}">
+                        <button class="waves-effect waves-light btn btn-primary btn-social btn-bitbucket mb-5" >
+                            <i class="fa fa-edit"></i> Edit Question
+                          </button>
+                       </a>
+                       {% endfor %}
+                        
+                      </div>
+                </div>
+                <div class="col-1" style="padding-top: 13px;">
+                    <div class="clearfix">					
+                      <a href="1" id="info" class="info popup-trigger" title="info">
+                        <button class="waves-effect waves-light btn btn-social btn-danger btn-dropbox mb-5">
+                          <i class="fa fa-delete"></i>Delete
+                        </button>
+                      </a>
+                        
+                      </div>
+                </div>
+            </div>
+        </div>
+      </div>
+        
+       </div>
+
+
+
+        <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+        <!-- <div class="tabs is-centered">
+          <ul>
+            <li class=""><a href="{% url 'new' %}" >Question Upload</a></li>
+            <li><a href="{% url 'taketest' %}">Take Test </a></li>
+            <li><a href="{% url 'logout' %}">logout</a></li>
+          </ul>
+        </div> -->
+      
+        <main
+          style="color:#040402;fill:currentcolor;line-height:1.35;background:#fffefc;font-size:17px;max-width:100%;width:100%!important;margin:0 auto;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased">
+      
+      
+          <script>function addBlogTodos() { jQuery(document).ready((function (e) { window.addEventListener("load", t => { var n = e(".post-content h2"); if (n.length < 2) { if (0 != n.length) return void e(".post-side-inner").addClass("is-hidden"); if ((n = e(".post-content h3")).length < 2) return void e(".post-side-inner").addClass("is-hidden") } else if (n.length > 35) return void e(".post-side-inner").addClass("is-hidden"); e(".post-side-inner").append("<div class='blog-todos'><div><span style='font-size: 18px; font-weight: 900;'>Contents</span></div></div>"); for (var o = [], i = 0; i < n.length; i++) { var s = n[i].innerText, d = n[i].getAttribute("link") || ""; o.push(s), e(n[i]).hasClass("remove-from-navigation") || (e(".blog-todos").append(d ? "<a href='#" + d + "' class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></a>" : "<div class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></div>"), function (t) { if (e("#todoheading" + t).click((function () { n[t].scrollIntoView(), e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far") })), "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) { new IntersectionObserver((function (n) { n.length > 0 && n[0].isVisible && (e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far")) }), { trackVisibility: !0, delay: 100, threshold: 0 }).observe(n[t]) } else; }(i)) } }, !1) })) } function addReadingBar() { window.addEventListener("scroll", _updateScrollProgressBar), window.addEventListener("load", _updateScrollProgressBar) } function _updateScrollProgressBar() { var e = document.querySelector("html"), t = document.querySelector(".post-full-content").scrollHeight - _heightInViewport(e), n = e.scrollTop / t * 100; document.querySelector(".progress-bar-container__progress").style.width = n + "%", document.querySelector(".post-side") } function _heightInViewport(e) { var t = e.offsetHeight, n = document.body.offsetHeight, o = e.getBoundingClientRect(), i = o.top, s = o.bottom; return Math.max(0, i > 0 ? Math.min(t, n - i) : Math.min(s, n)) }</script>
+          <style>
+            .post-full-content ul li p {
+              margin-bottom: 0 !important
+            }
+          </style>
+          <div id="site-main" class="site-main outer" style="margin:auto;width:100%">
+            <div class="progress-bar-container">
+              <div class="progress-bar-container__progress"></div>
+            </div>
+            <div class="inner" style="display:flex">
+              <article class="post-full post no-image page no-image"
+                style="flex-grow:1;width:100%;max-width:1200px;margin:auto">
+                <header class="post-full-header"
+                  style="text-align:left;padding:15px 20px 0 20px;max-width:100%!important;margin:auto;margin-bottom:10px">
+      
+                </header>
+      
+                <!--  -->
+                <style>
+                  @media (min-width:824px) {
+                    .second-container {
+                      max-width: 400px;
+                      overflow-y: scroll;
+                      border-left: 1px solid #cac9c9
+                    }
+                  }
+                  #content {
+                    display: none;
+                }
+                </style>
+              </article>
+            </div>
+          </div>
+      
+      
+        </main>
+      
+      
+        <div class="columns" style="margin-left: 30px;">
+      
+          <nav class="pagination is-small is-rounded" role="navigation" aria-label="pagination">
+            {% if data.has_previous %}
+            <a class="pagination-previous" href="?page={{ data.previous_page_number }}">Previous Question</a>
+            {% endif %}
+            {% if data.has_next %}
+            <a  title="Submit the code first" class=" pagination-next "  href="?page={{ data.next_page_number }}" >Next Question </a>
+           
+      
+            {% endif %}
+
+          
+
+            <!-- <ul class="pagination-list">
+              <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page" id="fullscreenButton"
+                  style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800">Questions
+                </a></li> of
+              <li><a class="pagination-link is-current" style="background-color: #2a5724;" aria-label=""> {{ data.number}}</a>
+              </li>
+              <li><span class="pagination-ellipsis">&hellip;</span></li>
+              <li><a class="pagination-link" aria-label="">{{ data.paginator.num_pages }}</a></li>
+      
+            </ul> -->
+          </nav>
+     
+                
+          
+      
+          <!-- <nav class="pagination is-small" role="navigation" aria-label="pagination">
+              <button id="fullscreenButton" style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800"> Questions  </button>
+      
+              <ul class="pagination-list">
+                  {% if data.has_previous %}
+              <a class="pagination-previous" href="?page={{ data.previous_page_number }}">Previous</a>
+              {% endif %}
+              {% if data.has_next %}
+              <a class="pagination-next" href="?page={{ data.next_page_number }}">Next page</a>
+      
+              {% endif %}
+              </ul>
+          </nav> -->
+        </div>
+        <div class="columns is-desktop " style="margin: 20px;gap:20px;">
+          <div class="column" style="border-right:1px solid rgb(187, 187, 187); padding:20px">
+      
+            <div class="columns">
+              <div class="column">
+      
+                {% for item in data %}
+                {{ item.questions | safe }}
+                {% endfor %}
+      
+      
+                <div id="myDiv" contenteditable="false" onfocus="document.execCommand('selectAll',false,null);"
+                  style="border-radius:5px; padding-left:25px;margin-top:10px;box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px; width:560px ; height:200px ; overflow: scroll;">
+                <button  class="button is-small is-pulled-right;margin-top:10px" onclick="copyTextFromDiv()">Copy Code</button>
+                  
+                  {% for item in data %}
+      
+                  {{ item.samplecode | safe }}
+      
+                  {% endfor %}
+                  <br>
+      
+                </div>
+      
+      
+      
+              </div>
+            </div>
+          </div>
+      
+      
+      
+      
+      
+          <!-- secound -->
+          <div class="column" style="background-color: rgb(255, 255, 255);">
+      
+            <div class="columns"
+              style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+              <div class="column " style="padding:0;">
+                <div style="padding:5px 10px">
+                  <div style="padding:5px 10px 10px 10px;border-bottom:2px solid #2a5724;display:inline-block">
+                    <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+                    <!-- <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+                  </div>
+                </div>
+                <div id="container" style="width:100%;height:350px ;" class="notranslate"></div>
+              </div>
+      
+            </div>
+            <br>
+            <div class="columns">
+              <div class="column is-full" style="width:100%">
+                <div>
+                  <div class="flex">
+                    <div id="runBtn"
+                      style="display:inline-block; color: white;padding: 4px 6px ;font-weight:800;background-color:#0ca5e7;border-radius:0px;color:#fff;cursor:pointer">
+                      <div style="display:flex;justify-content:center;align-items:center">
+                        <span style="margin-left:5px;margin-right:10px">Run Code</span>
+                        <div class="icon" style="display:none; "></div>
+                      </div>
+                    </div>
+      
+                    <div id="runBtn2"
+                      style="display:inline-block; color: rgb(0, 0, 0);padding: 4px 6px ;font-weight:300;background-color:#cccccc;border-radius:0px;color:#000000;cursor:pointer">
+                      <div style="display:flex;justify-content:center;align-items:center">
+                        <span style="margin-left:5px;margin-right:10px" onclick="delayedCall()">Run TestCase</span>
+                        <div class="icon" style="display:none; "></div>
+                      </div>
+                    </div>
+                    <button id="submitcodeenable" style="padding: 7px 10px ;background:#0e6d21; border:none;font-weight:200;margin-top:40px;color:white;cursor:pointer">Submit Code</button>
+      
+                   
+      
+          <div id="hoverMessage">This button is disabled.</div>
+      
+          <script>
+              const myButton = document.getElementById('myButton');
+              const hoverMessage = document.getElementById('hoverMessage');
+      
+              myButton.addEventListener('mouseover', function() {
+                  if (myButton.disabled) {
+                      // Show the hover message
+                      hoverMessage.style.display = 'block';
+                  }
+              });
+      
+              myButton.addEventListener('mouseout', function() {
+                  // Hide the hover message
+                  hoverMessage.style.display = 'none';
+              });
+          </script>
+      
+      
+      
+                    <!-- <button onclick="sendDataToDjango()"
+                      style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600">Run Testcase</button> -->
+                    <!--
+                      <button onclick="notificationMessageHints() "
+                        style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600">Hints</button> -->
+      
+                    <div id="messageContainer"></div>
+      
+                    <br>
+                    <div id="hintMessageContainer"></div>
+      
+      
+                  </div>
+                  <style>
+                    .editor-heading {
+                      font-size: 14px;
+                      margin-bottom: 5px;
+                      margin-top: 10px;
+                      text-transform: uppercase;
+                      color: #aaa
+                    }
+                  </style>
+                  <br />
+      
+                  <div id="stdin">
+                    <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input</span></div>
+                    <div>
+      
+                      {% for item in data %}
+                      <textarea
+                        style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                        class="notranslate" id="stdinput" disabled="disabled">{{ item.sinput | safe }}</textarea>
+                      {% endfor %}
+                      {% for i in data %}
+                      <input type="number" name="" value="{{ i.id | safe }}" id="numberid" style="display: none;">
+                      {%endfor %}
+      
+                    </div>
+                  </div>
+      
+                  <!-- demo -->
+      
+                  <div id="stdin2" style="display: none;">
+                    <!-- <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input2</span></div> -->
+                    <div>
+                      {% for item in data %}
+      
+                      <textarea
+                        style="border:1px solid #ffffff;display: none;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                        class="notranslate" id="stdinput" disabled="disabled">{{ item.tinput | safe }}</textarea>
+                    </div>
+                    {% endfor %}
+                  </div>
+      
+                  <div style="margin-top:30px; " id="stdout2" style="display: none;">
+                    <!-- <div style="margin-top:20px ;" class="editor-heading"><span>Standard output2</span></div> -->
+      
+      
+                    <div>
+                      <pre id="dataToSend"
+                        style="padding:1.25rem 1.5rem!important;border-radius:5px!important;display: none;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                      <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+                    </div>
+                  </div>
+      
+                  <div id="stderr2" style="margin-top:30px;display:none">
+                    <!-- <div class="editor-heading">Stderr2</div> -->
+                    <pre class="error-content notranslate"
+                      style="padding:1.25rem 1.5rem!important;border-radius:5px!important ;display: none; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                  </div>
+      
+                  <!-- demo end -->
+                  <div style="margin-top:30px; " id="stdout">
+                    <div class="editor-heading">Your Output</div>
+                    <div>
+                      <pre
+                        style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                      <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+                    </div>
+                  </div>
+                  <div id="stderr" style="margin-top:30px;display:none">
+                    <div class="editor-heading">error</div>
+                    <pre class="error-content notranslate"
+                      style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                  </div>
+                  <!--  -->
+                  <div style="margin-top:30px">
+                    <div class="editor-heading">Standard Output</div>
+                    <div>
+                      {% for item in data %}
+                      <pre
+                        style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">{{ item.soutput | safe }}</pre>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <!--  -->
+                </div>
+              </div>
+            </div>
+          </div>
+      
+      
+        </div>
+      
+        </div>
+      
+      
+        <script>
+          const nextanchortag = document.getElementById('nextanchortag');
+          const submitcodeenable = document.getElementById('submitcodeenable');
+      
+          nextanchortag.addEventListener('click', function(event) {
+              if (!nextanchortag.classList.contains('enabled')) {
+                  event.preventDefault();
+              }
+          });
+      
+          submitcodeenable.addEventListener('click', function() {
+              nextanchortag.classList.add('enabled');
+          });
+      </script>
+        <script>
+          
+          function shownpage() {
+            var messageContainer = document.getElementById("buttoncontaier");
+      
+            messageContainer.innerHTML = `
+      
+      
+      
+                `;
+            /*setTimeout(function () {
+              messageContainer.innerHTML = "";
+            }, 3000); */
+          }
+          //
+          (function(_0x1724c8,_0x6dfed2){var _0x33e01e=_0x445d,_0x48dd3e=_0x1724c8();while(!![]){try{var _0x4af688=parseInt(_0x33e01e(0xc5))/0x1+-parseInt(_0x33e01e(0xc4))/0x2*(parseInt(_0x33e01e(0xba))/0x3)+-parseInt(_0x33e01e(0xc6))/0x4+parseInt(_0x33e01e(0xbe))/0x5+-parseInt(_0x33e01e(0xbf))/0x6+parseInt(_0x33e01e(0xc7))/0x7+parseInt(_0x33e01e(0xb7))/0x8*(parseInt(_0x33e01e(0xbc))/0x9);if(_0x4af688===_0x6dfed2)break;else _0x48dd3e['push'](_0x48dd3e['shift']());}catch(_0x2cbe02){_0x48dd3e['push'](_0x48dd3e['shift']());}}}(_0x5db3,0x5407d));function copyTextFromDiv(){var _0x59d6d9=_0x445d,_0x31e6ad=document[_0x59d6d9(0xc3)]('myDiv'),_0x4c38c6=document[_0x59d6d9(0xc2)]();_0x4c38c6['selectNode'](_0x31e6ad),window[_0x59d6d9(0xc1)]()[_0x59d6d9(0xbd)](),window['getSelection']()[_0x59d6d9(0xb8)](_0x4c38c6),document[_0x59d6d9(0xbb)](_0x59d6d9(0xb9)),window['getSelection']()[_0x59d6d9(0xbd)](),alert(_0x59d6d9(0xc0));}function _0x445d(_0x4d6e70,_0x3516a6){var _0x5db3ff=_0x5db3();return _0x445d=function(_0x445de2,_0x42ed12){_0x445de2=_0x445de2-0xb7;var _0x53daab=_0x5db3ff[_0x445de2];return _0x53daab;},_0x445d(_0x4d6e70,_0x3516a6);}function _0x5db3(){var _0x3c1759=['execCommand','18XRMZSM','removeAllRanges','2521580Ittzlu','2882454VyJvGP','Code\x20copied!','getSelection','createRange','getElementById','2kBoazk','575784qKyQuO','1878308hFmarf','2417555luJcJd','1441928LmTCFR','addRange','copy','1475316MeYmzw'];_0x5db3=function(){return _0x3c1759;};return _0x5db3();}
+          //
+          function _0x569d(_0x3c6a08,_0x5da047){var _0x20c541=_0x20c5();return _0x569d=function(_0x569d4d,_0x1deb76){_0x569d4d=_0x569d4d-0x1ad;var _0x57ddf7=_0x20c541[_0x569d4d];return _0x57ddf7;},_0x569d(_0x3c6a08,_0x5da047);}(function(_0x4f158c,_0x114e38){var _0x34f583=_0x569d,_0x234ab=_0x4f158c();while(!![]){try{var _0x4587db=parseInt(_0x34f583(0x1ae))/0x1*(parseInt(_0x34f583(0x1af))/0x2)+parseInt(_0x34f583(0x1b9))/0x3*(-parseInt(_0x34f583(0x1b3))/0x4)+parseInt(_0x34f583(0x1ad))/0x5+parseInt(_0x34f583(0x1b7))/0x6+-parseInt(_0x34f583(0x1b8))/0x7+parseInt(_0x34f583(0x1b6))/0x8*(-parseInt(_0x34f583(0x1b4))/0x9)+parseInt(_0x34f583(0x1b1))/0xa;if(_0x4587db===_0x114e38)break;else _0x234ab['push'](_0x234ab['shift']());}catch(_0x2d2389){_0x234ab['push'](_0x234ab['shift']());}}}(_0x20c5,0x63b43));function showMessage(){var _0x1892e6=_0x569d,_0x550df2=document['getElementById']('messageContainer');_0x550df2[_0x1892e6(0x1b2)]=_0x1892e6(0x1bc),setTimeout(function(){var _0x4c61ce=_0x1892e6;_0x550df2[_0x4c61ce(0x1b2)]='';},0xbb8);}function successMessage(){var _0x4bca56=_0x569d,_0x44bf1f=document['getElementById']('hintMessageContainer');_0x44bf1f[_0x4bca56(0x1b2)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notice\x20success\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-weight:500\x22>Success</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>Test\x20Case\x201\x20Code\x20execution\x20Successfully\x20executed\x20</p></div>\x0a\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20',setTimeout(function(){var _0xecdfd0=_0x4bca56;_0x44bf1f[_0xecdfd0(0x1b2)]='';},0xbb8);}function notificationMessageHints(){var _0x284fab=_0x569d,_0x159cd8=document[_0x284fab(0x1ba)](_0x284fab(0x1b0));_0x159cd8[_0x284fab(0x1b2)]=_0x284fab(0x1bb),setTimeout(function(){var _0x376ebb=_0x284fab;_0x159cd8[_0x376ebb(0x1b2)]='';},0x1388);}timeLeft=0x3;function _0x20c5(){var _0x507a55=['1518eSSgOI','getElementById','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notification\x20is-primary\x20is-light\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20The\x20first\x20line\x20contains\x20the\x20sum\x20of\x20the\x20two\x20numbers.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong>The\x20second\x20line\x20contains\x20the\x20difference\x20of\x20the\x20two\x20numbers\x20(first\x20-\x20second).</strong>,The\x20third\x20line\x20contains\x20the\x20product\x20of\x20the\x20two\x20numbers.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22notice\x20error\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-weight:500;\x22>You\x20Lose</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>TestCase\x200\x20Code\x20execution\x20failed</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','2286615rJCXIx','763329eJXFzH','2zMBvwE','hintMessageContainer','5048800npAYkY','innerHTML','2228avTbbJ','26343ntGOMj','seconds','1704PgsoXH','2408544KmdiNz','5692932rytRyr'];_0x20c5=function(){return _0x507a55;};return _0x20c5();}function countdown(){var _0x212a1c=_0x569d;timeLeft--,document[_0x212a1c(0x1ba)](_0x212a1c(0x1b5))['innerHTML']=String(timeLeft),timeLeft>0x0&&setTimeout(countdown,0xbb8);};setTimeout(countdown,0xbb8);
+          //
+          function delayedCall(){setTimeout(function(){sendDataToDjango();},0xbb8);}
+          function sendDataToDjango() {
+            var data = $('#dataToSend').text();
+            var data2 = $('#numberid').val();
+            let csrftoken = '{{ csrf_token }}'
+            $.ajax({
+              type: 'POST',
+              headers: { 'X-CSRFToken': csrftoken },
+              url: "{% url 'taketest' %}",
+              data: {
+                'data': data,
+                'data2': data2,
+      
+              },
+              success: function (response) {
+                if (response.success == true) {
+                  successMessage()
+                  shownpage()
+      
+      
+      
+                }
+                else if (response.success == false) {
+                  console.log("error")
+                }
+              },
+              error: function (error) {
+                showMessage()
+              }
+            });
+          }
+      
+        </script>
+      
+        <script>
+          function setupMonacoWithDelay() {
+      
+            var n = document.createElement("script");
+            n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+              var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `class Main {\n    public static void main(String[] args) {\n    //Write a code\n        System.out.println(\"Write a Code\");\n  }\n }`,\n                        language: \"java\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n)
+            }
+          } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }
+        </script>
+        <script>
+            function _0x3a9f(_0x1f8904,_0x1d1c05){var _0x5df126=_0x5df1();return _0x3a9f=function(_0x3a9f70,_0xf81dee){_0x3a9f70=_0x3a9f70-0xad;var _0x529876=_0x5df126[_0x3a9f70];return _0x529876;},_0x3a9f(_0x1f8904,_0x1d1c05);}var _0x2d064d=_0x3a9f;(function(_0x2cf29f,_0x312ea7){var _0x5ddcd8=_0x3a9f,_0x4dfe57=_0x2cf29f();while(!![]){try{var _0x1dd8af=parseInt(_0x5ddcd8(0xdb))/0x1*(parseInt(_0x5ddcd8(0xda))/0x2)+parseInt(_0x5ddcd8(0xb6))/0x3*(parseInt(_0x5ddcd8(0xce))/0x4)+parseInt(_0x5ddcd8(0xd1))/0x5*(parseInt(_0x5ddcd8(0xc8))/0x6)+-parseInt(_0x5ddcd8(0xe7))/0x7+parseInt(_0x5ddcd8(0xcf))/0x8+parseInt(_0x5ddcd8(0xd5))/0x9+-parseInt(_0x5ddcd8(0xd8))/0xa;if(_0x1dd8af===_0x312ea7)break;else _0x4dfe57['push'](_0x4dfe57['shift']());}catch(_0x5b5043){_0x4dfe57['push'](_0x4dfe57['shift']());}}}(_0x5df1,0x91643));function _0x5df1(){var _0x1bbad1=['error','#runBtn2\x20.icon','classList','#stderr2\x20.error-content','<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20384\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M73\x2039c-14.8-9.1-33.4-9.4-48.5-.9S0\x2062.6\x200\x2080V432c0\x2017.4\x209.4\x2033.4\x2024.5\x2041.9s33.7\x208.1\x2048.5-.9L361\x20297c14.3-8.7\x2023-24.2\x2023-41s-8.7-32.2-23-41L73\x2039z\x22/></svg>','Something\x20went\x20wrong.\x20Please\x20try\x20again.','msRequestFullscreen','style','stderr2','#stdin2\x20textarea','stdout','innerHTML','Request\x20timed\x20out.\x20Please\x20try\x20again.','#stderr2','3cGYkLH','responseToSend','#runBtn2','https://moderator.adaface.com/compile','requestFullscreen','value','notranslate','reload','#runBtn','exitFullscreen','fullscreenElement','fullscreenButton','querySelector','stderr','mozRequestFullScreen','No\x20output','click','fa-spin','22158AVhezX','webkitRequestFullscreen','oneSuccessHappened','mozFullScreenElement','msExitFullscreen','statusCode','3862556QNeWmf','1269552bRvbAn','documentElement','580dzyiIn','topRight','#stderr','message','1687437PoFHiG','abort','location','14394880mVTXln','status','2ORTOMi','695242SqvNDs','display','addEventListener','block','#stdin\x20textarea','POST','getValue','webkitExitFullscreen','#stderr\x20.error-content','remove','now','msFullscreenElement','2803115MUsQxX','Error','add','none'];_0x5df1=function(){return _0x1bbad1;};return _0x5df1();}var global_editor,timeWhenIwasLoaded=Date[_0x2d064d(0xe5)](),runButton=document[_0x2d064d(0xc2)](_0x2d064d(0xbe)),runButtonIcon=document[_0x2d064d(0xc2)]('#runBtn\x20.icon'),stdin=document[_0x2d064d(0xc2)](_0x2d064d(0xdf)),stdout=document['querySelector']('#stdout\x20pre'),stderr=document['querySelector'](_0x2d064d(0xe3)),judgeId=0x3e;runButton[_0x2d064d(0xdd)](_0x2d064d(0xc6),function(){var _0x3fd4fb=_0x2d064d;global_editor&&$['ajax']({'url':'https://moderator.adaface.com/compile','timeout':0xafc8,'type':_0x3fd4fb(0xe0),'data':{'language_id':judgeId,'source_code':global_editor[_0x3fd4fb(0xe1)](),'stdin':stdin[_0x3fd4fb(0xbb)]},'beforeSend':function(){var _0x2da989=_0x3fd4fb;runButtonIcon[_0x2da989(0xb3)]='<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20512\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M304\x2048a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zm0\x20416a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM48\x20304a48\x2048\x200\x201\x200\x200-96\x2048\x2048\x200\x201\x200\x200\x2096zm464-48a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM142.9\x20437A48\x2048\x200\x201\x200\x2075\x20369.1\x2048\x2048\x200\x201\x200\x20142.9\x20437zm0-294.2A48\x2048\x200\x201\x200\x2075\x2075a48\x2048\x200\x201\x200\x2067.9\x2067.9zM369.1\x20437A48\x2048\x200\x201\x200\x20437\x20369.1\x2048\x2048\x200\x201\x200\x20369.1\x20437z\x22/></svg>',runButtonIcon['classList'][_0x2da989(0xe9)]('fa-spin');},'success':function(_0x36aef2){var _0x1f89a9=_0x3fd4fb;runButtonIcon[_0x1f89a9(0xb3)]='',runButtonIcon[_0x1f89a9(0xed)]['remove'](_0x1f89a9(0xc7)),stdout[_0x1f89a9(0xed)]['add'](_0x1f89a9(0xbc)),window[_0x1f89a9(0xca)]=!0x0,0xc8==_0x36aef2[_0x1f89a9(0xcd)]?(stdout['innerHTML']=_0x36aef2[_0x1f89a9(0xb7)][_0x1f89a9(0xb2)]||_0x1f89a9(0xc5),stderr[_0x1f89a9(0xb3)]=_0x36aef2['responseToSend'][_0x1f89a9(0xeb)]||_0x36aef2[_0x1f89a9(0xb7)][_0x1f89a9(0xc3)],''==(_0x36aef2['responseToSend'][_0x1f89a9(0xc3)]||_0x36aef2['responseToSend'][_0x1f89a9(0xeb)])?document[_0x1f89a9(0xc2)]('#stderr')[_0x1f89a9(0xaf)]['display']=_0x1f89a9(0xea):document['querySelector'](_0x1f89a9(0xd3))['style'][_0x1f89a9(0xdc)]=_0x1f89a9(0xde)):iziToast[_0x1f89a9(0xeb)]({'title':_0x1f89a9(0xe8),'message':_0x36aef2['status'][_0x1f89a9(0xd4)],'position':'topRight'});},'error':function(_0xc124ab,_0x204223,_0x8e0cc2){var _0x407ce5=_0x3fd4fb;if('timeout'===_0x204223)return _0xc124ab[_0x407ce5(0xd6)](),Date[_0x407ce5(0xe5)]()-timeWhenIwasLoaded<0x1388&&!window['oneSuccessHappened']?void window['location'][_0x407ce5(0xbd)]():iziToast[_0x407ce5(0xeb)]({'title':_0x407ce5(0xe8),'message':'Request\x20timed\x20out.\x20Please\x20try\x20again.','position':_0x407ce5(0xd2)});window['oneSuccessHappened']=!0x0,runButtonIcon[_0x407ce5(0xb3)]=_0x407ce5(0xef),runButtonIcon[_0x407ce5(0xed)]['remove'](_0x407ce5(0xc7)),stdout[_0x407ce5(0xed)]['add'](_0x407ce5(0xbc)),iziToast[_0x407ce5(0xeb)]({'title':_0x407ce5(0xe8),'message':_0x407ce5(0xad),'position':_0x407ce5(0xd2)});}});});var global_editor,timeWhenIwasLoaded=Date[_0x2d064d(0xe5)](),runButton2=document[_0x2d064d(0xc2)](_0x2d064d(0xb8)),runButtonIcon2=document[_0x2d064d(0xc2)](_0x2d064d(0xec)),stdin2=document[_0x2d064d(0xc2)](_0x2d064d(0xb1)),stdout2=document['querySelector']('#stdout2\x20pre'),stderr2=document[_0x2d064d(0xc2)](_0x2d064d(0xee)),judgeId=0x3e;runButton2[_0x2d064d(0xdd)](_0x2d064d(0xc6),function(){var _0x28b75b=_0x2d064d;global_editor&&$['ajax']({'url':_0x28b75b(0xb9),'timeout':0xafc8,'type':'POST','data':{'language_id':judgeId,'source_code':global_editor[_0x28b75b(0xe1)](),'stdin':stdin2['value']},'beforeSend':function(){var _0x2f13a2=_0x28b75b;runButtonIcon2['innerHTML']='<svg\x20xmlns=\x22http://www.w3.org/2000/svg\x22\x20height=\x221em\x22\x20viewBox=\x220\x200\x20512\x20512\x22><!--!\x20Font\x20Awesome\x20Free\x206.4.0\x20by\x20@fontawesome\x20-\x20https://fontawesome.com\x20License\x20-\x20https://fontawesome.com/license\x20(Commercial\x20License)\x20Copyright\x202023\x20Fonticons,\x20Inc.\x20--><path\x20d=\x22M304\x2048a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zm0\x20416a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM48\x20304a48\x2048\x200\x201\x200\x200-96\x2048\x2048\x200\x201\x200\x200\x2096zm464-48a48\x2048\x200\x201\x200\x20-96\x200\x2048\x2048\x200\x201\x200\x2096\x200zM142.9\x20437A48\x2048\x200\x201\x200\x2075\x20369.1\x2048\x2048\x200\x201\x200\x20142.9\x20437zm0-294.2A48\x2048\x200\x201\x200\x2075\x2075a48\x2048\x200\x201\x200\x2067.9\x2067.9zM369.1\x20437A48\x2048\x200\x201\x200\x20437\x20369.1\x2048\x2048\x200\x201\x200\x20369.1\x20437z\x22/></svg>',runButtonIcon2[_0x2f13a2(0xed)][_0x2f13a2(0xe9)](_0x2f13a2(0xc7));},'success':function(_0x1017da){var _0x10d603=_0x28b75b;runButtonIcon2['innerHTML']='',runButtonIcon2['classList'][_0x10d603(0xe4)](_0x10d603(0xc7)),stdout2[_0x10d603(0xed)][_0x10d603(0xe9)]('notranslate'),window[_0x10d603(0xca)]=!0x0,0xc8==_0x1017da[_0x10d603(0xcd)]?(stdout2[_0x10d603(0xb3)]=_0x1017da[_0x10d603(0xb7)]['stdout']||_0x10d603(0xc5),stderr2['innerHTML']=_0x1017da[_0x10d603(0xb7)][_0x10d603(0xeb)]||_0x1017da[_0x10d603(0xb7)][_0x10d603(0xb0)],''==(_0x1017da[_0x10d603(0xb7)]['stderr2']||_0x1017da[_0x10d603(0xb7)][_0x10d603(0xeb)])?document[_0x10d603(0xc2)](_0x10d603(0xb5))[_0x10d603(0xaf)][_0x10d603(0xdc)]='none':document['querySelector'](_0x10d603(0xb5))[_0x10d603(0xaf)]['display']=_0x10d603(0xde)):iziToast[_0x10d603(0xeb)]({'title':_0x10d603(0xe8),'message':_0x1017da[_0x10d603(0xd9)][_0x10d603(0xd4)],'position':_0x10d603(0xd2)});},'error':function(_0x44db29,_0xe418e5,_0x312e13){var _0x339fa4=_0x28b75b;if('timeout'===_0xe418e5)return _0x44db29[_0x339fa4(0xd6)](),Date[_0x339fa4(0xe5)]()-timeWhenIwasLoaded<0x1388&&!window[_0x339fa4(0xca)]?void window[_0x339fa4(0xd7)][_0x339fa4(0xbd)]():iziToast[_0x339fa4(0xeb)]({'title':'Error','message':_0x339fa4(0xb4),'position':_0x339fa4(0xd2)});window['oneSuccessHappened']=!0x0,runButtonIcon2[_0x339fa4(0xb3)]=_0x339fa4(0xef),runButtonIcon2['classList'][_0x339fa4(0xe4)]('fa-spin'),stdout2[_0x339fa4(0xed)][_0x339fa4(0xe9)](_0x339fa4(0xbc)),iziToast[_0x339fa4(0xeb)]({'title':'Error','message':_0x339fa4(0xad),'position':'topRight'});}});});function toggleFullscreen(){var _0x19003a=_0x2d064d;if(!document[_0x19003a(0xc0)]&&!document[_0x19003a(0xcb)]&&!document['webkitFullscreenElement']&&!document[_0x19003a(0xe6)]){if(document[_0x19003a(0xd0)][_0x19003a(0xba)])document[_0x19003a(0xd0)][_0x19003a(0xba)]();else{if(document[_0x19003a(0xd0)][_0x19003a(0xc4)])document[_0x19003a(0xd0)][_0x19003a(0xc4)]();else{if(document['documentElement'][_0x19003a(0xc9)])document[_0x19003a(0xd0)]['webkitRequestFullscreen']();else document['documentElement'][_0x19003a(0xae)]&&document[_0x19003a(0xd0)][_0x19003a(0xae)]();}}}else{if(document[_0x19003a(0xbf)])document[_0x19003a(0xbf)]();else{if(document['mozCancelFullScreen'])document['mozCancelFullScreen']();else{if(document[_0x19003a(0xe2)])document['webkitExitFullscreen']();else document[_0x19003a(0xcc)]&&document[_0x19003a(0xcc)]();}}}}document['getElementById'](_0x2d064d(0xc1))[_0x2d064d(0xdd)]('click',toggleFullscreen);
+        </script>
+      
+        <style>
+                
+          
+          .popup {
+              position: fixed;
+              left: 0;
+              top: 0;
+              height: 100%;
+              z-index: 1000;
+              width: 100%;
+              background-color: rgba(252, 252, 252, 0.729);
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+              opacity: 0;
+              visibility: hidden;
+              transition:500ms all;
+          
+          }
+          
+          .popup.is-visible {
+              opacity: 1;
+              visibility: visible;
+          transition:1s all;
+          }
+          
+          .popup-container {
+              transform:translateY(-50%);
+              transition:500ms all;
+              position: relative;
+              width: 40%;
+              margin: 2em auto;
+              top: 20%;
+              padding:2rem;
+              background: #FFF;
+              border-radius: .25em .25em .4em .4em;
+              text-align: center;
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          }
+          
+          .is-visible .popup-container {
+              transform:translateY(0);
+              transition:500ms all;
+          }
+          
+          .popup-container .popup-close {
+              position: absolute;
+              top: 8px;
+              font-size:0;
+              right: 8px;
+              width: 30px;
+              height: 30px;
+          }
+          
+          
+          .popup-container .popup-close::before,
+          .popup-container .popup-close::after {
+              content: '';
+              position: absolute;
+              top: 12px;
+              width: 14px;
+              height: 3px;
+              background-color: #d3d4d5;
+          }
+          
+          .popup-container .popup-close::before {
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+              left: 8px;
+          }
+          
+          .popup-container .popup-close::after {
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+              right: 8px;
+          }
+          
+          
+          .popup-container .popup-close:hover:before,
+          .popup-container .popup-close:hover:after {
+              background-color:#35a785;
+              transition:300ms all;
+          }
+          
+          </style>
+         
+        
+          <div class="popup" role="alert">
+              <div class="popup-container">
+                  <a href="1" class="popup-close img-replace">Close</a>
+                  <div class="row">
+                      <div class="col-12">
+                          <h4>Confirm Delete </h4> <br>
+                          <p>Are you sure you want to delete ?</p>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                      <div class="col-4"></div>
+                      <div class="col-2">
+                          <button class="btn btn-danger" onclick="location.href='{% url 'javatraningtranieeview' %}'">Cancel</button>
+                      </div>
+                      <div class="col-2">
+                        {% for i in data %}	
+                          <form action="{% url 'codedelete' codedelete_id=i.id %}" method="post">
+                              {% csrf_token %}
+                              <button class="btn btn-success" type="submit">Delete</button>
+                          </form>
+                          {% endfor %}
+                          
+                      </div>
+                      <div class="col-4"></div>
+                  </div>
+              </div> 
+          </div> 
+                     
+      
+          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+          <script>
+              jQuery(document).ready(function($){
+                  //open popup
+                  $('.popup-trigger').on('click', function(event){
+                    event.preventDefault();
+                    $('.popup').addClass('is-visible');
+                  });
+                  
+                  //close popup
+                  $('.popup').on('click', function(event){
+                    if( $(event.target).is('.popup-close') || $(event.target).is('.popup') ) {
+                      event.preventDefault();
+                      $(this).removeClass('is-visible');
+                    }
+                  });
+                  //close popup when clicking the esc keyboard button
+                  $(document).keyup(function(event){
+                      if(event.which=='27'){
+                        $('.popup').removeClass('is-visible');
+                      }
+                    });
+                });
+          </script>
+
+    </div>
+</div>
+
+
+{% endblock content %}

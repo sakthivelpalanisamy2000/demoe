@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Java</title>
+        <link rel="shortcut icon"
+            href="data:image/png;base64,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" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=0" />
+
+        
+        <link rel="stylesheet"
+            href="{% static 'css/compiler/space.css'%}"
+            rel="stylesheet" type="text/css" />
+            
+        <link rel="stylesheet"
+        href="{% static 'css/compiler/codebuilde.css'%}"
+        rel="stylesheet" type="text/css" />
+        <style>
+            #editor{
+              height: 400px;
+              width: 400px;
+            }
+            #terminal{
+              height: 200px;
+              width: 400px;
+            }
+            #stdout{
+              height: 200px;
+              width: 400px;
+            }
+            #stdin{
+              height: 200px;
+              width: 400px;
+            }
+           </style>
+    </head>
+    <body>
+        <div class="container" id="root" data-lang="java">
+           
+            
+                <div id="editor">class Imagecon {
+public static void main(String[] args) {
+    System.out.println("Welcome to Imagecon 10 x");
+}
+}
+                </div>
+            
+                <button class="desktop-run-button run">
+                    <span class="run-text">
+                        &nbsp;Execute&nbsp;
+                    </span>
+                </button>
+
+                <div id="terminal">Loading ....</div>
+            
+        </div>
+        <script defer src="{% static 'lib/ace/socket.io.min.js'%}"></script>
+        <script defer
+            src="{% static 'lib/ace/jquery.min.js'%}"></script>
+
+        <script defer src="{% static 'lib/ace/ace.js'%}"></script>
+        <script defer src="{% static 'lib/ace/mode-java.js'%}"></script>
+        <script defer
+            src="{% static 'lib/ace/theme-eclipse.js'%}"></script>
+        <script defer
+            src="{% static 'lib/ace/theme-monokai.js'%}"></script>
+
+        <script defer
+            src="{% static 'lib/ace/mousetrap.min.js'%}"></script>
+        <script defer src="{% static 'js/build/space.js'%}"></script>
+        <script>
+            let editor;
+
+            window.onload = function() {
+                editor = ace.edit("editor");
+                editor.setTheme("ace/theme/eclipse");
+                editor.session.setMode("ace/mode/java");
+            }
+        </script>
+    </body>
+
+</html>

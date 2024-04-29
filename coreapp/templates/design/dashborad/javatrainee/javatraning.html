@@ -1,0 +1,373 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-6 col-12">
+                    <div class="box pull-up">
+                        <div class="box-body bg-img"
+                            style="background-image: url(../images/bg-5.png);"
+                            data-overlay-light="9">
+                            <div
+                                class="d-lg-flex align-items-center justify-content-between">
+                                <div
+                                    class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                                    <img
+                                        src="https://eduadmin-template.multipurposethemes.com/bs5/images/svg-icon/color-svg/custom-14.svg"
+                                        class="img-fluid max-w-150" alt />
+                                    <div class="ms-30">
+                                        <h4 class="mb-10">Advancing your skills
+                                            through courses can be a great way
+                                            to achieve your goals.</h4>
+                                        <p class="mb-0 text-fade">Concepts
+                                            Covered in Core Java · Java
+                                            Fundamentals · OOPs Concepts ·
+                                            Overloading & Overriding ·
+                                            Inheritance with Interface and
+                                            Abstract Class · Exception Handling
+                                            ... </p>
+                                    </div>
+                                </div>
+                                <!-- <div>
+                                    <button type="button"
+                                        class="waves-effect waves-light w-p100 btn btn-primary"
+                                        style="white-space: nowrap;">Start
+                                        Now!</button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4 col-md-6 col-12">
+                    <div class="box pull-up">
+                        <div class="box-body d-flex align-items-center">
+                            <img
+                                src="https://1000logos.net/wp-content/uploads/2020/09/Java-Emblem.jpg"
+                                alt class="align-self-end h-50 w-80">
+                            <div class="d-flex flex-column flex-grow-1">
+                                <h5 class="box-title fs-16 mb-2">Java
+                                    Courses</h5>
+                                <a href="#" class=" mb-0">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box no-shadow mb-0 bg-transparent">
+                            <div class="box-header no-border px-0">
+                                <h4 class="box-title">Course</h4>
+                                <!-- <ul
+                                    class="box-controls pull-right d-md-flex d-none">
+                                    <li>
+                                        <button
+                                            class="btn btn-primary-light px-10">View
+                                            All</button>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-6 col-md-6 col-12">
+                        <a href>
+                            <div class="box pull-up">
+                                <div class="box-body">
+                                    <div class="bg-primary rounded">
+                                        <h5
+                                            class="text-white text-center p-10">Complied
+                                            Java Full course</h5>
+                                    </div>
+                                    <p class="mb-0 fs-18">Quisque a felis
+                                        quis</p>
+                                    <p class="mb-0 fs-18">Course A-Z</p>
+                                    <div
+                                        class="d-flex justify-content-between mt-30">
+                                        <div>
+                                            <p class="mb-0 text-fade">Author</p>
+                                            <p class="mb-0">Maical Doe</p>
+                                        </div>
+                                        <div>
+                                            <p class="mb-5 fw-600">0%</p>
+                                            <div
+                                                class="progress progress-sm mb-0 w-100">
+                                                <div
+                                                    class="progress-bar progress-bar-primary"
+                                                    role="progressbar"
+                                                    aria-valuenow="40"
+                                                    aria-valuemin="0"
+                                                    aria-valuemax="100"
+                                                    style="width: 55%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div> -->
+                    <div class="col-lg-12">
+                        <div class="box">
+                            <div class="box-body ribbon-box">
+                                <div class="ribbon ribbon-primary">Java complete
+                                    Full Course</div>
+                                <p class="mb-0">
+
+                                    {% for i in data %}
+                                   
+                                        <div class="col-lg-12 col-md-6 col-12">
+                                            <div class="box " >
+                                                <div class="box-body bg-img"
+                                                    style="background-image: url(../images/bg-5.png);"
+                                                    data-overlay-light="9">
+                                                    <div
+                                                        class="d-lg-flex align-items-center justify-content-between">
+                                                        <div
+                                                            class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                                                            <img
+                                                                src="https://seeklogo.com/images/J/java-logo-41D4155FC3-seeklogo.com.png"
+                                                                class="img-fluid max-w-40"
+                                                                alt />
+                                                            <div class="ms-30">
+                                                                <p
+                                                                    class="mb-10 text-fade">{{i.selecttype}}
+                                                                </p>
+                                                                <h4
+                                                                    class="mb-0">
+                                                                    {{i.title}}</h4>
+
+                                                            </div>
+                                                          
+                                                        </div>
+                                                        <div  style="margin-right: 60px;">
+                                                            <a href="{% url 'aeditvideo' editvideo_id=i.id %}"><span class="badge bg-success">Video</span></a>
+                                                        </div>
+                                                        <div  style="margin-right: 60px;">
+                                                              <a href=""><span class="badge bg-success">MCQ</span></a>
+                                                         </div class="mb-10 text-fade">
+                                                         <div  style="margin-right: 60px;">
+                                                             <a href="{% url 'editcodeingview' editcoding=i.id %}"><span class="badge bg-success">Coding</span></a>
+                                                         </div>
+                                                        <div style="margin-right: 10px;">
+                                                            <div class="clearfix">
+                                                                <a href="{% url 'item_update' i.pk %}">
+                                                                    <button type="button" class="waves-effect waves-circle btn btn-circle btn-primary btn-xs mb-5" data-bs-toggle="modal"
+                                                                data-bs-target="#modal-fill"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -5px;">
+                                                                    <path d="M8.21667 17.8583L7.5 18.3333L5 16.6667L2.5 18.3333V2.5H17.5V8.5C16.75 8.18333 15.8333 8.33333 15.2 8.95833L8.21667 15.9417V17.8583ZM14.1667 5.83333H5.83333V7.5H14.1667V5.83333ZM12.5 9.16667H5.83333V10.8333H12.5V9.16667ZM9.88333 16.6333V18.3333H11.5833L16.6917 13.225L15 11.525L9.88333 16.6333ZM18.0917 11.225L16.9917 10.125C16.9732 10.1038 16.9505 10.0868 16.925 10.075C16.8479 10.021 16.7547 9.99493 16.6608 10.001C16.5669 10.007 16.4779 10.0449 16.4083 10.1083L16.3917 10.125L15.575 10.9417L17.275 12.6417L18.0917 11.825C18.2583 11.6667 18.2583 11.3917 18.0917 11.225Z" fill="white"/>
+                                                                    </svg>
+                                                                    </i></button> 
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div >
+                                                            <div class="clearfix">
+                                                                <a href="1" id="info" class="info popup-trigger" title="info">
+                                                                    <button type="submit" class="waves-effect waves-circle btn btn-circle btn-danger btn-xs mb-5"  onclick="uploadtitle()" ><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -5px;">
+                                                                    <path d="M10 1.66663C11.0944 1.66663 12.178 1.88217 13.189 2.30096C14.2001 2.71975 15.1188 3.33358 15.8926 4.1074C16.6664 4.88122 17.2802 5.79988 17.699 6.81093C18.1178 7.82198 18.3334 8.90561 18.3334 9.99996C18.3334 12.2101 17.4554 14.3297 15.8926 15.8925C14.3298 17.4553 12.2102 18.3333 10 18.3333C8.90567 18.3333 7.82204 18.1177 6.81099 17.699C5.79994 17.2802 4.88129 16.6663 4.10746 15.8925C2.54466 14.3297 1.66669 12.2101 1.66669 9.99996C1.66669 7.78982 2.54466 5.67021 4.10746 4.1074C5.67027 2.5446 7.78988 1.66663 10 1.66663ZM10 3.33329C8.23191 3.33329 6.53622 4.03567 5.28598 5.28591C4.03573 6.53616 3.33335 8.23185 3.33335 9.99996C3.33335 11.7681 4.03573 13.4638 5.28598 14.714C6.53622 15.9642 8.23191 16.6666 10 16.6666C11.7681 16.6666 13.4638 15.9642 14.7141 14.714C15.9643 13.4638 16.6667 11.7681 16.6667 9.99996C16.6667 8.23185 15.9643 6.53616 14.7141 5.28591C13.4638 4.03567 11.7681 3.33329 10 3.33329ZM13.3334 8.33329V14.1666C13.3334 14.3876 13.2456 14.5996 13.0893 14.7559C12.933 14.9122 12.721 15 12.5 15H7.50002C7.27901 15 7.06705 14.9122 6.91076 14.7559C6.75448 14.5996 6.66669 14.3876 6.66669 14.1666V8.33329H13.3334ZM11.25 4.99996L12.0834 5.83329H14.1667V7.49996H5.83335V5.83329H7.91669L8.75002 4.99996H11.25Z" fill="white"/>
+                                                                    </svg>
+                                                                    </i></button> 
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                        
+
+
+                                                       
+                                                        <!-- demo check -->
+                                                        
+                                                        <!-- end demo check -->
+
+                                                        <!-- <form action="{% url 'item_delete' i.pk %}" method="post">
+                                                            {% csrf_token %}
+                                                            <button type="submit">Delete</button>
+                                                        </form> -->
+
+                                                        <!--  -->
+
+                                                     
+                                                        <!--  -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                 
+                                    {% endfor %}
+                                    
+
+                                </p>
+                            </div> <!-- end box-body-->
+                        </div>
+                    </div> <!-- end col-->
+                </div>
+                               
+            </div>
+
+            
+         
+
+            <!-- demo sections -->
+
+            <style>
+                
+          
+            .popup {
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100%;
+                z-index: 1000;
+                width: 100%;
+                background-color: rgba(252, 252, 252, 0.729);
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                opacity: 0;
+                visibility: hidden;
+                transition:500ms all;
+            
+            }
+            
+            .popup.is-visible {
+                opacity: 1;
+                visibility: visible;
+            transition:1s all;
+            }
+            
+            .popup-container {
+                transform:translateY(-50%);
+                transition:500ms all;
+                position: relative;
+                width: 40%;
+                margin: 2em auto;
+                top: 20%;
+                padding:2rem;
+                background: #FFF;
+                border-radius: .25em .25em .4em .4em;
+                text-align: center;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            .is-visible .popup-container {
+                transform:translateY(0);
+                transition:500ms all;
+            }
+            
+            .popup-container .popup-close {
+                position: absolute;
+                top: 8px;
+                font-size:0;
+                right: 8px;
+                width: 30px;
+                height: 30px;
+            }
+            
+            
+            .popup-container .popup-close::before,
+            .popup-container .popup-close::after {
+                content: '';
+                position: absolute;
+                top: 12px;
+                width: 14px;
+                height: 3px;
+                background-color: #d3d4d5;
+            }
+            
+            .popup-container .popup-close::before {
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+                left: 8px;
+            }
+            
+            .popup-container .popup-close::after {
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                right: 8px;
+            }
+            
+            
+            .popup-container .popup-close:hover:before,
+            .popup-container .popup-close:hover:after {
+                background-color:#35a785;
+                transition:300ms all;
+            }
+            
+            </style>
+           
+            {% for i in data2 %}
+            <div class="popup" role="alert">
+                <div class="popup-container">
+                    <a href="1" class="popup-close img-replace">Close</a>
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Confirm Delete </h4> <br>
+                            <p>Are you sure you want to delete ( <strong>{{i.title}}</strong> )?</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-2">
+                            <button class="btn btn-danger">Cancel</button>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-success">Delete</button>
+                        </div>
+                        <div class="col-4"></div>
+                    </div>
+                </div> 
+            </div> 
+                       
+            {% endfor %}
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script>
+                jQuery(document).ready(function($){
+                    //open popup
+                    $('.popup-trigger').on('click', function(event){
+                      event.preventDefault();
+                      $('.popup').addClass('is-visible');
+                    });
+                    
+                    //close popup
+                    $('.popup').on('click', function(event){
+                      if( $(event.target).is('.popup-close') || $(event.target).is('.popup') ) {
+                        event.preventDefault();
+                        $(this).removeClass('is-visible');
+                      }
+                    });
+                    //close popup when clicking the esc keyboard button
+                    $(document).keyup(function(event){
+                        if(event.which=='27'){
+                          $('.popup').removeClass('is-visible');
+                        }
+                      });
+                  });
+            </script>
+                        <!-- end demo -->
+        </section>
+        
+                                        	<!-- Modal -->
+		
+    </div>
+</div>
+
+<!-- /.modal -->
+{% endblock content %}

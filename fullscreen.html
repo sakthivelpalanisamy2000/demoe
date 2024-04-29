@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Screen Demo</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      
+      #fullscreenButton {
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+      }
+      
+</style>
+</head>
+<body>
+<div id="fullscreenButton">Enter Fullscreen</div>
+<script src="script.js"></script>
+<script>
+    const fullscreenButton = document.getElementById('fullscreenButton');
+
+    // Function to toggle fullscreen mode
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    
+    // Event listener for the fullscreen button
+    fullscreenButton.addEventListener('click', toggleFullscreen);
+    
+    // Automatically enter fullscreen mode when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      toggleFullscreen();
+    });
+    
+</script>
+</body>
+</html>

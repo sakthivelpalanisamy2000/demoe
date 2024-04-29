@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+    .circular-progress {
+      position: relative;
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+    
+    .circular-progress:before {
+      content: "";
+      position: absolute;
+      height: 70%;
+      width: 70%;
+      background-color: #ffffff;
+      border-radius: 50%;
+    }
+    
+    .value-container {
+      position: relative;
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      color: #1c3d23;
+    }
+  </style>
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="box">
+               
+                {% for i in data %}
+
+                <div class="box pull-up">
+                    <div class="box-body bg-img" style="background-image: url(../images/bg-5.png);" data-overlay-light="9">
+                        <div class="d-lg-flex align-items-center justify-content-between">
+                            <div class="d-md-flex align-items-center mb-30 mb-lg-0 w-p100">
+                                <div class="circular-progress">
+                                    <div class="value-container">0%</div>
+                                </div>
+                                <div class="ms-30">
+                                    <h4 class="mb-10">{{i.title}}</h4>
+                                    <p class="mb-0 text-fade">{{i.title.subtitle}}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <a href="{% url 'ebusinessmcq' app_id=i.title_id %}" class="waves-effect waves-light w-p100 btn btn-primary" style="white-space: nowrap;">Next</a>
+                            </div>
+                        </div>							
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <!-- Default box -->
+                    <div class="box">
+                 
+                    <div class="box-body">
+                       
+
+                        <!-- demo -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <video id="myVideo" width="100%" height="100px" controls
+                                    controlsList="noplaybackrate nodownload ">
+                               
+
+                                    <source src="{{ i.video_file.url }}" type="video/mp4">
+                                    Your browser does
+                                    not support the
+                                    video tag.
+                           
+
+                                </video>
+
+                            </div>
+                            <br>
+                            <div class="col-md-12 " style="margin-top: 35px;">
+                                <div id="slimtest1">
+                                  
+                                    {{i.content | safe}}
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- demo -->
+
+
+                        
+                    </div>
+                    <!-- /.box-body -->
+                    <!-- </div> -->
+                    <!-- /.box -->
+                   
+
+                    <div>
+
+                   
+               
+
+                {%endfor%}
+                    
+                </div>
+
+            </div>
+            
+        </section>
+    </div>
+</div>
+
+
+<script>
+
+
+
+    let vid = document.getElementById("myVideo");
+
+    function getVolume() {
+        alert(vid.volume);
+    }
+
+    function setHalfVolume() {
+        vid.volume = 0.2;
+    }
+
+    function setFullVolume() {
+        vid.volume = 2.0;
+    }
+    vid.onratechange = function () {
+        vid.playbackRate = 1;
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('myVideo');
+
+        // Variables for drag functionality
+        var isDragging = false;
+        var startX;
+        var endX;
+
+        video.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            startX = e.clientX;
+            endX = e.clientX;
+        });
+
+        video.addEventListener('mouseup', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = e.clientX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('mousemove', function (e) {
+            if (isDragging) {
+                endX = e.clientX;
+            }
+        });
+
+        video.addEventListener('mouseleave', function (e) {
+            if (isDragging) {
+                isDragging = false;
+                var deltaX = endX - startX;
+                var newTime = video.currentTime + (deltaX / video.offsetWidth) * video.duration;
+                video.currentTime = Math.max(0, Math.min(video.duration, newTime));
+            }
+        });
+
+        video.addEventListener('ended', function () {
+            video.play();
+        });
+    });
+
+</script>
+<script>
+    let progressBar = document.querySelector(".circular-progress");
+  let valueContainer = document.querySelector(".value-container");
+  
+  let progressValue = 0;
+  let progressEndValue = 2;
+  let speed = 100;
+  
+  let progress = setInterval(() => {
+    progressValue++;
+    valueContainer.textContent = `${progressValue}%`;
+    progressBar.style.background = `conic-gradient(
+        #4d5bf9 ${progressValue * 3.6}deg,
+        #cadcff ${progressValue * 3.6}deg
+    )`;
+    if (progressValue == progressEndValue) {
+      clearInterval(progress);
+    }
+  }, speed);
+  
+  </script>
+{% endblock content %}

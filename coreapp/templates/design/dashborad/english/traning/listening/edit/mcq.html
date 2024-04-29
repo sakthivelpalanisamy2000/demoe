@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<style>
+   
+   
+    
+    .app h1{
+        font-size: 16px;
+        color: #989898;
+        text-align: center;
+        font-weight: 600;
+        border-bottom: 1px solid #333;
+        padding-bottom: 30px;
+    }
+    .quiz{
+        padding: 20px 0;
+    }
+    .quiz h2{
+        font-size: 15px;
+        color:#4d4d4f;
+        font-weight: 600;
+    }
+    .btnquiz{
+        background: #fff;
+        color: #535252;
+        font-weight: 500;
+        width: 100%;
+        border: 1px solid #ffffff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        padding: 10px;
+        border-left: 1px solid rgb(255, 255, 255);
+        margin: 10px 0;
+        text-align: left;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    /* disabled olduğunda çalışmasın */
+    .btnquiz:hover:not([disabled]){ 
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        color: #222;
+    }
+    .btnquiz:disabled{
+        cursor: no-drop;
+    }
+    #next-btnquiz{
+        background: #005B41;
+        color: #fff;
+        font-weight: 500;
+        width: 150px;
+        border: 0;
+        padding: 10px;
+        margin: 20px auto 0;
+        border-radius: 4px;
+        cursor: pointer;
+        display: none;
+    }
+    .correct{
+        border-left: 5px solid rgb(5, 57, 12);
+        color: rgb(40, 40, 40);
+        background: #9aeabc;
+    }
+    .incorrect{
+        border-left: 2px solid rgb(57, 5, 5);
+        color: rgb(40, 40, 40);
+        background: #ff9393;
+    }
+    .yourClassName{
+        text-align: center;
+    }
+    .nextpreviouspagecon{
+        gap: 20px;
+        margin-top: 20px;
+
+    }
+    .nextpreviouspagecon a{
+        padding: 6px 15px;
+        background-color: rgb(5, 51, 5);
+        color: white;
+        font-size: 15px;
+        font-weight: 100;
+        text-decoration: none;
+        border-radius: 5%;
+
+
+    }
+    .nextpreviouspagecon a:hover{
+        transform: scale(1,1);
+        font-weight: 200;
+        color: white;
+        text-decoration: none;
+        
+
+    }
+</style>
+<style>
+    [data-bs-original-title] {
+     
+        color: rgb(10, 100, 108); 
+    }
+   
+    .tooltip .tooltip-inner {
+    color: rgb(0, 0, 0); 
+    }
+
+
+    .tooltip .tooltip-inner {
+    background-color: rgb(255, 255, 255); 
+    }
+</style>
+<div class="content-wrapper">
+    <div class="container-full">
+
+        
+      
+
+        <section class="content">
+            <div style="margin: 20px;">
+                <nav class="pagination is-small is-rounded" role="navigation" aria-label="pagination">
+                    {% if data.has_previous %}
+                    <a class=" btn btn-info" href="?page={{ data.previous_page_number }}">Previous Question</a>
+                    {% endif %}
+                    {% if data.has_next %}
+                    <a id="nextanchortag" title="Submit the code first" class=" btn btn-info"  href="?page={{ data.next_page_number }}" >Next Question</a>
+              
+              
+                    {% endif %}
+                
+                  </nav>
+                  <div >
+                    <div class="btn-group " >
+                    {%for data in data%} 
+
+                      <a href="{% url 'elisteningmcqeditpart' id=data.id %}" class="btn btn-primary"> Edit Question</a>
+                    {%endfor%}
+                      <button type="button" class="btn btn-danger ms-2" data-bs-toggle="modal" style="border-radius: none !important;"
+                      data-bs-target="#myModal">
+                      Delete
+                  </button>
+                    </div>
+
+                  </div>
+              </div>
+              
+            <div class="box" style="padding: 20px;">
+                <div class="app">
+                    {%for data in data%} 
+                    
+                
+
+                    <div class="quiz">
+                        <h2 id="question">{{data.question}}</h2>
+                        <pre id="preview" style="display: none;"></pre>
+                        <div id="answer-buttons">
+                            <button class="btnquiz">{{data.option1}}</button>
+                            <button class="btnquiz">{{data.option2}}</button>
+                            <button class="btnquiz">{{data.option3}}</button>
+                            <button class="btnquiz">{{data.option4}}</button>
+                        </div>
+                        {%endfor%}
+                        <button id="next-btnquiz">Next</button>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" name="" id="" value="">
+            
+
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" >
+				<div class="modal-content "  style="border-radius: none;">
+					<!-- <div class="modal-header ">
+						<h4 class="modal-title" id="myModalLabel" >Confirmation </h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="startTimerButton"></button>
+					</div> -->
+					<div class="modal-body">
+						<h4 style="color: rgb(5, 76, 80);">Are you sure you want to delete this Question?</h4>
+                        {%for data in data%} 
+                        <p>{{data.question}}</p>
+
+                        <p>A : {{data.option1}}</p>
+                        <p>B : {{data.option2}}</p>
+                        <p>C : {{data.option3}}</p>
+                        <p>D : {{data.option4}}</p>
+
+                        {%endfor%}
+					</div>
+					<div class="modal-footer align-items-center">
+						<button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="startTimerButton">Cancel</button>
+                        {%for data in data%} 
+                        <form action="{% url 'elisteningtecqdeletepart' id=data.id %}" method="post">
+                            {% csrf_token %}
+
+						<button class="btn btn-success" type="submit">Delete</button>
+                        </form>
+                        {%endfor%}
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+
+            
+		</div>
+
+        
+        </section>
+    </div>
+</div>
+
+
+
+{% endblock content %}

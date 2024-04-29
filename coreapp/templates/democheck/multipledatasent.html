@@ -1,0 +1,57 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <textarea name="questions" id="questions"></textarea>
+    <textarea name="" id="userinput"></textarea>
+    <textarea name="" id="useroutput"></textarea>
+    <textarea name="" id="testcaseinput"></textarea>
+    <textarea name="" id="testcaseoutput"></textarea>
+    <button onclick="sentData()">sent</button>
+
+
+    <script>
+        function sentData() {
+            var data1 = ('#questions').val();
+            var data2 = $('#userinput').val();
+            var data3 = $('#useroutput').val();
+            var data4 = $('#testcaseinput').val();
+            var data5 = $('#testcaseoutput').val();
+            let csrftoken = '{{ csrf_token }}'
+    
+            $.ajax({
+                type: 'POST',
+                headers: { 'X-CSRFToken': csrftoken },
+                url:  "{% url 'sentadd' %}",  // Use the URL from your Django urls.py
+                contentType: 'application/json;charset=UTF-8',
+                data: JSON.stringify({
+                    'data1': data1,
+                    'data2': data2,
+                    'data3': data3,
+                    'data4': data4,
+                    'data5': data5,
+                }),
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+
+
+</body>
+
+
+</html>

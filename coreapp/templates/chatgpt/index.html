@@ -1,0 +1,23 @@
+<!-- In myrecipe_app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Recipe</title>
+</head>
+<body>
+    <form method="post" action="{% url 'generate_recipe' %}">
+        {% csrf_token %}
+        <label for="ingredient1">Ingredient 1:</label>
+        <input type="text" name="ingredient" id="ingredient1"><br>
+
+        <label for="ingredient2">Ingredient 2:</label>
+        <input type="text" name="ingredient" id="ingredient2"><br>
+
+        <label for="ingredient3">Ingredient 3:</label>
+        <input type="text" name="ingredient" id="ingredient3"><br>
+
+        <input type="submit" value="Generate Recipe">
+    </form>
+</body>
+</html>

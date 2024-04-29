@@ -1,0 +1,1826 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="">
+
+	<title>Imagecon</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+	<link rel="stylesheet" href="{% static 'resume/style.css'%}" type="text/css" />
+	<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Vendors Style-->
+	<link rel="stylesheet" href="{% static 'design/css/color_theme.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/style_rtl.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/font-awesome/css/font-awesome.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/Ionicons/css/ionicons.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/themify-icons/themify-icons.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/linea-icons/linea.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/glyphicons/glyphicon.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/flag-icon-css/css/flag-icon.css '%}" type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/icons/material-design-iconic-font/css/materialdesignicons.css '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/simple-line-icons/css/simple-line-icons.css '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/cryptocoins-master/cryptocoins.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/weather-icons/css/weather-icons.min.css '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/iconsmind/style.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/icons/icomoon/style.css '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/animate/animate.css '%}" type="text/css" />
+
+
+
+	<link rel="stylesheet" href="{% static 'design/css/color_theme.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/style_rtl.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendors_css.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/style.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/skin_color.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/iconsmindstyle.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/weather-icons.min.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/cryptocoins.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/simple-line-icons.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/materialdesignicons.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/flag-icon.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/glyphicon.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/linea.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/themify-icons.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/ionicons.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/font-awesome.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/style_rtl.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/color_theme.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/iconmoonstyle.css'%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/iconmoon.css'%}" type="text/css" />
+
+	<link rel="stylesheet" href="{% static 'design/css/animate.css'%}" type="text/css" />
+
+	<!-- vendor -->
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/gridstack/gridstack.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/ion-rangeSlider/css/ion.rangeSlider.skinModern.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/ion-rangeSlider/css/ion.rangeSlider.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/raty-master/lib/jquery.raty.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/bootstrap-select/dist/css/bootstrap-select.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/veendor_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/bootstrap-daterangepicker/daterangepicker.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/select2/dist/css/select2.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/dropzone/dropzone.css  '%}" type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/bootstrap-markdown-master/css/bootstrap-markdown.css '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/sweetalert/sweetalert.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/jvectormap/lib2/jquery-jvectormap-2.0.2.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/lightbox-master/dist/ekko-lightbox.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/gallery/css/animated-masonry-gallery.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/Magnific-Popup-master/dist/magnific-popup.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/datatable/datatables.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/prism/prism.css  '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/flexslider/flexslider.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/horizontal-timeline/css/horizontal-timeline.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/OwlCarousel2/dist/assets/owl.theme.default.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/OwlCarousel2/dist/assets/owl.carousel.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/morris.js/morris.css  '%}" type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/perfect-scrollbar/css/perfect-scrollbar.css '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/bootstrap/dist/css/bootstrap.css '%}"
+		type="text/css" />
+
+
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/fullcalendar/fullcalendar.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_plugins/pace/pace.min.css  '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_plugins/timepicker/bootstrap-timepicker.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_plugins/iCheck/all.css  '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_plugins/iCheck/flat/blue.css  '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_plugins/bootstrap-slider/slider.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/cssvendor_components/chartist-js-develop/chartist.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/c3/c3.min.css  '%}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/bootstrap-switch/switch.css  '%}"
+		type="text/css" />
+	<link rel="stylesheet" href="{% static 'design/css/vendor_components/nestable/nestable.css  '%}" type="text/css" />
+	<link rel="stylesheet"
+		href="{% static 'design/css/vendor_components/jquery-toast-plugin-master/src/jquery.toast.css  '%}"
+		type="text/css" />
+
+
+
+</head>
+
+<body class="hold-transition light-skin sidebar-mini theme-primary fixed">
+
+	<div class="wrapper">
+		<div id="loader"></div>
+
+		<header class="main-header">
+			<div class="d-flex align-items-center logo-box justify-content-start"
+				style="border-bottom: .5px solid rgba(233, 233, 233, 0.704);">
+				<a href="#"
+					class="waves-effect waves-light nav-link d-none d-md-inline-block mx-10 push-btn bg-transparent"
+					data-toggle="push-menu" role="button">
+					<span class="icon-Align-left"><span class="path1"></span><span class="path2"></span><span
+							class="path3"></span></span>
+				</a>
+				<!-- Logo -->
+				<a href="index-2.html" class="logo">
+					<!-- logo-->
+					<div class="logo-lg">
+						<span class="light-logo"
+							style="font-weight:900 ; text-transform:uppercase; color:rgb(63, 131, 108)"><img
+								src="">Imagecon</span>
+						<span class="dark-logo"><img src="">d</span>
+					</div>
+				</a>
+			</div>
+			<!-- Header Navbar -->
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top">
+				<!-- Sidebar toggle button-->
+				<div class="app-menu">
+					<ul class="header-megamenu nav">
+						<li class="btn-group nav-item d-md-none">
+							<a href="#" class="waves-effect waves-light nav-link push-btn" data-toggle="push-menu"
+								role="button">
+								<span class="icon-Align-left"><span class="path1"></span><span
+										class="path2"></span><span class="path3"></span></span>
+							</a>
+						</li>
+						<!-- <li class="btn-group nav-item d-none d-xl-inline-block">
+						  <a href="contact_app_chat.html" class="waves-effect waves-light nav-link svg-bt-icon" title="Chat">
+							  <i class="icon-Chat"><span class="path1"></span><span class="path2"></span></i>
+						  </a>
+					  </li>
+					  <li class="btn-group nav-item d-none d-xl-inline-block">
+						  <a href="mailbox.html" class="waves-effect waves-light nav-link svg-bt-icon" title="Mailbox">
+							  <i class="icon-Mailbox"><span class="path1"></span><span class="path2"></span></i>
+						  </a>
+					  </li>
+					  <li class="btn-group nav-item d-none d-xl-inline-block">
+						  <a href="extra_taskboard.html" class="waves-effect waves-light nav-link svg-bt-icon" title="Taskboard">
+							  <i class="icon-Clipboard-check"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+						  </a>
+					  </li> -->
+					</ul>
+				</div>
+
+				<div class="navbar-custom-menu r-side">
+					<ul class="nav navbar-nav">
+						<li class="btn-group nav-item d-lg-inline-flex d-none">
+							<a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link full-screen"
+								title="Full Screen">
+								<i class="icon-Expand-arrows"><span class="path1"></span><span class="path2"></span></i>
+							</a>
+						</li>
+						<li class="btn-group d-lg-inline-flex d-none">
+							<div class="app-menu">
+								<div class="search-bx mx-5">
+									<form>
+										<div class="input-group">
+											<input type="search" class="form-control" placeholder="Search"
+												aria-label="Search" aria-describedby="button-addon2">
+											<div class="input-group-append">
+												<button class="btn" type="submit" id="button-addon3"><i
+														class="ti-search"></i></button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</li>
+						<!-- Notifications -->
+
+						<!-- User Account-->
+						<li class="dropdown user user-menu">
+							<a href="#" class="waves-effect waves-light dropdown-toggle" data-bs-toggle="dropdown"
+								title="User">
+								<i class="icon-User"><span class="path1"></span><span class="path2"></span></i>
+							</a>
+							<ul class="dropdown-menu animated flipInX">
+								<li class="user-body">
+									<a class="dropdown-item" href="#"><i class="ti-user text-muted me-2"></i>
+										Profile</a>
+									<!-- <a class="dropdown-item" href="#"><i class="ti-wallet text-muted me-2"></i> My Wallet</a> -->
+									<a class="dropdown-item" href="#"><i class="ti-settings text-muted me-2"></i>
+										Settings</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><i class="ti-lock text-muted me-2"></i> Logout</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- Control Sidebar Toggle Button -->
+
+
+					</ul>
+				</div>
+			</nav>
+
+		</header>
+
+		<aside class="main-sidebar" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+			<!-- sidebar-->
+			<section class="sidebar position-relative">
+				<div class="multinav">
+					<div class="multinav-scroll" style="height: 100%;">
+						<!-- sidebar menu-->
+						<ul class="sidebar-menu" data-widget="tree">
+							<li class="header">Imagecon10x Application</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="icon-Layout-4-blocks"><span class="path1"></span><span
+											class="path2"></span></i>
+									<span>Dashboard</span>
+									<!-- <span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span> -->
+								</a>
+								<!-- <ul class="treeview-menu">
+									<li><a href="index-2.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 1</a></li>
+									<li><a href="index2.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 2</a></li>
+									<li><a href="index3.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 3</a></li>
+									<li><a href="index4.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 4</a></li>
+									<li><a href="index5.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 5</a></li>
+									<li><a href="index6.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 6</a></li>
+									<li><a href="index7.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 7</a></li>
+									<li><a href="index8.html"><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Dashboard 8</a></li>
+								</ul> -->
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i span class="icon"> <img
+											src="https://cdni.iconscout.com/illustration/premium/thumb/report-7108510-5791726.png?f=webp"
+											width="20px" height="20px" alt=""><span class="path1"></span><span
+											class="path2"></span></i>
+									<span>Report</span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Aptitud Report</a>
+									</li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Technical Report</a>
+									</li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>English Traning Report</a></li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Job Report</a></li>
+
+								</ul>
+							</li>
+							<!-- <li class="header">Components & UI </li> -->
+							<li class="treeview">
+								<a href="#">
+									<i class="icon"><img
+											src="https://cdni.iconscout.com/illustration/premium/thumb/human-head-brain-with-pie-chart-of-idea-10015300-8111327.png?f=webp"
+											width="20px" height="20px" alt=""><span class="path1"></span><span
+											class="path2"></span></i>
+									<span>Aptitude</span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Traning</a></li>
+									<!-- <li class="treeview">
+										<a href="#">
+											<i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Card
+											<span class="pull-right-container">
+												<i class="fa fa-angle-right pull-right"></i>
+											</span>
+										</a>
+										<ul class="treeview-menu">
+											<li><a href="box_cards.html"><i class="icon-Commit"><span
+															class="path1"></span><span class="path2"></span></i>User
+													Card</a></li>
+											<li><a href="box_advanced.html"><i class="icon-Commit"><span
+															class="path1"></span><span class="path2"></span></i>Advanced
+													Card</a></li>
+											<li><a href="box_basic.html"><i class="icon-Commit"><span
+															class="path1"></span><span class="path2"></span></i>Basic
+													Card</a></li>
+											<li><a href="box_color.html"><i class="icon-Commit"><span
+															class="path1"></span><span class="path2"></span></i>Card
+													Color</a></li>
+											<li><a href="box_group.html"><i class="icon-Commit"><span
+															class="path1"></span><span class="path2"></span></i>Card
+													Group</a></li>
+										</ul>
+									</li> -->
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Practices</a></li>
+
+								</ul>
+							</li>
+
+							<!-- <li class="header">COLLECTIONS</li> -->
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">T<span class="path1"></span><span class="path2"></span></i>
+									<span>Technical</span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+
+									<li class="treeview">
+										<a href="#">
+											<i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>C
+											<span class="pull-right-container">
+												<i class="fa fa-angle-right pull-right"></i>
+											</span>
+										</a>
+										<ul class="treeview-menu">
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Traning</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Practice</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Test</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Report</a></li>
+
+										</ul>
+									</li>
+									<li class="treeview">
+										<a href="#">
+											<i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>C++
+											<span class="pull-right-container">
+												<i class="fa fa-angle-right pull-right"></i>
+											</span>
+										</a>
+										<ul class="treeview-menu">
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Traning</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Practice</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Test</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Report</a></li>
+
+										</ul>
+									</li>
+									<li class="treeview">
+										<a href="#">
+											<i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Java
+											<span class="pull-right-container">
+												<i class="fa fa-angle-right pull-right"></i>
+											</span>
+										</a>
+										<ul class="treeview-menu">
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Traning</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Practice</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Test</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Report</a></li>
+
+										</ul>
+									</li>
+									<li class="treeview">
+										<a href="#">
+											<i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Python
+											<span class="pull-right-container">
+												<i class="fa fa-angle-right pull-right"></i>
+											</span>
+										</a>
+										<ul class="treeview-menu">
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Traning</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Practice</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Test</a></li>
+											<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+															class="path2"></span></i>Report</a></li>
+
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">R<span class="path1"></span><span class="path2"></span></i>
+									<span>Resume Builder</span>
+									<!-- <span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span> -->
+								</a>
+
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">E<span class="path1"></span><span class="path2"></span></i>
+									<span>English Traning</span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Technical English</a></li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Business English</a>
+									</li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Spoken English</a></li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Listening English</a>
+									</li>
+
+								</ul>
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">I<span class="path1"></span><span class="path2"></span></i>
+									<span>InterShip</span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Announcement</a></li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Certification</a>
+									</li>
+
+
+								</ul>
+
+							</li>
+
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">W<span class="path1"></span><span class="path2"></span></i>
+									<span>WorkShop</span>
+									<span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span>
+								</a>
+								<ul class="treeview-menu">
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Announcement</a></li>
+									<li><a href=""><i class="icon-Commit"><span class="path1"></span><span
+													class="path2"></span></i>Certification</a>
+									</li>
+
+
+								</ul>
+
+							</li>
+
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">P<span class="path1"></span><span class="path2"></span></i>
+									<span>PD</span>
+									<!-- <span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span> -->
+								</a>
+
+							</li>
+							<li class="treeview">
+								<a href="#">
+									<i class="icon">J<span class="path1"></span><span class="path2"></span></i>
+									<span>Jobs</span>
+									<!-- <span class="pull-right-container">
+										<i class="fa fa-angle-right pull-right"></i>
+									</span> -->
+								</a>
+
+							</li>
+							<!-- <li class="header">LOGIN & ERROR </li> -->
+
+
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- <div class="sidebar-footer">
+				<a href="javascript:void(0)" class="link" data-bs-toggle="tooltip" title="Settings"><span
+						class="icon-Settings-2"></span></a>
+				<a href="mailbox.html" class="link" data-bs-toggle="tooltip" title="Email"><span
+						class="icon-Mail"></span></a>
+				<a href="javascript:void(0)" class="link" data-bs-toggle="tooltip" title="Logout"><span
+						class="icon-Lock-overturning"><span class="path1"></span><span class="path2"></span></span></a>
+			</div> -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+
+		<!-- /.content-wrapper -->
+		<!-- <footer class="main-footer">
+			<div class="pull-right d-none d-sm-inline-block">
+				<ul class="nav nav-primary nav-dotted nav-dot-separated justify-content-center justify-content-md-end">
+					<li class="nav-item">
+						<a class="nav-link" href="javascript:void(0)">FAQ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link"
+							href="https://themeforest.net/item/eduadmin-responsive-bootstrap-admin-template-dashboard/29365133"
+							target="_blank">Purchase Now</a>
+					</li>
+				</ul>
+			</div>
+			&copy; 2022 <a href="https://www.multipurposethemes.com/">Multipurpose Themes</a>. All Rights Reserved.
+		</footer> -->
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar">
+
+			<div class="rpanel-title"><span class="pull-right btn btn-circle btn-danger"><i
+						class="ion ion-close text-white" data-toggle="control-sidebar"></i></span> </div>
+			<!-- Create the tabs -->
+			<ul class="nav nav-tabs control-sidebar-tabs">
+				<li class="nav-item"><a href="#control-sidebar-home-tab" data-bs-toggle="tab" class="active"><i
+							class="mdi mdi-message-text"></i></a></li>
+				<li class="nav-item"><a href="#control-sidebar-settings-tab" data-bs-toggle="tab"><i
+							class="mdi mdi-playlist-check"></i></a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!-- Home tab content -->
+				<div class="tab-pane active" id="control-sidebar-home-tab">
+					<div class="flexbox">
+						<a href="javascript:void(0)" class="text-grey">
+							<i class="ti-more"></i>
+						</a>
+						<p>Users</p>
+						<a href="javascript:void(0)" class="text-end text-grey"><i class="ti-plus"></i></a>
+					</div>
+					<div class="lookup lookup-sm lookup-right d-none d-lg-block">
+						<input type="text" name="s" placeholder="Search" class="w-p100">
+					</div>
+					<div class="media-list media-list-hover mt-20">
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-success" href="#">
+								<img src="../images/avatar/1.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Tyler</strong></a>
+								</p>
+								<p>Praesent tristique diam...</p>
+								<span>Just now</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-danger" href="#">
+								<img src="../images/avatar/2.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Luke</strong></a>
+								</p>
+								<p>Cras tempor diam ...</p>
+								<span>33 min ago</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-warning" href="#">
+								<img src="../images/avatar/3.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Evan</strong></a>
+								</p>
+								<p>In posuere tortor vel...</p>
+								<span>42 min ago</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-primary" href="#">
+								<img src="../images/avatar/4.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Evan</strong></a>
+								</p>
+								<p>In posuere tortor vel...</p>
+								<span>42 min ago</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-success" href="#">
+								<img src="../images/avatar/1.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Tyler</strong></a>
+								</p>
+								<p>Praesent tristique diam...</p>
+								<span>Just now</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-danger" href="#">
+								<img src="../images/avatar/2.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Luke</strong></a>
+								</p>
+								<p>Cras tempor diam ...</p>
+								<span>33 min ago</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-warning" href="#">
+								<img src="../images/avatar/3.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Evan</strong></a>
+								</p>
+								<p>In posuere tortor vel...</p>
+								<span>42 min ago</span>
+							</div>
+						</div>
+
+						<div class="media py-10 px-0">
+							<a class="avatar avatar-lg status-primary" href="#">
+								<img src="../images/avatar/4.jpg" alt="...">
+							</a>
+							<div class="media-body">
+								<p class="fs-16">
+									<a class="hover-primary" href="#"><strong>Evan</strong></a>
+								</p>
+								<p>In posuere tortor vel...</p>
+								<span>42 min ago</span>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- /.tab-pane -->
+				<!-- Settings tab content -->
+				<div class="tab-pane" id="control-sidebar-settings-tab">
+					<div class="flexbox">
+						<a href="javascript:void(0)" class="text-grey">
+							<i class="ti-more"></i>
+						</a>
+						<p>Todo List</p>
+						<a href="javascript:void(0)" class="text-end text-grey"><i class="ti-plus"></i></a>
+					</div>
+					<ul class="todo-list mt-20">
+						<li class="py-15 px-5 by-1">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_1" class="filled-in">
+							<label for="basic_checkbox_1" class="mb-0 h-15"></label>
+							<!-- todo text -->
+							<span class="text-line">Nulla vitae purus</span>
+							<!-- Emphasis label -->
+							<small class="badge bg-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+							<!-- General tools such as edit or delete-->
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_2" class="filled-in">
+							<label for="basic_checkbox_2" class="mb-0 h-15"></label>
+							<span class="text-line">Phasellus interdum</span>
+							<small class="badge bg-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5 by-1">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_3" class="filled-in">
+							<label for="basic_checkbox_3" class="mb-0 h-15"></label>
+							<span class="text-line">Quisque sodales</span>
+							<small class="badge bg-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_4" class="filled-in">
+							<label for="basic_checkbox_4" class="mb-0 h-15"></label>
+							<span class="text-line">Proin nec mi porta</span>
+							<small class="badge bg-success"><i class="fa fa-clock-o"></i> 3 days</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5 by-1">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_5" class="filled-in">
+							<label for="basic_checkbox_5" class="mb-0 h-15"></label>
+							<span class="text-line">Maecenas scelerisque</span>
+							<small class="badge bg-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_6" class="filled-in">
+							<label for="basic_checkbox_6" class="mb-0 h-15"></label>
+							<span class="text-line">Vivamus nec orci</span>
+							<small class="badge bg-info"><i class="fa fa-clock-o"></i> 1 month</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5 by-1">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_7" class="filled-in">
+							<label for="basic_checkbox_7" class="mb-0 h-15"></label>
+							<!-- todo text -->
+							<span class="text-line">Nulla vitae purus</span>
+							<!-- Emphasis label -->
+							<small class="badge bg-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+							<!-- General tools such as edit or delete-->
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_8" class="filled-in">
+							<label for="basic_checkbox_8" class="mb-0 h-15"></label>
+							<span class="text-line">Phasellus interdum</span>
+							<small class="badge bg-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5 by-1">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_9" class="filled-in">
+							<label for="basic_checkbox_9" class="mb-0 h-15"></label>
+							<span class="text-line">Quisque sodales</span>
+							<small class="badge bg-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+						<li class="py-15 px-5">
+							<!-- checkbox -->
+							<input type="checkbox" id="basic_checkbox_10" class="filled-in">
+							<label for="basic_checkbox_10" class="mb-0 h-15"></label>
+							<span class="text-line">Proin nec mi porta</span>
+							<small class="badge bg-success"><i class="fa fa-clock-o"></i> 3 days</small>
+							<div class="tools">
+								<i class="fa fa-edit"></i>
+								<i class="fa fa-trash-o"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- /.tab-pane -->
+			</div>
+		</aside>
+		<!-- /.control-sidebar -->
+
+		<div class="content-wrapper">
+			<div class="container-full">
+
+
+				<section class="content">
+					<div class="row">
+						<div class="col-xl-12 col-12">
+							<div class="box bg-primary-light">
+								<div class="box-body d-flex px-0">
+									<div class="flex-grow-1 p-30 flex-grow-1 bg-img dask-bg bg-none-md"
+										style="background-position: right bottom; background-size: auto 100%; background-image: url(https://eduadmin-template.multipurposethemes.com/bs5/images/svg-icon/color-svg/custom-1.svg)">
+										<div class="row">
+											<div class="col-12 col-xl-12">
+												<h2> Create A Professional Resume</h2>
+
+												<p class="text-dark my-10 fs-16">
+													Pick one of many world-class templates and build your resume in
+													<strong class="text-warning">minutes</strong>
+												</p>
+												<p class="text-dark my-10 fs-16">
+													Make a perfect resume in <strong class="text-warning">2024</strong>
+													and get your dream job
+												</p>
+											</div>
+											<div class="col-12 col-xl-5"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+
+				<!-- demo check -->
+
+
+				<!-- end demo check -->
+				<!--  Two Column  -->
+				<!-- <div class="row">
+					<div class="col-sm-6 background">
+						One of one columns
+					</div>
+					<div class="col-sm-6 background">
+						One of two columns
+					</div>
+				</div> -->
+				<!--  Two Column  -->
+
+				<section class="content">
+
+
+
+					<div class="box">
+						<!-- <div class="box-header with-border">
+							<h4 class="box-title">Form Popup</h4>
+						</div> -->
+						<div class="box-body">
+							<div class="row">
+								<div class="col-xl-3 col-sm-3 background">
+									<a class=" btn btn-success" href="{% url 'choosetemplatedesign' %}"
+										style="align-items: center;">Choose the Template</a>
+								</div>
+
+								<div class="col-xl-3 col-sm-3 background">
+
+								</div>
+
+								<div class="col-xl-3 col-sm-3 background">
+									<button class="button is-small " onclick="downloadPDF()" style="padding: 10px;">
+										<span class="icon " style="margin-right: 4px;">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+												viewBox="0 0 20 20" fill="none">
+												<path
+													d="M15.0624 1.29492L18.5399 4.91992V18.7049H5.54932V18.7499H18.5843V4.96555L15.0624 1.29492Z"
+													fill="#909090" />
+												<path d="M15.0194 1.25H5.505V18.705H18.54V4.92063L15.0194 1.25Z"
+													fill="#F4F4F4" />
+												<path d="M5.4094 2.1875H1.41565V6.45437H13.9781V2.1875H5.4094Z"
+													fill="#7A7B7C" />
+												<path d="M14.045 6.38182H1.49683V2.11182H14.045V6.38182Z"
+													fill="#DD2025" />
+												<path
+													d="M5.65745 2.83368H4.84058V5.83368H5.48308V4.82181L5.62495 4.82993C5.76281 4.82756 5.89937 4.80287 6.02933 4.75681C6.14327 4.71762 6.24808 4.65575 6.33745 4.57493C6.42839 4.49794 6.50008 4.40078 6.54683 4.29118C6.60951 4.10899 6.6319 3.91537 6.61245 3.72368C6.60855 3.58675 6.58454 3.45113 6.5412 3.32118C6.50175 3.22737 6.4432 3.14281 6.36927 3.07287C6.29535 3.00292 6.20767 2.94914 6.11183 2.91493C6.02896 2.88493 5.94334 2.86316 5.8562 2.84993C5.79022 2.83975 5.72359 2.83432 5.65683 2.83368M5.5387 4.26743H5.48308V3.34243H5.6037C5.65694 3.33859 5.71036 3.34677 5.76001 3.36635C5.80967 3.38593 5.85429 3.41641 5.89058 3.45556C5.96578 3.55619 6.00595 3.67868 6.00495 3.80431C6.00495 3.95806 6.00495 4.09743 5.8662 4.19556C5.76624 4.25053 5.65247 4.27591 5.5387 4.26743ZM7.83308 2.82556C7.7637 2.82556 7.6962 2.83056 7.6487 2.83243L7.49995 2.83618H7.01245V5.83618H7.5862C7.80547 5.84219 8.02377 5.80503 8.2287 5.72681C8.39365 5.66138 8.53971 5.55592 8.6537 5.41993C8.76455 5.28272 8.84411 5.12296 8.88683 4.95181C8.93593 4.75798 8.95987 4.55863 8.95808 4.35868C8.9702 4.12253 8.95193 3.8858 8.9037 3.65431C8.85794 3.48391 8.77224 3.32686 8.6537 3.19618C8.5607 3.09066 8.44685 3.00554 8.31933 2.94618C8.20981 2.89551 8.09462 2.85815 7.9762 2.83493C7.92911 2.82715 7.88142 2.8236 7.8337 2.82431M7.71995 5.28493H7.65745V3.36993H7.66558C7.79443 3.35511 7.92479 3.37836 8.04058 3.43681C8.12537 3.50451 8.19445 3.58981 8.24308 3.68681C8.29555 3.78889 8.3258 3.90094 8.33183 4.01556C8.33745 4.15306 8.33183 4.26556 8.33183 4.35868C8.33437 4.46596 8.32747 4.57324 8.3112 4.67931C8.29194 4.7882 8.25633 4.89356 8.20558 4.99181C8.14813 5.08315 8.07052 5.16012 7.9787 5.21681C7.90159 5.26668 7.81028 5.28995 7.7187 5.28306M10.8937 2.83618H9.37495V5.83618H10.0175V4.64618H10.83V4.08868H10.0175V3.39368H10.8925V2.83618"
+													fill="#464648" />
+												<path
+													d="M13.6132 12.6594C13.6132 12.6594 15.6057 12.2982 15.6057 12.9788C15.6057 13.6594 14.3713 13.3826 13.6132 12.6594ZM12.1401 12.7113C11.8235 12.7813 11.515 12.8837 11.2194 13.0169L11.4694 12.4544C11.7194 11.8919 11.9788 11.1251 11.9788 11.1251C12.2771 11.6272 12.6242 12.0986 13.0151 12.5326C12.7203 12.5765 12.4282 12.6366 12.1401 12.7126V12.7113ZM11.3513 8.64882C11.3513 8.05569 11.5432 7.89382 11.6926 7.89382C11.8419 7.89382 12.0101 7.96569 12.0157 8.48069C11.967 8.99854 11.8586 9.50902 11.6926 10.0019C11.4651 9.58809 11.3474 9.12291 11.3507 8.65069L11.3513 8.64882ZM8.44568 15.2213C7.83443 14.8557 9.72755 13.7301 10.0707 13.6938C10.0688 13.6944 9.08568 15.6038 8.44568 15.2213ZM16.1876 13.0594C16.1813 12.9969 16.1251 12.3051 14.8938 12.3344C14.3806 12.3262 13.8676 12.3623 13.3607 12.4426C12.8696 11.9478 12.4467 11.3898 12.1032 10.7832C12.3196 10.1578 12.4506 9.50611 12.4926 8.84569C12.4744 8.09569 12.2951 7.66569 11.7201 7.67194C11.1451 7.67819 11.0613 8.18132 11.1369 8.93007C11.211 9.43322 11.3507 9.92449 11.5526 10.3913C11.5526 10.3913 11.2869 11.2182 10.9357 12.0407C10.5844 12.8632 10.3444 13.2944 10.3444 13.2944C9.73363 13.4933 9.15864 13.7887 8.6413 14.1694C8.1263 14.6488 7.91693 15.0169 8.18818 15.3851C8.42193 15.7026 9.24005 15.7744 9.9713 14.8163C10.3598 14.3214 10.7148 13.8011 11.0338 13.2588C11.0338 13.2588 12.1488 12.9532 12.4957 12.8694C12.8426 12.7857 13.2619 12.7194 13.2619 12.7194C13.2619 12.7194 14.2801 13.7438 15.2619 13.7076C16.2438 13.6713 16.1963 13.1207 16.1901 13.0607"
+													fill="#DD2025" />
+												<path d="M14.9712 1.29834V4.96896H18.4918L14.9712 1.29834Z"
+													fill="#909090" />
+												<path d="M15.0194 1.25V4.92063H18.54L15.0194 1.25Z" fill="#F4F4F4" />
+												<path
+													d="M5.60936 2.78583H4.79248V5.78583H5.43748V4.77458L5.57998 4.78271C5.71784 4.78033 5.8544 4.75564 5.98436 4.70958C6.09829 4.67038 6.2031 4.60851 6.29248 4.52771C6.38273 4.45051 6.45378 4.35336 6.49998 4.24396C6.56266 4.06177 6.58506 3.86814 6.56561 3.67646C6.5617 3.53952 6.5377 3.40391 6.49436 3.27396C6.4549 3.18015 6.39635 3.09558 6.32243 3.02564C6.2485 2.9557 6.16083 2.90191 6.06498 2.86771C5.98173 2.83741 5.89569 2.81543 5.80811 2.80208C5.74212 2.7919 5.67549 2.78647 5.60873 2.78583M5.49061 4.21958H5.43498V3.29458H5.55623C5.60947 3.29074 5.66289 3.29891 5.71254 3.31849C5.7622 3.33808 5.80682 3.36856 5.84311 3.40771C5.9183 3.50834 5.95848 3.63083 5.95748 3.75646C5.95748 3.91021 5.95748 4.04958 5.81873 4.14771C5.71877 4.20268 5.60499 4.22744 5.49123 4.21896M7.78498 2.77771C7.71561 2.77771 7.64811 2.78271 7.60061 2.78458L7.45373 2.78833H6.96623V5.78833H7.53998C7.75925 5.79434 7.97755 5.75718 8.18248 5.67896C8.34743 5.61353 8.49349 5.50807 8.60748 5.37208C8.71833 5.23487 8.79789 5.0751 8.84061 4.90396C8.88971 4.71012 8.91365 4.51078 8.91186 4.31083C8.92398 4.07468 8.9057 3.83795 8.85748 3.60646C8.81172 3.43606 8.72602 3.27901 8.60748 3.14833C8.51448 3.04281 8.40063 2.95769 8.27311 2.89833C8.16359 2.84765 8.04839 2.8103 7.92998 2.78708C7.88289 2.7793 7.8352 2.77575 7.78748 2.77646M7.67373 5.23708H7.61123V3.32208H7.61936C7.7482 3.30726 7.87857 3.3305 7.99436 3.38896C8.07914 3.45666 8.14823 3.54196 8.19686 3.63896C8.24933 3.74104 8.27958 3.85308 8.28561 3.96771C8.29123 4.10521 8.28561 4.21771 8.28561 4.31083C8.28815 4.4181 8.28125 4.52539 8.26498 4.63146C8.24572 4.74035 8.21011 4.84571 8.15936 4.94396C8.10191 5.0353 8.0243 5.11227 7.93248 5.16896C7.85537 5.21883 7.76406 5.2421 7.67248 5.23521M10.8456 2.78833H9.32686V5.78833H9.96936V4.59833H10.7819V4.04083H9.96936V3.34583H10.8444V2.78833"
+													fill="white" />
+											</svg>
+										</span>Download PDF</button>
+								</div>
+								<div class="col-xl-3 col-sm-3 background">
+									<span style="border:1px solid rgba(233, 225, 225, 0.593) ; padding : 10px"><label
+											for="">
+											<h6>Header</h6>
+										</label>
+										<input type="color" id="colorPicker" class="btn btn-succes "
+											style="height:30px"></span>
+
+
+
+
+								</div>
+
+
+
+
+
+							</div>
+							<!-- /.box-body -->
+						</div>
+					</div>
+					<!-- Step wizard -->
+					<div class="row">
+						<div class="col-xl-6 col-sm-12 background">
+							<div class="box">
+								<div class="box-header with-border">
+									<h4 class="box-title">Personal Information</h4>
+
+								</div>
+								<!-- /.box-header -->
+								<div class="box-body wizard-content">
+									<form method="post" action="{% url 'templateone' %}"
+										class="tab-wizard wizard-circle">
+										{% csrf_token %}
+
+										<!-- Step 1 -->
+										<!-- <h6>Personal Information</h6> -->
+										<section>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="firstName5" class="form-label">Job Title
+															:</label>
+														<input type="text" class="form-control" name="jobtitle"
+															value={{data.jobtitle}}>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="lastName1" class="form-label">Name :</label>
+														<input type="text" class="form-control" name="fullName"
+															value={{data.name}}>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="emailAddress1" class="form-label">Email Address
+															:</label>
+														<input type="email" class="form-control" name="Email"
+															value={{data.email}}>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="phoneNumber1" class="form-label">Phone
+															Number
+															:</label>
+														<input type="tel" class="form-control" name="Phone"
+															value={{data.phone}}>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="addressline1" class="form-label">Address
+															:</label>
+														<input type="text" class="form-control" name="Address"
+															value={{data.address}}>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="addressline2" class="form-label">Country:</label>
+														<input type="text" class="form-control" name="Country"
+															value={{data.country}}>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														<label for="addressline1" class="form-label">City :</label>
+														<input type="text" class="form-control" name="city"
+															value={{data.city}}>
+													</div>
+												</div>
+												<!-- <div class="col-md-6">
+													<div class="form-group">
+														<label for="addressline2" class="form-label">Pincode :</label>
+														<input type="text" class="form-control" id="addressline2">
+													</div>
+												</div> -->
+											</div>
+											<br>
+											<div class="box-header with-border">
+												<h6 class="" style="padding-right:-50px">Profile Information</h6>
+
+											</div>
+											<br>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="form-group">
+														<label for="decisions1" class="form-label">Profile (Summary)
+															:</label>
+														<textarea class="form-control" row="6" style="height:150px"
+															name="summary"> {{summary.summary}}</textarea>
+													</div>
+												</div>
+
+											</div>
+											<button type="submit" class="btn btn-success" onclick="sentData()">Save
+												&
+												Preview
+											</button>
+
+
+										</section>
+
+									</form>
+								</div>
+								<!-- /.box-body -->
+							</div>
+							<!-- /.box -->
+						</div>
+						<div class="col-xl-6 col-sm-12  background">
+
+							<div class="column " style="background-color: #ffffff;border:1px solid rgb(147, 146, 144)"
+								id="resume">
+
+								<div class="header-resume2" id="colorBox">
+
+									<h1> {{data.name}}</h1>
+
+									<p>{{data.jobtitle}}</p>
+								</div>
+
+
+								<div class="columns is-desktop" style="padding-top: 3%;">
+
+									<div class="column" style="border-right: 1px solid gray;">
+										<div class="rightside-resume">
+											<h2 id="textToColor">profile</h2>
+											<p>
+												{{summary.summary}}
+											</p>
+											<br>
+											<h2 id="textToColor">experience</h2>
+
+											<div class="experience">
+												<h4>Uber</h4>
+												<h3>Product Designer</h3>
+												<p>Mar 2015 - Present</p>
+
+												<div style="padding:4px">
+													<ul>
+														<li>Designed safety-focused experiences for Riders
+															and Drivers
+														</li>
+														<li>Physical space problem solving and it’s
+															interaction with the
+															digital
+														</li>
+														<li>Navigated organization to achieve operational
+															improvements
+														</li>
+													</ul>
+												</div>
+											</div>
+
+											<div class="experience">
+												<h4>Facebook</h4>
+												<h3>Product Designer</h3>
+												<p>Mar 2015 - Present</p>
+
+												<div style="padding:4px">
+													<ul>
+														<li>Designed safety-focused experiences for Riders
+															and Drivers
+														</li>
+														<li>Physical space problem solving and it’s
+															interaction with the
+															digital
+														</li>
+														<li>Navigated organization to achieve operational
+															improvements
+														</li>
+													</ul>
+												</div>
+											</div>
+
+											<div class="experience">
+												<h4>Google Maps</h4>
+												<h3>UX/UI Design Intern</h3>
+												<p>June 2012 - Sep 2013</p>
+
+												<div style="padding:4px">
+													<ul>
+														<li>Designed safety-focused experiences for Riders
+															and Drivers
+														</li>
+														<li>Physical space problem solving and it’s
+															interaction with the
+															digital
+														</li>
+														<li>Navigated organization to achieve operational
+															improvements
+														</li>
+													</ul>
+												</div>
+											</div>
+
+											<h2 id="textToColor">Education</h2>
+											<div class="education">
+												<h2>Rhode Island School of Design</h2>
+												<p>BFA Industrial Design, Class of 2013</p>
+											</div>
+											<div class="education">
+												<h2>Brown University</h2>
+												<p>Interdisciplinary studies, Sep 2010 - May 2013</p>
+											</div>
+
+
+										</div>
+
+									</div>
+									<div class="column is-one-third">
+										<div class="leftside-resume">
+											<!-- <h2 style="padding-bottom: 10px;">Details</h2> -->
+											<div class="details">
+												<h2 id="textToColor">Address</h2>
+												<p>{{data.address}} {{data.city}} {{data.country}} </p>
+											</div>
+											<div class="details">
+												<h2 id="textToColor">Phone</h2>
+												<p>{{data.phone}}</p>
+											</div>
+											<div class="details">
+												<h2 id="textToColor">Email</h2>
+												<p>{{data.email}}</p>
+											</div>
+											<h2 style="padding-top: 10px;padding-bottom:10px" id="textToColor">links
+											</h2>
+
+											<div class="link-resume">
+												<a href="">LinkedIn</a>
+												<a href="">Dribbble</a>
+												<a href="">Behance</a>
+												<a href="">Facebook</a>
+											</div>
+											<h2 style="padding-top: 10px;padding-bottom:10px" id="textToColor">skills
+											</h2>
+											<div class="skil-resume">
+												<p>Figma</p>
+												<input type="range" name="" id="" value="40">
+											</div>
+											<div class="skil-resume">
+												<p>Sketch</p>
+												<input type="range" name="" id="" value="60">
+											</div>
+											<div class="skil-resume">
+												<p>Adobe Photoshop</p>
+												<input type="range" name="" id="" value="10">
+											</div>
+											<div class="skil-resume">
+												<p>Adobe Illustrator</p>
+												<input type="range" name="" id="" value="50">
+											</div>
+											<div class="skil-resume">
+												<p>Principle</p>
+												<input type="range" name="" id="" value="30">
+											</div>
+											<div class="skil-resume">
+												<p>Adobe XD</p>
+												<input type="range" name="" id="" value="70">
+											</div>
+											<h2 style="padding-top: 10px;padding-bottom:10px" id="textToColor">
+												Languages</h2>
+											<div class="skil-resume">
+												<p>English</p>
+												<input type="range" name="" id="" value="90">
+											</div>
+											<div class="skil-resume">
+												<p>Hindi</p>
+												<input type="range" name="" id="" value="80">
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+							<!-- end tempalte -->
+
+						</div>
+					</div>
+
+				</section>
+
+
+
+				<style>
+					.headertext {
+						color: #db440c !important
+					}
+
+					.header-resume4 {
+						padding-bottom: 3%;
+						border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+						background: #533914;
+						color: white !important;
+
+						text-align: left;
+						padding: 20px;
+						margin: -12px;
+						padding-top: 20px;
+
+
+					}
+
+					.header-resume4 h1 {
+						font-size: 36px;
+						color: white !important;
+
+						font-family: Roboto;
+						font-weight: 700;
+						text-transform: uppercase;
+						line-height: 45px;
+						word-wrap: break-word
+					}
+
+					.header-resume4 p {
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						text-transform: capitalize;
+						letter-spacing: 0.20px;
+						word-wrap: break-word
+					}
+
+
+
+
+
+					.header-resume2 {
+						padding-bottom: 3%;
+						border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+						background: #145349;
+						color: white !important;
+
+						text-align: center;
+						margin: -12px;
+						padding-top: 20px;
+
+
+					}
+
+					.header-resume2 h1 {
+						color: white !important;
+
+						font-size: 36px;
+						font-family: Roboto;
+						font-weight: 700;
+						text-transform: uppercase;
+						line-height: 45px;
+						word-wrap: break-word
+					}
+
+					.header-resume2 p {
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						text-transform: capitalize;
+						letter-spacing: 0.20px;
+						word-wrap: break-word
+					}
+
+
+
+
+
+
+					.header-resume {
+						padding-bottom: 3%;
+						border-bottom: 1px rgba(0, 0, 0, 0.15) solid;
+
+
+					}
+
+					.header-resume h1 {
+						color: black;
+						font-size: 36px;
+						font-family: Roboto;
+						font-weight: 700;
+						text-transform: uppercase;
+						line-height: 45px;
+						word-wrap: break-word
+					}
+
+					.header-resume p {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						text-transform: capitalize;
+						letter-spacing: 0.20px;
+						word-wrap: break-word
+					}
+
+					.leftside-resume {}
+
+					.leftside-resume h2 {
+
+						font-size: 19px;
+						font-family: Roboto;
+						font-weight: 700;
+
+						text-transform: uppercase;
+						letter-spacing: 0.30px;
+						word-wrap: break-word
+					}
+
+					.rightside-resume {}
+
+					.rightside-resume h2 {
+						font-size: 19px;
+						font-family: Roboto;
+						font-weight: 700;
+
+						text-transform: uppercase;
+						letter-spacing: 0.30px;
+						word-wrap: break-word
+					}
+
+					.rightside-resume p {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						word-wrap: break-word
+					}
+
+					.experience {
+						padding: 5px;
+					}
+
+					.experience h2 {
+						font-size: 19px;
+						font-family: Roboto;
+						font-weight: 700;
+
+						text-transform: uppercase;
+						letter-spacing: 0.30px;
+						word-wrap: break-word
+					}
+
+					.experience h3 {
+						color: black;
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						letter-spacing: 0.09px;
+						word-wrap: break-word
+					}
+
+					.experience h4 {
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 700;
+						letter-spacing: 0.20px;
+						word-wrap: break-word
+					}
+
+					.experience p {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						line-height: 13px;
+						word-wrap: break-word
+					}
+
+					.experience ul li {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						padding: 3px;
+						line-height: 13px;
+						word-wrap: break-word
+					}
+
+					.education {
+						padding: 5px;
+					}
+
+					.education h2 {
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 700;
+						letter-spacing: 0.20px;
+						word-wrap: break-word;
+						text-decoration: none;
+
+					}
+
+					.education p {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						letter-spacing: 0.09px;
+						word-wrap: break-word
+					}
+
+					.details {
+						padding-top: 0px;
+						padding-bottom: 0px;
+
+					}
+
+					.details h2 {
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 700;
+						letter-spacing: 0.20px;
+						word-wrap: break-word;
+						text-decoration: none;
+					}
+
+					.details p {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						letter-spacing: 0.10px;
+						word-wrap: break-word
+					}
+
+					.link-resume {
+						display: flex;
+						flex-direction: column;
+						gap: 10px;
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						letter-spacing: 0.10px;
+						word-wrap: break-word
+					}
+
+					.link-resume a {
+						color: rgba(0, 0, 0, 0.70) !important;
+
+					}
+
+					.skil-resume p {
+						color: rgba(0, 0, 0, 0.70);
+						font-size: 13px;
+						font-family: Roboto;
+						font-weight: 400;
+						letter-spacing: 0.09px;
+						word-wrap: break-word
+					}
+				</style>
+
+
+
+
+
+
+				<script>
+
+					//jQuery time
+					var current_fs, next_fs, previous_fs; //fieldsets
+					var left, opacity, scale; //fieldset properties which we will animate
+					var animating; //flag to prevent quick multi-click glitches
+
+					$(".next").click(function () {
+						if (animating) return false;
+						animating = true;
+
+						current_fs = $(this).parent();
+						next_fs = $(this).parent().next();
+
+						//activate next step on progressbar using the index of next_fs
+						$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+						//show the next fieldset
+						next_fs.show();
+						//hide the current fieldset with style
+						current_fs.animate({ opacity: 0 }, {
+							step: function (now, mx) {
+								//as the opacity of current_fs reduces to 0 - stored in "now"
+								//1. scale current_fs down to 80%
+								scale = 1 - (1 - now) * 0.2;
+								//2. bring next_fs from the right(50%)
+								left = (now * 50) + "%";
+								//3. increase opacity of next_fs to 1 as it moves in
+								opacity = 1 - now;
+								current_fs.css({
+									'transform': 'scale(' + scale + ')',
+									'position': 'absolute'
+								});
+								next_fs.css({ 'left': left, 'opacity': opacity });
+							},
+							duration: 800,
+							complete: function () {
+								current_fs.hide();
+								animating = false;
+							},
+							//this comes from the custom easing plugin
+							easing: 'easeInOutBack'
+						});
+					});
+
+					$(".previous").click(function () {
+						if (animating) return false;
+						animating = true;
+
+						current_fs = $(this).parent();
+						previous_fs = $(this).parent().prev();
+
+						//de-activate current step on progressbar
+						$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+						//show the previous fieldset
+						previous_fs.show();
+						//hide the current fieldset with style
+						current_fs.animate({ opacity: 0 }, {
+							step: function (now, mx) {
+								//as the opacity of current_fs reduces to 0 - stored in "now"
+								//1. scale previous_fs from 80% to 100%
+								scale = 0.8 + (1 - now) * 0.2;
+								//2. take current_fs to the right(50%) - from 0%
+								left = ((1 - now) * 50) + "%";
+								//3. increase opacity of previous_fs to 1 as it moves in
+								opacity = 1 - now;
+								current_fs.css({ 'left': left });
+								previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+							},
+							duration: 800,
+							complete: function () {
+								current_fs.hide();
+								animating = false;
+							},
+							//this comes from the custom easing plugin
+							easing: 'easeInOutBack'
+						});
+					});
+
+
+				</script>
+				<script src="{% static 'resume/script.js'%}"></script>
+
+
+
+
+
+				<!-- html2 pdf -->
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js "></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+				<script>
+					window.jsPDF = window.jspdf.jsPDF;
+					var docPDF = new jsPDF();
+
+					function downloadPDF(invoiceNo) {
+
+						var elementHTML = document.querySelector("#resume");
+						docPDF.html(elementHTML, {
+							callback: function (docPDF) {
+								docPDF.save("sakthi" + '.pdf');
+							},
+							x: 15,
+							y: 15,
+							width: 170,
+							windowWidth: 650
+						});
+					}
+				</script>
+
+				<script>
+					function sentData() {
+
+						var data1 = ('#jobtitle').val();
+						var data2 = ('#fullName').val();
+
+						var data3 = ('#Email').val();
+						var data4 = $('#Phone').val();
+						var data5 = $('#Country').val();
+						var data6 = $('#city').val();
+						var data7 = $('#Address').val();
+						let csrftoken = '{{ csrf_token }}'
+
+						$.ajax({
+							type: 'POST',
+							headers: { 'X-CSRFToken': csrftoken },
+							url: "{% url 'resume' %}",  // Use the URL from your Django urls.py
+							contentType: 'application/json;charset=UTF-8',
+							data: JSON.stringify({
+								'data1': data1,
+								'data2': data2,
+								'data3': data3,
+								'data4': data4,
+								'data5': data5,
+								'data6': data6,
+								'data7': data7,
+							}),
+							success: function (response) {
+								console.log(response);
+							},
+							error: function (error) {
+								console.error(error);
+							}
+						});
+					}
+				</script>
+
+			</div>
+		</div>
+
+		<!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+		<div class="control-sidebar-bg"></div>
+
+	</div>
+	<!-- ./wrapper -->
+
+	<!-- ./side demo panel -->
+	<!-- <div class="sticky-toolbar">
+		<a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Buy Now"
+			class="waves-effect waves-light btn btn-success btn-flat mb-5 btn-sm" target="_blank">
+			<span class="icon-Money"><span class="path1"></span><span class="path2"></span></span>
+		</a>
+		<a href="https://themeforest.net/user/multipurposethemes/portfolio" data-bs-toggle="tooltip"
+			data-bs-placement="left" title="Portfolio"
+			class="waves-effect waves-light btn btn-danger btn-flat mb-5 btn-sm" target="_blank">
+			<span class="icon-Image"></span>
+		</a>
+		<a id="chat-popup" href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Live Chat"
+			class="waves-effect waves-light btn btn-warning btn-flat btn-sm">
+			<span class="icon-Group-chat"><span class="path1"></span><span class="path2"></span></span>
+		</a>
+	</div> -->
+	<!-- Sidebar -->
+
+	<script>
+		function template(id) {
+
+			var data2 = $('#numberid').val();
+			var data3 = id;
+			let csrftoken = '{{ csrf_token }}'
+			$.ajax({
+				type: 'POST',
+				headers: { 'X-CSRFToken': csrftoken },
+				url: "{% url 'desgin' %}",
+				data: {
+					'data2': data2,
+					'data3': id,
+
+				},
+				success: function (response) {
+					if (response.success == true) {
+						console.log("sucesss")
+
+
+
+					}
+					else if (response.success == false) {
+						console.log("error")
+					}
+				},
+				error: function (error) {
+
+				}
+			});
+		}
+	</script>
+	<!-- Page Content overlay -->
+
+	<script src="{% static 'design/js/vendors.min.js '%}"></script>
+	<script src="{% static 'design/js/pages/chat-popup.js '%}"></script>
+	<script src="{% static 'design/icon/feather.min.js '%}"></script>
+	<script src="{% static 'design/vendor/apexcharts.js'%}"></script>
+	<script src="{% static 'design/vendor/moment.min.js'%}"></script>
+	<script src="{% static 'design/vendor/fullcalendar.js'%}"></script>
+	<script src="{% static 'design/js/template.js '%}"></script>
+	<script src="{% static 'design/js/pages/dashboard.js '%}"></script>
+	<script src="{% static 'design/js/pages/calendar.js '%}"></script>
+
+	<script src="{% static 'design/css/vendor_components/jquery-steps-master/build/jquery.steps.js  '%}"></script>
+	<script src="{% static 'design/css/vendor_components/sweetalert/sweetalert.min.js  '%}"></script>
+	<script
+		src="{% static 'design/css/vendor_components/jquery-validation-1.17.0/dist/jquery.validate.min.js  '%}"></script>
+
+	<script
+		src="{% static 'design/css/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup.min.js  '%}"></script>
+	<script
+		src="{% static 'design/css/vendor_components/Magnific-Popup-master/dist/jquery.magnific-popup-init.js  '%}"></script>
+
+
+
+	<!-- EduAdmin App -->
+	<script src="{% static 'design/js/template.js '%}"></script>
+
+
+	<script src="{% static 'design/js/pages/steps.js '%}"></script>
+	<!-- Vendor JS -->
+	<script src=""></script>
+	<script src=""></script>
+	<script src=""></script>
+
+	<script src=""></script>
+	<script src=""></script>
+	<script src=""></script>
+	<!-- EduAdmin App -->
+	<script src=""></script>
+	<script src=""></script>
+	<script>
+		class ColorPicker {
+			constructor() {
+				this.colorPicker = document.getElementById('colorPicker');
+				this.colorBox = document.getElementById('colorBox');
+				this.addEventListeners();
+			}
+
+			addEventListeners() {
+				this.colorPicker.addEventListener('input', () => {
+					this.setColor();
+				});
+			}
+
+			setColor() {
+				const color = this.colorPicker.value;
+				this.colorBox.style.backgroundColor = color;
+			}
+		}
+
+		// Initialize the ColorPicker class
+		const colorPickerApp = new ColorPicker();
+	</script>
+
+</body>
+
+</html>

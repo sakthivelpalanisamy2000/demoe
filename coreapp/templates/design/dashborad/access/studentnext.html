@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+       <section class="content">
+            <div class="box">
+                <div class="box-header " style="border: none;">
+                    <h5 class="box-title">Access to the Student</h5>
+                </div>
+                
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col">
+                           
+                            <form method="post" action="{% url 'studentnext' %}"  novalidate>
+                                {% csrf_token %}
+                                <div class="row">
+                                   
+                                    <div class="col-8">
+                                       
+                                        <div class="form-group">
+                                            <h5>Student Select <span class="text-danger">*</span></h5>
+                                            <div class="controls">
+                                                <select name="emp" id="select" required class="form-select" style="width: 50%;">
+                                                    <option value="">Selecte Your Student</option>
+                                                    {% for i in user %}
+                                                    <option value={{i.id}}>{{i.username}}</option>
+                                                    {%endfor%}
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <h5>Access <span class="text-danger">*</span></h5>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_1" name="data1" value="1">
+                                                        <label for="checkbox_1">10x Product</label>
+                                                    </div>	
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_2" name="data1" value="1">
+                                                        <label for="checkbox_2">5x Product</label>
+                                                    </div>
+                                                    <div class="controls">
+                                                        <input type="checkbox" id="checkbox_2" name="data1" value="1">
+                                                        <label for="checkbox_2">3x Product</label>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="text-xs-right">
+                                            <button type="submit" class="btn btn-info">Provide Access</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-4">
+                                        <img src="{% static 'login_img_three.png'%}" alt="">
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </section>
+    </div>
+</div>
+
+
+{% endblock content %}

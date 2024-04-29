@@ -1,0 +1,14 @@
+<form action method="post">
+    {% csrf_token %}
+    <input type="text" name="file">
+    <input type="submit" value="save">
+</form>
+<div>
+    <ul>
+        {% for i in data %}
+        <li>{{i.file}}</li>
+        <a href="{{i.id}}/edit">edit</a>
+        <a href="{{i.id}}/delete">delete</a>
+        {%endfor%}
+    </ul>
+</div>

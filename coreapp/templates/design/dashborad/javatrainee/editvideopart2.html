@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="box-header with-border">
+                <h4 class="box-title">Edit Video</h4>
+               
+            </div>
+            <div class="box-body">
+            {% for i in data2 %}
+            <form method="POST" action="{% url 'updatevideopart' updatevideo=i.pk %}" enctype="multipart/form-data">
+                {% csrf_token %}
+              
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Current
+                        Topic upload</label>
+                    <div class="col-md-10">
+
+                        <select
+                            class="form-control select2"
+                            style="width: 30%;"
+                            name="type">
+
+                            {% for i in somevalue %}
+                            <option
+                                value={{i.id}}>{{i.title}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Upload
+                        Video</label>
+                    <div class="col-md-10">
+                        
+
+                        <input type="file" name="video_file" accept="video/*"  value={{i.video_file.name}}/><br>
+                       
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Content
+                        of Video</label>
+                    <div class="col-md-10">
+
+                        <textarea id="editor"
+                            name="content">{{i.content }}</textarea>
+                       
+                    </div>
+
+
+                </div>
+                <button type="submit" class="btn btn-success">Save</button>
+
+                <br>
+                <br>
+           
+
+            </form>
+            {%endfor%}
+            
+            </div>
+            
+        </section>
+    </div>
+</div>
+<script
+    src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+    ClassicEditor
+    .create( document.querySelector( '#editor2' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+    ClassicEditor
+    .create( document.querySelector( '#editor3' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+    ClassicEditor
+    .create( document.querySelector( '#editor1' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+    ClassicEditor
+    .create( document.querySelector( '#editor5' ) )
+    .catch( error => {
+        console.error( error );
+    } );
+</script>
+
+{% endblock content %}

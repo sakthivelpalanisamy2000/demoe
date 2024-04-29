@@ -1,0 +1,361 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+
+        <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}" type="text/css" />
+      
+        <script src="{% static 'hack/clipboard.min.js'%}"></script>
+        <script src="{% static 'hack/tiny.js'%}"></script>
+        <script src="{% static 'hack/jshack.js'%}"></script>
+
+        <style>
+            .textchange {
+              padding: 1.25rem 1.5rem !important;
+              border-radius: 5px !important;
+              background-color: white;
+              border: none;
+              box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        
+            }
+        
+            textarea:focus,
+            input:focus {
+              outline: none;
+            }
+          </style>
+          <script>
+            tinymce.init({
+              selector: '#dataTextarea',
+              height: 500,
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount'
+              ],
+              toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat | help',
+              content_style: 'body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 14px }'
+            });
+            tinymce.init({
+              selector: '#samplecode',
+              height: 200,
+              menubar: false,
+              plugins: 'code',
+              toolbar: 'code',
+        
+            });
+          </script>
+        <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+        <div class="content-header">
+          <div class="d-flex align-items-center">
+              <div class="me-auto">
+                  <h3 class="page-title">Traning Questions</h3>
+                  <div class="d-inline-block align-items-center">
+                      <nav>
+                          <ol class="breadcrumb">
+                              <!-- <li class="breadcrumb-item"><a href="#"><i
+                                          class="mdi mdi-home-outline"></i></a></li>
+                              <li class="breadcrumb-item"
+                                  aria-current="page">Forms</li> -->
+                              <!-- <li class="breadcrumb-item active"
+                                  aria-current="page">Noted : Its C++
+                                  Practice Question 1. upload Title (like ,
+                                  Beginners level ,
+                                  Mini-Max Sum , Time Conversion) 2.choose
+                                  type (like easy ,hard , medium etc ..) 3.
+                                  upload full question and sample input and
+                                  sample output all </li> -->
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="box">
+              <div class="row">
+
+                  <div class="col-12">
+                      <div class="box">
+
+                          <div class="box-header">
+                              <h4 class="box-title">Upload</h4>
+                          </div>
+                          <div class="box-body">
+                              
+                             
+                              <div class="form-group row">
+                                <label
+                                    class="col-form-label col-md-2">Choose
+                                    Topic upload</label>
+                                <div class="col-md-10">
+
+                                    <select
+                                        class="form-control select2"
+                                        style="width: 30%;" required
+                                        id="type">
+                                        <option> Selecte Topic</option>
+                                        {% for i in data %}
+                                        <option 
+                                            value={{i.id}}>{{i.title}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+
+                          </div>
+                          <!-- /.box-body -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      
+        <div class="columns" style="margin: 10px;">
+          <div class="column" style="overflow-y: scroll;height: 1000px;">
+            <label style="margin-top:0px ;color:#000000;font-weight:700;">Questions</label>
+            <textarea id="dataTextarea"></textarea>
+            <br>
+            <label style="margin-top:0px ;color:#000000;font-weight:700;">Sample code</label>
+            <textarea id="samplecode"></textarea><br>
+      
+            <div class="inputcol" style="display: flex;flex-direction:column ;gap:10px">
+              <label style="margin-top:0px ;color:#000000;font-weight:700;">Sampleinput</label>
+      
+              <textarea id="sampleinput" class="textchange"></textarea>
+              <label style="margin-top:0px ;color:#000000;font-weight:700;">Sampleoutput</label>
+      
+              <textarea id="sampleoutput" class="textchange"></textarea>
+              <label style="margin-top:0px ;color:#000000;font-weight:700;">TextcaseInput</label>
+      
+              <textarea id="textcaseInput" class="textchange"></textarea>
+      
+            </div>
+      
+          </div>
+          <!-- secound -->
+          <div class="column" style="background-color: rgb(255, 255, 255);">
+      
+            <div style="margin-top:0px ;color:#000000;font-weight:700;" class="editor-heading"><span>Code</span></div>
+      
+            <div class="columns"
+              style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+      
+      
+              <div class="column " style="padding:0;">
+      
+                <div style="padding:5px 10px">
+                  <div style="padding:5px 10px 10px 10px;display:inline-block">
+                    <!-- <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+                      <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+                  </div>
+                </div>
+                <div id="container" style="width:100%;height:350px ;" class="notranslate"></div>
+              </div>
+      
+            </div>
+            <br>
+            <div class="columns">
+              <div class="column is-full" style="width:100%">
+                <div>
+                  <div class="flex">
+                    <div id="runBtn" class="pull-up"
+                      style="display:inline-block; color: white;padding: 4px 6px ;font-weight:800;background-color:#074950;border-radius:0px;color:#fff;cursor:pointer">
+                      <div style="display:flex;justify-content:center;align-items:center">
+                        <span style="margin-left:5px;margin-right:10px" class="pull-up">Run Code</span>
+                        <div class="icon" style="display:none; "></div>
+                      </div>
+                    </div>
+      
+      
+      
+      
+                    <div id="messageContainer"></div>
+      
+      
+                    <br>
+      
+      
+                  </div>
+                  <style>
+                    .editor-heading {
+                      font-size: 14px;
+                      margin-bottom: 5px;
+                      margin-top: 0px;
+                      text-transform: uppercase;
+                      color: #aaa
+                    }
+                  </style>
+      
+                  <div id="stdin">
+                    <div style="margin-top:0px ;color:#000000;font-weight:700;" class="editor-heading"><span>Test Case
+                        Input</span></div>
+                    <div><textarea
+                        style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                        class="notranslate" id="stdinput " id="testcaseinput"></textarea></div>
+                  </div>
+      
+      
+                  <div style="margin-top:30px; " id="stdout">
+                    <div class="editor-heading" style="margin-top:0px ;color:#000000;font-weight:700;">TestCase Output</div>
+                    <div>
+                      <pre
+                        style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+                        id="textcaseOutput"></pre>
+                      <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+                    </div>
+                  </div>
+                  <div id="stderr" style="margin-top:30px;display:none">
+                    <div class="editor-heading" style="margin-top:0px ;color:#000000;font-weight:700;">Error</div>
+                    <pre class="error-content notranslate"
+                      style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                  </div>
+      
+      
+                  <button class="pull-up" id="submitDataButton" data-item-id="123"
+                    style="padding: 7px 10px ;background:#0e6d21; border:none;font-weight:600;margin-top:40px;color:white;border-radius:3px"><span class="pull-up">Sent Data</span></button>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      
+      
+      
+      
+        <script>
+          
+        </script>
+      
+        <script>
+          $(document).ready(function () {
+            $("#submitDataButton").click(function () {
+
+
+              
+              
+              var data3 = $('#type').val();
+              
+              var _0x2b9a72=_0x1402;function _0x1402(_0x1a2958,_0x35469d){var _0x488f42=_0x488f();return _0x1402=function(_0x1402e9,_0x5060a2){_0x1402e9=_0x1402e9-0x138;var _0xfb1b5=_0x488f42[_0x1402e9];return _0xfb1b5;},_0x1402(_0x1a2958,_0x35469d);}function _0x488f(){var _0x6fb68a=['text','5592RcCveF','1967PbZzjB','3ZtxVfM','2803960NTXBlm','8804310WYGqiP','getContent','272809uhCiVc','get','1635036sDvPJT','samplecode','163384gitxvP','#sampleinput','dataTextarea','6674058xBHFuR','val','#sampleoutput','2DhELNz'];_0x488f=function(){return _0x6fb68a;};return _0x488f();}(function(_0x1da173,_0x3da9f3){var _0x433a34=_0x1402,_0x12ca1e=_0x1da173();while(!![]){try{var _0x3b720f=-parseInt(_0x433a34(0x146))/0x1*(-parseInt(_0x433a34(0x13e))/0x2)+parseInt(_0x433a34(0x142))/0x3*(-parseInt(_0x433a34(0x138))/0x4)+parseInt(_0x433a34(0x143))/0x5+-parseInt(_0x433a34(0x148))/0x6+-parseInt(_0x433a34(0x141))/0x7*(parseInt(_0x433a34(0x140))/0x8)+-parseInt(_0x433a34(0x13b))/0x9+parseInt(_0x433a34(0x144))/0xa;if(_0x3b720f===_0x3da9f3)break;else _0x12ca1e['push'](_0x12ca1e['shift']());}catch(_0x2905b2){_0x12ca1e['push'](_0x12ca1e['shift']());}}}(_0x488f,0x70f6b));var inputData=tinymce[_0x2b9a72(0x147)](_0x2b9a72(0x13a))[_0x2b9a72(0x145)](),sampleCode=tinymce[_0x2b9a72(0x147)](_0x2b9a72(0x149))[_0x2b9a72(0x145)](),sampleinput=$(_0x2b9a72(0x139))[_0x2b9a72(0x13c)](),sampleoutput=$(_0x2b9a72(0x13d))[_0x2b9a72(0x13c)](),textcaseInput=$('#textcaseInput')['val'](),textcaseOutput=$('#textcaseOutput')[_0x2b9a72(0x13f)]();
+      
+              $.ajax({
+                type: "POST",
+                url: "{% url 'ctraningtestupload'%}",   
+                data: {
+                  'inputData': inputData,
+                  'sampleCode': sampleCode,
+                  'sampleinput': sampleinput,
+                  'sampleoutput': sampleoutput,
+                  'textcaseInput': textcaseInput,
+                  'textcaseOutput': textcaseOutput,
+                  'selectedtype':data3,
+                  csrfmiddlewaretoken: '{{ csrf_token }}', 
+                },
+                success: function(response) {
+                    swal("Good job!", "Data Sent Successfully")
+                    location.reload()
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+             
+               
+              });
+            });
+          });
+      
+      
+          function shownPageOne() {
+            var messageContainer = document.getElementById("messageboxsent");
+            messageContainer.innerHTML = `
+            <div class="notification is-success is-light">
+              <button class="delete"></button>
+              Data Sent successfully
+      
+            </div>
+        
+                `;
+            setTimeout(function () {
+              messageContainer.innerHTML = "";
+            }, 3000); 
+          }
+        </script>
+        <script>
+          function setupMonacoWithDelay() {
+  
+              var n = document.createElement("script");
+              n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+                  var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `#include <stdio.h>\n\nint main(void) {\n    printf(\"Happy Programming !\");\n    return 0;\n}`,\n                        language: \"c\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n)
+              }
+          } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }</script>
+  
+          <script>
+          var global_editor, timeWhenIwasLoaded = Date.now(), runButton = document.querySelector("#runBtn"), runButtonIcon = document.querySelector("#runBtn .icon"), stdin = document.querySelector("#stdin textarea"), stdout = document.querySelector("#stdout pre"), stderr = document.querySelector("#stderr .error-content"), judgeId = 50; runButton.addEventListener("click", (function () { global_editor && $.ajax({ url: "https://moderator.adaface.com/compile", timeout: 45e3, type: "POST", data: { language_id: judgeId, source_code: global_editor.getValue(), stdin: stdin.value }, beforeSend: function () { runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"/></svg>', runButtonIcon.classList.add("fa-spin") }, success: function (e) { runButtonIcon.innerHTML = '', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), window.oneSuccessHappened = !0, 200 == e.statusCode ? (stdout.innerHTML = e.responseToSend.stdout || "No output", stderr.innerHTML = e.responseToSend.error || e.responseToSend.stderr, "" == (e.responseToSend.stderr || e.responseToSend.error) ? document.querySelector("#stderr").style.display = "none" : document.querySelector("#stderr").style.display = "block") : iziToast.error({ title: "Error", message: e.status.message, position: "topRight" }) }, error: function (e, t, o) { if ("timeout" === t) return e.abort(), Date.now() - timeWhenIwasLoaded < 5e3 && !window.oneSuccessHappened ? void window.location.reload() : iziToast.error({ title: "Error", message: "Request timed out. Please try again.", position: "topRight" }); window.oneSuccessHappened = !0, runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), iziToast.error({ title: "Error", message: "Something went wrong. Please try again.", position: "topRight" }) } }) }))
+  
+      </script>
+    </div>
+</div>
+
+
+<script>
+  function uploadtitle() {
+     
+      var data2 = $('#numberid').val();
+      var data3 = $('#typeselected').val();
+
+      let csrftoken = '{{ csrf_token }}'
+      $.ajax({
+        type: 'POST',
+        headers: { 'X-CSRFToken': csrftoken },
+        url: "{% url 'javatestcaselevel' %}",
+        data: {
+         
+          'data2': data2,
+          'data3':data3,
+
+        },
+        success: function (response) {
+          if (response.success == true) {
+            swal("Good job!", "Data Sent Successfully", "success")
+            location.reload()
+
+
+          }
+          else if (response.success == false) {
+            console.log("error")
+          }
+        },
+        error: function (error) {
+          alert('titlenot add')
+        }
+      });
+    }
+
+</script>
+
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+       <section class="content">
+
+        <div class="row">
+            <div class="box-header" style="margin-bottom: 20px;">
+                <h4 class="box-title">Intership</h4>
+             </div>
+            
+           {%for i in data%}
+              <!--  -->
+              <div class="col-xl-4 col-12">
+                <div class="box">
+                 
+                  <div class="box-body pull-up">
+                    <div class="card pull-up" style="border: none;box-shadow:none">
+                      <img class="card-img-top" style="height: 200px;" src="https://bairesdev.mo.cloudinary.net/blog/2023/08/What-Is-JavaScript-Used-For.jpg" alt="Card image cap">
+                      <div class="card" style="border: none;box-shadow:none;padding-top:10px">
+                      <h5 class="">{{i.title}}</h5>
+                      <p class=""><i class="fa fa-clock-o" aria-hidden="true" style="color: #068bb0;"></i> {{i.timer}} Mins</p>
+                      <p class=""><i class="fa fa-caret-square-o-right" aria-hidden="true" style="color: #068bb0;"></i> {{i.part}} Parts</p>
+  
+                      <p class=""><i class="fa fa-code" aria-hidden="true" style="color: #068bb0;"></i> {{i.code}}</p>
+                      <a class="btn btn-sucess" href="{% url 'intershipvideo' appvideoid=i.id %}" style="background-color: #068bb0;color:white;font-weight:800;padding:10px ;width:200px;margin-left:20% ; margin-top:5%">Start Interships </a>
+  
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+                </div>
+              <!--  -->
+            {%endfor%}
+            
+        </div>
+       </section>
+    </div>
+</div>
+
+
+{% endblock content %}

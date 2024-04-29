@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<title>Sample Resume</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			font-size: 13px;
+			font-family: 'Nunito', sans-serif;
+		}
+		@media screen {
+			body { background-color: #e5e5e5; }
+			.resume {
+				background-color: #fff;
+				max-width: 1200px;
+				margin: 20px auto;
+				box-shadow: 0 0.5rem 2.5rem 0 rgba(0,0,0,0.25);
+			}
+		}
+		.resume-heading {
+			display: flex;
+			justify-content: space-between;
+			background-color: #291b2c;
+			color: #fff;
+			padding: 25px;
+			line-height: 1;
+		}
+		.resume-heading a {
+			color: #fff;
+			text-decoration: none;
+		}
+		.resume-heading p { margin-bottom: 0; }
+		.resume-heading-title {
+			margin-top: 0;
+			margin-bottom: 0;
+			font-weight: 600;
+		}
+		.resume-heading-subtitle {
+			margin-top: 15px;
+			margin-bottom: 0px;
+			font-weight: normal;
+			font-size: 16px;
+		}
+		.resume-heading-section {
+			display: inline-block;
+			vertical-align: top;
+			padding-right: 10px;
+		}
+		.resume-heading-section.last { padding-right: 0; }
+		.resume-body {
+			padding: 20px 30px;
+			line-height: 1.45;
+		}
+		@media(min-width: 400px) {
+			.resume-section {
+				display: flex;
+			}
+			.resume-section-time { flex: 0 0 15%; }
+			.resume-section-info { flex: 0 0 100%; }
+		}
+		.resume-section-title {
+			padding-bottom: 5px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+			border-bottom: 1px solid #ddd;
+			font-weight: 600;
+			font-size: 18px;
+		}
+		.resume-section-body {
+			padding-left: 10px;
+		}
+		.resume-section p,
+		.resume-section h4 {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		.resume-section h4 {
+			font-size: 15px;
+			font-weight: 600;
+		}
+		.resume-list {
+			padding-left: 0;
+			list-style: none;
+			margin-top: 0;
+		}
+		.resume-list li {
+			position: relative;
+			padding-left: 20px;
+		}
+		.resume-list li:before {
+			position: absolute;
+			left: 0;
+			top: 0; 
+			content: '\2022';
+		}
+		.resume-statement {
+			margin-top: 0;
+		}
+
+		.resume-section-info-title {
+			display: flex; 
+			justify-content: space-between;
+		}
+		.resume-company-section {
+
+			padding-left: 15px;
+		}
+		.resume-company-title {
+			margin-bottom: 5px !important;
+		}
+	</style>
+</head>
+<body>
+
+	<div class=" content resume" >
+		
+		<div class="resume-heading">
+			<div class="resume-heading-section">
+				<h1 class="resume-heading-title">Maulik Modi</h1>
+				<h3 class="resume-heading-subtitle">Senior Developer / Project Manager</h3>
+				<p>
+					E-mail:
+					<a href="mailto:maulikmmodi94@gmail.com">mm9817@nyu.edu</a>
+				</p>
+				<p>
+					Mobile:
+					<a href="#">214-609-0911</a>
+				</p>
+			</div>
+			<div class="resume-heading-section">
+				
+			</div>
+			<div class="resume-heading-section last">
+				<p>
+					LinkedIn:
+					<a href="https://www.linkedin.com/in/modimaulik/" target="_blank">linkedin.com/in/modimaulik</a>
+				</p>				
+				<p>
+					GitHub:
+					<a href="https://github.com/maulikmmodi/" target="_blank">github.com/maulikmmodi</a>
+				</p>
+				<p>
+					Stack-overflow:
+					<a href="https://stackoverflow.com/users/4685440/maulik-modi" target="_blank">stackoverflow.com/users/4685440/maulik-modi</a>
+				</p>
+			</div>
+			
+		</div>
+
+		<div class="resume-body">
+			<p class="resume-statement">
+				Senior Developer / Project Manager with 4 years of experience in developing and managing web applications and sass products using NodeJs, ReactJs, AngularJs, Java and PHP. Proﬁcient in modern web technologies. Knowledgeable in UI, UX and working with clients.
+				Senior Developer / Project Manager with 4 years of experience in developing and managing web applications and sass products using NodeJs, ReactJs, AngularJs, Java and PHP. Proﬁcient in modern web technologies. Knowledgeable in UI, UX and working with clients.
+				Senior Developer / Project Manager with 4 years of experience in developing and managing web applications and sass products using NodeJs, ReactJs, AngularJs, Java and PHP. Proﬁcient in modern web technologies. Knowledgeable in UI, UX and working with clients.
+				Senior Developer / Project Manager with 4 years of experience in developing and managing web applications and sass products using NodeJs, ReactJs, AngularJs, Java and PHP. Proﬁcient in modern web technologies. Knowledgeable in UI, UX and working with clients.
+
+			</p>
+
+			<h3 class="resume-section-title">Skills</h3>
+			<div class="resume-section-body">
+				<div class="resume-section">
+					<p class="resume-section-time">Client Side:</p>
+					<div class="resume-section-info">
+						<p>
+							Javascript, AngularJs, ReactJS, React Native, VueJs, PugJs, Bootstrap, HTML, CSS, SASS, LESS
+						</p>
+					</div>
+				</div>
+				<div class="resume-section">
+					<p class="resume-section-time">Server Side:</p>
+					<div class="resume-section-info">
+						<p>
+							NodeJs, Java, Python, PHP, MySQL, MongoDB, PostgreSQL, Redis, Nginx, Linux (Ubuntu), Amazon AWS
+						</p>
+					</div>
+				</div>
+				<div class="resume-section">
+					<p class="resume-section-time">Developer Tools:</p>
+					<div class="resume-section-info">
+						<p>
+							Git, Grunt, Gulp, Webpack, NPM, Docker, Elasticsearch, Kibana
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<h3 class="resume-section-title">Experience</h3>
+			<div class="resume-section-body">
+				<div class="resume-section">
+					<div class="resume-section-info">
+						<div class="resume-section-info-title">
+							<h4 style="margin-bottom: 5px;">Gridle, Senior Fullstack Developer / Project Manager </h4>
+							<p>
+								May 2017 - Aug 2018
+							</p>
+						</div>
+						<div class="resume-company-section">
+							<p class="resume-company-title"><b>Project: HomeSchoolPanda, A Homeschooling Platform</b></p>
+							<ul class="resume-list">
+								<li>
+									Advised the business team on cost and effort estimation regarding the development of the projects.
+								</li>
+								<!-- <li>
+									Implemented on two-factor authentication, firewalls, created SSH keys to access the server, and SSL support for the website.
+								</li> -->
+								<li>
+									Architected the product's structure with different technologies and tools. Led the development team of the six peoples to achieve the client's expectation and the deadlines.
+								</li>
+								<li>
+									Provided the backend support to the application. Created the automation and the jobs to make it hassle-free.
+								</li>
+							</ul>
+						</div>
+						<div class="resume-company-section">
+							<p class="resume-company-title"><b>Project: Aqualogy, An E-Commerce Marketplace</b></p>
+							<ul class="resume-list">
+								<li>
+									Led the software team of five peoples through the development of the core product and the administrative control. Assigned coding tasks to various team members. Regularly monitored work with software development tools.
+								</li>
+								<!-- <li>
+									Configured nginx server from a threat like brute force and man in the middle attack. Made server access secure with google authenticator.
+								</li> -->
+								<li>
+									Developed the real-time notification, email and the feedback system to engage users. Created the logistics flow for the product.
+								</li>
+							</ul>
+						</div>
+						<div class="resume-company-section">
+							<p class="resume-company-title"><b>Project: Samcara, A Career Assessment Tool</b></p>
+							<ul class="resume-list">
+								<li>
+									Architected, designed, and developed a single page application for the product. Used Birkman API for the career assessment.
+								</li>
+								<li>
+									Helped and mentored junior members of the team by reviewing and advising them for possible improvements in the code.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="resume-section">
+					<div class="resume-section-info">
+						<div class="resume-section-info-title">
+							<h4 style="margin-bottom: 5px;">IndiaBizForSale, Senior Fullstack Developer</h4>
+							<p>
+								July 2016 - May 2017
+							</p>
+						</div>
+						<div class="resume-company-section">
+							<p class="resume-company-title"><b>Project: IndiaBizForSale, A Network To Grow Business</b></p>
+							<ul class="resume-list">
+								<li>
+									Worked closely with design team, management team and created interfaces based on visual design and user feedback.
+								</li>
+								<li>
+									Worked on a frontend as well as a backend of the product to implement new features as per requirement.
+								</li>
+								<li>
+									Developed event-driven analytics which is for analyzing user behavior and make auto-suggestions. Used elasticsearch and created filter module for better experience. 
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="resume-section">
+					<div class="resume-section-info">
+						<div class="resume-section-info-title">
+							<h4 style="margin-bottom: 5px;">Accenture, Software Engineering Associate</h4>
+							<p>
+								Oct 2015 - July 2016
+							</p>
+						</div>
+						<div class="resume-company-section">
+							<p class="resume-company-title"><b>Project: AT&T ERP Solution</b></p>
+							<ul class="resume-list">
+								<li>
+									Developed Oracle Forms and Oracle Reports which used in ERP solutions. Worked on PL/SQL, shell script and Oracle R12 database to manage the resources.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="resume-section">
+					<div class="resume-section-info">
+						<div class="resume-section-info-title">
+							<h4 style="margin-bottom: 5px;">Gridle, Intern / Software Developer</h4>
+							<p>
+								Jan 2015 - Oct 2015
+							</p>
+						</div>
+						<div class="resume-company-section">
+							<p class="resume-company-title"><b>Project: Gridle, A Collaboration Tool</b></p>
+							<ul class="resume-list">
+								<li>
+									Developed the back-end of the product and managed the database. Created an analytics module to measure daily activity of the user. Worked on automated emails and real time notiﬁcation to get user engagement.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<h3 class="resume-section-title" style="margin-top: 0px;margin-bottom: 15px;">Education</h2>
+			<div class="resume-section-body">
+				<div class="resume-section">
+					<div class="resume-section-info">
+						<div class="resume-section-info-title">
+							<h4 style="margin-bottom: 5px;">New York University Tandon School of Engineering</h4>
+							<p>May 2020</p>
+						</div>
+						<p>Masters of Science, Computer Science</p>
+					</div>
+				</div>
+				<div class="resume-section">
+					<div class="resume-section-info">
+						<div class="resume-section-info-title">
+							<h4 style="margin-bottom: 5px;">LD College Of Engineering</h4>
+							<p>May 2015</p>
+						</div>
+						<p>Bachelor of Engineering, Computer Engineering, CGPA: 8.28</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div id="editor"></div>
+	<button type="button" class="download">Download!</button>
+	<ion-icon name="print-outline" class=''>dsd</ion-icon>
+
+</body>
+<script>
+
+	var doc = new jsPDF(); // create new jsPDF() function
+	var specialElementHandlers = { 
+	  '#editor': function(element, renderer) { // this is where the specific content of our PDF will be rendered
+		return true;
+	  }
+	};
+	
+	$('.download').click(function() { // upon clicking the download button, perform the following function
+	  
+	const media = window.matchMedia('print');
+	
+	const update = (e) => print.style.display = e.matches ? 'none' : 'block';
+	
+	function convert() {
+	  media.addEventListener('change',update,false);
+	  window.print();
+	}
+	
+	print.addEventListener('click',convert,false);
+	});
+	
+	
+	// meta
+	var getUrl = window.location.host;
+	if (window.location.host != "s.codepen.io") {
+	  document.querySelector(".meta").style.display = "none";
+	}
+
+
+</script>
+</html>

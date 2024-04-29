@@ -1,0 +1,318 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Python</title>
+    <link rel="shortcut icon"
+      href="data:image/jpeg;base64,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" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0" />
+
+    <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}"  type="text/css" />
+    <link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}"  type="text/css" />
+
+    <script src="{% static 'hack/clipboard.min.js'%}"></script>
+
+  </head>
+  <body>
+    <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+    <main
+        style="color:#040402;fill:currentcolor;line-height:1.35;background:#fffefc;font-size:17px;max-width:100%;width:100%!important;margin:0 auto;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased">
+
+
+        <script>function addBlogTodos() { jQuery(document).ready((function (e) { window.addEventListener("load", t => { var n = e(".post-content h2"); if (n.length < 2) { if (0 != n.length) return void e(".post-side-inner").addClass("is-hidden"); if ((n = e(".post-content h3")).length < 2) return void e(".post-side-inner").addClass("is-hidden") } else if (n.length > 35) return void e(".post-side-inner").addClass("is-hidden"); e(".post-side-inner").append("<div class='blog-todos'><div><span style='font-size: 18px; font-weight: 900;'>Contents</span></div></div>"); for (var o = [], i = 0; i < n.length; i++) { var s = n[i].innerText, d = n[i].getAttribute("link") || ""; o.push(s), e(n[i]).hasClass("remove-from-navigation") || (e(".blog-todos").append(d ? "<a href='#" + d + "' class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></a>" : "<div class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></div>"), function (t) { if (e("#todoheading" + t).click((function () { n[t].scrollIntoView(), e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far") })), "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) { new IntersectionObserver((function (n) { n.length > 0 && n[0].isVisible && (e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far")) }), { trackVisibility: !0, delay: 100, threshold: 0 }).observe(n[t]) } else; }(i)) } }, !1) })) } function addReadingBar() { window.addEventListener("scroll", _updateScrollProgressBar), window.addEventListener("load", _updateScrollProgressBar) } function _updateScrollProgressBar() { var e = document.querySelector("html"), t = document.querySelector(".post-full-content").scrollHeight - _heightInViewport(e), n = e.scrollTop / t * 100; document.querySelector(".progress-bar-container__progress").style.width = n + "%", document.querySelector(".post-side") } function _heightInViewport(e) { var t = e.offsetHeight, n = document.body.offsetHeight, o = e.getBoundingClientRect(), i = o.top, s = o.bottom; return Math.max(0, i > 0 ? Math.min(t, n - i) : Math.min(s, n)) }</script>
+        <style>
+            .post-full-content ul li p {
+                margin-bottom: 0 !important
+            }
+        </style>
+        <div id="site-main" class="site-main outer" style="margin:auto;width:100%">
+            <div class="progress-bar-container">
+                <div class="progress-bar-container__progress"></div>
+            </div>
+            <div class="inner" style="display:flex">
+                <article class="post-full post no-image page no-image"
+                    style="flex-grow:1;width:100%;max-width:1200px;margin:auto">
+                    <header class="post-full-header"
+                        style="text-align:left;padding:15px 20px 0 20px;max-width:100%!important;margin:auto;margin-bottom:10px">
+                        <!-- <div
+                        style="display:block;font-size:15px;text-align:left;margin-bottom:5px;font-weight:900;letter-spacing:-.75px;cursor:pointer;text-transform:capitalize">
+                        <a target="_blank" href="https://www.adaface.com/online-compiler">Compilers</a>
+                    </div>
+                    <h1 style="margin:0;text-align:left;font-size:30px;font-weight:900">C++ Compiler
+                    </h1>
+                    <p style="margin-top:15px!important;margin-bottom:0!important">Write, compile, and
+                        run C++ code instantly with C++ Compiler. Learn C++ syntax, take inputs, import
+                        libraries, and more. Perfect for beginners and experts alike, especially for
+                        systems programming.</p> -->
+                    </header>
+               
+
+
+
+
+
+
+
+
+<!--  -->
+                    <style>
+                        @media (min-width:824px) {
+                            .second-container {
+                                max-width: 400px;
+                                overflow-y: scroll;
+                                border-left: 1px solid #cac9c9
+                            }
+                        }
+                    </style>
+                </article>
+            </div>
+        </div>
+
+
+    </main>
+  
+
+    <button id="fullscreenButton" style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800"> Coder  </button>
+    <!-- <h4 id='alldata'></h4><br> -->
+    <div class="columns is-desktop " style="margin: 20px;gap:20px;">
+        <div class="column" style="border-right:1px solid rgb(187, 187, 187); padding:20px">
+
+        <div class="columns"  >
+            <div class="column"  >
+
+
+                <div>
+                    
+                    <p  style="color:#040402;font-weight:700" >Task</p>
+                    <p>The provided code stub reads two integers from STDIN,  and . Add code to print three lines where:</p>
+                    <div style="padding: 15px;">
+                        <ol>
+                            <li>The first line contains the sum of the two numbers.</li>
+                            <li>The second line contains the difference of the two numbers (first - second).</li>
+                            <li>The third line contains the product of the two numbers.</li>
+                        </ol>
+                    </div>
+                    <p  style="color:#040402;font-weight:700" >Example</p>
+                    <p  style="color:#040402;font-weight:700" >a = 3</p>
+                    <p  style="color:#040402;font-weight:700" >b = 5</p>
+                    <!-- start  -->
+                    <div style="margin-top:30px">
+                        <div>
+                    <p>Print the following:</p>
+
+                            <pre style="border-radius:5px!important ; background-color:rgb(224, 236, 242);box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+8
+-2
+15</pre>
+                        </div>
+                    </div>
+                    <!-- end -->
+
+                    <p  style="color:#040402;font-weight:700 ;padding-top:15px" >Input Format                    </p>
+                    <p>The first line contains the first integer, a.</p>
+                    <p>The second line contains the second integer,b .</p>
+
+
+
+                    
+
+                </div>
+
+                <!-- start  -->
+                <div style="margin-top:30px">
+                    <div class="editor-heading" style="color:#040402;font-weight:700" >Sample Input</div>
+                    <div>
+                        <pre style="border-radius:5px!important ; background-color:rgb(224, 236, 242);box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+3
+2</pre>
+                    </div>
+                </div>
+                <!-- end -->
+                <p  style="color:#040402;font-weight:700 ;padding-top:15px" >Output Format                    </p>
+                <p>Print the three lines as explained above.</p>
+
+                <!-- start  -->
+                <div style="margin-top:30px">
+                    <div class="editor-heading" style="color:#040402;font-weight:700" >Sample Output</div>
+                    <div>
+                        <pre style="border-radius:5px!important ; background-color:rgb(224, 236, 242);box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+5
+1
+6</pre>
+                    </div>
+                </div>
+                <!-- end -->
+
+
+                <!--  -->
+                <br>
+
+                <p  style="color:#040402;font-weight:700" >Explanation 0</p>
+                <p  style="color:#040402;font-weight:500" >3 + 2 ==> 5</p>
+                <p  style="color:#040402;font-weight:500" >3 - 2 ==> 1</p>
+                <p  style="color:#040402;font-weight:500" >3 * 2 ==> 6</p>
+    
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+        <!-- secound -->
+        <div class="column"  style="background-color: rgb(255, 255, 255);">
+
+            <div class="columns"
+            style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+            <div class="column " style="padding:0;">
+                <div style="padding:5px 10px">
+                    <div
+                        style="padding:5px 10px 10px 10px;border-bottom:2px solid #2a5724;display:inline-block">
+                        <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+                        <!-- <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+                    </div>
+                </div>
+                <div id="container" style="width:100%;height:350px ;" class="notranslate"></div>
+            </div>
+            
+        </div>
+        <br>
+        <div class="columns">
+            <div class="column is-full" style="width:100%">
+                <div>
+                    <div class="flex">
+                        <div id="runBtn"
+                            style="display:inline-block;padding:5px 5px 5px 5px;padding:6px 8px ; color: white;font-weight:800;background-color:#2a5724;border-radius:0px;color:#fff;cursor:pointer">
+                            <div style="display:flex;justify-content:center;align-items:center">
+                                <span style="margin-left:5px;margin-right:10px">Run Code</span>
+                                <div class="icon" style="display:flex; "></div>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        .editor-heading {
+                            font-size: 14px;
+                            margin-bottom: 5px;
+                            margin-top: 10px;
+                            text-transform: uppercase;
+                            color: #aaa
+                        }
+                    </style>
+                    <div>
+                        
+                        <div id="stdin">
+                            <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input</span></div>
+                            <div><textarea
+                                    style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                                    class="notranslate" id="stdinput" disabled="disabled">
+3
+2</textarea></div>
+                        </div>
+                        <div style="margin-top:30px; " id="stdout">
+                            <div class="editor-heading">Your Output</div>
+                            <div>
+                                <pre style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+
+</pre>
+                            </div>
+                        </div>
+                        <div id="stderr" style="margin-top:30px;display:none">
+                            <div class="editor-heading">Stderr</div>
+                            <pre class="error-content notranslate"
+                                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+</pre>
+                        </div>
+                        <!--  -->
+                        <div style="margin-top:30px">
+                            <div class="editor-heading">Standard Output</div>
+                            <div>
+                                <pre style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+a : 5
+b : 1
+c : 6
+</pre>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+        
+      </div>
+
+
+    <script>
+        function setupMonacoWithDelay() {
+            
+             var n = document.createElement("script"); 
+             n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+                 var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `#####################\n##### Write a code here ##### \nprint('Write a code') `,\n                        language: \"python\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n) } } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }</script>
+    <!-- button click actions -->
+    <script>var global_editor, timeWhenIwasLoaded = Date.now(), runButton = document.querySelector("#runBtn"), runButtonIcon = document.querySelector("#runBtn .icon"), stdin = document.querySelector("#stdin textarea"), stdout = document.querySelector("#stdout pre"), stderr = document.querySelector("#stderr .error-content"), judgeId = 71; runButton.addEventListener("click", (function () { global_editor && $.ajax({ url: "https://moderator.adaface.com/compile", timeout: 45e3, type: "POST", data: { language_id: judgeId, source_code: global_editor.getValue(), stdin: stdin.value }, beforeSend: function () { runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"/></svg>', runButtonIcon.classList.add("fa-spin") }, success: function (e) { runButtonIcon.innerHTML = '', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), window.oneSuccessHappened = !0, 200 == e.statusCode ? (stdout.innerHTML = e.responseToSend.stdout || "No output", stderr.innerHTML = e.responseToSend.error || e.responseToSend.stderr, "" == (e.responseToSend.stderr || e.responseToSend.error) ? document.querySelector("#stderr").style.display = "none" : document.querySelector("#stderr").style.display = "block") : iziToast.error({ title: "Error", message: e.status.message, position: "topRight" }) }, error: function (e, t, o) { if ("timeout" === t) return e.abort(), Date.now() - timeWhenIwasLoaded < 5e3 && !window.oneSuccessHappened ? void window.location.reload() : iziToast.error({ title: "Error", message: "Request timed out. Please try again.", position: "topRight" }); window.oneSuccessHappened = !0, runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), iziToast.error({ title: "Error", message: "Something went wrong. Please try again.", position: "topRight" }) } }) }))</script>
+    
+<script>
+    // Function to toggle fullscreen mode
+    function toggleFullscreen() {
+      // Check if the document is currently in fullscreen
+      if (!document.fullscreenElement &&
+          !document.mozFullScreenElement && 
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement) { 
+        
+        // If not in fullscreen, enter fullscreen mode
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+          document.documentElement.msRequestFullscreen();
+        }
+  
+      } else {
+        // If already in fullscreen, exit fullscreen mode
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+    }
+  
+    // Attach the function to the button click event
+    document.getElementById('fullscreenButton').addEventListener('click', toggleFullscreen);
+  </script>
+
+
+
+  <!-- pass data -->
+  <script> 
+    var data = JSON.parse("{{data|escapejs}}"); 
+    var dataNode = document.getElementById('alldata'); 
+    dataNode.innerHTML+="{{data|escapejs}}"; 
+    dataNode = document.getElementById('neatdata'); 
+    for(var x in data){ 
+        dataNode.innerHTML+=x+' : '+data[x]+'<br><br>'; 
+    } 
+</script>
+
+
+<script>
+    
+    // Now you can use the data in your JavaScript code
+</script>
+
+</html>

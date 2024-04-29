@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <style>
+              
+                
+                .buttons {
+                    text-align: center;
+                }
+                
+                .btn-hover {
+                    font-size: 14px;
+                    font-weight: 100;
+                    color: #fff;
+                    cursor: pointer;
+                    margin: 20px;
+                    padding: 4px 15px;
+                    text-align:center;
+                    border: none;
+                    background-size: 300% 100%;
+                
+                    border-radius: 50px;
+                    moz-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    -webkit-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                }
+                
+                .btn-hover:hover {
+                    transform: scale(1.1);
+                    font-weight: 300;
+
+                    background-position: 100% 0;
+                    moz-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    -webkit-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                }
+                
+                .btn-hover:focus {
+                    outline: none;
+                }
+                
+                .btn-hover.color-1 {
+                    border: 1px solid rgb(255, 255, 255);
+                    background-color: rgba(31, 123, 13, 0.715);
+                }
+              
+                
+                
+                
+                
+            </style>
+            <div class="buttons">
+                <!-- <button class="btn-hover color-1" onclick="location.href='{% url 'topicupload' %}'">Upload Topic</button> -->
+                <!-- <button class="btn-hover color-1" >Upload Video</button>
+                <button class="btn-hover color-1" onclick="location.href='{% url 'mcqupload' %}'">Upload MCQ</button>
+                <button class="btn-hover color-1"onclick="location.href='{% url 'codingtestupload' %}'">Upload Coding</button>
+                 -->
+            </div>
+            <div class="box-header with-border">
+                <h4 class="box-title">Upload Topic</h4>
+               
+            </div>
+            <div class="box-body">
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Choose
+                        Chapter</label>
+                    <div class="col-md-10">
+    
+                        <select
+                            class="form-control select2"
+                            style="width: 40%;"
+                            id="typeselected">
+                            <option>.</option>
+                            <option
+                                value="Chapter 1">Chapter
+                                1</option>
+                            <option
+                                value="Chapter 2">Chapter
+                                2</option>
+                            <option
+                                value="Chapter 3">Chapter
+                                3</option>
+                            <option
+                                value="Chapter 4">Chapter
+                                4</option>
+                            <option
+                                value="Chapter 5">Chapter
+                                5</option>
+                            <option
+                                value="Chapter 6 ">Chapter
+                                6
+                            </option>
+                            <option
+                                value="Chapter 7">Chapter
+                                7</option>
+                            <option
+                                value="Chapter 8">Chapter
+                                8</option>
+                            <option
+                                value="Chapter 9">Chapter
+                                9</option>
+                            <option
+                                value="Chapter 10">Chapter
+                                10</option>
+                            <option
+                                value="Chapter 11">Chapter
+                                11</option>
+                            <option
+                                value="Chapter 12">Chapter
+                                12</option>
+                            <option
+                                value="Chapter 13">Chapter
+                                13</option>
+                            <option
+                                value="Chapter 14">Chapter
+                                14</option>
+                            <option
+                                value="Chapter 15">Chapter
+                                15</option>
+                            <option
+                                value="Chapter 16">Chapter
+                                16</option>
+                            <option
+                                value="Chapter 17">Chapter
+                                17</option>
+                            <option
+                                value="Chapter 18">Chapter
+                                18</option>
+                            <option
+                                value="Chapter 19">Chapter
+                                19</option>
+                            <option
+                                value="Chapter 20">Chapter
+                                20</option>
+                            <option
+                                value="Chapter 21">Chapter
+                                21</option>
+                            <option
+                                value="Chapter 22">Chapter
+                                22</option>
+                            <option
+                                value="Chapter 23">Chapter
+                                23</option>
+                            <option
+                                value="Chapter 24">Chapter
+                                24</option>
+                            <option
+                                value="Chapter 25">Chapter
+                                25</option>
+                            <option
+                                value="Chapter 26">Chapter
+                                26</option>
+                            <option
+                                value="Chapter 27">Chapter
+                                27</option>
+    
+                        </select>
+    
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Title
+                    </label>
+                    <div class="col-md-6">
+                        <input class="form-control"
+                            type="text"
+                            placeholder="Mini-Max Sum,"
+                            id="numberid">
+                    </div>
+    
+                    <div class="col-md-4">
+                        <button class="btn btn-success"
+                            onclick="uploadtitle()">+
+                            Add Title
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-header with-border">
+                <h4 class="box-title">Upload Topic List</h4>
+               
+            </div>
+            <div class="box-body">
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Your Upload Topics</label>
+                    <div class="col-md-4">
+
+                        <select
+                            class="form-control select2"
+                            style="width: 100%;"
+                            name="type">
+
+                            {% for i in data %}
+                            <option
+                                value={{i.id}}>{{i.title}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-info" onclick="location.href='{% url 'videoupload' %}'">Next ...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    function uploadtitle() {
+       
+        var data2 = $('#numberid').val();
+        var data3 = $('#typeselected').val();
+       
+
+        let csrftoken = '{{ csrf_token }}'
+        $.ajax({
+          type: 'POST',
+          headers: { 'X-CSRFToken': csrftoken },
+          url: "{% url 'uploadjavatraing' %}",
+          data: {
+           
+            'data2': data2,
+            'data3':data3,
+  
+           
+  
+          },
+          success: function (response) {
+            if (response.success == true) {
+              location.reload() 
+  
+  
+            }
+            else if (response.success == false) {
+              console.log("error")
+            }
+          },
+          error: function (error) {
+            alert('titlenot add')
+          }
+        });
+      }
+  
+</script>
+
+{% endblock content %}

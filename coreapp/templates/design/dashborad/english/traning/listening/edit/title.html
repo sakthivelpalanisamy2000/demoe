@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+
+{% block page_title %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+        
+            <div class="box-header with-border">
+                <h4 class="box-title">Edit  </h4>
+               
+            </div>
+            <div class="box-body">
+          
+            <form action="{% url 'elisteningtitle' id=data.id %}" method="post">
+                {% csrf_token %}
+
+                <div class="form-group row">
+                    <label
+                        class="col-form-label col-md-2">Title
+                    </label>
+                    <div class="col-md-6">
+                        <input class="form-control"
+                            type="text" name="title"
+                            value="{{data.title|default:' '}}"
+                            >
+                    </div>
+                   
+    
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="submit"> Save Edit
+                        </button>
+                    </div>
+                    
+                </div>
+            </form>
+           
+            <div class="box-header with-border">
+                <h6 class="box-title">Note : if delete Title video also deleted ... !</h6>
+               
+            </div>
+            <div class="box-body">
+                <div class="form-group row">
+                    <div class="col-md-6">
+                       <a href="1" id="info" class="info popup-trigger" title="info">
+                        <button class="btn btn-success">Delete</button>
+                       </a>
+                    </div>
+                   
+                </div>
+            </div>
+            <style>
+                
+          
+                .popup {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    z-index: 1000;
+                    width: 100%;
+                    background-color: rgba(252, 252, 252, 0.729);
+                    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition:500ms all;
+                
+                }
+                
+                .popup.is-visible {
+                    opacity: 1;
+                    visibility: visible;
+                transition:1s all;
+                }
+                
+                .popup-container {
+                    transform:translateY(-50%);
+                    transition:500ms all;
+                    position: relative;
+                    width: 40%;
+                    margin: 2em auto;
+                    top: 20%;
+                    padding:2rem;
+                    background: #FFF;
+                    border-radius: .25em .25em .4em .4em;
+                    text-align: center;
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+                }
+                
+                .is-visible .popup-container {
+                    transform:translateY(0);
+                    transition:500ms all;
+                }
+                
+                .popup-container .popup-close {
+                    position: absolute;
+                    top: 8px;
+                    font-size:0;
+                    right: 8px;
+                    width: 30px;
+                    height: 30px;
+                }
+                
+                
+                .popup-container .popup-close::before,
+                .popup-container .popup-close::after {
+                    content: '';
+                    position: absolute;
+                    top: 12px;
+                    width: 14px;
+                    height: 3px;
+                    background-color: #d3d4d5;
+                }
+                
+                .popup-container .popup-close::before {
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    left: 8px;
+                }
+                
+                .popup-container .popup-close::after {
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    right: 8px;
+                }
+                
+                
+                .popup-container .popup-close:hover:before,
+                .popup-container .popup-close:hover:after {
+                    background-color:#35a785;
+                    transition:300ms all;
+                }
+                
+                </style>
+               
+              
+                <div class="popup" role="alert">
+                    <div class="popup-container">
+                        <a href="1" class="popup-close img-replace">Close</a>
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>Confirm Delete </h4> <br>
+                                <p>Are you sure you want to delete ( <strong>{{data.title|default:' '}}</strong> )?</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-4"></div>
+                            <div class="col-2">
+                                <button class="btn btn-danger" onclick="location.href=''">Cancel</button>
+                            </div>
+                            <div class="col-2">
+                                <form action="{% url 'elisteningtitledelet' data.pk %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-success" type="submit">Delete</button>
+                                </form>
+                                
+                            </div>
+                            <div class="col-4"></div>
+                        </div>
+                    </div> 
+                </div> 
+                           
+            
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script>
+                    jQuery(document).ready(function($){
+                        //open popup
+                        $('.popup-trigger').on('click', function(event){
+                          event.preventDefault();
+                          $('.popup').addClass('is-visible');
+                        });
+                        
+                        //close popup
+                        $('.popup').on('click', function(event){
+                          if( $(event.target).is('.popup-close') || $(event.target).is('.popup') ) {
+                            event.preventDefault();
+                            $(this).removeClass('is-visible');
+                          }
+                        });
+                        //close popup when clicking the esc keyboard button
+                        $(document).keyup(function(event){
+                            if(event.which=='27'){
+                              $('.popup').removeClass('is-visible');
+                            }
+                          });
+                      });
+                </script>
+            
+           
+        </section>
+    </div>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,647 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Java</title>
+  <link rel="shortcut icon"
+    href="data:image/png;base64,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" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+
+  <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}" type="text/css" />
+
+  <script src="{% static 'hack/clipboard.min.js'%}"></script>
+  <style>
+    #clock {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: rgb(167, 221, 161);
+      margin: auto;
+    }
+
+    #seconds {
+      display: block;
+      margin: auto;
+      padding-top: 0px;
+      text-align: center;
+    }
+
+
+    p {
+      margin: 0;
+    }
+
+    .notice {
+      position: relative;
+      margin: 1em;
+      color: rgb(5, 5, 5);
+      font-weight: 300;
+      padding: 1em 1em 1em 2em;
+      border-left: 4px solid #DDD;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.125);
+    }
+
+    .notice:before {
+      position: absolute;
+      background-color: #DDD;
+      color: #FFF;
+      top:-1%;
+      margin-left: -50px;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 30px;
+      font-weight: bold;
+      font-family: Georgia;
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .info {
+      border-color: #0074D9;
+    }
+
+    .info:before {
+      content: "i";
+      background-color: #0074D9;
+    }
+
+    .success {
+      border-color: #2ECC40;
+      background: #cbe2b5;
+      color: #0b4111;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .success:before {
+      content: "√";
+      background-color: #2ECC40;
+    }
+
+    .warning {
+      border-color: #FFDC00;
+    }
+
+    .warning:before {
+      content: "!";
+      background-color: #FFDC00;
+    }
+
+    .error {
+      border-color: #FF4136;
+      background: #e9b6b6c2;
+      color: rgb(108, 7, 7);
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .error:before {
+      content: "X";
+      background-color: #FF4136;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+  <main
+    style="color:#040402;fill:currentcolor;line-height:1.35;background:#fffefc;font-size:17px;max-width:100%;width:100%!important;margin:0 auto;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased">
+
+
+    <script>function addBlogTodos() { jQuery(document).ready((function (e) { window.addEventListener("load", t => { var n = e(".post-content h2"); if (n.length < 2) { if (0 != n.length) return void e(".post-side-inner").addClass("is-hidden"); if ((n = e(".post-content h3")).length < 2) return void e(".post-side-inner").addClass("is-hidden") } else if (n.length > 35) return void e(".post-side-inner").addClass("is-hidden"); e(".post-side-inner").append("<div class='blog-todos'><div><span style='font-size: 18px; font-weight: 900;'>Contents</span></div></div>"); for (var o = [], i = 0; i < n.length; i++) { var s = n[i].innerText, d = n[i].getAttribute("link") || ""; o.push(s), e(n[i]).hasClass("remove-from-navigation") || (e(".blog-todos").append(d ? "<a href='#" + d + "' class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></a>" : "<div class='blog-todo-item' id='todoheading" + i + "'><span class='icon' style='color: lightgray; max-width:fit-content;'><i class='far fa-check-circle'></i></span><span style='padding-left: 10px;align-self: center;'>" + s + "</span></div>"), function (t) { if (e("#todoheading" + t).click((function () { n[t].scrollIntoView(), e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far") })), "IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype) { new IntersectionObserver((function (n) { n.length > 0 && n[0].isVisible && (e("#todoheading" + t + " .icon").addClass("done-todo"), e("#todoheading" + t + " .icon").find(".far").addClass("fas").removeClass("far")) }), { trackVisibility: !0, delay: 100, threshold: 0 }).observe(n[t]) } else; }(i)) } }, !1) })) } function addReadingBar() { window.addEventListener("scroll", _updateScrollProgressBar), window.addEventListener("load", _updateScrollProgressBar) } function _updateScrollProgressBar() { var e = document.querySelector("html"), t = document.querySelector(".post-full-content").scrollHeight - _heightInViewport(e), n = e.scrollTop / t * 100; document.querySelector(".progress-bar-container__progress").style.width = n + "%", document.querySelector(".post-side") } function _heightInViewport(e) { var t = e.offsetHeight, n = document.body.offsetHeight, o = e.getBoundingClientRect(), i = o.top, s = o.bottom; return Math.max(0, i > 0 ? Math.min(t, n - i) : Math.min(s, n)) }</script>
+    <style>
+      .post-full-content ul li p {
+        margin-bottom: 0 !important
+      }
+    </style>
+    <div id="site-main" class="site-main outer" style="margin:auto;width:100%">
+      <div class="progress-bar-container">
+        <div class="progress-bar-container__progress"></div>
+      </div>
+      <div class="inner" style="display:flex">
+        <article class="post-full post no-image page no-image"
+          style="flex-grow:1;width:100%;max-width:1200px;margin:auto">
+          <header class="post-full-header"
+            style="text-align:left;padding:15px 20px 0 20px;max-width:100%!important;margin:auto;margin-bottom:10px">
+            <!-- <div
+                        style="display:block;font-size:15px;text-align:left;margin-bottom:5px;font-weight:900;letter-spacing:-.75px;cursor:pointer;text-transform:capitalize">
+                        <a target="_blank" href="https://www.adaface.com/online-compiler">Compilers</a>
+                    </div>
+                    <h1 style="margin:0;text-align:left;font-size:30px;font-weight:900">C++ Compiler
+                    </h1>
+                    <p style="margin-top:15px!important;margin-bottom:0!important">Write, compile, and
+                        run C++ code instantly with C++ Compiler. Learn C++ syntax, take inputs, import
+                        libraries, and more. Perfect for beginners and experts alike, especially for
+                        systems programming.</p> -->
+          </header>
+
+
+
+
+
+
+
+
+
+          <!--  -->
+          <style>
+            @media (min-width:824px) {
+              .second-container {
+                max-width: 400px;
+                overflow-y: scroll;
+                border-left: 1px solid #cac9c9
+              }
+            }
+          </style>
+        </article>
+      </div>
+    </div>
+
+
+  </main>
+
+
+  <button id="fullscreenButton"
+    style="background-color: #2a5724;border:none ; padding:6px 8px ; color: white;font-weight:800"> Coder </button>
+    <a  href="{% url 'logout' %}">Logout</a>
+
+  <!-- <h4 id='alldata'></h4><br> -->
+  <div class="columns is-desktop " style="margin: 20px;gap:20px;">
+    <div class="column" style="border-right:1px solid rgb(187, 187, 187); padding:20px">
+
+      <div class="columns">
+        <div class="column">
+
+
+          <div>
+
+            <p style="color:#040402;font-weight:700">Task</p>
+            <p>The provided code stub reads two integers from STDIN, and . Add code to print three lines where:</p>
+            <div style="padding: 15px;">
+              <ol>
+                <li>The first line contains the sum of the two numbers.</li>
+                <li>The second line contains the difference of the two numbers (first - second).</li>
+                <li>The third line contains the product of the two numbers.</li>
+              </ol>
+            </div>
+            <p style="color:#040402;font-weight:700">Example</p>
+            <p style="color:#040402;font-weight:700">a = 3</p>
+            <p style="color:#040402;font-weight:700">b = 5</p>
+            <!-- start  -->
+            <div style="margin-top:30px">
+              <div>
+                <p>Print the following:</p>
+
+                <pre
+                  style="border-radius:5px!important ; background-color:rgb(224, 236, 242);box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+8
+-2
+15</pre>
+              </div>
+            </div>
+            <!-- end -->
+
+            <p style="color:#040402;font-weight:700 ;padding-top:15px">Input Format </p>
+            <p>The first line contains the first integer, a.</p>
+            <p>The second line contains the second integer,b .</p>
+
+
+
+
+
+          </div>
+
+          <!-- start  -->
+          <div style="margin-top:30px">
+            <div class="editor-heading" style="color:#040402;font-weight:700">Sample Input</div>
+            <div>
+              <pre
+                style="border-radius:5px!important ; background-color:rgb(224, 236, 242);box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+3
+2</pre>
+            </div>
+          </div>
+          <!-- end -->
+          <p style="color:#040402;font-weight:700 ;padding-top:15px">Output Format </p>
+          <p>Print the three lines as explained above.</p>
+
+          <!-- start  -->
+          <div style="margin-top:30px">
+            <div class="editor-heading" style="color:#040402;font-weight:700">Sample Output</div>
+            <div>
+              <pre
+                style="border-radius:5px!important ; background-color:rgb(224, 236, 242);box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+5
+1
+6</pre>
+            </div>
+          </div>
+          <!-- end -->
+
+
+          <!--  -->
+          <br>
+
+          <p style="color:#040402;font-weight:700">Explanation 0</p>
+          <p style="color:#040402;font-weight:500">3 + 2 ==> 5</p>
+          <p style="color:#040402;font-weight:500">3 - 2 ==> 1</p>
+          <p style="color:#040402;font-weight:500">3 * 2 ==> 6</p>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <!-- secound -->
+    <div class="column" style="background-color: rgb(255, 255, 255);">
+
+      <div class="columns"
+        style="margin:0px;border:1px solid #ffffff;border-radius:5px;overflow:auto;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+        <div class="column " style="padding:0;">
+          <div style="padding:5px 10px">
+            <div style="padding:5px 10px 10px 10px;border-bottom:2px solid #2a5724;display:inline-block">
+              <span style="font-size:14px;color:#2a5724;margin-right:5px"><span>Code</span></span>
+              <!-- <span style="font-size:12px;color:#ccc"><span>GCC 9.2</span></span> -->
+            </div>
+          </div>
+          <div id="container" style="width:100%;height:350px ;" class="notranslate"></div>
+        </div>
+
+      </div>
+      <br>
+      <div class="columns">
+        <div class="column is-full" style="width:100%">
+          <div>
+            <div class="flex">
+              <div id="runBtn"
+                style="display:inline-block; color: white;padding: 4px 6px ;font-weight:800;background-color:#0ca5e7;border-radius:0px;color:#fff;cursor:pointer">
+                <div style="display:flex;justify-content:center;align-items:center">
+                  <span style="margin-left:5px;margin-right:10px">Run Code</span>
+                  <div class="icon" style="display:none; "></div>
+                </div>
+              </div>
+
+              <div id="runBtn2"
+                style="display:inline-block; color: rgb(0, 0, 0);padding: 4px 6px ;font-weight:300;background-color:#cccccc;border-radius:0px;color:#000000;cursor:pointer">
+                <div style="display:flex;justify-content:center;align-items:center">
+                  <span style="margin-left:5px;margin-right:10px" onclick="delayedCall()">Run TestCase</span>
+                  <div class="icon" style="display:none; "></div>
+                </div>
+              </div>
+
+
+
+              <!-- <button onclick="sendDataToDjango()"
+                style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600">Run Testcase</button> -->
+
+              <button onclick="notificationMessageHints() "
+                style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600">Hints</button>
+
+              <!-- <button type="submit" style="padding: 7px 10px ;background:#cccccc; border:none;font-weight:600" value={{excel_path}} onclick="location.href='{% url 'downloadexcel' %}'" name='mybtn2'>Hints</button> -->
+              <div id="messageContainer"></div>
+
+              <br>
+              <div id="hintMessageContainer"></div>
+
+
+            </div>
+            <style>
+              .editor-heading {
+                font-size: 14px;
+                margin-bottom: 5px;
+                margin-top: 10px;
+                text-transform: uppercase;
+                color: #aaa
+              }
+            </style>
+            <br />
+
+            <div id="stdin">
+              <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input</span></div>
+              <div><textarea
+                  style="border:1px solid #ffffff;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                  class="notranslate" id="stdinput" disabled="disabled">
+3
+2</textarea></div>
+            </div>
+
+            <!-- demo -->
+
+            <div id="stdin2" style="display: none;">
+              <!-- <div style="margin-top:20px ;" class="editor-heading"><span>Standard Input2</span></div> -->
+              <div><textarea
+                  style="border:1px solid #ffffff;display: none;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-radius:5px;width:100%;height:100px;padding:10px;resize:none"
+                  class="notranslate" id="stdinput" disabled="disabled">
+3
+5</textarea></div>
+            </div>
+
+            <div style="margin-top:30px; " id="stdout2" style="display: none;">
+              <!-- <div style="margin-top:20px ;" class="editor-heading"><span>Standard output2</span></div> -->
+
+
+              <div>
+                <pre id="dataToSend"
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important;display: none;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+              </div>
+            </div>
+
+            <div id="stderr2" style="margin-top:30px;display:none">
+              <!-- <div class="editor-heading">Stderr2</div> -->
+              <pre class="error-content notranslate"
+                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ;display: none; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+            </div>
+
+            <!-- demo end -->
+            <div style="margin-top:30px; " id="stdout">
+              <div class="editor-heading">Your Output</div>
+              <div>
+                <pre
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+                <!-- <textarea name="" style="padding:1.25rem 1.5rem!important;border-radius:5px!important;background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></textarea> -->
+              </div>
+            </div>
+            <div id="stderr" style="margin-top:30px;display:none">
+              <div class="editor-heading">Stderr</div>
+              <pre class="error-content notranslate"
+                style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"></pre>
+            </div>
+            <!--  -->
+            <div style="margin-top:30px">
+              <div class="editor-heading">Standard Output</div>
+              <div>
+                <pre
+                  style="padding:1.25rem 1.5rem!important;border-radius:5px!important ; background-color:white;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+5
+1
+6</pre>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // try start
+
+    //try end
+    function showMessage() {
+      // Get the messageContainer element
+      var messageContainer = document.getElementById("messageContainer");
+
+      // Set the innerHTML property to multiple HTML tags using concatenation
+
+
+      // Alternatively, you can use template literals for cleaner syntax
+      messageContainer.innerHTML = `
+            <div class="notice error">
+              <p style="font-weight:500;">You Lose</p>
+              <p>TestCase 0 Code execution failed</p>
+            </div>
+    
+            `;
+      setTimeout(function () {
+        messageContainer.innerHTML = "";
+      }, 3000); // 3000 milliseconds = 3 seconds
+    }
+
+    function successMessage() {
+      // Get the messageContainer element
+      var messageContainer = document.getElementById("hintMessageContainer");
+
+      // Set the innerHTML property to multiple HTML tags using concatenation
+
+
+      // Alternatively, you can use template literals for cleaner syntax
+      messageContainer.innerHTML = `
+          <div class="notice success">
+            <p style="font-weight:500">Success</p>
+            <p>Test Case 1 Code execution Successfully executed </p></div>
+  
+          `;
+      setTimeout(function () {
+        messageContainer.innerHTML = "";
+      }, 3000); // 3000 milliseconds = 3 seconds
+    }
+    function notificationMessageHints() {
+      var hintsMessageContainer = document.getElementById("hintMessageContainer");
+      hintsMessageContainer.innerHTML = `
+          <div class="notification is-primary is-light">
+          
+            The first line contains the sum of the two numbers.
+            <strong>The second line contains the difference of the two numbers (first - second).</strong>,The third line contains the product of the two numbers.
+          </div>
+          `;
+      setTimeout(function () {
+        hintsMessageContainer.innerHTML = "";
+
+      }, 5000);
+    }
+    timeLeft = 3;
+
+    function countdown() {
+      timeLeft--;
+      document.getElementById("seconds").innerHTML = String(timeLeft);
+      if (timeLeft > 0) {
+        setTimeout(countdown, 3000);
+      }
+    };
+
+    setTimeout(countdown, 3000);
+
+  </script>
+
+  <script>
+
+    function delayedCall() {
+      setTimeout(function () {
+        sendDataToDjango();
+      }, 3000);
+    }
+    function sendDataToDjango() {
+      var data = $('#dataToSend').text();
+
+
+      let csrftoken = '{{ csrf_token }}'
+      $.ajax({
+        type: 'POST',
+        headers: { 'X-CSRFToken': csrftoken },
+        url: "{% url 'javat' %}",  // Replace with your actual Django endpoint
+        data: {
+          'data': data,
+
+        },
+        success: function (response) {
+          if (response.success == true) {
+            // If the server indicates success, update the UI accordingly
+            successMessage()
+
+          }
+          else if (response.success == false) {
+            // If the server indicates an error, handle it
+            console.log("error")
+          }
+          // Handle the response from Django if needed
+        },
+        error: function (error) {
+          showMessage()
+
+
+
+        }
+      });
+    }
+  </script>
+
+  <!-- notification -->
+
+  <!--  delet not-->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        const $notification = $delete.parentNode;
+
+        $delete.addEventListener('click', () => {
+          $notification.parentNode.removeChild($notification);
+        });
+      });
+    });
+  </script>
+  <!-- end -->
+
+  <script>
+    function setupMonacoWithDelay() {
+
+      var n = document.createElement("script");
+      n.src = "{% static 'hack/loader.min.js'%}", document.body.appendChild(n); n.onload = function () {
+        var n = document.createElement("script"); n.innerHTML = "\n                require.config({\n                    paths: {\n                        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'\n                    }\n                });\n\n\n                require(['vs/editor/editor.main'], function() {\n                    var editor = monaco.editor.create(document.getElementById('container'), {\n                        value: `class Main {\n    public static void main(String[] args) {\n    //Write a code\n        System.out.println(\"Write a Code\");\n  }\n }`,\n                        language: \"java\",\n                        fontSize: 16\n                    });\n\n                    global_editor = editor;\n                });", document.body.appendChild(n)
+      }
+    } document.onreadystatechange = function () { "complete" === document.readyState && setupMonacoWithDelay() }</script>
+  <!-- button click actions -->
+  <script>
+    var global_editor, timeWhenIwasLoaded = Date.now(), runButton = document.querySelector("#runBtn"), runButtonIcon = document.querySelector("#runBtn .icon"), stdin = document.querySelector("#stdin textarea"), stdout = document.querySelector("#stdout pre"), stderr = document.querySelector("#stderr .error-content"), judgeId = 62; runButton.addEventListener("click", (function () { global_editor && $.ajax({ url: "https://moderator.adaface.com/compile", timeout: 45e3, type: "POST", data: { language_id: judgeId, source_code: global_editor.getValue(), stdin: stdin.value }, beforeSend: function () { runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"/></svg>', runButtonIcon.classList.add("fa-spin") }, success: function (e) { runButtonIcon.innerHTML = '', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), window.oneSuccessHappened = !0, 200 == e.statusCode ? (stdout.innerHTML = e.responseToSend.stdout || "No output", stderr.innerHTML = e.responseToSend.error || e.responseToSend.stderr, "" == (e.responseToSend.stderr || e.responseToSend.error) ? document.querySelector("#stderr").style.display = "none" : document.querySelector("#stderr").style.display = "block") : iziToast.error({ title: "Error", message: e.status.message, position: "topRight" }) }, error: function (e, t, o) { if ("timeout" === t) return e.abort(), Date.now() - timeWhenIwasLoaded < 5e3 && !window.oneSuccessHappened ? void window.location.reload() : iziToast.error({ title: "Error", message: "Request timed out. Please try again.", position: "topRight" }); window.oneSuccessHappened = !0, runButtonIcon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>', runButtonIcon.classList.remove("fa-spin"), stdout.classList.add("notranslate"), iziToast.error({ title: "Error", message: "Something went wrong. Please try again.", position: "topRight" }) } }) }))
+    var global_editor, timeWhenIwasLoaded = Date.now(), runButton2 = document.querySelector("#runBtn2"), runButtonIcon2 = document.querySelector("#runBtn2 .icon"), stdin2 = document.querySelector("#stdin2 textarea"), stdout2 = document.querySelector("#stdout2 pre"), stderr2 = document.querySelector("#stderr2 .error-content"), judgeId = 62; runButton2.addEventListener("click", (function () { global_editor && $.ajax({ url: "https://moderator.adaface.com/compile", timeout: 45e3, type: "POST", data: { language_id: judgeId, source_code: global_editor.getValue(), stdin: stdin2.value }, beforeSend: function () { runButtonIcon2.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"/></svg>', runButtonIcon2.classList.add("fa-spin") }, success: function (e) { runButtonIcon2.innerHTML = '', runButtonIcon2.classList.remove("fa-spin"), stdout2.classList.add("notranslate"), window.oneSuccessHappened = !0, 200 == e.statusCode ? (stdout2.innerHTML = e.responseToSend.stdout || "No output", stderr2.innerHTML = e.responseToSend.error || e.responseToSend.stderr2, "" == (e.responseToSend.stderr2 || e.responseToSend.error) ? document.querySelector("#stderr2").style.display = "none" : document.querySelector("#stderr2").style.display = "block") : iziToast.error({ title: "Error", message: e.status.message, position: "topRight" }) }, error: function (e, t, o) { if ("timeout" === t) return e.abort(), Date.now() - timeWhenIwasLoaded < 5e3 && !window.oneSuccessHappened ? void window.location.reload() : iziToast.error({ title: "Error", message: "Request timed out. Please try again.", position: "topRight" }); window.oneSuccessHappened = !0, runButtonIcon2.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">\x3c!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --\x3e<path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>', runButtonIcon2.classList.remove("fa-spin"), stdout2.classList.add("notranslate"), iziToast.error({ title: "Error", message: "Something went wrong. Please try again.", position: "topRight" }) } }) }))
+
+  </script>
+
+  <script>
+
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      // Assuming you have a button with the ID 'submitBtn'
+      $('#runBtn').on('click', function () {
+        // Fetch the content of the <pre> element
+        var outputValue = $({ stdout }).text();
+
+        // Send the value to the Django view using AJAX
+        $.ajax({
+          type: 'POST',
+          url: '{% url "outputvalue" %}',  // Replace with your Django view's URL
+          data: { output_value: outputValue },
+          success: function (data) {
+            // Handle success if needed
+            console.log("sent suscee")
+
+
+          },
+          error: function (error) {
+            // Handle error if needed
+            console.error('Error sending data:', error);
+          }
+        });
+      });
+    });
+  </script>
+  <script>
+    // Function to toggle fullscreen mode
+    function toggleFullscreen() {
+      // Check if the document is currently in fullscreen
+      if (!document.fullscreenElement &&
+        !document.mozFullScreenElement &&
+        !document.webkitFullscreenElement &&
+        !document.msFullscreenElement) {
+
+        // If not in fullscreen, enter fullscreen mode
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+          document.documentElement.msRequestFullscreen();
+        }
+
+      } else {
+        // If already in fullscreen, exit fullscreen mode
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { // Firefox
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+          document.msExitFullscreen();
+        }
+      }
+    }
+
+    // Attach the function to the button click event
+    document.getElementById('fullscreenButton').addEventListener('click', toggleFullscreen);
+  </script>
+
+
+
+  <!-- pass data -->
+  <!-- <script> 
+    var data = JSON.parse("{{data|escapejs}}"); 
+    var dataNode = document.getElementById('alldata'); 
+    dataNode.innerHTML+="{{data|escapejs}}"; 
+    dataNode = document.getElementById('neatdata'); 
+    for(var x in data){ 
+        dataNode.innerHTML+=x+' : '+data[x]+'<br><br>'; 
+    } 
+</script> -->
+
+
+  <script>
+
+    // Now you can use the data in your JavaScript code
+  </script>
+
+</html>

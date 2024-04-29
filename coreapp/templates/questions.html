@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>C++</title>
+    <link rel="shortcut icon"
+      href="data:image/png;base64,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" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0" />
+
+    <link rel="stylesheet" href="{% static 'hack/bulma.min.css'%}"  type="text/css" />
+    <link rel="stylesheet" href="{% static 'hack/a11y-dark.min.css'%}"  type="text/css" />
+
+    <script src="{% static 'hack/clipboard.min.js'%}"></script>
+
+  </head>
+  <body>
+    <script src="{% static 'hack/jquery.min.js'%}"></script>
+
+    <form action="" `method="post" enctype="multipart/form-data">
+        <div class="columns " style="gap:10px; margin:10px">
+            
+            <div class="column" style="background-color: rgb(255, 255, 255); box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+                <div class="select is-small">
+                    {% csrf_token %}
+
+                    <select name = "languageselecte">
+                      <option value="1">C</option>
+                      <option value="2">C++</option>
+                      <option value="3">Python</option>
+                      <option value="4">Java</option>
+                    </select>
+                  </div>
+                <h1 style="font-weight: 900;padding:10px">Technical Questions Box</h1>
+
+                <textarea id="fullquestions"name="technicalquestions"></textarea>
+            </div>
+            
+        </div>
+        <div class="colums" style="gap:10px; margin:10px">
+            <div class="column" style="background-color: rgb(255, 255, 255); box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+                <div class="columns " style="gap:10px; ">
+                    <div class="column">
+
+                        <h1 style="font-weight: 700;padding:10px">Standard Input</h1>
+                        <input class="input" type="textarea" placeholder="input " name="sinput" >
+    
+    
+                    </div>
+                    <div class="column">
+                         
+                        <h1 style="font-weight: 700;padding:10px">Standard Output</h1>
+                        <textarea name="soutput"></textarea>
+    
+                    </div>
+    
+                    <div class="column">
+
+                        <h1 style="font-weight: 700;padding:10px">Test Case Input</h1>
+                        <input class="input" type="textarea" placeholder="Text input" name="tinput">
+    
+    
+                    </div>
+                    <div class="column">
+
+                        <h1 style="font-weight: 700;padding:10px" >Test Case Output</h1>
+                        <textarea name="toutput"></textarea>
+    
+                    </div>
+    
+    
+    
+                </div>
+    
+                <!-- <div class="columns " style="gap:10px; ">
+                    <div class="column">
+                        <h1 style="font-weight: 700;padding:10px">Test Case Input</h1>
+                        <input class="input" type="textarea" placeholder="Text input">
+                    </div>
+                    <div class="column">
+                        <h1 style="font-weight: 700;padding:10px">Test Case Output</h1>
+                        <input class="input" type="text" placeholder="Text input">
+                    </div>
+    
+                </div> -->
+    
+    
+                <div class="columns " style="gap:10px; ">
+                    <div class="column">
+                      
+                    </div>
+                    <div class="column">
+                        <h1>.</h1>
+        {% csrf_token %}
+
+                        <button class="button is-success" type="submit" >SAVE</button>
+                    </div>
+    
+                </div>
+    
+    
+            </div>
+        </div>
+    
+    </form>
+{{data}}
+
+
+
+    
+    
+        <script src="https://cdn.tiny.cloud/1/dmucryed521zcfq6kp546u0b75epkjy8276k0wpfaxkvlqul/tinymce/6/tinymce.min.js"
+            referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: 'textarea#fullquestions',
+                plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                tinycomments_mode: 'embedded',
+                tinycomments_author: 'Author name',
+                mergetags_list: [
+                    { value: 'First.Name', title: 'First Name' },
+                    { value: 'Email', title: 'Email' },
+                ],
+                ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+            });
+        </script>
+
+</body>
+
+</html>

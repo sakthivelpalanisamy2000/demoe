@@ -1,0 +1,566 @@
+<!-- <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --blue-color: rgb(51, 85, 170);
+        }
+
+        body {
+            background: rgb(238, 174, 202);
+            background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+
+        .ml-auto {
+            margin-left: auto;
+        }
+
+
+        .form {
+            background-color: white;
+            width: clamp(320px, 30%, 430px);
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 0.35rem;
+            padding: 1.5rem;
+            z-index: 1;
+        }
+
+        .input-group {
+            margin: 0.5rem 0;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            transform-origin: top;
+            animation: animate .5s;
+        }
+
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 0.75rem;
+            display: block;
+            text-decoration: none;
+            width: min-content;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-next {
+            background-color: var(--blue-color);
+            color: white;
+            float: right;
+        }
+
+        .btn-prev {
+            background-color: #777;
+            color: #fff;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--blue-color);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+ 
+
+        .input-box {
+            display: flex;
+            align-items: center;
+          
+            background: #fff;
+            border: 1px solid #a0a0a0;
+            border-radius: 4px;
+            padding-left: 0.5rem;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        .input-box .prefix {
+            font-weight: 300;
+            font-size: 14px;
+            color: rgb(117, 114, 114);
+        }
+
+        .input-box input {
+            border: none;
+            outline: none;
+        }
+
+        .input-box:focus-within {
+            border-color: #777;
+        }
+
+     
+
+        .progress-bar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar::before,
+        .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: #dcdcdc;
+            z-index: -1;
+        }
+
+        .progress {
+            background-color: var(--blue-color);
+            width: 0;
+            transition: .5s;
+        }
+
+        .progress-step {
+            width: 35px;
+            height: 35px;
+            background-color: #dcdcdc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .progress-step::before {
+            counter-increment: step;
+            content: counter(step);
+        }
+
+        .progress-step::after {
+            content: attr(data-title);
+            position: absolute;
+            top: calc(100% + 0.20rem);
+            font-size: 0.85rem;
+            color: black !important;
+        }
+
+        .progress-step.active {
+            background-color: var(--blue-color);
+            color: white;
+        }
+
+        @keyframes animate {
+            from {
+                transform: scale(1, 0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1, 1);
+                opacity: 1;
+            }
+        }
+
+ 
+
+
+        .add-exp-btn {
+            color: #577d4c;
+            border-right: 2px solid #577d4c;
+            border-bottom: 2px solid #577d4c;
+            padding: 0 10px 10px 0;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom-right-radius: 6px;
+            cursor: pointer;
+        }
+
+        .add-experience {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="data.php" method="post" class="form">
+  
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step active" data-title="Personal"></div>
+            <div class="progress-step" data-title="Contact "></div>
+            <div class="progress-step" data-title="Experiences"></div>
+            <div class="progress-step" data-title="Links"></div>
+        </div>
+
+        <div class="form-step active">
+            <h3>Personal Informations</h3>
+            <div class="input-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" name="full-name" id="full-name">
+            </div>
+
+            <div class="input-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address">
+            </div>
+            <div class="input-group">
+                <label for="birth-date">Birth Date</label>
+                <input type="date" name="birth-date" id="birth-date">
+            </div>
+            <div class="">
+                <a class="btn btn-next">Next</a>
+            </div>
+        </div>
+        <div class="form-step ">
+            <h3>Contact Informations</h3>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="phone" name="phone" id="phone">
+            </div>
+            <div class="input-group">
+                <label for="summary">Profile Summary</label>
+                <textarea name="summary" id="summary" cols="42" rows="6"></textarea>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-prev">Previous</a>
+                <a class="btn btn-next">Next</a>
+            </div>
+        </div>
+        <div class="form-step ">
+            <h3>Experiences</h3>
+            <div class="experiences-group">
+                <div class="experience-item">
+                    <div class="input-group">
+                        <label for="title">Company name</label>
+                        <input type="text" name="job-title[]" id="job-title">
+                    </div>
+                    <div class="input-group">
+                        <label for="start-date">Start date</label>
+                        <input type="date" name="start-date[]" id="start-date">
+                    </div>
+                    <div class="input-group">
+                        <label for="end-date">End date</label>
+                        <input type="date" name="end-date[]" id="end-date">
+                    </div>
+                    <div class="input-group">
+                        <label for="job-description">Description</label>
+                        <textarea name="job-description[]" id="job-description" cols="42" rows="6"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="add-experience">
+                <a class="add-exp-btn"> + Add Experience</a>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-prev">Previous</a>
+                <a class="btn btn-next">Next</a>
+            </div>
+        </div>
+        <div class="form-step ">
+            <h3>Social Links</h3>
+            <div class="input-group">
+                <label for="linkedin">LinkedIn</label>
+                <div class="input-box">
+                    <span class="prefix">linkedin.com/in/</span>
+                    <input id="linkedin" name="linkedin" type="text" placeholder="USER123" />
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="twitter">Twitter</label>
+                <div class="input-box">
+                    <span class="prefix">twitter.com/</span>
+                    <input id="twitter" name="twitter" type="text" placeholder="USER123" />
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="github">Github</label>
+                <div class="input-box">
+                    <span class="prefix">github.com/</span>
+                    <input id="github" name="facebook" type="text" placeholder="USER123" />
+                </div>
+            </div>
+            <div class="btn-group">
+                <a class="btn btn-prev">Previous</a>
+                <input type="submit" value="Complete" name="complete" class="btn btn-complete">
+            </div>
+        </div>
+    </form>
+    <script src="script.js" defer></script>
+    <script>
+        const prevBtns = document.querySelectorAll(".btn-prev");
+        const nextBtns = document.querySelectorAll(".btn-next");
+        const progress = document.getElementById("progress");
+        const formSteps = document.querySelectorAll(".form-step");
+        const progressSteps = document.querySelectorAll(".progress-step");
+        const addExperienceBtn = document.querySelector(".add-exp-btn");
+        const experiencesGroup = document.querySelector(".experiences-group");
+        const btnComplete = document.querySelector(".btn-complete");
+        btnComplete.addEventListener("click", () => {
+            document.getElementsByTagName('form').submit
+        })
+        let formStepsNum = 0;
+        let experienceNum = 1;
+
+
+
+
+        function updateFormSteps() {
+
+            formSteps.forEach(formStep => {
+                formStep.classList.contains("active") &&
+                    formStep.classList.remove("active");
+            })
+            formSteps[formStepsNum].classList.add("active");
+        }
+
+        function updateProgressBar() {
+            progressSteps.forEach((progressStep, idx) => {
+                if (idx < formStepsNum + 1) {
+                    progressStep.classList.add("active");
+                } else {
+                    progressStep.classList.remove("active");
+                }
+            })
+
+            const progressActive = document.querySelectorAll(".progress-step.active");
+            progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + '%';
+        }
+
+
+        nextBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                formStepsNum++;
+                updateFormSteps();
+                updateProgressBar();
+                console.log("kk")
+            })
+        })
+
+
+        prevBtns.forEach(btn => {
+            btn.addEventListener("click", function () {
+                formStepsNum--;
+                updateFormSteps();
+                updateProgressBar();
+                console.log("kk")
+            })
+        })
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+# models.py
+
+from django.db import models
+
+class Skill(models.Model):
+name = models.CharField(max_length=100)
+experience = models.CharField(max_length=50) # Adjust max_length as needed
+
+
+# views.py
+
+from django.http import JsonResponse
+from .models import Skill # Import your Skill model
+
+def handle_multiple_inputs(request):
+if request.method == 'POST':
+# Get the list of skills and experiences from the POST data
+skills = request.POST.getlist('skill')
+experiences = request.POST.getlist('experience')
+
+# Process the skills and experiences as needed
+for skill, experience in zip(skills, experiences):
+# Save each skill and experience to the database
+skill_obj = Skill(name=skill, experience=experience)
+skill_obj.save()
+
+# Return a JSON response or any other response as needed
+return JsonResponse({'message': 'Skills and experiences saved successfully'}, status=200)
+else:
+return JsonResponse({'error': 'Method not allowed'}, status=405)
+
+<form id="skillsForm" method="post">
+    <div>
+        <label for="skill">Skill:</label>
+        <input type="text" name="skill" value="Python">
+    </div>
+    <div>
+        <label for="experience">Experience:</label>
+        <input type="text" name="experience" value="Intermediate">
+    </div>
+    <div>
+        <label for="skill">Skill:</label>
+        <input type="text" name="skill" value="Django">
+    </div>
+    <div>
+        <label for="experience">Experience:</label>
+        <input type="text" name="experience" value="Advanced">
+    </div>
+  
+    <input type="submit" value="Submit">
+</form> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* styles.css */
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-component {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .skill-input {
+            flex: 1;
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .add-skill-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-skill-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .remove-skill-btn {
+            padding: 8px 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-skill-btn:hover {
+            background-color: #bd2130;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- index.html -->
+<!-- index.html -->
+
+<div id="skillsContainer" class="skills-container">
+    <!-- Skill components will be added here dynamically -->
+</div>
+<button id="addSkillBtn" class="add-skill-btn">Add Skill</button>
+
+
+    <script>
+        // script.js
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillsContainer = document.getElementById('skillsContainer');
+            const addSkillBtn = document.getElementById('addSkillBtn');
+
+            // Function to create a new skill component
+            function createSkillComponent() {
+                const skillComponent = document.createElement('div');
+                skillComponent.classList.add('skill-component');
+
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.classList.add('skill-input');
+                input.placeholder = 'Enter skill';
+
+                const removeBtn = document.createElement('button');
+                removeBtn.classList.add('remove-skill-btn');
+                removeBtn.textContent = 'Remove';
+
+                // Event listener to remove the skill component
+                removeBtn.addEventListener('click', function () {
+                    skillComponent.remove();
+                });
+
+                skillComponent.appendChild(input);
+                skillComponent.appendChild(removeBtn);
+
+                skillsContainer.appendChild(skillComponent);
+            }
+
+            // Event listener for adding a skill component
+            addSkillBtn.addEventListener('click', function () {
+                createSkillComponent();
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

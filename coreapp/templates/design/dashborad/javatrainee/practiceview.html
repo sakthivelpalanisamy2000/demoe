@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<!-- <style xmlns="http://www.w3.org/1999/html">
+    </style> -->
+{% endblock %}
+
+{% block page_title %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-full">
+        <section class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box bg-transparent no-shadow mb-0">
+                        <div class="box-header no-border px-0">
+                            <h4 class="box-title">Practice Title Upload </h4>
+                            <!-- <div
+                                class="box-controls pull-right d-md-flex d-none">
+                                <a href="#">View All</a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="box-body py-10">
+                            <div class="table-responsive">
+                                <table class="table no-border mb-0">
+                                    <tbody>
+                                        <tr>
+
+                                            <td class="fw-600">Title</td>
+                                            <!-- <td
+                                                class="text-fade">Inside
+                                                Content</td> -->
+                                            <td class="fw-500"><span
+                                                    class="badge badge-sm badge-dot badge-warning me-10"></span>Type</td>
+                                            <td class="text-fade">Count of
+                                                content</td>
+                                            <td class="fw-600"><div
+                                                    class="dropdown">
+                                                    <a data-bs-toggle="dropdown"
+                                                        href="#"
+                                                        class="px-10 pt-0"><i
+                                                            class="ti-more-alt"></i></a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item"
+                                                            href="#"><i
+                                                                class="ti-import"></i>
+                                                            Import</a>
+                                                        <a class="dropdown-item"
+                                                            href="#"><i
+                                                                class="ti-export"></i>
+                                                            Export</a>
+                                                        <a class="dropdown-item"
+                                                            href="#"><i
+                                                                class="ti-printer"></i>
+                                                            Print</a>
+                                                        <div
+                                                            class="dropdown-divider"></div>
+                                                        <a class="dropdown-item"
+                                                            href="#"><i
+                                                                class="ti-settings"></i>
+                                                            Settings</a>
+                                                    </div>
+                                                </div> </td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="fw-600">Contemporary
+                                                Art</td>
+                                            <td
+                                                class="text-fade">Loremipsum.doc</td>
+                                            <td
+                                                class="fw-500 text-warning"><span
+                                                    class="badge badge-sm badge-dot badge-warning me-10"></span>Edit
+                                                available</td>
+                                            <td class="text-fade">78
+                                                members</td>
+                                            <td class="fw-600">78 MB</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="fw-600">Programming
+                                                Language</td>
+                                            <td
+                                                class="text-fade">phpcore.mp3</td>
+                                            <td class="fw-500"><span
+                                                    class="badge badge-sm badge-dot badge-primary me-10"></span>Only
+                                                view</td>
+                                            <td class="text-fade">48
+                                                members</td>
+                                            <td class="fw-600">12 MB</td>
+                                        </tr>
+                                        <tr>
+
+                                            <td class="fw-600">Geometry
+                                                Course</td>
+                                            <td
+                                                class="text-fade">dummyabz.pdf</td>
+                                            <td class="fw-500"><span
+                                                    class="badge badge-sm badge-dot badge-primary me-10"></span>Only
+                                                view</td>
+                                            <td class="text-fade">24
+                                                members</td>
+                                            <td class="fw-600">18 MB</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock content %}
